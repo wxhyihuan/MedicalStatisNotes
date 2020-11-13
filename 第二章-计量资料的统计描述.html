@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 第二章 计量资料的统计描述 | MedicalStatisNotes.utf8</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 第二章 计量资料的统计描述 | MedicalStatisNotes.utf8" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 第二章 计量资料的统计描述 | MedicalStatisNotes.utf8" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="https://wxhyihuan.github.io/">医学统计学笔记</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="2" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html"><i class="fa fa-check"></i><b>2</b> 第二章 计量资料的统计描述</a><ul>
+<li class="chapter" data-level="2.1" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#测试数据"><i class="fa fa-check"></i><b>2.1</b> 测试数据</a></li>
+<li class="chapter" data-level="2.2" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#输入数据和预处理"><i class="fa fa-check"></i><b>2.2</b> 输入数据和预处理</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#读取数据并将数据转换成单列形式"><i class="fa fa-check"></i><b>2.2.1</b> 读取数据，并将数据转换成单列形式</a></li>
+<li class="chapter" data-level="2.2.2" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#计算极差-maxminrange"><i class="fa fa-check"></i><b>2.2.2</b> 计算极差, max()/min()/range()</a></li>
+<li class="chapter" data-level="2.2.3" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#确定组段数和组距"><i class="fa fa-check"></i><b>2.2.3</b> 确定组段数和组距</a></li>
+<li class="chapter" data-level="2.2.4" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#计算频数分布"><i class="fa fa-check"></i><b>2.2.4</b> 计算频数分布</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#统计描述"><i class="fa fa-check"></i><b>2.3</b> 统计描述</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#算术平均值"><i class="fa fa-check"></i><b>2.3.1</b> 算术平均值</a></li>
+<li class="chapter" data-level="2.3.2" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#几何平均值"><i class="fa fa-check"></i><b>2.3.2</b> 几何平均值</a></li>
+<li class="chapter" data-level="2.3.3" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#中位数与百分位数"><i class="fa fa-check"></i><b>2.3.3</b> 中位数与百分位数</a></li>
+<li class="chapter" data-level="2.3.4" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#极差"><i class="fa fa-check"></i><b>2.3.4</b> 极差</a></li>
+<li class="chapter" data-level="2.3.5" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#四分位间距interquartile-range"><i class="fa fa-check"></i><b>2.3.5</b> 四分位间距(interquartile range)</a></li>
+<li class="chapter" data-level="2.3.6" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#方差与标准差"><i class="fa fa-check"></i><b>2.3.6</b> 方差与标准差</a></li>
+<li class="chapter" data-level="2.3.7" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#变异系数"><i class="fa fa-check"></i><b>2.3.7</b> 变异系数</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#正态分布和标准正态分布"><i class="fa fa-check"></i><b>2.4</b> 正态分布和标准正态分布</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#概率密度函数dnorm"><i class="fa fa-check"></i><b>2.4.1</b> 概率密度函数dnorm()</a></li>
+<li class="chapter" data-level="2.4.2" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#概率累积分布函数pnorm"><i class="fa fa-check"></i><b>2.4.2</b> 概率累积分布函数pnorm()</a></li>
+<li class="chapter" data-level="2.4.3" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#正态分位函数qnorm"><i class="fa fa-check"></i><b>2.4.3</b> 正态分位函数qnorm()</a></li>
+<li class="chapter" data-level="2.4.4" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#指定正态分位函数rnorm"><i class="fa fa-check"></i><b>2.4.4</b> 指定正态分位函数rnorm()</a></li>
+<li class="chapter" data-level="2.4.5" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#正态分布检验"><i class="fa fa-check"></i><b>2.4.5</b> 正态分布检验</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="第二章-计量资料的统计描述" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> 第二章 计量资料的统计描述</h1>
+<p>日期: “2020-11-13”
+作者：wxhyihuan</p>
+<div id="测试数据" class="section level2">
+<h2><span class="header-section-number">2.1</span> 测试数据</h2>
+<table>
+<caption><span id="tab:tab1">Table 2.1: </span>某医院用随机抽样的方法检测了138名正常成年女子的红细胞数目(RBC， <span class="math inline">\(*10^{12}/L\)</span>),其测量结果如下表：</caption>
+<thead>
+<tr class="header">
+<th align="right">V1</th>
+<th align="right">V2</th>
+<th align="right">V3</th>
+<th align="right">V4</th>
+<th align="right">V5</th>
+<th align="right">V6</th>
+<th align="right">V7</th>
+<th align="right">V8</th>
+<th align="right">V9</th>
+<th align="right">V10</th>
+<th align="right">V11</th>
+<th align="right">V12</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">3.96</td>
+<td align="right">4.23</td>
+<td align="right">4.42</td>
+<td align="right">3.59</td>
+<td align="right">5.12</td>
+<td align="right">4.02</td>
+<td align="right">4.32</td>
+<td align="right">3.72</td>
+<td align="right">4.76</td>
+<td align="right">4.16</td>
+<td align="right">4.61</td>
+<td align="right">4.26</td>
+</tr>
+<tr class="even">
+<td align="right">3.77</td>
+<td align="right">4.20</td>
+<td align="right">4.36</td>
+<td align="right">3.07</td>
+<td align="right">4.89</td>
+<td align="right">3.97</td>
+<td align="right">4.28</td>
+<td align="right">3.64</td>
+<td align="right">4.66</td>
+<td align="right">4.04</td>
+<td align="right">4.55</td>
+<td align="right">4.25</td>
+</tr>
+<tr class="odd">
+<td align="right">4.63</td>
+<td align="right">3.91</td>
+<td align="right">4.41</td>
+<td align="right">3.52</td>
+<td align="right">5.03</td>
+<td align="right">4.01</td>
+<td align="right">4.30</td>
+<td align="right">4.19</td>
+<td align="right">4.75</td>
+<td align="right">4.14</td>
+<td align="right">4.57</td>
+<td align="right">4.26</td>
+</tr>
+<tr class="even">
+<td align="right">4.56</td>
+<td align="right">3.79</td>
+<td align="right">3.89</td>
+<td align="right">4.21</td>
+<td align="right">4.95</td>
+<td align="right">3.98</td>
+<td align="right">4.29</td>
+<td align="right">3.67</td>
+<td align="right">4.69</td>
+<td align="right">4.12</td>
+<td align="right">4.56</td>
+<td align="right">4.26</td>
+</tr>
+<tr class="odd">
+<td align="right">4.66</td>
+<td align="right">4.28</td>
+<td align="right">3.83</td>
+<td align="right">4.20</td>
+<td align="right">5.24</td>
+<td align="right">4.02</td>
+<td align="right">4.33</td>
+<td align="right">3.76</td>
+<td align="right">4.81</td>
+<td align="right">4.17</td>
+<td align="right">3.96</td>
+<td align="right">3.27</td>
+</tr>
+<tr class="even">
+<td align="right">4.61</td>
+<td align="right">4.26</td>
+<td align="right">3.96</td>
+<td align="right">4.23</td>
+<td align="right">3.76</td>
+<td align="right">4.01</td>
+<td align="right">4.29</td>
+<td align="right">3.67</td>
+<td align="right">3.39</td>
+<td align="right">4.12</td>
+<td align="right">4.27</td>
+<td align="right">3.61</td>
+</tr>
+<tr class="odd">
+<td align="right">4.98</td>
+<td align="right">4.24</td>
+<td align="right">3.83</td>
+<td align="right">4.20</td>
+<td align="right">3.71</td>
+<td align="right">4.03</td>
+<td align="right">4.34</td>
+<td align="right">4.69</td>
+<td align="right">3.62</td>
+<td align="right">4.18</td>
+<td align="right">4.26</td>
+<td align="right">4.36</td>
+</tr>
+<tr class="even">
+<td align="right">5.28</td>
+<td align="right">4.21</td>
+<td align="right">4.42</td>
+<td align="right">4.36</td>
+<td align="right">3.66</td>
+<td align="right">4.02</td>
+<td align="right">4.31</td>
+<td align="right">4.83</td>
+<td align="right">3.59</td>
+<td align="right">3.97</td>
+<td align="right">3.96</td>
+<td align="right">4.49</td>
+</tr>
+<tr class="odd">
+<td align="right">5.11</td>
+<td align="right">4.20</td>
+<td align="right">4.36</td>
+<td align="right">4.54</td>
+<td align="right">3.72</td>
+<td align="right">3.97</td>
+<td align="right">4.28</td>
+<td align="right">4.76</td>
+<td align="right">3.21</td>
+<td align="right">4.04</td>
+<td align="right">4.56</td>
+<td align="right">4.25</td>
+</tr>
+<tr class="even">
+<td align="right">4.92</td>
+<td align="right">4.23</td>
+<td align="right">4.47</td>
+<td align="right">3.60</td>
+<td align="right">5.23</td>
+<td align="right">4.02</td>
+<td align="right">4.32</td>
+<td align="right">4.68</td>
+<td align="right">4.76</td>
+<td align="right">3.69</td>
+<td align="right">4.61</td>
+<td align="right">4.26</td>
+</tr>
+<tr class="odd">
+<td align="right">3.89</td>
+<td align="right">4.21</td>
+<td align="right">4.36</td>
+<td align="right">3.42</td>
+<td align="right">5.01</td>
+<td align="right">4.01</td>
+<td align="right">4.29</td>
+<td align="right">3.68</td>
+<td align="right">4.71</td>
+<td align="right">4.13</td>
+<td align="right">4.57</td>
+<td align="right">4.26</td>
+</tr>
+<tr class="even">
+<td align="right">4.03</td>
+<td align="right">5.46</td>
+<td align="right">4.16</td>
+<td align="right">3.64</td>
+<td align="right">4.16</td>
+<td align="right">3.76</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="输入数据和预处理" class="section level2">
+<h2><span class="header-section-number">2.2</span> 输入数据和预处理</h2>
+<div id="读取数据并将数据转换成单列形式" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> 读取数据，并将数据转换成单列形式</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="第二章-计量资料的统计描述.html#cb3-1"></a>RBC&lt;-<span class="kw">read.table</span>(<span class="st">&quot;ExampleData/02-01.txt&quot;</span>,<span class="dt">sep=</span><span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>)</span>
+<span id="cb3-2"><a href="第二章-计量资料的统计描述.html#cb3-2"></a>RBC&lt;-<span class="kw">as.matrix</span>(RBC)</span>
+<span id="cb3-3"><a href="第二章-计量资料的统计描述.html#cb3-3"></a>RBC_q &lt;-<span class="st"> </span><span class="kw">c</span>()</span>
+<span id="cb3-4"><a href="第二章-计量资料的统计描述.html#cb3-4"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(RBC))){</span>
+<span id="cb3-5"><a href="第二章-计量资料的统计描述.html#cb3-5"></a>  RBC_q &lt;-<span class="st"> </span><span class="kw">c</span>(RBC_q, RBC[i,])</span>
+<span id="cb3-6"><a href="第二章-计量资料的统计描述.html#cb3-6"></a>}</span>
+<span id="cb3-7"><a href="第二章-计量资料的统计描述.html#cb3-7"></a>RBC_v&lt;-<span class="kw">as.vector</span>(RBC_q)</span>
+<span id="cb3-8"><a href="第二章-计量资料的统计描述.html#cb3-8"></a>RBC_v&lt;-<span class="kw">na.omit</span>(RBC_v)</span></code></pre></div>
+</div>
+<div id="计算极差-maxminrange" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> 计算极差, max()/min()/range()</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="第二章-计量资料的统计描述.html#cb4-1"></a><span class="co">#range(RBC_v)  #返回最小值和最大值</span></span>
+<span id="cb4-2"><a href="第二章-计量资料的统计描述.html#cb4-2"></a>rge&lt;-<span class="kw">max</span>(RBC_v)<span class="op">-</span><span class="kw">min</span>(RBC_v)</span>
+<span id="cb4-3"><a href="第二章-计量资料的统计描述.html#cb4-3"></a>rge</span>
+<span id="cb4-4"><a href="第二章-计量资料的统计描述.html#cb4-4"></a><span class="co">## [1] 2.39</span></span></code></pre></div>
+</div>
+<div id="确定组段数和组距" class="section level3">
+<h3><span class="header-section-number">2.2.3</span> 确定组段数和组距</h3>
+<p>可以参考PAST软件中的the zero-stage rule of Wand 1997方式计算分段“最佳”个数。
+<span class="math inline">\(h=3.49min(s,IQ/1.349)n^{1/3}\)</span>,其中s是样本标准差，IQ是四分位数范围。</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="第二章-计量资料的统计描述.html#cb5-1"></a><span class="co">#sd()计算标准差，quantile()计算分位数</span></span>
+<span id="cb5-2"><a href="第二章-计量资料的统计描述.html#cb5-2"></a>s&lt;-<span class="kw">sd</span>(RBC_v)</span>
+<span id="cb5-3"><a href="第二章-计量资料的统计描述.html#cb5-3"></a><span class="co">## [1] 0.4457298</span></span>
+<span id="cb5-4"><a href="第二章-计量资料的统计描述.html#cb5-4"></a>quan&lt;-<span class="kw">quantile</span>(RBC_v,<span class="kw">c</span>(<span class="fl">0.25</span>,<span class="fl">0.75</span>))</span>
+<span id="cb5-5"><a href="第二章-计量资料的统计描述.html#cb5-5"></a>iq&lt;-quan[<span class="dv">2</span>]<span class="op">-</span>quan[<span class="dv">1</span>]</span>
+<span id="cb5-6"><a href="第二章-计量资料的统计描述.html#cb5-6"></a><span class="co">## 0.565</span></span>
+<span id="cb5-7"><a href="第二章-计量资料的统计描述.html#cb5-7"></a>h&lt;-<span class="fl">3.49</span><span class="op">*</span><span class="kw">min</span>(s,iq<span class="op">/</span><span class="fl">1.349</span>)<span class="op">*</span>(<span class="kw">length</span>(RBC_v)<span class="op">^</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">3</span>))</span>
+<span id="cb5-8"><a href="第二章-计量资料的统计描述.html#cb5-8"></a><span class="co">## 7.553617</span></span>
+<span id="cb5-9"><a href="第二章-计量资料的统计描述.html#cb5-9"></a>h&lt;-<span class="kw">ceiling</span>(h)</span>
+<span id="cb5-10"><a href="第二章-计量资料的统计描述.html#cb5-10"></a><span class="co">## 8</span></span>
+<span id="cb5-11"><a href="第二章-计量资料的统计描述.html#cb5-11"></a>i&lt;-rge<span class="op">/</span>h</span></code></pre></div>
+</div>
+<div id="计算频数分布" class="section level3">
+<h3><span class="header-section-number">2.2.4</span> 计算频数分布</h3>
+<p>根据计算的短组段数(h=8)，极差值(rge=2.39))和组距(i=rge/h=0.3164)计算各组段的频数</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="第二章-计量资料的统计描述.html#cb6-1"></a>breaks =<span class="st"> </span><span class="kw">seq</span>(<span class="kw">min</span>(RBC_v), <span class="kw">max</span>(RBC_v), <span class="dt">length.out =</span> <span class="dv">8</span>)</span>
+<span id="cb6-2"><a href="第二章-计量资料的统计描述.html#cb6-2"></a>RBC_v.cut =<span class="st"> </span><span class="kw">cut</span>(RBC_v, breaks, <span class="dt">right=</span>T,<span class="dt">include.lowest=</span>T)</span>
+<span id="cb6-3"><a href="第二章-计量资料的统计描述.html#cb6-3"></a>RBC_v.freq =<span class="st"> </span><span class="kw">table</span>(RBC_v.cut)</span>
+<span id="cb6-4"><a href="第二章-计量资料的统计描述.html#cb6-4"></a><span class="co">## [3.07,3.41) [3.41,3.75) [3.75,4.09) [4.09,4.44) [4.44,4.78) </span></span>
+<span id="cb6-5"><a href="第二章-计量资料的统计描述.html#cb6-5"></a><span class="co">##          4          17          29          51          23 </span></span>
+<span id="cb6-6"><a href="第二章-计量资料的统计描述.html#cb6-6"></a><span class="co">## [4.78,5.12) [5.12,5.46) </span></span>
+<span id="cb6-7"><a href="第二章-计量资料的统计描述.html#cb6-7"></a><span class="co">##          9           4 </span></span>
+<span id="cb6-8"><a href="第二章-计量资料的统计描述.html#cb6-8"></a><span class="kw">hist</span>(RBC_v, <span class="dt">right=</span><span class="ot">FALSE</span>, </span>
+<span id="cb6-9"><a href="第二章-计量资料的统计描述.html#cb6-9"></a>     <span class="dt">breaks =</span> breaks, <span class="dt">labels =</span><span class="ot">TRUE</span>, </span>
+<span id="cb6-10"><a href="第二章-计量资料的统计描述.html#cb6-10"></a>     <span class="dt">freq =</span> <span class="ot">TRUE</span>, <span class="dt">col =</span> <span class="st">&quot;#A8D6FF&quot;</span>, </span>
+<span id="cb6-11"><a href="第二章-计量资料的统计描述.html#cb6-11"></a>     <span class="dt">border =</span> <span class="st">&quot;white&quot;</span>, <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>, <span class="kw">max</span>(RBC_v.freq))) </span>
+<span id="cb6-12"><a href="第二章-计量资料的统计描述.html#cb6-12"></a></span>
+<span id="cb6-13"><a href="第二章-计量资料的统计描述.html#cb6-13"></a><span class="kw">hist</span>(RBC_v, <span class="dt">right=</span><span class="ot">FALSE</span>, </span>
+<span id="cb6-14"><a href="第二章-计量资料的统计描述.html#cb6-14"></a>      <span class="dt">breaks =</span> breaks, <span class="dt">labels =</span><span class="ot">TRUE</span>, </span>
+<span id="cb6-15"><a href="第二章-计量资料的统计描述.html#cb6-15"></a>      <span class="dt">freq =</span> <span class="ot">FALSE</span>, <span class="dt">col =</span> <span class="st">&quot;#A8D6FF&quot;</span>, </span>
+<span id="cb6-16"><a href="第二章-计量资料的统计描述.html#cb6-16"></a>      <span class="dt">border =</span> <span class="st">&quot;white&quot;</span>, <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>))</span>
+<span id="cb6-17"><a href="第二章-计量资料的统计描述.html#cb6-17"></a><span class="kw">lines</span>(<span class="kw">density</span>(RBC_v),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">lwd=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:histgrah"></span>
+<img src="image/a1e3904af844b14d3b57d1448690aea.png" alt="红细胞含量的频数分布" width="49%" height="49%" /><img src="image/5ba23e818daa7c71b147707f9b5dfd6.png" alt="红细胞含量的频数分布" width="49%" height="49%" />
+<p class="caption">
+Figure 2.1: 红细胞含量的频数分布
+</p>
+</div>
+</div>
+</div>
+<div id="统计描述" class="section level2">
+<h2><span class="header-section-number">2.3</span> 统计描述</h2>
+<div id="算术平均值" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> 算术平均值</h3>
+<p>算术均数简称均数(mean),用于反映组呈对称分布的变量值在数量上的平均水平。</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="第二章-计量资料的统计描述.html#cb7-1"></a><span class="kw">mean</span>(RBC_v)</span>
+<span id="cb7-2"><a href="第二章-计量资料的统计描述.html#cb7-2"></a><span class="co">## [1] 4.227029</span></span></code></pre></div>
+</div>
+<div id="几何平均值" class="section level3">
+<h3><span class="header-section-number">2.3.2</span> 几何平均值</h3>
+<p>几何均数(geometric mean)可用于反映一组经 <strong>对数转换</strong> 后呈对称分布的变量值在数量上的平均水平。</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="第二章-计量资料的统计描述.html#cb8-1"></a><span class="kw">exp</span>(<span class="kw">mean</span>(<span class="kw">log</span>(RBC_v)))</span>
+<span id="cb8-2"><a href="第二章-计量资料的统计描述.html#cb8-2"></a><span class="co">## [1] 4.203676</span></span></code></pre></div>
+</div>
+<div id="中位数与百分位数" class="section level3">
+<h3><span class="header-section-number">2.3.3</span> 中位数与百分位数</h3>
+<p>中位数(median)是将n个变量值从小到大排列,位置居于中间的那个数。当为奇数时取位次居中 的变量值,当n为偶数时取位次居中的两个变量值的均数。
+它适用于各种分布类型的资料,尤其是偏态分 布资料和一端或两端无确切数值的资料。</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="第二章-计量资料的统计描述.html#cb9-1"></a><span class="co">#中位数（=50百分位）</span></span>
+<span id="cb9-2"><a href="第二章-计量资料的统计描述.html#cb9-2"></a><span class="kw">median</span>(RBC_v)</span>
+<span id="cb9-3"><a href="第二章-计量资料的统计描述.html#cb9-3"></a><span class="kw">quantile</span>(RBC_v,  <span class="fl">0.5</span>)</span>
+<span id="cb9-4"><a href="第二章-计量资料的统计描述.html#cb9-4"></a><span class="co">##  4.23</span></span>
+<span id="cb9-5"><a href="第二章-计量资料的统计描述.html#cb9-5"></a><span class="co">#百分位</span></span>
+<span id="cb9-6"><a href="第二章-计量资料的统计描述.html#cb9-6"></a><span class="kw">quantile</span>(RBC_v, <span class="kw">c</span>(<span class="fl">0.1</span>, <span class="fl">0.25</span>, <span class="fl">0.5</span>,<span class="fl">0.75</span>,<span class="fl">0.9</span>))</span>
+<span id="cb9-7"><a href="第二章-计量资料的统计描述.html#cb9-7"></a><span class="co">##    10%    25%    50%    75%    90% </span></span>
+<span id="cb9-8"><a href="第二章-计量资料的统计描述.html#cb9-8"></a><span class="co">##3.6670 3.9625 4.2300 4.5275 4.7750 </span></span></code></pre></div>
+</div>
+<div id="极差" class="section level3">
+<h3><span class="header-section-number">2.3.4</span> 极差</h3>
+<p>极差即一组变量值的最大值与最小值之差。</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="第二章-计量资料的统计描述.html#cb10-1"></a><span class="kw">max</span>(RBC_v)<span class="op">-</span><span class="kw">min</span>(RBC_v)</span>
+<span id="cb10-2"><a href="第二章-计量资料的统计描述.html#cb10-2"></a><span class="kw">range</span>(RBC_v)</span></code></pre></div>
+</div>
+<div id="四分位间距interquartile-range" class="section level3">
+<h3><span class="header-section-number">2.3.5</span> 四分位间距(interquartile range)</h3>
+<p>四分位数(quartile)是把全部变量值分为四部分的分位数,即第1四分位数(Q .=Ps)、第2四分位数 M=P)、第3四分位数 (Qu=Ps)。 四分位数间距(quartile range)是由第3四分位数和第1四分位数相减行得,
+记为 R.它般和中位数起描述偏态分们资料的分布特征</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="第二章-计量资料的统计描述.html#cb11-1"></a><span class="kw">IQR</span>(RBC_v)</span>
+<span id="cb11-2"><a href="第二章-计量资料的统计描述.html#cb11-2"></a><span class="co">##  0.565</span></span>
+<span id="cb11-3"><a href="第二章-计量资料的统计描述.html#cb11-3"></a><span class="kw">quantile</span>(RBC_v, <span class="fl">0.75</span>)<span class="op">-</span><span class="kw">quantile</span>(RBC_v, <span class="fl">0.25</span>)</span>
+<span id="cb11-4"><a href="第二章-计量资料的统计描述.html#cb11-4"></a><span class="co">## 0.565</span></span></code></pre></div>
+</div>
+<div id="方差与标准差" class="section level3">
+<h3><span class="header-section-number">2.3.6</span> 方差与标准差</h3>
+<p>方差(variance)也称均方差(mean Square deviation),反映一组数据的平均离散水平。
+标准差(standard deviation)是方差的正平方根,其单位与原变量值的单位相同。</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="第二章-计量资料的统计描述.html#cb12-1"></a><span class="kw">sd</span>(RBC_v)</span>
+<span id="cb12-2"><a href="第二章-计量资料的统计描述.html#cb12-2"></a><span class="co">## [1] 0.4457298</span></span>
+<span id="cb12-3"><a href="第二章-计量资料的统计描述.html#cb12-3"></a><span class="kw">var</span>(RBC_v)</span>
+<span id="cb12-4"><a href="第二章-计量资料的统计描述.html#cb12-4"></a><span class="co">## [1] 0.1986751</span></span>
+<span id="cb12-5"><a href="第二章-计量资料的统计描述.html#cb12-5"></a><span class="kw">sd</span>(RBC_v)<span class="op">^</span><span class="dv">2</span></span>
+<span id="cb12-6"><a href="第二章-计量资料的统计描述.html#cb12-6"></a>(<span class="kw">sum</span>((RBC_v<span class="op">-</span><span class="kw">mean</span>(RBC_v))<span class="op">^</span><span class="dv">2</span>))<span class="op">/</span>(<span class="kw">length</span>(RBC_v)<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb12-7"><a href="第二章-计量资料的统计描述.html#cb12-7"></a><span class="co">## 0.1986751</span></span></code></pre></div>
+</div>
+<div id="变异系数" class="section level3">
+<h3><span class="header-section-number">2.3.7</span> 变异系数</h3>
+<p>变异系数(coefficient of variation)记为CV,多用于观察指标单位不同时。</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="第二章-计量资料的统计描述.html#cb13-1"></a><span class="kw">sd</span>(RBC_v)<span class="op">/</span><span class="kw">mean</span>(RBC_v)<span class="op">*</span><span class="dv">100</span></span>
+<span id="cb13-2"><a href="第二章-计量资料的统计描述.html#cb13-2"></a><span class="co">## [1] 10.54475</span></span>
+<span id="cb13-3"><a href="第二章-计量资料的统计描述.html#cb13-3"></a>raster<span class="op">::</span><span class="kw">cv</span>(RBC_v)</span>
+<span id="cb13-4"><a href="第二章-计量资料的统计描述.html#cb13-4"></a><span class="co">## [1] 10.54475</span></span></code></pre></div>
+</div>
+</div>
+<div id="正态分布和标准正态分布" class="section level2">
+<h2><span class="header-section-number">2.4</span> 正态分布和标准正态分布</h2>
+<p><a href="https://zh.wikipedia.org/zh-cn/%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83">正态分布</a>（Normal distribution）又名高斯分布（Gaussian distribution），是一个非常常见的连续概率分布。
+<strong>正态分布</strong>在统计学上十分重要，经常用在自然和社会科学来代表一个不明的随机变量。
+可以说，弄懂正态分布是灵活运用统计学中各种假设检验方法、理解p值，均数置信区间的前提。
+R包含有很丰富的正态分布相关的<a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Normal.html">函数功能</a>，
+比如概率密度函数dnorm()，概率累积分布函数pnorm()，正态分位函数qnorm()和用来生成特定正态分布数据序列的函数rnorm()，
+以及检测数据时候符合正态分布的方法，这里主要做下面一些介绍。</p>
+<div id="概率密度函数dnorm" class="section level3">
+<h3><span class="header-section-number">2.4.1</span> 概率密度函数dnorm()</h3>
+<p><a href="https://zh.wikipedia.org/zh-cn/%E6%A9%9F%E7%8E%87%E5%AF%86%E5%BA%A6%E5%87%BD%E6%95%B8">概率密度函数，Probability density function</a>，R中即为dnorm()，
+它可以给出了指定均值和标准差下每个点的<strong>概率分布的高度</strong>，
+越高就代表着这个点/区间的概率越密集(大)。概率密度函数有时也被称为概率分布函数，但这种称法可能会和累积分布函数pnorm()混淆。</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="第二章-计量资料的统计描述.html#cb14-1"></a><span class="co">#在-10~10区间等分的 100个 数据集x</span></span>
+<span id="cb14-2"><a href="第二章-计量资料的统计描述.html#cb14-2"></a>x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="dt">by =</span> <span class="fl">.1</span>)</span>
+<span id="cb14-3"><a href="第二章-计量资料的统计描述.html#cb14-3"></a><span class="co">#创建一个均值是2.5，标准差是0.5正态分布 y</span></span>
+<span id="cb14-4"><a href="第二章-计量资料的统计描述.html#cb14-4"></a>y &lt;-<span class="st"> </span><span class="kw">dnorm</span>(x, <span class="dt">mean =</span> <span class="fl">2.5</span>, <span class="dt">sd =</span> <span class="fl">0.5</span>)</span>
+<span id="cb14-5"><a href="第二章-计量资料的统计描述.html#cb14-5"></a><span class="co">#将 y 中的落在x数据集上的数据画出来</span></span>
+<span id="cb14-6"><a href="第二章-计量资料的统计描述.html#cb14-6"></a><span class="kw">plot</span>(x,y,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">pch=</span><span class="dv">20</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:dnorm"></span>
+<img src="MedicalStatisNotes_files/figure-html/dnorm-1.png" alt="概率密度函数示例" width="49%" height="49%" />
+<p class="caption">
+Figure 2.2: 概率密度函数示例
+</p>
+</div>
+</div>
+<div id="概率累积分布函数pnorm" class="section level3">
+<h3><span class="header-section-number">2.4.2</span> 概率累积分布函数pnorm()</h3>
+<p><a href="https://zh.wikipedia.org/wiki/%E7%B4%AF%E7%A7%AF%E5%88%86%E5%B8%83%E5%87%BD%E6%95%B0">累积分布函数，Cumulative Distribution Function</a>，R中即为pnorm()，
+又叫分布函数，是概率密度函数的积分，能完整描述一个实随机变量X的概率分布，它给出一个正态分布中小于一个给定数字的累计概率(即指定定点的左边范围的曲线面积)。</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="第二章-计量资料的统计描述.html#cb15-1"></a><span class="co">#在-10~10区间等分的 40个 数据集x</span></span>
+<span id="cb15-2"><a href="第二章-计量资料的统计描述.html#cb15-2"></a>x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="dt">by =</span> <span class="fl">.5</span>)</span>
+<span id="cb15-3"><a href="第二章-计量资料的统计描述.html#cb15-3"></a><span class="co">#创建一个均值是2.5，标准差是0.5正态分布 y</span></span>
+<span id="cb15-4"><a href="第二章-计量资料的统计描述.html#cb15-4"></a>y &lt;-<span class="st"> </span><span class="kw">pnorm</span>(x, <span class="dt">mean =</span> <span class="fl">2.5</span>, <span class="dt">sd =</span> <span class="fl">0.5</span>)</span>
+<span id="cb15-5"><a href="第二章-计量资料的统计描述.html#cb15-5"></a><span class="co">#将 y 中的落在x数据集上的累计概率画出来</span></span>
+<span id="cb15-6"><a href="第二章-计量资料的统计描述.html#cb15-6"></a><span class="kw">plot</span>(x,y,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">pch=</span><span class="dv">20</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:pnorm"></span>
+<img src="MedicalStatisNotes_files/figure-html/pnorm-1.png" alt="累积分布函数示例" width="49%" height="49%" />
+<p class="caption">
+Figure 2.3: 累积分布函数示例
+</p>
+</div>
+</div>
+<div id="正态分位函数qnorm" class="section level3">
+<h3><span class="header-section-number">2.4.3</span> 正态分位函数qnorm()</h3>
+<p>正态分位函数，R中即为qnorm()，它可以给出一个累积分布概率达到指定值的数字。</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="第二章-计量资料的统计描述.html#cb16-1"></a><span class="co">#在0~1区间等分的 50个 数据集x</span></span>
+<span id="cb16-2"><a href="第二章-计量资料的统计描述.html#cb16-2"></a>x &lt;-<span class="st"> </span>x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dt">by =</span> <span class="fl">0.02</span>)</span>
+<span id="cb16-3"><a href="第二章-计量资料的统计描述.html#cb16-3"></a><span class="co">#创建一个均值是2，标准差是1正态分布 y</span></span>
+<span id="cb16-4"><a href="第二章-计量资料的统计描述.html#cb16-4"></a>y &lt;-<span class="st"> </span><span class="kw">qnorm</span>(x, <span class="dt">mean =</span> <span class="dv">2</span>, <span class="dt">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb16-5"><a href="第二章-计量资料的统计描述.html#cb16-5"></a><span class="co">#将 y 中的落在x数据集上的数字画出来</span></span>
+<span id="cb16-6"><a href="第二章-计量资料的统计描述.html#cb16-6"></a><span class="kw">plot</span>(x,y,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">pch=</span><span class="dv">20</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:qnorm"></span>
+<img src="MedicalStatisNotes_files/figure-html/qnorm-1.png" alt="正态分位函数示例" width="49%" height="49%" />
+<p class="caption">
+Figure 2.4: 正态分位函数示例
+</p>
+</div>
+</div>
+<div id="指定正态分位函数rnorm" class="section level3">
+<h3><span class="header-section-number">2.4.4</span> 指定正态分位函数rnorm()</h3>
+<p>rnorm()函数用于生成符合指定均值和标准差的分布为正态分布的随机数，默认是标准正态分布，即均值为0，标准差1的正态分布。</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="第二章-计量资料的统计描述.html#cb17-1"></a><span class="co">#设置随机种子，便于重复后续的数据选取</span></span>
+<span id="cb17-2"><a href="第二章-计量资料的统计描述.html#cb17-2"></a><span class="kw">set.seed</span>(<span class="dv">50</span>)</span>
+<span id="cb17-3"><a href="第二章-计量资料的统计描述.html#cb17-3"></a><span class="co">#在标准正态分布中随机选取50个数据</span></span>
+<span id="cb17-4"><a href="第二章-计量资料的统计描述.html#cb17-4"></a>y &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">50</span>)</span>
+<span id="cb17-5"><a href="第二章-计量资料的统计描述.html#cb17-5"></a><span class="co">#对选区的数据绘制频率分布图</span></span>
+<span id="cb17-6"><a href="第二章-计量资料的统计描述.html#cb17-6"></a><span class="kw">hist</span>(y,<span class="dt">col=</span><span class="st">&quot;#A8D6FF&quot;</span>,<span class="dt">labels =</span><span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:rnorm"></span>
+<img src="MedicalStatisNotes_files/figure-html/rnorm-1.png" alt="随机正态分布数据示例" width="49%" height="49%" />
+<p class="caption">
+Figure 2.5: 随机正态分布数据示例
+</p>
+</div>
+</div>
+<div id="正态分布检验" class="section level3">
+<h3><span class="header-section-number">2.4.5</span> 正态分布检验</h3>
+<p>许多计量资料的分析方法要求数据分布是正态或近似正态，因此对原始独立测定数据进行正态性检验是十分必要的。通过绘制数据的频数分布直方图来定性地判断数据分布正态性。</p>
+<p>以下正态检验的资料整理自：</p>
+<ol style="list-style-type: decimal">
+<li><p><a href="https://blog.csdn.net/u013524655/article/details/41053105?utm_medium=distribute.pc_relevant.none-task-blog-baidulandingword-7&amp;spm=1001.2101.3001.4242">用R语言做正态分布检验</a></p></li>
+<li><p><a href="https://www.statsandr.com/blog/do-my-data-follow-a-normal-distribution-a-note-on-the-most-widely-used-distribution-and-how-to-test-for-normality-in-r/">How to test the normality assumption</a></p></li>
+</ol>
+<p>正态性检验主要有三类方法:</p>
+<ol style="list-style-type: decimal">
+<li><p>计算综合统计量
+如动差法、夏皮罗-威尔克Shapiro-Wilk 法(W 检验) 、达戈斯提诺D′Agostino 法(D 检验) 、Shapiro-Francia 法(W′检验)。</p></li>
+<li><p>正态分布的拟合优度检验</p>
+<p>如皮尔逊χ2 检验 、对数似然比检验 、柯尔莫哥洛夫Kolmogorov-Smirov 法检验。</p></li>
+<li><p>图示法(正态概率图Normal Probability plot)</p>
+<p>如分位数图(Quantile Quantileplot ,简称QQ 图) 、百分位数(Percent Percent plot ,简称PP 图) 和稳定化概率图(Stablized Probability plot ,
+简称SP 图) 等。</p></li>
+</ol>
+<p>统计软件中常用的正态性检验方法</p>
+<ol style="list-style-type: decimal">
+<li><p>用偏态系数和峰态系数检验数据正态性</p>
+<p>偏态系数Sk,它用于检验不对称性;峰态系数Ku,它用于检验峰态。 S k= 0, K u= 0 时, 分布呈正态, S k&gt; 0 时, 分布呈正偏态,S k &lt; 0 时, 分布呈负偏态。适用条件：样本含量应大于200</p></li>
+<li><p>用夏皮罗-威尔克(Shapiro-Wilk)法检验数据正态性
+即W检验,1965 年提出,适用于样本含量n ≤50 时的正态性检;。</p></li>
+<li><p>用达戈斯提诺(D′Agostino)法检验数据正态性
+即D检验,1971提出,正态性D检验该方法效率高，是比较精确的正态检验法。</p></li>
+<li><p>Shapiro-Francia 法
+即W′检验,于1972 年提出,适用于50 &lt; n &lt; 100 时的正态性检验。</p></li>
+<li><p>QQ图或PP图
+散点聚集在固定直线的周围，可以认为数据资料近似服从正态分布</p></li>
+</ol>
+<p><strong>常用的规则</strong>：</p>
+<p><strong>SPSS 规定</strong>:当样本含量3 ≤n ≤5000 时,结果以Shapiro - Wilk (W 检验) 为难,当样本含量n &gt; 5000 结果以Kolmogorov - Smirnov 为准。</p>
+<p><strong>SAS 规定</strong>:当样本含量n ≤2000 时,结果以Shapiro - Wilk (W 检验) 为准,当样本含量n &gt;2000 时,结果以Kolmogorov - Smirnov (D 检验) 为准。</p>
+<p>参考：</p>
+<p>刘庆武,胡志艳，如何用SPSS、SAS 统计软件进行正态性检验，湘南学院学报(自然科学版)，2005
+朱红兵，何丽娟，在SPSS10.0 中进行数据资料正态性检验的方法，首都体育学院学报，2004</p>
+<div id="直方图" class="section level4">
+<h4><span class="header-section-number">2.4.5.1</span> 直方图</h4>
+<p>直方图显示了分布的分布范围和形状，因此它是评估正态性的一个很好的起点。本文开始测试的红细胞浓度遵循正态曲线，因此数据似乎遵循正态分布。</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="第二章-计量资料的统计描述.html#cb18-1"></a><span class="kw">hist</span>(RBC_v, <span class="dt">right=</span><span class="ot">FALSE</span>, </span>
+<span id="cb18-2"><a href="第二章-计量资料的统计描述.html#cb18-2"></a>      <span class="dt">breaks =</span> breaks, <span class="dt">labels =</span><span class="ot">TRUE</span>, </span>
+<span id="cb18-3"><a href="第二章-计量资料的统计描述.html#cb18-3"></a>      <span class="dt">freq =</span> <span class="ot">FALSE</span>, <span class="dt">col =</span> <span class="st">&quot;#A8D6FF&quot;</span>, </span>
+<span id="cb18-4"><a href="第二章-计量资料的统计描述.html#cb18-4"></a>      <span class="dt">border =</span> <span class="st">&quot;white&quot;</span>, <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>))</span>
+<span id="cb18-5"><a href="第二章-计量资料的统计描述.html#cb18-5"></a></span>
+<span id="cb18-6"><a href="第二章-计量资料的统计描述.html#cb18-6"></a><span class="kw">lines</span>(<span class="kw">density</span>(RBC_v),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">lwd=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:histtest"></span>
+<img src="image/5ba23e818daa7c71b147707f9b5dfd6.png" alt="正态分布检验与直方图" width="49%" height="49%" />
+<p class="caption">
+Figure 2.6: 正态分布检验与直方图
+</p>
+</div>
+</div>
+<div id="密度图" class="section level4">
+<h4><span class="header-section-number">2.4.5.2</span> 密度图</h4>
+<p>密度图提供了关于数据是否服从正态分布的直观判断。它们类似于直方图，因为它们也允许分析分布的传播和形状。但是，它们是直方图的平滑版本。</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="第二章-计量资料的统计描述.html#cb19-1"></a>maintxt&lt;-<span class="kw">paste</span>(<span class="st">&quot;N=&quot;</span>,<span class="kw">length</span>(RBC_v),<span class="st">&quot;,&quot;</span>,<span class="st">&quot;Mean=&quot;</span>,<span class="kw">round</span>(<span class="kw">mean</span>(RBC_v),<span class="dv">3</span>),<span class="st">&quot;,&quot;</span>,<span class="st">&quot;Sd=&quot;</span>,<span class="kw">round</span>(s,<span class="dv">3</span>))</span>
+<span id="cb19-2"><a href="第二章-计量资料的统计描述.html#cb19-2"></a><span class="kw">plot</span>(<span class="kw">density</span>(RBC_v),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">main =</span> maintxt)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:densitytest"></span>
+<img src="image/Densitytest.png" alt="正态分布检验与密度图" width="49%" height="49%" />
+<p class="caption">
+Figure 2.7: 正态分布检验与密度图
+</p>
+</div>
+</div>
+<div id="qq-plot" class="section level4">
+<h4><span class="header-section-number">2.4.5.3</span> QQ-plot</h4>
+<p>有的数据从直方图和密度图很难检验正态性，因此建议用qq图来确证这些图。QQ-plot，又称正态图。在QQ-plots中，
+我们只需要确定数据点是否沿着直线(有时也称为Henry’s line)，而不是查看数据的扩散情况(如直方图和密度图)。
+如果点靠近参考线并且在置信区间内，则认为满足了正态性假设。点与参考线之间的偏差越大，偏离置信区间越远，
+满足正态条件的可能性就越小。这12个成年人的身高似乎服从正态分布，因为所有的点都在置信区间内。</p>
+<p>如果qq图所示的非正态分布(系统地偏离参考线)时，通常第一步是对数据进行对数变换，
+并重新检查对数变换后的数据是否正态分布。可以应用log()函数进行对数变换。</p>
+<p>另外，qq图也是评估回归分析的残差是否服从正态分布的一种方便的方法。</p>
+<div class="figure" style="text-align: center"><span id="fig:qqplottest1"></span>
+<img src="MedicalStatisNotes_files/figure-html/qqplottest1-1.png" alt="难以判断正态分布的密度图" width="49%" height="49%" />
+<p class="caption">
+Figure 2.8: 难以判断正态分布的密度图
+</p>
+</div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="第二章-计量资料的统计描述.html#cb20-1"></a><span class="co">#qqPlot是car包中的函数，因此需要载入包</span></span>
+<span id="cb20-2"><a href="第二章-计量资料的统计描述.html#cb20-2"></a><span class="kw">library</span>(car)</span></code></pre></div>
+<pre><code>## 载入需要的程辑包：carData</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="第二章-计量资料的统计描述.html#cb22-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb22-2"><a href="第二章-计量资料的统计描述.html#cb22-2"></a>dat_hist &lt;-<span class="st"> </span><span class="kw">data.frame</span>( <span class="dt">value =</span> <span class="kw">rnorm</span>(<span class="dv">12</span>, <span class="dt">mean =</span> <span class="dv">165</span>, <span class="dt">sd =</span> <span class="dv">5</span>))</span>
+<span id="cb22-3"><a href="第二章-计量资料的统计描述.html#cb22-3"></a><span class="co">##</span></span>
+<span id="cb22-4"><a href="第二章-计量资料的统计描述.html#cb22-4"></a><span class="kw">qqPlot</span>(dat_hist<span class="op">$</span>value)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:qqplot"></span>
+<img src="MedicalStatisNotes_files/figure-html/qqplot-1.png" alt="正态分布检验与QQ-plot (1)" width="49%" height="49%" />
+<p class="caption">
+Figure 2.9: 正态分布检验与QQ-plot (1)
+</p>
+</div>
+<pre><code>## [1] 12  2</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="第二章-计量资料的统计描述.html#cb24-1"></a><span class="co">#qqPlot是car包中的函数，因此需要载入包</span></span>
+<span id="cb24-2"><a href="第二章-计量资料的统计描述.html#cb24-2"></a><span class="kw">library</span>(car)</span>
+<span id="cb24-3"><a href="第二章-计量资料的统计描述.html#cb24-3"></a><span class="kw">qqPlot</span>(<span class="kw">as.numeric</span>(RBC_v),<span class="dt">ylab=</span><span class="st">&quot;RBC&quot;</span>, <span class="dt">main=</span><span class="st">&quot;RBC QQ-plot&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:qqplot1"></span>
+<img src="image/qqPlot.png" alt="正态分布检验与QQ-plot (2)" width="49%" height="49%" />
+<p class="caption">
+Figure 2.10: 正态分布检验与QQ-plot (2)
+</p>
+</div>
+</div>
+<div id="正态检验" class="section level4">
+<h4><span class="header-section-number">2.4.5.4</span> 正态检验</h4>
+<p>上述3种方法是对常态的目视检查。然而，目测有时可能不可靠，因此也有可能通过统计检验正式检验数据是否服从正态分布。
+这些正态性检验将数据的分布与正态分布进行比较，以评估观察结果是否显示出偏离正态性的重要偏差。
+最常用的两种正态性检验是Shapiro-Wilk检验（K检验）和Kolmogorov-Smirnov检验（D检验）。两种测试都有相同的假设，即:</p>
+<p><strong><em>H0</em></strong> : 数据服从正态分布</p>
+<p><strong><em>H1</em></strong> : 数据不服从正态分布</p>
+<p>正态性检验推荐使用Shapiro-Wilk检验，因为它比Kolmogorov-Smirnov检验提供更好的效用。
+在R中，正态性的Shapiro-Wilk检验可以通过函数shapiro.test()进行。</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="第二章-计量资料的统计描述.html#cb25-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb25-2"><a href="第二章-计量资料的统计描述.html#cb25-2"></a>dat_hist &lt;-<span class="st"> </span><span class="kw">data.frame</span>( <span class="dt">value =</span> <span class="kw">rnorm</span>(<span class="dv">12</span>, <span class="dt">mean =</span> <span class="dv">165</span>, <span class="dt">sd =</span> <span class="dv">5</span>))</span>
+<span id="cb25-3"><a href="第二章-计量资料的统计描述.html#cb25-3"></a><span class="kw">shapiro.test</span>(dat_hist<span class="op">$</span>value)</span>
+<span id="cb25-4"><a href="第二章-计量资料的统计描述.html#cb25-4"></a></span>
+<span id="cb25-5"><a href="第二章-计量资料的统计描述.html#cb25-5"></a><span class="co">##      Shapiro-Wilk normality test</span></span>
+<span id="cb25-6"><a href="第二章-计量资料的统计描述.html#cb25-6"></a><span class="co">##  </span></span>
+<span id="cb25-7"><a href="第二章-计量资料的统计描述.html#cb25-7"></a><span class="co">##  data:  dat_hist$value</span></span>
+<span id="cb25-8"><a href="第二章-计量资料的统计描述.html#cb25-8"></a><span class="co">##  W = 0.9, p-value = 0.5</span></span></code></pre></div>
+<p>从输出中，我们看到p-value&gt;0.05意味着我们不拒绝数据服从正态分布的原假设。
+该检验与qq图的方向相同，qq图与正态性没有显著偏差(因为所有点都在置信区间内)。</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="第二章-计量资料的统计描述.html#cb26-1"></a><span class="kw">shapiro.test</span>(RBC_v)</span>
+<span id="cb26-2"><a href="第二章-计量资料的统计描述.html#cb26-2"></a></span>
+<span id="cb26-3"><a href="第二章-计量资料的统计描述.html#cb26-3"></a><span class="co">##      Shapiro-Wilk normality test</span></span>
+<span id="cb26-4"><a href="第二章-计量资料的统计描述.html#cb26-4"></a><span class="co">##  </span></span>
+<span id="cb26-5"><a href="第二章-计量资料的统计描述.html#cb26-5"></a><span class="co">##  data:  as.numeric(RBC_v)</span></span>
+<span id="cb26-6"><a href="第二章-计量资料的统计描述.html#cb26-6"></a><span class="co">##  W = 1, p-value = 0.4</span></span></code></pre></div>
+<p>对RBC数据同样的结果。</p>
+<p>注意的是，在实践中，正态检验通常被认为过于保守，因为对于大样本(n&gt;50)，对正态条件的一个
+小偏差可能会导致违反正态判断的条件。由于正态性检验是一种假设检验，所以随着样本量的增加，其检测较小差
+异的能力也会增加。因此，随着观测数的增加，Shapiro-Wilk检验变得非常敏感，甚至对正态性的一个
+微小偏差也非常敏感。所以，根据正态性检验，数据不服从正态分布，尽管偏离正态分布的情况可以忽略不计，但数据
+实际上服从正态分布。因此，通常情况下，正态性条件的验证是基于本文所介绍的所有方法的组合，即目视检验
+(使用直方图和q-q图)和正式化检验(例如使用shapio-wilk检验)。</p>
+<p>R中还有其他一些正态检验的方法，比如 ks.test() 函数实现Kolmogorov-Smirnov Test（D检验），
+是对经验分布的拟合检验，检验的是经验分布函数和假设总体分布函数的差异，适应于大样本(n&gt;5000)。
+另外有一些package包含了丰富的检验函数，比如fBasics，nortest等。</p>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/01-intro.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["MedicalStatisNotes.pdf", "MedicalStatisNotes.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
