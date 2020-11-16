@@ -181,6 +181,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#t-检验"><i class="fa fa-check"></i><b>3.3</b> <em>t</em> 检验</a><ul>
 <li class="chapter" data-level="3.3.1" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#t检验与z检验"><i class="fa fa-check"></i><b>3.3.1</b> <em>t</em>检验与Z检验</a></li>
 <li class="chapter" data-level="3.3.2" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#单样本t检验"><i class="fa fa-check"></i><b>3.3.2</b> 单样本<em>t</em>检验</a></li>
+<li class="chapter" data-level="3.3.3" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#配对样本t检验"><i class="fa fa-check"></i><b>3.3.3</b> 配对样本<em>t</em>检验</a></li>
+<li class="chapter" data-level="3.3.4" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#两种独立样本t检验"><i class="fa fa-check"></i><b>3.3.4</b> 两种独立样本t检验</a></li>
+<li class="chapter" data-level="3.3.5" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#两样本方差齐性检验"><i class="fa fa-check"></i><b>3.3.5</b> 两样本方差齐性检验</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -347,7 +350,7 @@ Figure 3.4: t分布的rt()
 <h3><span class="header-section-number">3.2.5</span> 参数估计</h3>
 <p>参数估计是指用样本参数(统计量)推断总体参数，有点值估计(Point estimation)和区间估计(Interval estimation)两种。</p>
 <p><strong>点值估计</strong>就是用相应样本统计量简单直接的作为总体参数的估计值，如用<span class="math inline">\(\bar{X}\)</span>估计<span class="math inline">\(μ\)</span>，用<span class="math inline">\(S\)</span>估计<span class="math inline">\(\sigma\)</span>。
-案例一 某开发团队对开发App进行了改版迭代，现在有以下两个版本
+案例 某开发团队对开发App进行了改版迭代，现在有以下两个版本
 + 版本1: 首页为一屏课程列表
 + 版本2：首页为信息流
 如果我们想区分两个版本，哪个版本用户更喜欢，转化率会更高。我们就需要对总体（全部用户）进行评估，
@@ -379,7 +382,7 @@ Figure 3.4: t分布的rt()
 <p>从总体中随机抽样，由样本信息推断总体特征，除前面所讲的参数估计方法外，在实际应用中还会遇到这样的问题：某一样本均数是
 否来自于某已知数的总体?两个不同样本均数是否来自均数不相等的总体等要回答这类问题,除可用前面参数估计的方法外，
 更多的是用统计推断的另一方面——假设检验 (Hypothesis test)来解决，比如下面两个案例：</p>
-<p><strong>案例二</strong> 某医生测量了36名从事铅作业男性工人的血红蛋白含量,算得其均数为130.83 g/L，标准差为25.74 g/L。问：
+<p><strong>案例3-5</strong> 某医生测量了36名从事铅作业男性工人的血红蛋白含量,算得其均数为130.83 g/L，标准差为25.74 g/L。问：
 从事铅作业男性工人的血红蛋白含量均数(<em>μ</em>)是否<u>不等于</u>正常成年男性的均数 140 g/L (<span class="math inline">\(μ_0\)</span>)?</p>
 <p>针对问题一，其目的是判断是否<span class="math inline">\(μ≠μ_0\)</span>，以给出的条件看<span class="math inline">\(\bar{X}\)</span>与已知总体均数<span class="math inline">\(μ_0\)</span>不相等，
 造成两者不等的原因有两种情况：</p>
@@ -410,7 +413,7 @@ Figure 3.4: t分布的rt()
 <p>  ②. <span class="math inline">\(H_0\)</span>和<span class="math inline">\(H_1\)</span>是相互联系，对你的假设，后面的统计推断的结论是根据<span class="math inline">\(H_0\)</span>和<span class="math inline">\(H_1\)</span>作出的，二者缺一不可；</p>
 <p>  ③. <span class="math inline">\(H_0\)</span>为无效假设，其假定通常是：某两个(或多个)总体的参数相等，或两个总体参数之差为0，或某资料服从某一特定分布
   (如正态分布，Poisson分布等)，或<span class="math inline">\(\cdots\cdots\)</span>无效等；</p>
-<p>  ④. <span class="math inline">\(H_1\)</span>的内容直接反映呢检验的单双侧。比如案例二中，如果<span class="math inline">\(μ≠μ_0\)</span>，则此检验为双侧检验(Two-sided test);若<span class="math inline">\(H_1\)</span>为
+<p>  ④. <span class="math inline">\(H_1\)</span>的内容直接反映呢检验的单双侧。比如案例3-5中，如果<span class="math inline">\(μ≠μ_0\)</span>，则此检验为双侧检验(Two-sided test);若<span class="math inline">\(H_1\)</span>为
   <span class="math inline">\(μ＞μ_0\)</span>或<span class="math inline">\(μ小于μ_0\)</span>，则检验为单侧检验(One-sided test)，不仅考虑差异，而且考虑差异的方向。单双侧检验的确定，
   首先需要根据专业知识，其次是根据需要解决的问题来确定。</p>
 <ul>
@@ -426,6 +429,13 @@ Figure 3.4: t分布的rt()
 <p>第I类错误或α错误：它是指<span class="math inline">\(H_0\)</span>实际上是真的，但通过假设检验后，拒绝了原假设。这是错误的，
 我们拒绝了真实的原假设，所以叫弃真错误，这个错误的概率我们记为α，也就是检验水准。在假设检验之前我们会规定这个概率的大小，从而控制检验功效。</p>
 <p>第II类错误或β错误：它是指<span class="math inline">\(H_0\)</span>实际上假的，但通过假设检验显示，不拒绝原假设。这也是错误的，我们接受的原假设实际上是假的，所以叫取伪错误，这个错误的概率我们记为β。</p>
+<p>1-β称为检验效能(Power of test)，过去称把握度。其意义为当两总体确有差异，按规定检验水准α所能发现该差异的能力。
+和B一样，1-β只取单尾。如1-β = 0.90，意味着若两总体确有差别,则理论上平均每100 次检验中，有90 次能够得出差异
+有统计学意义的结论。从图中可看出，α愈小，B愈大; 反之α愈大，β愈小。若要同时减小型错误a以及1型错误B，唯一的方法
+就是增加样本含量n。若重点是减少第I类错误α(如一般的假设检验)，一般取 a=0.05。
+若重点是减少第II类错误(如方差齐性检验，正态性检验或想用一种方法代替另一种方法的检验等)，
+一般取 a = 0.10 或0.20，甚至更高。注意:拒绝<span class="math inline">\(H_0\)</span>，只可能犯第I类错误，不可能第II类错误。
+不拒绝<span class="math inline">\(H_0\)</span>，只可能犯第II类错误，不可能犯第I类错误。</p>
 <p>因此，原假设一般都是想要拒绝的假设，如果原假设备被错误拒绝的话，只能犯弃真错误，而犯弃真错误的概率可以用
 检验水准<span class="math inline">\(\alpha\)</span>控制，对统计者来说更容易控制，将错误影响降到最小。</p>
 <div class="figure" style="text-align: center"><span id="fig:typeerror"></span>
@@ -480,7 +490,7 @@ Figure 3.5: 第I类错误和第Ⅱ类错误
 <ol style="list-style-type: decimal">
 <li><p>单样本<em>t</em>检验(One sample/gourp <em>t</em>-test)</p></li>
 <li><p>配对样本<em>t</em>检验(Paired/matched <em>t</em>-test)</p></li>
-<li><p>两种独立样本<em>t</em>检验((Two sample/gourp <em>t</em>-test))</p></li>
+<li><p>两种独立样本<em>t</em>检验(Two sample/gourp <em>t</em>-test)</p></li>
 </ol>
 <p>R的stats包提供了<a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/t.test"><strong>t.test()</strong></a>，可以用于各种<em>t</em>检验，如果只提供一组数据，则进行单样本<em>t</em>检验，如果提供两组数据，
 则进行两样本<em>t</em>检验，主要的相关的参数是：</p>
@@ -494,28 +504,30 @@ Figure 3.5: 第I类错误和第Ⅱ类错误
 <p><strong><u>t.test()为什么用Welch <em>t</em>检验</u></strong></p>
 <p>配对数据我们可以把配对信息扔了，放在一起做两独立样本<em>t</em>检验；当然还是成对T检验好，比如病人在使用某药
 物前后的指标，如果不用配对信息，则病人之间的 variance 也混进去，方差估计会大一些，使得<em>t</em>检验的检验效能减弱。</p>
-<p>方差齐性得条件，我们也可以把它当做不齐，用Welch方法，但是用经典方法可以检验出更小的差别。所以如果不确定方差齐性与否的情况下(最好时进行方差齐性检验)，
-就用Welch <em>t</em>检验。注意的是，Welch <em>t</em>检验的自由度会比方差齐性的经典方法要小，根据<em>t</em>分布特征，自由度越小，中心越平，
+<p>方差齐性样本数据，理论上我们也可以把它当做不齐的样本用<em>t’</em>方法处理，但是用经典方法可以检验出更小的差别。
+所以如果不确定方差齐性与否的情况下(最好时进行方差齐性检验)，就用Welch <em>t</em>检验。因为与经典方法相比，
+Welch <em>t</em>检验的自由度会比方差齐性的经典方法要小，根据<em>t</em>分布特征，自由度越小，中心越平，
 而尾巴越长，要观察到同样一个t值，自由度越小所计算出来的p值会越大，换句话说，自由度越小，<em>t</em>检验就越保守。</p>
-<p>t.tes()默认使用Welch <em>t</em> 检验的原因估计就是因为它较为保守。</p>
+<p>在方差非齐性的处理方法中，Welch 法检验又可以给出相对较高的自由度，因此t.tes()默认使用Welch <em>t</em> 检验的原因估计就是因为它较为保守。</p>
 <hr />
 </div>
 <div id="单样本t检验" class="section level3">
 <h3><span class="header-section-number">3.3.2</span> 单样本<em>t</em>检验</h3>
-<p>使用《医学统计学》中的 案例3-5 的数据在R中进行单样本<em>t</em>检验测试。</p>
+<p>单样本<em>t</em>检验(One sample/gourp <em>t</em>-test)即已知样本均数<span class="math inline">\(\bar{X}\)</span>(代表未知总体均数<span class="math inline">\(μ\)</span>)与已知总体<span class="math inline">\(μ_0\)</span>的比较。比如
+使用《医学统计学》中的 案例3-5 的数据在R中进行单样本<em>t</em>检验测试。</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="第三章-总体均数的估计与假设检验.html#cb36-1"></a><span class="co">#使用memic包读取spss的数据格式</span></span>
 <span id="cb36-2"><a href="第三章-总体均数的估计与假设检验.html#cb36-2"></a><span class="co">#install.packages(&#39;memisc&#39;)</span></span>
 <span id="cb36-3"><a href="第三章-总体均数的估计与假设检验.html#cb36-3"></a><span class="kw">library</span>(<span class="st">&quot;memisc&quot;</span>)</span>
 <span id="cb36-4"><a href="第三章-总体均数的估计与假设检验.html#cb36-4"></a><span class="co">#读取数据</span></span>
-<span id="cb36-5"><a href="第三章-总体均数的估计与假设检验.html#cb36-5"></a>hemo_sav&lt;-<span class="kw">spss.system.file</span>(<span class="st">&quot;ExampleData/SavData4MedSta/Exam03-05.sav&quot;</span>)</span>
+<span id="cb36-5"><a href="第三章-总体均数的估计与假设检验.html#cb36-5"></a>home_sav&lt;-<span class="kw">spss.system.file</span>(<span class="st">&quot;ExampleData/SavData4MedSta/Exam03-05.sav&quot;</span>)</span>
 <span id="cb36-6"><a href="第三章-总体均数的估计与假设检验.html#cb36-6"></a><span class="co">#将数据形式转换为数据框</span></span>
-<span id="cb36-7"><a href="第三章-总体均数的估计与假设检验.html#cb36-7"></a>hemo_df&lt;-<span class="kw">as.data.frame</span>(<span class="kw">as.data.set</span>(hemo_sav))</span>
+<span id="cb36-7"><a href="第三章-总体均数的估计与假设检验.html#cb36-7"></a>home_df&lt;-<span class="kw">as.data.frame</span>(<span class="kw">as.data.set</span>(home_sav))</span>
 <span id="cb36-8"><a href="第三章-总体均数的估计与假设检验.html#cb36-8"></a></span>
 <span id="cb36-9"><a href="第三章-总体均数的估计与假设检验.html#cb36-9"></a><span class="co">#直接使用t.test()进行计算</span></span>
-<span id="cb36-10"><a href="第三章-总体均数的估计与假设检验.html#cb36-10"></a><span class="kw">t.test</span>(hemo_df<span class="op">$</span>hb, <span class="dt">mu=</span><span class="dv">140</span>)</span>
+<span id="cb36-10"><a href="第三章-总体均数的估计与假设检验.html#cb36-10"></a><span class="kw">t.test</span>(home_df<span class="op">$</span>hb, <span class="dt">mu=</span><span class="dv">140</span>)</span>
 <span id="cb36-11"><a href="第三章-总体均数的估计与假设检验.html#cb36-11"></a><span class="co">##      One Sample t-test</span></span>
 <span id="cb36-12"><a href="第三章-总体均数的估计与假设检验.html#cb36-12"></a><span class="co">##  </span></span>
-<span id="cb36-13"><a href="第三章-总体均数的估计与假设检验.html#cb36-13"></a><span class="co">##  data:  hemo_df</span></span>
+<span id="cb36-13"><a href="第三章-总体均数的估计与假设检验.html#cb36-13"></a><span class="co">##  data:  bfc_df</span></span>
 <span id="cb36-14"><a href="第三章-总体均数的估计与假设检验.html#cb36-14"></a><span class="co">##  t = -2.1367, df = 35, p-value = 0.03969</span></span>
 <span id="cb36-15"><a href="第三章-总体均数的估计与假设检验.html#cb36-15"></a><span class="co">##  alternative hypothesis: true mean is not equal to 140</span></span>
 <span id="cb36-16"><a href="第三章-总体均数的估计与假设检验.html#cb36-16"></a><span class="co">##  95 percent confidence interval:</span></span>
@@ -525,20 +537,24 @@ Figure 3.5: 第I类错误和第Ⅱ类错误
 <span id="cb36-20"><a href="第三章-总体均数的估计与假设检验.html#cb36-20"></a><span class="co">##   130.8333 </span></span>
 <span id="cb36-21"><a href="第三章-总体均数的估计与假设检验.html#cb36-21"></a></span>
 <span id="cb36-22"><a href="第三章-总体均数的估计与假设检验.html#cb36-22"></a><span class="co">#左侧检验</span></span>
-<span id="cb36-23"><a href="第三章-总体均数的估计与假设检验.html#cb36-23"></a><span class="kw">t.test</span>(hemo_df<span class="op">$</span>hb, <span class="dt">mu=</span><span class="dv">140</span>, <span class="dt">alternative =</span> <span class="st">&quot;less&quot;</span>)</span>
+<span id="cb36-23"><a href="第三章-总体均数的估计与假设检验.html#cb36-23"></a><span class="kw">t.test</span>(home_df<span class="op">$</span>hb, <span class="dt">mu=</span><span class="dv">140</span>, <span class="dt">alternative =</span> <span class="st">&quot;less&quot;</span>)</span>
 <span id="cb36-24"><a href="第三章-总体均数的估计与假设检验.html#cb36-24"></a><span class="co">#右侧检验</span></span>
-<span id="cb36-25"><a href="第三章-总体均数的估计与假设检验.html#cb36-25"></a><span class="kw">t.test</span>(hemo_df<span class="op">$</span>hb, <span class="dt">mu=</span><span class="dv">140</span>, <span class="dt">alternative =</span> <span class="st">&quot;greater&quot;</span>)</span>
+<span id="cb36-25"><a href="第三章-总体均数的估计与假设检验.html#cb36-25"></a><span class="kw">t.test</span>(home_df<span class="op">$</span>hb, <span class="dt">mu=</span><span class="dv">140</span>, <span class="dt">alternative =</span> <span class="st">&quot;greater&quot;</span>)</span>
 <span id="cb36-26"><a href="第三章-总体均数的估计与假设检验.html#cb36-26"></a></span>
 <span id="cb36-27"><a href="第三章-总体均数的估计与假设检验.html#cb36-27"></a></span>
 <span id="cb36-28"><a href="第三章-总体均数的估计与假设检验.html#cb36-28"></a><span class="co">#直接计算出t值后，使用pt函数计算p值的方式</span></span>
-<span id="cb36-29"><a href="第三章-总体均数的估计与假设检验.html#cb36-29"></a>t.value &lt;-<span class="st"> </span><span class="kw">mean</span>(hemo_df<span class="op">$</span>hb <span class="op">-</span><span class="st"> </span><span class="dv">140</span>) <span class="op">/</span></span>
-<span id="cb36-30"><a href="第三章-总体均数的估计与假设检验.html#cb36-30"></a><span class="st">              </span><span class="kw">sd</span>(hemo_df<span class="op">$</span>hb) <span class="op">*</span><span class="st"> </span><span class="kw">sqrt</span>(<span class="kw">nrow</span>(hemo_df))</span>
+<span id="cb36-29"><a href="第三章-总体均数的估计与假设检验.html#cb36-29"></a>t.value &lt;-<span class="st"> </span><span class="kw">mean</span>(home_df<span class="op">$</span>hb <span class="op">-</span><span class="st"> </span><span class="dv">140</span>) <span class="op">/</span></span>
+<span id="cb36-30"><a href="第三章-总体均数的估计与假设检验.html#cb36-30"></a><span class="st">              </span><span class="kw">sd</span>(home_df<span class="op">$</span>hb) <span class="op">*</span><span class="st"> </span><span class="kw">sqrt</span>(<span class="kw">nrow</span>(home_df))</span>
 <span id="cb36-31"><a href="第三章-总体均数的估计与假设检验.html#cb36-31"></a><span class="co">#-2.136668</span></span>
 <span id="cb36-32"><a href="第三章-总体均数的估计与假设检验.html#cb36-32"></a><span class="co">#双侧检验，概率值乘以2</span></span>
 <span id="cb36-33"><a href="第三章-总体均数的估计与假设检验.html#cb36-33"></a>p.value &lt;-<span class="st"> </span><span class="kw">pt</span>(t.value, </span>
-<span id="cb36-34"><a href="第三章-总体均数的估计与假设检验.html#cb36-34"></a>              <span class="dt">df=</span><span class="kw">nrow</span>(hemo_df)<span class="op">-</span><span class="dv">1</span>, </span>
+<span id="cb36-34"><a href="第三章-总体均数的估计与假设检验.html#cb36-34"></a>              <span class="dt">df=</span><span class="kw">nrow</span>(home_df)<span class="op">-</span><span class="dv">1</span>, </span>
 <span id="cb36-35"><a href="第三章-总体均数的估计与假设检验.html#cb36-35"></a>              <span class="dt">lower.tail=</span>T)<span class="op">*</span><span class="dv">2</span></span>
 <span id="cb36-36"><a href="第三章-总体均数的估计与假设检验.html#cb36-36"></a><span class="co">## [1] 0.03969288</span></span></code></pre></div>
+<p>计算显示<span class="math inline">\(P=0.03969288&lt;\alpha=0.05\)</span>，可以认为一次抽样发生了小概率事件，因此拒绝原假设<span class="math inline">\(H_0\)</span>，
+接受<span class="math inline">\(H_1\)</span>，差异有统计意义；结合案例数据意义，可以认为从事铅作业的工人的平均血红蛋白含量低于
+(因为给出样本均值是小于总体均值的)正常值。</p>
+<p>我们还可以通过绘制拒绝域和t值落点，更直观的发现t值落在左侧和右侧的拒绝域内的。</p>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="第三章-总体均数的估计与假设检验.html#cb37-1"></a><span class="co">#l使用scales包中alpha函数改变颜色透明度</span></span>
 <span id="cb37-2"><a href="第三章-总体均数的估计与假设检验.html#cb37-2"></a><span class="kw">library</span>(<span class="st">&quot;scales&quot;</span>)</span>
 <span id="cb37-3"><a href="第三章-总体均数的估计与假设检验.html#cb37-3"></a>t.value&lt;-<span class="op">-</span><span class="fl">2.136668</span></span>
@@ -547,35 +563,280 @@ Figure 3.5: 第I类错误和第Ⅱ类错误
 <span id="cb37-6"><a href="第三章-总体均数的估计与假设检验.html#cb37-6"></a>y &lt;-<span class="st"> </span><span class="kw">dt</span>(x,<span class="dt">df=</span>df)</span>
 <span id="cb37-7"><a href="第三章-总体均数的估计与假设检验.html#cb37-7"></a><span class="co">#右侧p值0.95对应的t值</span></span>
 <span id="cb37-8"><a href="第三章-总体均数的估计与假设检验.html#cb37-8"></a>right &lt;-<span class="st"> </span><span class="kw">qt</span>(<span class="fl">0.95</span>,<span class="dt">df=</span>df)</span>
-<span id="cb37-9"><a href="第三章-总体均数的估计与假设检验.html#cb37-9"></a>left &lt;-<span class="st"> </span><span class="kw">qt</span>(<span class="fl">0.05</span>,<span class="dt">df=</span>df,<span class="dt">lower.tail=</span>T)</span>
-<span id="cb37-10"><a href="第三章-总体均数的估计与假设检验.html#cb37-10"></a><span class="kw">plot</span>(x,y,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">xaxt=</span><span class="st">&quot;n&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;probabilityy&quot;</span>,</span>
-<span id="cb37-11"><a href="第三章-总体均数的估计与假设检验.html#cb37-11"></a>     <span class="dt">xlab=</span><span class="kw">expression</span>(<span class="kw">paste</span>(<span class="st">&#39;Assumed Distribution of &#39;</span>,<span class="kw">bar</span>(x))),</span>
-<span id="cb37-12"><a href="第三章-总体均数的估计与假设检验.html#cb37-12"></a>     <span class="dt">axes=</span><span class="ot">FALSE</span>,<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="kw">max</span>(y)<span class="op">*</span><span class="fl">1.1</span>),<span class="dt">xlim=</span><span class="kw">c</span>(<span class="kw">min</span>(x),<span class="kw">max</span>(x)),</span>
-<span id="cb37-13"><a href="第三章-总体均数的估计与假设检验.html#cb37-13"></a>     <span class="dt">frame.plot=</span><span class="ot">FALSE</span>)</span>
-<span id="cb37-14"><a href="第三章-总体均数的估计与假设检验.html#cb37-14"></a><span class="kw">axis</span>(<span class="dv">1</span>,<span class="dt">at=</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">5</span>,left,right,<span class="dv">0</span>,<span class="dv">5</span>),</span>
-<span id="cb37-15"><a href="第三章-总体均数的估计与假设检验.html#cb37-15"></a>     <span class="dt">pos =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>),</span>
-<span id="cb37-16"><a href="第三章-总体均数的估计与假设检验.html#cb37-16"></a>     <span class="dt">labels=</span><span class="kw">c</span>(<span class="kw">expression</span>(<span class="st">&#39; &#39;</span>),<span class="kw">expression</span>(<span class="kw">bar</span>(x)[cil]),</span>
-<span id="cb37-17"><a href="第三章-总体均数的估计与假设检验.html#cb37-17"></a>     <span class="kw">expression</span>(<span class="kw">bar</span>(x)[cir]),<span class="kw">expression</span>(mu[<span class="dv">0</span>]),<span class="kw">expression</span>(<span class="st">&#39;&#39;</span>)))</span>
-<span id="cb37-18"><a href="第三章-总体均数的估计与假设检验.html#cb37-18"></a><span class="kw">axis</span>(<span class="dv">2</span>,<span class="dt">pos =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">5</span>,<span class="dv">0</span>))</span>
-<span id="cb37-19"><a href="第三章-总体均数的估计与假设检验.html#cb37-19"></a>xRiReject &lt;-<span class="st"> </span><span class="kw">seq</span>(right,<span class="dv">5</span>,<span class="dt">by=</span><span class="fl">0.01</span>)</span>
-<span id="cb37-20"><a href="第三章-总体均数的估计与假设检验.html#cb37-20"></a>yRiReject &lt;-<span class="st"> </span><span class="kw">dt</span>(xRiReject,<span class="dt">df=</span>df,)</span>
-<span id="cb37-21"><a href="第三章-总体均数的估计与假设检验.html#cb37-21"></a>xLeReject &lt;-<span class="st"> </span><span class="kw">seq</span>(left,<span class="op">-</span><span class="dv">5</span>,<span class="dt">by=</span><span class="op">-</span><span class="fl">0.01</span>)</span>
-<span id="cb37-22"><a href="第三章-总体均数的估计与假设检验.html#cb37-22"></a>yLeReject &lt;-<span class="st"> </span><span class="kw">dt</span>(xLeReject,<span class="dt">df=</span>df)</span>
-<span id="cb37-23"><a href="第三章-总体均数的估计与假设检验.html#cb37-23"></a><span class="kw">polygon</span>(<span class="kw">c</span>(xRiReject,xRiReject[<span class="kw">length</span>(xRiReject)],xRiReject[<span class="dv">1</span>]),</span>
-<span id="cb37-24"><a href="第三章-总体均数的估计与假设检验.html#cb37-24"></a>        <span class="kw">c</span>(yRiReject,<span class="dv">0</span>, <span class="dv">0</span>), <span class="dt">col=</span><span class="kw">alpha</span>(<span class="st">&quot;red&quot;</span>,<span class="fl">0.4</span>),<span class="dt">border=</span><span class="ot">NA</span>)</span>
-<span id="cb37-25"><a href="第三章-总体均数的估计与假设检验.html#cb37-25"></a><span class="kw">polygon</span>(<span class="kw">c</span>(xLeReject,xLeReject[<span class="kw">length</span>(xLeReject)],xLeReject[<span class="dv">1</span>]),</span>
-<span id="cb37-26"><a href="第三章-总体均数的估计与假设检验.html#cb37-26"></a>        <span class="kw">c</span>(yLeReject,<span class="dv">0</span>, <span class="dv">0</span>), <span class="dt">col=</span><span class="kw">alpha</span>(<span class="st">&quot;red&quot;</span>,<span class="fl">0.4</span>),<span class="dt">border=</span><span class="ot">NA</span>)</span>
-<span id="cb37-27"><a href="第三章-总体均数的估计与假设检验.html#cb37-27"></a><span class="kw">axis</span>(<span class="dv">1</span>,<span class="dt">at=</span><span class="kw">c</span>(t.value,<span class="kw">abs</span>(t.value)),</span>
-<span id="cb37-28"><a href="第三章-总体均数的估计与假设检验.html#cb37-28"></a>     <span class="dt">pos =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>),<span class="dt">lwd.ticks=</span><span class="dv">1</span>,</span>
-<span id="cb37-29"><a href="第三章-总体均数的估计与假设检验.html#cb37-29"></a>     <span class="dt">labels=</span><span class="kw">c</span>( <span class="kw">round</span>(t.value,<span class="dv">2</span>),<span class="kw">round</span>(<span class="kw">abs</span>(t.value),<span class="dv">2</span>)))</span>
-<span id="cb37-30"><a href="第三章-总体均数的估计与假设检验.html#cb37-30"></a><span class="kw">arrows</span>(<span class="kw">abs</span>(t.value),<span class="dv">0</span>, <span class="kw">abs</span>(t.value), <span class="fl">0.4</span>, <span class="dt">length =</span> <span class="dv">0</span>,<span class="dt">lty =</span><span class="dv">2</span>,<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb37-31"><a href="第三章-总体均数的估计与假设检验.html#cb37-31"></a><span class="kw">arrows</span>(t.value,<span class="dv">0</span>, t.value, <span class="fl">0.4</span>, <span class="dt">length =</span> <span class="dv">0</span>,<span class="dt">lty =</span><span class="dv">2</span>,<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
+<span id="cb37-9"><a href="第三章-总体均数的估计与假设检验.html#cb37-9"></a><span class="co">#左p值0.05对应的t值</span></span>
+<span id="cb37-10"><a href="第三章-总体均数的估计与假设检验.html#cb37-10"></a>left &lt;-<span class="st"> </span><span class="kw">qt</span>(<span class="fl">0.05</span>,<span class="dt">df=</span>df,<span class="dt">lower.tail=</span>T)</span>
+<span id="cb37-11"><a href="第三章-总体均数的估计与假设检验.html#cb37-11"></a><span class="co">#绘制密度曲线</span></span>
+<span id="cb37-12"><a href="第三章-总体均数的估计与假设检验.html#cb37-12"></a><span class="kw">plot</span>(x,y,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">xaxt=</span><span class="st">&quot;n&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;probabilityy&quot;</span>,</span>
+<span id="cb37-13"><a href="第三章-总体均数的估计与假设检验.html#cb37-13"></a>     <span class="dt">xlab=</span><span class="kw">expression</span>(<span class="kw">paste</span>(<span class="st">&#39;Assumed Distribution of &#39;</span>,<span class="kw">bar</span>(x))),</span>
+<span id="cb37-14"><a href="第三章-总体均数的估计与假设检验.html#cb37-14"></a>     <span class="dt">axes=</span><span class="ot">FALSE</span>,<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="kw">max</span>(y)<span class="op">*</span><span class="fl">1.1</span>),<span class="dt">xlim=</span><span class="kw">c</span>(<span class="kw">min</span>(x),<span class="kw">max</span>(x)),</span>
+<span id="cb37-15"><a href="第三章-总体均数的估计与假设检验.html#cb37-15"></a>     <span class="dt">frame.plot=</span><span class="ot">FALSE</span>)</span>
+<span id="cb37-16"><a href="第三章-总体均数的估计与假设检验.html#cb37-16"></a><span class="co">#添加坐标轴</span></span>
+<span id="cb37-17"><a href="第三章-总体均数的估计与假设检验.html#cb37-17"></a><span class="kw">axis</span>(<span class="dv">1</span>,<span class="dt">at=</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">5</span>,left,right,<span class="dv">0</span>,<span class="dv">5</span>),</span>
+<span id="cb37-18"><a href="第三章-总体均数的估计与假设检验.html#cb37-18"></a>     <span class="dt">pos =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>),</span>
+<span id="cb37-19"><a href="第三章-总体均数的估计与假设检验.html#cb37-19"></a>     <span class="dt">labels=</span><span class="kw">c</span>(<span class="kw">expression</span>(<span class="st">&#39; &#39;</span>),<span class="kw">expression</span>(<span class="kw">bar</span>(x)[cil]),</span>
+<span id="cb37-20"><a href="第三章-总体均数的估计与假设检验.html#cb37-20"></a>     <span class="kw">expression</span>(<span class="kw">bar</span>(x)[cir]),<span class="kw">expression</span>(mu[<span class="dv">0</span>]),<span class="kw">expression</span>(<span class="st">&#39;&#39;</span>)))</span>
+<span id="cb37-21"><a href="第三章-总体均数的估计与假设检验.html#cb37-21"></a><span class="kw">axis</span>(<span class="dv">2</span>,<span class="dt">pos =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">5</span>,<span class="dv">0</span>))</span>
+<span id="cb37-22"><a href="第三章-总体均数的估计与假设检验.html#cb37-22"></a><span class="co">#标记左侧和右侧的拒绝域</span></span>
+<span id="cb37-23"><a href="第三章-总体均数的估计与假设检验.html#cb37-23"></a>xRiReject &lt;-<span class="st"> </span><span class="kw">seq</span>(right,<span class="dv">5</span>,<span class="dt">by=</span><span class="fl">0.01</span>)</span>
+<span id="cb37-24"><a href="第三章-总体均数的估计与假设检验.html#cb37-24"></a>yRiReject &lt;-<span class="st"> </span><span class="kw">dt</span>(xRiReject,<span class="dt">df=</span>df,)</span>
+<span id="cb37-25"><a href="第三章-总体均数的估计与假设检验.html#cb37-25"></a>xLeReject &lt;-<span class="st"> </span><span class="kw">seq</span>(left,<span class="op">-</span><span class="dv">5</span>,<span class="dt">by=</span><span class="op">-</span><span class="fl">0.01</span>)</span>
+<span id="cb37-26"><a href="第三章-总体均数的估计与假设检验.html#cb37-26"></a>yLeReject &lt;-<span class="st"> </span><span class="kw">dt</span>(xLeReject,<span class="dt">df=</span>df)</span>
+<span id="cb37-27"><a href="第三章-总体均数的估计与假设检验.html#cb37-27"></a><span class="co">#用poltgon()绘制拒绝域</span></span>
+<span id="cb37-28"><a href="第三章-总体均数的估计与假设检验.html#cb37-28"></a><span class="kw">polygon</span>(<span class="kw">c</span>(xRiReject,xRiReject[<span class="kw">length</span>(xRiReject)],xRiReject[<span class="dv">1</span>]),</span>
+<span id="cb37-29"><a href="第三章-总体均数的估计与假设检验.html#cb37-29"></a>        <span class="kw">c</span>(yRiReject,<span class="dv">0</span>, <span class="dv">0</span>), <span class="dt">col=</span><span class="kw">alpha</span>(<span class="st">&quot;red&quot;</span>,<span class="fl">0.4</span>),<span class="dt">border=</span><span class="ot">NA</span>)</span>
+<span id="cb37-30"><a href="第三章-总体均数的估计与假设检验.html#cb37-30"></a><span class="kw">polygon</span>(<span class="kw">c</span>(xLeReject,xLeReject[<span class="kw">length</span>(xLeReject)],xLeReject[<span class="dv">1</span>]),</span>
+<span id="cb37-31"><a href="第三章-总体均数的估计与假设检验.html#cb37-31"></a>        <span class="kw">c</span>(yLeReject,<span class="dv">0</span>, <span class="dv">0</span>), <span class="dt">col=</span><span class="kw">alpha</span>(<span class="st">&quot;red&quot;</span>,<span class="fl">0.4</span>),<span class="dt">border=</span><span class="ot">NA</span>)</span>
+<span id="cb37-32"><a href="第三章-总体均数的估计与假设检验.html#cb37-32"></a><span class="co">#在坐标轴上添加t值标记</span></span>
+<span id="cb37-33"><a href="第三章-总体均数的估计与假设检验.html#cb37-33"></a><span class="kw">axis</span>(<span class="dv">1</span>,<span class="dt">at=</span><span class="kw">c</span>(t.value,<span class="op">-</span><span class="dv">1</span><span class="op">*</span>(t.value)),</span>
+<span id="cb37-34"><a href="第三章-总体均数的估计与假设检验.html#cb37-34"></a>     <span class="dt">pos =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>),<span class="dt">lwd.ticks=</span><span class="dv">1</span>,</span>
+<span id="cb37-35"><a href="第三章-总体均数的估计与假设检验.html#cb37-35"></a>     <span class="dt">labels=</span><span class="kw">c</span>( <span class="kw">round</span>(t.value,<span class="dv">2</span>),<span class="kw">round</span>(<span class="op">-</span><span class="dv">1</span><span class="op">*</span>(t.value),<span class="dv">2</span>)))</span>
+<span id="cb37-36"><a href="第三章-总体均数的估计与假设检验.html#cb37-36"></a><span class="kw">arrows</span>(<span class="op">-</span><span class="dv">1</span><span class="op">*</span>(t.value),<span class="dv">0</span>, <span class="dv">-1</span><span class="op">*</span>(t.value), <span class="fl">0.4</span>, <span class="dt">length =</span> <span class="dv">0</span>,<span class="dt">lty =</span><span class="dv">2</span>,<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb37-37"><a href="第三章-总体均数的估计与假设检验.html#cb37-37"></a><span class="kw">arrows</span>(t.value,<span class="dv">0</span>, t.value, <span class="fl">0.4</span>, <span class="dt">length =</span> <span class="dv">0</span>,<span class="dt">lty =</span><span class="dv">2</span>,<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:hometdist"></span>
 <img src="MedicalStatisNotes_files/figure-html/hometdist-1.png" alt="血红蛋白样本的单样本t检验" width="49%" height="49%" />
 <p class="caption">
 Figure 3.6: 血红蛋白样本的单样本t检验
 </p>
 </div>
+</div>
+<div id="配对样本t检验" class="section level3">
+<h3><span class="header-section-number">3.3.3</span> 配对样本<em>t</em>检验</h3>
+<p>简称配对<em>t</em>检验(Paired/matched <em>t</em>-test)，也称成对<em>t</em>检验(注意区别于成组<em>t</em>检验)，适用于配对设计的计量资料。配对设计是将受试对象按照某些重要特征特征配成对子，再见没对中的
+两个受试对象随机分配到两处理组。常见的配对设计主要有：</p>
+<ol style="list-style-type: decimal">
+<li><p>两通志受试对象配成对子，分别接受两种不同的处理；</p></li>
+<li><p>同一受试对象分别接受两种不同处理；</p></li>
+<li><p>同一受试对象接受一种处理前后。</p></li>
+</ol>
+<p>使用《医学统计学》中的 案例3-6 的数据在R中进行配对样本<em>t</em>检验测试，案例3-6属于第2种配对设计情况。</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="第三章-总体均数的估计与假设检验.html#cb38-1"></a><span class="co">#使用memic包读取spss的数据格式</span></span>
+<span id="cb38-2"><a href="第三章-总体均数的估计与假设检验.html#cb38-2"></a><span class="co">#install.packages(&#39;memisc&#39;)</span></span>
+<span id="cb38-3"><a href="第三章-总体均数的估计与假设检验.html#cb38-3"></a><span class="kw">library</span>(<span class="st">&quot;memisc&quot;</span>)</span>
+<span id="cb38-4"><a href="第三章-总体均数的估计与假设检验.html#cb38-4"></a><span class="co">#读取数据</span></span>
+<span id="cb38-5"><a href="第三章-总体均数的估计与假设检验.html#cb38-5"></a>bfc_sav&lt;-<span class="kw">spss.system.file</span>(<span class="st">&quot;ExampleData/SavData4MedSta/Exam03-06.sav&quot;</span>)</span>
+<span id="cb38-6"><a href="第三章-总体均数的估计与假设检验.html#cb38-6"></a><span class="co">#将数据形式转换为数据框</span></span>
+<span id="cb38-7"><a href="第三章-总体均数的估计与假设检验.html#cb38-7"></a>bfc_df&lt;-<span class="kw">as.data.frame</span>(<span class="kw">as.data.set</span>(bfc_sav))</span>
+<span id="cb38-8"><a href="第三章-总体均数的估计与假设检验.html#cb38-8"></a><span class="co">#直接使用t.test()进行计算，注意paired=TRUE</span></span>
+<span id="cb38-9"><a href="第三章-总体均数的估计与假设检验.html#cb38-9"></a><span class="kw">t.test</span>(bfc_df<span class="op">$</span>x1, bfc_df<span class="op">$</span>x2, <span class="dt">paired=</span><span class="ot">TRUE</span>)</span>
+<span id="cb38-10"><a href="第三章-总体均数的估计与假设检验.html#cb38-10"></a><span class="co">##  Paired t-test</span></span>
+<span id="cb38-11"><a href="第三章-总体均数的估计与假设检验.html#cb38-11"></a><span class="co">## </span></span>
+<span id="cb38-12"><a href="第三章-总体均数的估计与假设检验.html#cb38-12"></a><span class="co">## data:  bfc_df$x1 and bfc_df$x2</span></span>
+<span id="cb38-13"><a href="第三章-总体均数的估计与假设检验.html#cb38-13"></a><span class="co">## t = 7.926, df = 9, p-value = 2.384e-05</span></span>
+<span id="cb38-14"><a href="第三章-总体均数的估计与假设检验.html#cb38-14"></a><span class="co">## alternative hypothesis: true difference in means is not equal to 0</span></span>
+<span id="cb38-15"><a href="第三章-总体均数的估计与假设检验.html#cb38-15"></a><span class="co">## 95 percent confidence interval:</span></span>
+<span id="cb38-16"><a href="第三章-总体均数的估计与假设检验.html#cb38-16"></a><span class="co">##  0.1946542 0.3501458</span></span>
+<span id="cb38-17"><a href="第三章-总体均数的估计与假设检验.html#cb38-17"></a><span class="co">## sample estimates:</span></span>
+<span id="cb38-18"><a href="第三章-总体均数的估计与假设检验.html#cb38-18"></a><span class="co">## mean of the differences </span></span>
+<span id="cb38-19"><a href="第三章-总体均数的估计与假设检验.html#cb38-19"></a><span class="co">##                  0.2724 </span></span></code></pre></div>
+<p>计算显示<span class="math inline">\(P=2.384e-05&lt;\alpha=0.05\)</span>，可以认为一次抽样发生了小概率事件，因此拒绝原假设<span class="math inline">\(H_0\)</span>，
+接受<span class="math inline">\(H_1\)</span>，差异有统计意义；结合案例数据意义，可认为两种方法对脂肪含量的测定结果不同，
+而且第一种方法的鉴定结果数值较高(mean of the differences=0.27224 &gt; 0)。</p>
+<p>同样，可以通过绘制拒绝域和t值落点，更直观的发现t值落在左侧和右侧的拒绝域内的。</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="第三章-总体均数的估计与假设检验.html#cb39-1"></a><span class="co">#l使用scales包中alpha函数改变颜色透明度</span></span>
+<span id="cb39-2"><a href="第三章-总体均数的估计与假设检验.html#cb39-2"></a><span class="kw">library</span>(<span class="st">&quot;scales&quot;</span>)</span>
+<span id="cb39-3"><a href="第三章-总体均数的估计与假设检验.html#cb39-3"></a>t.value&lt;-<span class="fl">7.926</span></span>
+<span id="cb39-4"><a href="第三章-总体均数的估计与假设检验.html#cb39-4"></a>df=<span class="dv">9</span></span>
+<span id="cb39-5"><a href="第三章-总体均数的估计与假设检验.html#cb39-5"></a>x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">9</span>,<span class="dv">9</span>,<span class="dt">by=</span><span class="fl">0.01</span>)</span>
+<span id="cb39-6"><a href="第三章-总体均数的估计与假设检验.html#cb39-6"></a>y &lt;-<span class="st"> </span><span class="kw">dt</span>(x,<span class="dt">df=</span>df)</span>
+<span id="cb39-7"><a href="第三章-总体均数的估计与假设检验.html#cb39-7"></a><span class="co">#右侧p值0.95对应的t值</span></span>
+<span id="cb39-8"><a href="第三章-总体均数的估计与假设检验.html#cb39-8"></a>right &lt;-<span class="st"> </span><span class="kw">qt</span>(<span class="fl">0.95</span>,<span class="dt">df=</span>df)</span>
+<span id="cb39-9"><a href="第三章-总体均数的估计与假设检验.html#cb39-9"></a><span class="co">#左p值0.05对应的t值</span></span>
+<span id="cb39-10"><a href="第三章-总体均数的估计与假设检验.html#cb39-10"></a>left &lt;-<span class="st"> </span><span class="kw">qt</span>(<span class="fl">0.05</span>,<span class="dt">df=</span>df,<span class="dt">lower.tail=</span>T)</span>
+<span id="cb39-11"><a href="第三章-总体均数的估计与假设检验.html#cb39-11"></a><span class="co">#绘制密度曲线</span></span>
+<span id="cb39-12"><a href="第三章-总体均数的估计与假设检验.html#cb39-12"></a><span class="kw">plot</span>(x,y,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">xaxt=</span><span class="st">&quot;n&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;probabilityy&quot;</span>,</span>
+<span id="cb39-13"><a href="第三章-总体均数的估计与假设检验.html#cb39-13"></a>     <span class="dt">xlab=</span><span class="kw">expression</span>(<span class="kw">paste</span>(<span class="st">&#39;Assumed Distribution of &#39;</span>,<span class="kw">bar</span>(x))),</span>
+<span id="cb39-14"><a href="第三章-总体均数的估计与假设检验.html#cb39-14"></a>     <span class="dt">axes=</span><span class="ot">FALSE</span>,<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="kw">max</span>(y)<span class="op">*</span><span class="fl">1.1</span>),<span class="dt">xlim=</span><span class="kw">c</span>(<span class="kw">min</span>(x),<span class="kw">max</span>(x)),</span>
+<span id="cb39-15"><a href="第三章-总体均数的估计与假设检验.html#cb39-15"></a>     <span class="dt">frame.plot=</span><span class="ot">FALSE</span>)</span>
+<span id="cb39-16"><a href="第三章-总体均数的估计与假设检验.html#cb39-16"></a><span class="co">#添加坐标轴</span></span>
+<span id="cb39-17"><a href="第三章-总体均数的估计与假设检验.html#cb39-17"></a><span class="kw">axis</span>(<span class="dv">1</span>,<span class="dt">at=</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">9</span>,left,right,<span class="dv">0</span>,<span class="dv">9</span>),</span>
+<span id="cb39-18"><a href="第三章-总体均数的估计与假设检验.html#cb39-18"></a>     <span class="dt">pos =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>),</span>
+<span id="cb39-19"><a href="第三章-总体均数的估计与假设检验.html#cb39-19"></a>     <span class="dt">labels=</span><span class="kw">c</span>(<span class="kw">expression</span>(<span class="st">&#39; &#39;</span>),<span class="kw">expression</span>(<span class="kw">bar</span>(x)[cil]),</span>
+<span id="cb39-20"><a href="第三章-总体均数的估计与假设检验.html#cb39-20"></a>     <span class="kw">expression</span>(<span class="kw">bar</span>(x)[cir]),<span class="kw">expression</span>(mu[<span class="dv">0</span>]),<span class="kw">expression</span>(<span class="st">&#39;&#39;</span>)))</span>
+<span id="cb39-21"><a href="第三章-总体均数的估计与假设检验.html#cb39-21"></a><span class="kw">axis</span>(<span class="dv">2</span>,<span class="dt">pos =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">9</span>,<span class="dv">0</span>))</span>
+<span id="cb39-22"><a href="第三章-总体均数的估计与假设检验.html#cb39-22"></a><span class="co">#标记左侧和右侧的拒绝域</span></span>
+<span id="cb39-23"><a href="第三章-总体均数的估计与假设检验.html#cb39-23"></a>xRiReject &lt;-<span class="st"> </span><span class="kw">seq</span>(right,<span class="dv">9</span>,<span class="dt">by=</span><span class="fl">0.01</span>)</span>
+<span id="cb39-24"><a href="第三章-总体均数的估计与假设检验.html#cb39-24"></a>yRiReject &lt;-<span class="st"> </span><span class="kw">dt</span>(xRiReject,<span class="dt">df=</span>df,)</span>
+<span id="cb39-25"><a href="第三章-总体均数的估计与假设检验.html#cb39-25"></a>xLeReject &lt;-<span class="st"> </span><span class="kw">seq</span>(left,<span class="op">-</span><span class="dv">9</span>,<span class="dt">by=</span><span class="op">-</span><span class="fl">0.01</span>)</span>
+<span id="cb39-26"><a href="第三章-总体均数的估计与假设检验.html#cb39-26"></a>yLeReject &lt;-<span class="st"> </span><span class="kw">dt</span>(xLeReject,<span class="dt">df=</span>df)</span>
+<span id="cb39-27"><a href="第三章-总体均数的估计与假设检验.html#cb39-27"></a><span class="co">#用poltgon()绘制拒绝域</span></span>
+<span id="cb39-28"><a href="第三章-总体均数的估计与假设检验.html#cb39-28"></a><span class="kw">polygon</span>(<span class="kw">c</span>(xRiReject,xRiReject[<span class="kw">length</span>(xRiReject)],xRiReject[<span class="dv">1</span>]),</span>
+<span id="cb39-29"><a href="第三章-总体均数的估计与假设检验.html#cb39-29"></a>        <span class="kw">c</span>(yRiReject,<span class="dv">0</span>, <span class="dv">0</span>), <span class="dt">col=</span><span class="kw">alpha</span>(<span class="st">&quot;red&quot;</span>,<span class="fl">0.4</span>),<span class="dt">border=</span><span class="ot">NA</span>)</span>
+<span id="cb39-30"><a href="第三章-总体均数的估计与假设检验.html#cb39-30"></a><span class="kw">polygon</span>(<span class="kw">c</span>(xLeReject,xLeReject[<span class="kw">length</span>(xLeReject)],xLeReject[<span class="dv">1</span>]),</span>
+<span id="cb39-31"><a href="第三章-总体均数的估计与假设检验.html#cb39-31"></a>        <span class="kw">c</span>(yLeReject,<span class="dv">0</span>, <span class="dv">0</span>), <span class="dt">col=</span><span class="kw">alpha</span>(<span class="st">&quot;red&quot;</span>,<span class="fl">0.4</span>),<span class="dt">border=</span><span class="ot">NA</span>)</span>
+<span id="cb39-32"><a href="第三章-总体均数的估计与假设检验.html#cb39-32"></a><span class="co">#在坐标轴上添加t值标记</span></span>
+<span id="cb39-33"><a href="第三章-总体均数的估计与假设检验.html#cb39-33"></a><span class="kw">axis</span>(<span class="dv">1</span>,<span class="dt">at=</span><span class="kw">c</span>(t.value,<span class="op">-</span><span class="dv">1</span><span class="op">*</span>(t.value)),</span>
+<span id="cb39-34"><a href="第三章-总体均数的估计与假设检验.html#cb39-34"></a>     <span class="dt">pos =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>),<span class="dt">lwd.ticks=</span><span class="dv">1</span>,</span>
+<span id="cb39-35"><a href="第三章-总体均数的估计与假设检验.html#cb39-35"></a>     <span class="dt">labels=</span><span class="kw">c</span>( <span class="kw">round</span>(t.value,<span class="dv">2</span>),<span class="kw">round</span>(<span class="op">-</span><span class="dv">1</span><span class="op">*</span>(t.value),<span class="dv">2</span>)))</span>
+<span id="cb39-36"><a href="第三章-总体均数的估计与假设检验.html#cb39-36"></a><span class="kw">arrows</span>(<span class="op">-</span><span class="dv">1</span><span class="op">*</span>(t.value),<span class="dv">0</span>, <span class="dv">-1</span><span class="op">*</span>(t.value), <span class="fl">0.4</span>, <span class="dt">length =</span> <span class="dv">0</span>,<span class="dt">lty =</span><span class="dv">2</span>,<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb39-37"><a href="第三章-总体均数的估计与假设检验.html#cb39-37"></a><span class="kw">arrows</span>(t.value,<span class="dv">0</span>, t.value, <span class="fl">0.4</span>, <span class="dt">length =</span> <span class="dv">0</span>,<span class="dt">lty =</span><span class="dv">2</span>,<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:piredttest"></span>
+<img src="MedicalStatisNotes_files/figure-html/piredttest-1.png" alt="两种方法对饮料中的脂肪含量检测的配对t检验" width="49%" height="49%" />
+<p class="caption">
+Figure 3.7: 两种方法对饮料中的脂肪含量检测的配对t检验
+</p>
+</div>
+</div>
+<div id="两种独立样本t检验" class="section level3">
+<h3><span class="header-section-number">3.3.4</span> 两种独立样本t检验</h3>
+<p>两种独立样本<em>t</em>检验又称为成组<em>t</em>检验((Two sample/gourp <em>t</em>-test)，适用于完全随机设计两样本均数比较，
+通常是比较两样本所代表的总体的均数是否不同。两组完全随机设计是将受试对象完全随机分配到两个不同处理组。</p>
+<p>当两样本含量较小(<span class="math inline">\(n_1\leq60,或(和)n_2\leq60\)</span>)，且各自的总体符合正态分布(<a href="第二章-计量资料的统计描述.html#正态检验">正态分布检验</a>)时，再根据两组
+数据的方差是否一样(<strong>方差齐性</strong>，方差齐性检验)来采用不同t检验方法。</p>
+<div id="总体方差相等的t检验" class="section level4">
+<h4><span class="header-section-number">3.3.4.1</span> 总体方差相等的<em>t</em>检验</h4>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="第三章-总体均数的估计与假设检验.html#cb40-1"></a><span class="kw">library</span>(<span class="st">&quot;memisc&quot;</span>)</span>
+<span id="cb40-2"><a href="第三章-总体均数的估计与假设检验.html#cb40-2"></a><span class="co">#读取数据</span></span>
+<span id="cb40-3"><a href="第三章-总体均数的估计与假设检验.html#cb40-3"></a>bfg_sav&lt;-<span class="kw">spss.system.file</span>(<span class="st">&quot;ExampleData/SavData4MedSta/Exam03-07.sav&quot;</span>)</span>
+<span id="cb40-4"><a href="第三章-总体均数的估计与假设检验.html#cb40-4"></a><span class="co">#将数据形式转换为数据框</span></span>
+<span id="cb40-5"><a href="第三章-总体均数的估计与假设检验.html#cb40-5"></a>bfg_df&lt;-<span class="kw">as.data.frame</span>(<span class="kw">as.data.set</span>(bfg_sav))</span>
+<span id="cb40-6"><a href="第三章-总体均数的估计与假设检验.html#cb40-6"></a>x &lt;-<span class="st"> </span>bfg_df<span class="op">$</span>result[<span class="kw">which</span>(bfg_df<span class="op">$</span>group<span class="op">==</span><span class="dv">1</span>)]</span>
+<span id="cb40-7"><a href="第三章-总体均数的估计与假设检验.html#cb40-7"></a>y &lt;-<span class="st"> </span>bfg_df<span class="op">$</span>result[<span class="kw">which</span>(bfg_df<span class="op">$</span>group<span class="op">==</span><span class="dv">2</span>)]</span>
+<span id="cb40-8"><a href="第三章-总体均数的估计与假设检验.html#cb40-8"></a><span class="co">#直接使用t.test()进行计算，注意 var.equal=TRUE</span></span>
+<span id="cb40-9"><a href="第三章-总体均数的估计与假设检验.html#cb40-9"></a><span class="kw">t.test</span>(x,y,<span class="dt">var.equal=</span><span class="ot">TRUE</span>)</span>
+<span id="cb40-10"><a href="第三章-总体均数的估计与假设检验.html#cb40-10"></a></span>
+<span id="cb40-11"><a href="第三章-总体均数的估计与假设检验.html#cb40-11"></a><span class="co">##  Two Sample t-test</span></span>
+<span id="cb40-12"><a href="第三章-总体均数的估计与假设检验.html#cb40-12"></a><span class="co">## </span></span>
+<span id="cb40-13"><a href="第三章-总体均数的估计与假设检验.html#cb40-13"></a><span class="co">## data:  x and y</span></span>
+<span id="cb40-14"><a href="第三章-总体均数的估计与假设检验.html#cb40-14"></a><span class="co">## t = -0.64187, df = 38, p-value = 0.5248</span></span>
+<span id="cb40-15"><a href="第三章-总体均数的估计与假设检验.html#cb40-15"></a><span class="co">## alternative hypothesis: true difference in means is not equal to 0</span></span>
+<span id="cb40-16"><a href="第三章-总体均数的估计与假设检验.html#cb40-16"></a><span class="co">## 95 percent confidence interval:</span></span>
+<span id="cb40-17"><a href="第三章-总体均数的估计与假设检验.html#cb40-17"></a><span class="co">##  -2.326179  1.206179</span></span>
+<span id="cb40-18"><a href="第三章-总体均数的估计与假设检验.html#cb40-18"></a><span class="co">## sample estimates:</span></span>
+<span id="cb40-19"><a href="第三章-总体均数的估计与假设检验.html#cb40-19"></a><span class="co">## mean of x mean of y </span></span>
+<span id="cb40-20"><a href="第三章-总体均数的估计与假设检验.html#cb40-20"></a><span class="co">##     2.065     2.625 </span></span></code></pre></div>
+<p>计算显示 <span class="math inline">\(P=0.5248&gt;\alpha=0.05\)</span>，因此不拒绝原假设<span class="math inline">\(H_0\)</span>，差异无统计意义；结合案例数据意义，
+还不能认为两种方法的预后效果不同。</p>
+</div>
+<div id="总体方差不相等的t检验" class="section level4">
+<h4><span class="header-section-number">3.3.4.2</span> 总体方差不相等的<em>t</em>检验</h4>
+<p>两独立小样本的均数比较，如果方差不相等(方差不齐)，可采用数据变换(如两样本几何均数的<em>t</em>检验，
+就是将原始数据对数转换后进行<em>t检验</em>)处理，或采用近似<em>t</em>检验(Separate variance estimation
+<em>t</em>-test)，即<em>t‘</em>检验或秩转换的非参数检验，比如常用的 Cochran&amp;Cox法 和 Satterthwaite法 两种，
+还有t.teet()里面使用的Welch法。注意的是，我了解的资料显示，似乎R语言中还没有具体实现Cochran&amp;Cox法
+和 Satterthwaite法的函数实现，需根据公式写代码实现，可以参考下面的代码。另外，Satterthwaite法和Welch法都是在
+Cochran&amp;Cox法的检验统计量<em>t’</em>的基础上，进行的自由度矫正，然后得到矫正自由度后对应的<em>t’</em>值代替<em>t</em>值。</p>
+<p>使用《医学统计学》中的 案例3-8 的数据在R中进行总体方差不相等的<em>t</em>检验测试。</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="第三章-总体均数的估计与假设检验.html#cb41-1"></a>mean_x &lt;-<span class="st"> </span><span class="fl">1.46</span></span>
+<span id="cb41-2"><a href="第三章-总体均数的估计与假设检验.html#cb41-2"></a>mean_y &lt;-<span class="st"> </span><span class="fl">1.13</span></span>
+<span id="cb41-3"><a href="第三章-总体均数的估计与假设检验.html#cb41-3"></a>stdev_x &lt;-<span class="st"> </span><span class="fl">1.36</span></span>
+<span id="cb41-4"><a href="第三章-总体均数的估计与假设检验.html#cb41-4"></a>stdev_y &lt;-<span class="st"> </span><span class="fl">0.7</span></span>
+<span id="cb41-5"><a href="第三章-总体均数的估计与假设检验.html#cb41-5"></a>nx &lt;-<span class="st"> </span><span class="dv">20</span></span>
+<span id="cb41-6"><a href="第三章-总体均数的估计与假设检验.html#cb41-6"></a>ny &lt;-<span class="st"> </span><span class="dv">20</span></span>
+<span id="cb41-7"><a href="第三章-总体均数的估计与假设检验.html#cb41-7"></a></span>
+<span id="cb41-8"><a href="第三章-总体均数的估计与假设检验.html#cb41-8"></a><span class="co">#Cochran&amp;Cox法的检验统计量*t&#39;*的</span></span>
+<span id="cb41-9"><a href="第三章-总体均数的估计与假设检验.html#cb41-9"></a>cochran_test&lt;-<span class="cf">function</span>(mean_x,mean_y,stdev_x,stdev_y,nx,ny) {</span>
+<span id="cb41-10"><a href="第三章-总体均数的估计与假设检验.html#cb41-10"></a>  t_vul &lt;-<span class="st"> </span>(mean_x<span class="op">-</span>mean_y)<span class="op">/</span><span class="kw">sqrt</span>(stdev_x<span class="op">^</span><span class="dv">2</span><span class="op">/</span>nx<span class="op">+</span>stdev_y<span class="op">^</span><span class="dv">2</span><span class="op">/</span>ny)</span>
+<span id="cb41-11"><a href="第三章-总体均数的估计与假设检验.html#cb41-11"></a>  <span class="kw">return</span>(t_vul)</span>
+<span id="cb41-12"><a href="第三章-总体均数的估计与假设检验.html#cb41-12"></a>}</span>
+<span id="cb41-13"><a href="第三章-总体均数的估计与假设检验.html#cb41-13"></a></span>
+<span id="cb41-14"><a href="第三章-总体均数的估计与假设检验.html#cb41-14"></a><span class="co">#计算t&#39;值</span></span>
+<span id="cb41-15"><a href="第三章-总体均数的估计与假设检验.html#cb41-15"></a>cochran_t&lt;-<span class="kw">cochran_test</span>(mean_x,mean_y,stdev_x,stdev_y,nx,ny)</span>
+<span id="cb41-16"><a href="第三章-总体均数的估计与假设检验.html#cb41-16"></a><span class="co">## [1] 0.9648463</span></span>
+<span id="cb41-17"><a href="第三章-总体均数的估计与假设检验.html#cb41-17"></a><span class="co">#计算P值</span></span>
+<span id="cb41-18"><a href="第三章-总体均数的估计与假设检验.html#cb41-18"></a><span class="kw">pt</span>(cochran_t,<span class="dt">df=</span>nx<span class="dv">-1</span>,<span class="dt">lower.tail=</span>F)<span class="op">*</span><span class="dv">2</span></span>
+<span id="cb41-19"><a href="第三章-总体均数的估计与假设检验.html#cb41-19"></a><span class="co">## 0.3467427</span></span>
+<span id="cb41-20"><a href="第三章-总体均数的估计与假设检验.html#cb41-20"></a></span>
+<span id="cb41-21"><a href="第三章-总体均数的估计与假设检验.html#cb41-21"></a><span class="co">#Satterthwaite法来矫正Cochran&amp;Cox法的检验统计量*t&#39;*的自由度</span></span>
+<span id="cb41-22"><a href="第三章-总体均数的估计与假设检验.html#cb41-22"></a>sattw_df&lt;-<span class="cf">function</span>(stdev_x,stdev_y,nx,ny){</span>
+<span id="cb41-23"><a href="第三章-总体均数的估计与假设检验.html#cb41-23"></a>  satt_df&lt;-(stdev_x<span class="op">^</span><span class="dv">2</span><span class="op">/</span>nx<span class="op">+</span>stdev_y<span class="op">^</span><span class="dv">2</span><span class="op">/</span>ny)<span class="op">^</span><span class="dv">2</span><span class="op">/</span></span>
+<span id="cb41-24"><a href="第三章-总体均数的估计与假设检验.html#cb41-24"></a><span class="st">  </span>(((stdev_x<span class="op">^</span><span class="dv">2</span><span class="op">/</span>nx)<span class="op">^</span><span class="dv">2</span><span class="op">/</span>(nx<span class="dv">-1</span>))<span class="op">+</span></span>
+<span id="cb41-25"><a href="第三章-总体均数的估计与假设检验.html#cb41-25"></a><span class="st">  </span>((stdev_y<span class="op">^</span><span class="dv">2</span><span class="op">/</span>ny)<span class="op">^</span><span class="dv">2</span><span class="op">/</span>(ny<span class="dv">-1</span>)))</span>
+<span id="cb41-26"><a href="第三章-总体均数的估计与假设检验.html#cb41-26"></a>  <span class="kw">return</span>(satt_df)</span>
+<span id="cb41-27"><a href="第三章-总体均数的估计与假设检验.html#cb41-27"></a>}</span>
+<span id="cb41-28"><a href="第三章-总体均数的估计与假设检验.html#cb41-28"></a>satt_df&lt;-<span class="kw">sattw_df</span>(stdev_x,stdev_y,nx,ny)</span>
+<span id="cb41-29"><a href="第三章-总体均数的估计与假设检验.html#cb41-29"></a><span class="co">#这里注意的是cochran_t&gt;0，我们要计算cochran_t相关的双侧拒绝域面积，需要指定 lower.tail=F，并加倍</span></span>
+<span id="cb41-30"><a href="第三章-总体均数的估计与假设检验.html#cb41-30"></a><span class="kw">pt</span>(cochran_t,satt_df,<span class="dt">lower.tail=</span>F)<span class="op">*</span><span class="dv">2</span></span>
+<span id="cb41-31"><a href="第三章-总体均数的估计与假设检验.html#cb41-31"></a><span class="co">#[1] 0.3427644</span></span>
+<span id="cb41-32"><a href="第三章-总体均数的估计与假设检验.html#cb41-32"></a></span>
+<span id="cb41-33"><a href="第三章-总体均数的估计与假设检验.html#cb41-33"></a><span class="co">#Welch法来矫正Cochran&amp;Cox法的检验统计量*t&#39;*的自由度</span></span>
+<span id="cb41-34"><a href="第三章-总体均数的估计与假设检验.html#cb41-34"></a>welch_df&lt;-<span class="cf">function</span>(stdev_x,stdev_y,nx,ny){</span>
+<span id="cb41-35"><a href="第三章-总体均数的估计与假设检验.html#cb41-35"></a>  welch_df&lt;-(stdev_x<span class="op">^</span><span class="dv">2</span><span class="op">/</span>nx<span class="op">+</span>stdev_y<span class="op">^</span><span class="dv">2</span><span class="op">/</span>ny)<span class="op">^</span><span class="dv">2</span><span class="op">/</span></span>
+<span id="cb41-36"><a href="第三章-总体均数的估计与假设检验.html#cb41-36"></a><span class="st">  </span>(((stdev_x<span class="op">^</span><span class="dv">2</span><span class="op">/</span>nx)<span class="op">^</span><span class="dv">2</span><span class="op">/</span>(nx<span class="op">+</span><span class="dv">1</span>))<span class="op">+</span></span>
+<span id="cb41-37"><a href="第三章-总体均数的估计与假设检验.html#cb41-37"></a><span class="st">  </span>((stdev_y<span class="op">^</span><span class="dv">2</span><span class="op">/</span>ny)<span class="op">^</span><span class="dv">2</span><span class="op">/</span>(ny<span class="op">+</span><span class="dv">1</span>)))<span class="op">-</span><span class="dv">2</span></span>
+<span id="cb41-38"><a href="第三章-总体均数的估计与假设检验.html#cb41-38"></a>  <span class="kw">return</span>(welch_df)</span>
+<span id="cb41-39"><a href="第三章-总体均数的估计与假设检验.html#cb41-39"></a>}</span>
+<span id="cb41-40"><a href="第三章-总体均数的估计与假设检验.html#cb41-40"></a>wel_df&lt;-<span class="kw">welch_df</span>(stdev_x,stdev_y,nx,ny)</span>
+<span id="cb41-41"><a href="第三章-总体均数的估计与假设检验.html#cb41-41"></a><span class="kw">pt</span>(cochran_t,wel_df,<span class="dt">lower.tail=</span>F)<span class="op">*</span><span class="dv">2</span></span>
+<span id="cb41-42"><a href="第三章-总体均数的估计与假设检验.html#cb41-42"></a><span class="co">#[1] 0.3424925</span></span></code></pre></div>
+<p>从上面的计算过程可知，三种<em>t’</em>检验显示了都不拒绝原假设<span class="math inline">\(H_0\)</span>，可以认为差异物统计学意义，尚不能认为两种药物
+对患者的干预效果不同。但是三种发放给出的效能是不一样的，其中Welch法的最小，Cochran&amp;Cox法的最大，也就是说
+Cochran&amp;Cox法更为保守。</p>
+</div>
+<div id="参数估计与假设检验的联系" class="section level4">
+<h4><span class="header-section-number">3.3.4.3</span> 参数估计与假设检验的联系</h4>
+<p>可信区间与假设检验的区别和联系可信区间用于说明量的大小即推断总体参数(如总体均数)的范围，而假设检验用于推断
+质的不同即判断两总体参数是否不等。两者既相互联系，又有区别。</p>
+<p>一方面，可信区间亦可回答假设检验的问题，算得的可信区间若包含了<span class="math inline">\(H_0\)</span>则按检验水准a，不拒绝<span class="math inline">\(H_0\)</span>:若不包含<span class="math inline">\(H_0\)</span>，则按检验水准a，拒绝<span class="math inline">\(H_0\)</span>，接受<span class="math inline">\(H_1\)</span>。</p>
+<p>另一方面，可信区间不但能回答差别是否有统计学意义，而且还能提供比假设检验更多的信息，即提示差別有无实际的专业意义。’
+Figure 3.8中的 a b c 均有统计学意义(因可信区间未包含<span class="math inline">\(H_0\)</span>)。但其中:a提示有实际的专业意义(因可信区间高于有实际专业意义的值)，
+值得重视:b提示可能有实际专业意义；c提示无实际专业意义，该图中d、e提示差异均无统计学意义，但其中：
+d因可信区间较宽，样本含量过小，抽样误差太大，难于得出结论；e提示以决策的观点，可“接受”<span class="math inline">\(H_0\)</span>，因为即使增加
+样本含量，得到差异有统计学意义义，也无实际专业意义。</p>
+<div class="figure" style="text-align: center"><span id="fig:Ieandht"></span>
+<img src="image/ieandht.png" alt="参数估计与假设检验的联系" width="49%" height="49%" />
+<p class="caption">
+Figure 3.8: 参数估计与假设检验的联系
+</p>
+</div>
+</div>
+</div>
+<div id="两样本方差齐性检验" class="section level3">
+<h3><span class="header-section-number">3.3.5</span> 两样本方差齐性检验</h3>
+<p>前面已经提到，在进行两样本检验尤其是两小样本均数的比较时，要求相应的两总体均服从正态分布且两总体方差相等，即方差齐性：
+而配对，检验则要求每对数据差值的总体服从正态分布即可。因此进行两小样本检验时，一般应先对资料进行方差齐性检验Hmogeneity of variance test)，
+特别是发现两样本方差相差悬殊时，要判断两样本所代表的两总体方差是否不等。若方差齐，采用一般的<em>t</em>检验;若方差不齐，
+则采用近似<em>t</em>检验(如Cochran&amp;Cox 的检验等)。必要时，也可对资料进行 <a href="第二章-计量资料的统计描述.html#正态检验">正态性检验(Normality test)</a>，但正态性检
+验更多用于采用正态分布法制定参考值范围时。</p>
+<p>两总体方差是否不等的判断过去多采用<em>F</em>检验(<em>F</em>-test)，由于该检验理论上要求资料服从正态分布，但很多资料方差不齐时，
+往往不服从正态分布。因此，近年来多采用更为稳健，不依赖总体分布具体形式Levene检验(Levene’s test，1960)。
+Levene检验实质上是将原始观测值<span class="math inline">\(X_{ij}\)</span>转换为相应的离差<span class="math inline">\(z_{ij}\)</span>(有多种去可选)，
+然后再作<a href="https://zh.wikipedia.org/zh/%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90">方差分析</a>，
+它既可用于对两个总体方差进行齐性检验，也可用于对个总体方差进行齐性检验。这里仅介绍两样本方差比较的<em>F</em>检验。</p>
+<p><em>F</em>检验与前面介绍到的利用正态分布进行Z检验，利用<em>t</em>分布进行<em>t</em>检验一样，它是利用<em>F</em>分布来进行检验的。
+在R中，<em>F</em>分布同样拥有与正态分布，<em>t</em>分布类似的几个函数，分别是<a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Fdist.html">df()，pf()，qf()和rf()</a>，
+不过<em>F</em>分布主要收两组样品的自由度共同影响。R中用<em>F</em>检验来比较两组样本方差的函数是<a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/var.test">var.test()</a>。</p>
+<p>使用《医学统计学》中的 案例3-6 和 案例3-8 的数据在R中进行总体方差齐性检验测试。</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="第三章-总体均数的估计与假设检验.html#cb42-1"></a><span class="co">##案例3-6 </span></span>
+<span id="cb42-2"><a href="第三章-总体均数的估计与假设检验.html#cb42-2"></a><span class="kw">library</span>(<span class="st">&quot;memisc&quot;</span>)</span>
+<span id="cb42-3"><a href="第三章-总体均数的估计与假设检验.html#cb42-3"></a><span class="co">#读取数据</span></span>
+<span id="cb42-4"><a href="第三章-总体均数的估计与假设检验.html#cb42-4"></a>bfc_sav&lt;-<span class="kw">spss.system.file</span>(<span class="st">&quot;ExampleData/SavData4MedSta/Exam03-06.sav&quot;</span>)</span>
+<span id="cb42-5"><a href="第三章-总体均数的估计与假设检验.html#cb42-5"></a>bfc_df&lt;-<span class="kw">as.data.frame</span>(<span class="kw">as.data.set</span>(bfc_sav))</span>
+<span id="cb42-6"><a href="第三章-总体均数的估计与假设检验.html#cb42-6"></a>x &lt;-<span class="st"> </span>bfg_df<span class="op">$</span>result[<span class="kw">which</span>(bfg_df<span class="op">$</span>group<span class="op">==</span><span class="dv">1</span>)]</span>
+<span id="cb42-7"><a href="第三章-总体均数的估计与假设检验.html#cb42-7"></a>y &lt;-<span class="st"> </span>bfg_df<span class="op">$</span>result[<span class="kw">which</span>(bfg_df<span class="op">$</span>group<span class="op">==</span><span class="dv">2</span>)]</span>
+<span id="cb42-8"><a href="第三章-总体均数的估计与假设检验.html#cb42-8"></a><span class="kw">var.test</span>(x,y)</span>
+<span id="cb42-9"><a href="第三章-总体均数的估计与假设检验.html#cb42-9"></a><span class="co">##  F test to compare two variances</span></span>
+<span id="cb42-10"><a href="第三章-总体均数的估计与假设检验.html#cb42-10"></a><span class="co">## </span></span>
+<span id="cb42-11"><a href="第三章-总体均数的估计与假设检验.html#cb42-11"></a><span class="co">## data:  x and y</span></span>
+<span id="cb42-12"><a href="第三章-总体均数的估计与假设检验.html#cb42-12"></a><span class="co">## F = 1.5984, num df = 19, denom df = 19, p-value = 0.3153</span></span>
+<span id="cb42-13"><a href="第三章-总体均数的估计与假设检验.html#cb42-13"></a><span class="co">## alternative hypothesis: true ratio of variances is not equal to 1</span></span>
+<span id="cb42-14"><a href="第三章-总体均数的估计与假设检验.html#cb42-14"></a><span class="co">## 95 percent confidence interval:</span></span>
+<span id="cb42-15"><a href="第三章-总体均数的估计与假设检验.html#cb42-15"></a><span class="co">##  0.6326505 4.0381795</span></span>
+<span id="cb42-16"><a href="第三章-总体均数的估计与假设检验.html#cb42-16"></a><span class="co">## sample estimates:</span></span>
+<span id="cb42-17"><a href="第三章-总体均数的估计与假设检验.html#cb42-17"></a><span class="co">## ratio of variances </span></span>
+<span id="cb42-18"><a href="第三章-总体均数的估计与假设检验.html#cb42-18"></a><span class="co">##           1.598361 </span></span>
+<span id="cb42-19"><a href="第三章-总体均数的估计与假设检验.html#cb42-19"></a></span>
+<span id="cb42-20"><a href="第三章-总体均数的估计与假设检验.html#cb42-20"></a><span class="co">##方法2</span></span>
+<span id="cb42-21"><a href="第三章-总体均数的估计与假设检验.html#cb42-21"></a><span class="co">#计算F值</span></span>
+<span id="cb42-22"><a href="第三章-总体均数的估计与假设检验.html#cb42-22"></a>f_val1&lt;-<span class="kw">var</span>(x)<span class="op">/</span><span class="kw">var</span>(y)</span>
+<span id="cb42-23"><a href="第三章-总体均数的估计与假设检验.html#cb42-23"></a><span class="co">## [1] 1.598361</span></span>
+<span id="cb42-24"><a href="第三章-总体均数的估计与假设检验.html#cb42-24"></a>p_val1 &lt;-<span class="st"> </span><span class="kw">pf</span>(f_val1, <span class="dt">df1=</span><span class="kw">length</span>(x)<span class="op">-</span><span class="dv">1</span>, <span class="dt">df2=</span><span class="kw">length</span>(y)<span class="op">-</span><span class="dv">1</span>, <span class="dt">lower.tail=</span><span class="ot">FALSE</span>)<span class="op">*</span><span class="dv">2</span></span>
+<span id="cb42-25"><a href="第三章-总体均数的估计与假设检验.html#cb42-25"></a><span class="co">## [1] 0.3152554</span></span>
+<span id="cb42-26"><a href="第三章-总体均数的估计与假设检验.html#cb42-26"></a></span>
+<span id="cb42-27"><a href="第三章-总体均数的估计与假设检验.html#cb42-27"></a></span>
+<span id="cb42-28"><a href="第三章-总体均数的估计与假设检验.html#cb42-28"></a><span class="co">##案例3-8</span></span>
+<span id="cb42-29"><a href="第三章-总体均数的估计与假设检验.html#cb42-29"></a>mean_x &lt;-<span class="st"> </span><span class="fl">1.46</span></span>
+<span id="cb42-30"><a href="第三章-总体均数的估计与假设检验.html#cb42-30"></a>mean_y &lt;-<span class="st"> </span><span class="fl">1.13</span></span>
+<span id="cb42-31"><a href="第三章-总体均数的估计与假设检验.html#cb42-31"></a>stdev_x &lt;-<span class="st"> </span><span class="fl">1.36</span></span>
+<span id="cb42-32"><a href="第三章-总体均数的估计与假设检验.html#cb42-32"></a>stdev_y &lt;-<span class="st"> </span><span class="fl">0.7</span></span>
+<span id="cb42-33"><a href="第三章-总体均数的估计与假设检验.html#cb42-33"></a>nx &lt;-<span class="st"> </span><span class="dv">20</span></span>
+<span id="cb42-34"><a href="第三章-总体均数的估计与假设检验.html#cb42-34"></a>ny &lt;-<span class="st"> </span><span class="dv">20</span></span>
+<span id="cb42-35"><a href="第三章-总体均数的估计与假设检验.html#cb42-35"></a><span class="co">#根据F分布公式，计算F值</span></span>
+<span id="cb42-36"><a href="第三章-总体均数的估计与假设检验.html#cb42-36"></a>f_val&lt;-stdev_x<span class="op">^</span><span class="dv">2</span><span class="op">/</span>stdev_y<span class="op">^</span><span class="dv">2</span></span>
+<span id="cb42-37"><a href="第三章-总体均数的估计与假设检验.html#cb42-37"></a><span class="co">## [1] 3.774694</span></span>
+<span id="cb42-38"><a href="第三章-总体均数的估计与假设检验.html#cb42-38"></a>p_val &lt;-<span class="st"> </span><span class="kw">pf</span>(f_val, <span class="dt">df1=</span>nx<span class="dv">-1</span>, <span class="dt">df2=</span>ny<span class="dv">-1</span>, <span class="dt">lower.tail=</span><span class="ot">FALSE</span>)<span class="op">*</span><span class="dv">2</span></span>
+<span id="cb42-39"><a href="第三章-总体均数的估计与假设检验.html#cb42-39"></a><span class="co">## [1] 0.005732012</span></span></code></pre></div>
+<p>根据计算结果，案例3-6的P值 0.3153&gt;0.1，按照α=0.1的水准，不拒绝<span class="math inline">\(H_0\)</span>，差异不具有统计学意义，两组数据的方差相等，应该采用经典的<em>t</em>检验。
+案例3-8的P值 0.0057&lt;0.1，按照α=0.1的水准，拒绝<span class="math inline">\(H_0\)</span>，差异具有统计学意义，两组数据的方差不相等，应该采用<em>t’</em>检验。</p>
 
 </div>
 </div>

@@ -181,6 +181,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#t-检验"><i class="fa fa-check"></i><b>3.3</b> <em>t</em> 检验</a><ul>
 <li class="chapter" data-level="3.3.1" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#t检验与z检验"><i class="fa fa-check"></i><b>3.3.1</b> <em>t</em>检验与Z检验</a></li>
 <li class="chapter" data-level="3.3.2" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#单样本t检验"><i class="fa fa-check"></i><b>3.3.2</b> 单样本<em>t</em>检验</a></li>
+<li class="chapter" data-level="3.3.3" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#配对样本t检验"><i class="fa fa-check"></i><b>3.3.3</b> 配对样本<em>t</em>检验</a></li>
+<li class="chapter" data-level="3.3.4" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#两种独立样本t检验"><i class="fa fa-check"></i><b>3.3.4</b> 两种独立样本t检验</a></li>
+<li class="chapter" data-level="3.3.5" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#两样本方差齐性检验"><i class="fa fa-check"></i><b>3.3.5</b> 两样本方差齐性检验</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -699,7 +702,7 @@ Figure 2.8: 难以判断正态分布的密度图
 </div>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="第二章-计量资料的统计描述.html#cb20-1"></a><span class="co">#qqPlot是car包中的函数，因此需要载入包</span></span>
 <span id="cb20-2"><a href="第二章-计量资料的统计描述.html#cb20-2"></a><span class="kw">library</span>(car)</span></code></pre></div>
-<pre><code>## 载入需要的程辑包：carData</code></pre>
+<pre><code>## Loading required package: carData</code></pre>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="第二章-计量资料的统计描述.html#cb22-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
 <span id="cb22-2"><a href="第二章-计量资料的统计描述.html#cb22-2"></a>dat_hist &lt;-<span class="st"> </span><span class="kw">data.frame</span>( <span class="dt">value =</span> <span class="kw">rnorm</span>(<span class="dv">12</span>, <span class="dt">mean =</span> <span class="dv">165</span>, <span class="dt">sd =</span> <span class="dv">5</span>))</span>
 <span id="cb22-3"><a href="第二章-计量资料的统计描述.html#cb22-3"></a><span class="co">##</span></span>
