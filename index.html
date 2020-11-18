@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 1 简介 | MedicalStatisNotes.utf8</title>
+  <title>Chapter 1 简介与传送门 | MedicalStatisNotes.utf8</title>
   <meta name="description" content="" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 1 简介 | MedicalStatisNotes.utf8" />
+  <meta property="og:title" content="Chapter 1 简介与传送门 | MedicalStatisNotes.utf8" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 1 简介 | MedicalStatisNotes.utf8" />
+  <meta name="twitter:title" content="Chapter 1 简介与传送门 | MedicalStatisNotes.utf8" />
   
   
   
@@ -134,7 +134,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="https://wxhyihuan.github.io/">医学统计学笔记</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> 简介</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> 简介与传送门</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#简介"><i class="fa fa-check"></i><b>1.1</b> 简介</a></li>
+</ul></li>
 <li class="chapter" data-level="2" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html"><i class="fa fa-check"></i><b>2</b> 第二章 计量资料的统计描述</a><ul>
 <li class="chapter" data-level="2.1" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#描述统计"><i class="fa fa-check"></i><b>2.1</b> 描述统计</a></li>
 <li class="chapter" data-level="2.2" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#测试数据"><i class="fa fa-check"></i><b>2.2</b> 测试数据</a></li>
@@ -185,6 +187,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3.4" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#两种独立样本t检验"><i class="fa fa-check"></i><b>3.3.4</b> 两种独立样本t检验</a></li>
 <li class="chapter" data-level="3.3.5" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#两样本方差齐性检验"><i class="fa fa-check"></i><b>3.3.5</b> 两样本方差齐性检验</a></li>
 </ul></li>
+<li class="chapter" data-level="3.4" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#变量转换"><i class="fa fa-check"></i><b>3.4</b> 变量转换</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#对数变换"><i class="fa fa-check"></i><b>3.4.1</b> 对数变换</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -208,10 +213,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <!--bookdown:title:end-->
 <!--bookdown:title:start-->
-<div id="简介" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> 简介</h1>
+<div id="简介与传送门" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> 简介与传送门</h1>
 <p>日期: 2020-11-10
 作者：wxhyihuan</p>
+<div id="简介" class="section level2">
+<h2><span class="header-section-number">1.1</span> 简介</h2>
 <p>这份笔记主要是学习孙振球，徐勇勇老师的&lt;<医学统计学>&gt; 第4版的过程中，尽量使用编程语言R对书中的示例进行实现的记录，
 并用<a href="https://github.com/rstudio/bookdown">Bookdown</a>形成此文档。</p>
 <p>如果这份文档对您有所助益，或者您对文档有疑问或建议，您可以 <strong><a href="mailto:wxh244295043@gamil.com">邮件</a></strong> 告知我。</p>
@@ -229,24 +236,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-2"><a href="index.html#cb2-2"></a><span class="co">## R version 4.0.3 (2020-10-10)</span></span>
 <span id="cb2-3"><a href="index.html#cb2-3"></a><span class="co">## Platform: x86_64-w64-mingw32/x64 (64-bit)</span></span>
 <span id="cb2-4"><a href="index.html#cb2-4"></a><span class="co">## Running under: Windows 10 x64 (build 19041)</span></span>
-<span id="cb2-5"><a href="index.html#cb2-5"></a></span>
-<span id="cb2-6"><a href="index.html#cb2-6"></a><span class="co">## Matrix products: default</span></span>
-<span id="cb2-7"><a href="index.html#cb2-7"></a></span>
-<span id="cb2-8"><a href="index.html#cb2-8"></a><span class="co">## locale:</span></span>
-<span id="cb2-9"><a href="index.html#cb2-9"></a><span class="co">## [1] LC_COLLATE=Chinese (Simplified)_China.936 </span></span>
-<span id="cb2-10"><a href="index.html#cb2-10"></a><span class="co">## [2] LC_CTYPE=Chinese (Simplified)_China.936   </span></span>
-<span id="cb2-11"><a href="index.html#cb2-11"></a><span class="co">## [3] LC_MONETARY=Chinese (Simplified)_China.936</span></span>
-<span id="cb2-12"><a href="index.html#cb2-12"></a><span class="co">## [4] LC_NUMERIC=C                              </span></span>
-<span id="cb2-13"><a href="index.html#cb2-13"></a><span class="co">## [5] LC_TIME=Chinese (Simplified)_China.936    </span></span>
-<span id="cb2-14"><a href="index.html#cb2-14"></a><span class="co">## </span></span>
-<span id="cb2-15"><a href="index.html#cb2-15"></a><span class="co">## attached base packages:</span></span>
-<span id="cb2-16"><a href="index.html#cb2-16"></a><span class="co">## [1] stats     graphics  grDevices utils     datasets  methods   base     </span></span>
-<span id="cb2-17"><a href="index.html#cb2-17"></a><span class="co">## </span></span>
-<span id="cb2-18"><a href="index.html#cb2-18"></a><span class="co">## loaded via a namespace (and not attached):</span></span>
-<span id="cb2-19"><a href="index.html#cb2-19"></a><span class="co">##  [1] compiler_4.0.3  bookdown_0.21   htmltools_0.5.0 tools_4.0.3    </span></span>
-<span id="cb2-20"><a href="index.html#cb2-20"></a><span class="co">##  [5] yaml_2.2.1      tinytex_0.27    rmarkdown_2.5   knitr_1.30     </span></span>
-<span id="cb2-21"><a href="index.html#cb2-21"></a><span class="co">##  [9] digest_0.6.27   xfun_0.19       rlang_0.4.8     evaluate_0.14  </span></span></code></pre></div>
+<span id="cb2-5"><a href="index.html#cb2-5"></a><span class="co">## Matrix products: default</span></span>
+<span id="cb2-6"><a href="index.html#cb2-6"></a><span class="co">## locale:</span></span>
+<span id="cb2-7"><a href="index.html#cb2-7"></a><span class="co">## [1] LC_COLLATE=Chinese (Simplified)_China.936 </span></span>
+<span id="cb2-8"><a href="index.html#cb2-8"></a><span class="co">## [2] LC_CTYPE=Chinese (Simplified)_China.936   </span></span>
+<span id="cb2-9"><a href="index.html#cb2-9"></a><span class="co">## [3] LC_MONETARY=Chinese (Simplified)_China.936</span></span>
+<span id="cb2-10"><a href="index.html#cb2-10"></a><span class="co">## [4] LC_NUMERIC=C                              </span></span>
+<span id="cb2-11"><a href="index.html#cb2-11"></a><span class="co">## [5] LC_TIME=Chinese (Simplified)_China.936    </span></span>
+<span id="cb2-12"><a href="index.html#cb2-12"></a><span class="co">## attached base packages:</span></span>
+<span id="cb2-13"><a href="index.html#cb2-13"></a><span class="co">## [1] stats     graphics  grDevices utils     datasets  methods   base     </span></span>
+<span id="cb2-14"><a href="index.html#cb2-14"></a><span class="co">## loaded via a namespace (and not attached):</span></span>
+<span id="cb2-15"><a href="index.html#cb2-15"></a><span class="co">##  [1] compiler_4.0.3  bookdown_0.21   htmltools_0.5.0 tools_4.0.3    </span></span>
+<span id="cb2-16"><a href="index.html#cb2-16"></a><span class="co">##  [5] yaml_2.2.1      tinytex_0.27    rmarkdown_2.5   knitr_1.30     </span></span>
+<span id="cb2-17"><a href="index.html#cb2-17"></a><span class="co">##  [9] digest_0.6.27   xfun_0.19       rlang_0.4.8     evaluate_0.14  </span></span></code></pre></div>
 
+</div>
 </div>
             </section>
 

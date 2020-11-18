@@ -134,7 +134,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="https://wxhyihuan.github.io/">医学统计学笔记</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> 简介</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> 简介与传送门</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#简介"><i class="fa fa-check"></i><b>1.1</b> 简介</a></li>
+</ul></li>
 <li class="chapter" data-level="2" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html"><i class="fa fa-check"></i><b>2</b> 第二章 计量资料的统计描述</a><ul>
 <li class="chapter" data-level="2.1" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#描述统计"><i class="fa fa-check"></i><b>2.1</b> 描述统计</a></li>
 <li class="chapter" data-level="2.2" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#测试数据"><i class="fa fa-check"></i><b>2.2</b> 测试数据</a></li>
@@ -184,6 +186,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3.3" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#配对样本t检验"><i class="fa fa-check"></i><b>3.3.3</b> 配对样本<em>t</em>检验</a></li>
 <li class="chapter" data-level="3.3.4" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#两种独立样本t检验"><i class="fa fa-check"></i><b>3.3.4</b> 两种独立样本t检验</a></li>
 <li class="chapter" data-level="3.3.5" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#两样本方差齐性检验"><i class="fa fa-check"></i><b>3.3.5</b> 两样本方差齐性检验</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#变量转换"><i class="fa fa-check"></i><b>3.4</b> 变量转换</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#对数变换"><i class="fa fa-check"></i><b>3.4.1</b> 对数变换</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -707,11 +712,11 @@ Figure 3.7: 两种方法对饮料中的脂肪含量检测的配对t检验
 <p>计算显示 <span class="math inline">\(P=0.5248&gt;\alpha=0.05\)</span>，因此不拒绝原假设<span class="math inline">\(H_0\)</span>，差异无统计意义；结合案例数据意义，
 还不能认为两种方法的预后效果不同。</p>
 </div>
-<div id="总体方差不相等的t检验" class="section level4">
-<h4><span class="header-section-number">3.3.4.2</span> 总体方差不相等的<em>t</em>检验</h4>
-<p>两独立小样本的均数比较，如果方差不相等(方差不齐)，可采用数据变换(如两样本几何均数的<em>t</em>检验，
+<div id="t检验" class="section level4">
+<h4><span class="header-section-number">3.3.4.2</span> <em>t’</em>检验</h4>
+<p><em>t’</em>检验，用于总体方差不相等的<em>t</em>检验。当两独立小样本的均数比较，如果方差不相等(方差不齐)，可采用数据变换(如两样本几何均数的<em>t</em>检验，
 就是将原始数据对数转换后进行<em>t检验</em>)处理，或采用近似<em>t</em>检验(Separate variance estimation
-<em>t</em>-test)，即<em>t‘</em>检验或秩转换的非参数检验，比如常用的 Cochran&amp;Cox法 和 Satterthwaite法 两种，
+<em>t</em>-test)，即<em>t’</em>检验或秩转换的非参数检验，比如常用的 Cochran&amp;Cox法 和 Satterthwaite法 两种，
 还有t.teet()里面使用的Welch法。注意的是，我了解的资料显示，似乎R语言中还没有具体实现Cochran&amp;Cox法
 和 Satterthwaite法的函数实现，需根据公式写代码实现，可以参考下面的代码。另外，Satterthwaite法和Welch法都是在
 Cochran&amp;Cox法的检验统计量<em>t’</em>的基础上，进行的自由度矫正，然后得到矫正自由度后对应的<em>t’</em>值代替<em>t</em>值。</p>
@@ -795,6 +800,7 @@ Levene检验实质上是将原始观测值<span class="math inline">\(X_{ij}\)</
 <p><em>F</em>检验与前面介绍到的利用正态分布进行Z检验，利用<em>t</em>分布进行<em>t</em>检验一样，它是利用<em>F</em>分布来进行检验的。
 在R中，<em>F</em>分布同样拥有与正态分布，<em>t</em>分布类似的几个函数，分别是<a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Fdist.html">df()，pf()，qf()和rf()</a>，
 不过<em>F</em>分布主要收两组样品的自由度共同影响。R中用<em>F</em>检验来比较两组样本方差的函数是<a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/var.test">var.test()</a>。</p>
+<p>注意的是，方差齐性检验中的第一类错误的控制水准一般选择0.1，即<span class="math inline">\(\aplha=0.1\)</span>。</p>
 <p>使用《医学统计学》中的 案例3-6 和 案例3-8 的数据在R中进行总体方差齐性检验测试。</p>
 <div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="第三章-总体均数的估计与假设检验.html#cb42-1"></a><span class="co">##案例3-6 </span></span>
 <span id="cb42-2"><a href="第三章-总体均数的估计与假设检验.html#cb42-2"></a><span class="kw">library</span>(<span class="st">&quot;memisc&quot;</span>)</span>
@@ -837,6 +843,161 @@ Levene检验实质上是将原始观测值<span class="math inline">\(X_{ij}\)</
 <span id="cb42-39"><a href="第三章-总体均数的估计与假设检验.html#cb42-39"></a><span class="co">## [1] 0.005732012</span></span></code></pre></div>
 <p>根据计算结果，案例3-6的P值 0.3153&gt;0.1，按照α=0.1的水准，不拒绝<span class="math inline">\(H_0\)</span>，差异不具有统计学意义，两组数据的方差相等，应该采用经典的<em>t</em>检验。
 案例3-8的P值 0.0057&lt;0.1，按照α=0.1的水准，拒绝<span class="math inline">\(H_0\)</span>，差异具有统计学意义，两组数据的方差不相等，应该采用<em>t’</em>检验。</p>
+</div>
+</div>
+<div id="变量转换" class="section level2">
+<h2><span class="header-section-number">3.4</span> 变量转换</h2>
+<p>在主要的处理以前对数据进行的一些预处理，比如数据清洗，数据整合，数据变换)等。这里主要关注统计背景下的数据转换
+(Transformation)，也叫变量转换，从更广泛的意义上讲，变量转换是一种更改分布或关系的形状的替换。</p>
+<p>实际资料若不满足正态性或(和)方差齐性的假定，尤其是小样本资料时，如用一般的,检验可能会导致偏离真实结果较远。
+对于明显偏离上述应用条件的资料，可通过变量变换的方法加以改善。所谓变量变换(Variable transformation)是将原始
+数据作某种函数转换,如转换为对数值等。它可使各组方差齐同, 亦可使偏态資料正态化,以满足,检验或其他统计分析方法对
+资料的要求。通常情况下，适当的变显变换可同时达到上述两个目的。但变量变换后，在结果解释上不如原始观测变量直观，
+比如地震震级是能量释放的数据的对数转换的结果，但是震级每相差1.0级，能量相差大约32倍；
+每相差2.0级，能量相差约1000倍！</p>
+<p>常用的变量变换有：</p>
+<ol style="list-style-type: decimal">
+<li>对数变换(Logarithm)</li>
+<li>平方根变换(Square root)</li>
+<li>平方根反正弦变换(Arcsine, Arcsine-square)</li>
+<li>倒数变换(Reciprocal)</li>
+<li>指数变换(Exponential)</li>
+</ol>
+<p>其他的(如立方根等)应根据资料性质选择适当的变量变换方法。</p>
+<hr />
+<p>关于变量转换的困惑？</p>
+<p>转换的主要动机是更易于描述会和挖掘数据信息。 尽管转换的处理看起来不太自然，但这在很大程度上是心理上的反对。
+拥有丰富的转换经验后会减少这种感觉，因为转换通常效果很好。 实际上，许多熟悉的测量单位也是转换后的数据，比如分贝，
+pH和地震震级的里氏标度都是为对数转换后的数据。但是，在经验丰富的数据分析人员中，转换也引起了争论。
+有些人经常使用它们，其他人则少得多。</p>
+<p>所有观点都是可以辩驳的，或者至少是可以理解的。</p>
+<hr />
+<p>常用的变量变换及其适用的数据分布，或者可以参考示例图<a href="第三章-总体均数的估计与假设检验.html#fig:Datatransfromsuit">3.9</a>：</p>
+<ol style="list-style-type: decimal">
+<li>变换前数据分布，集中前面， 使用倒数变换(Reciprocal)；</li>
+<li>变换前数据分布，偏前， 使用对数变换(Logarithm)</li>
+<li>变换前数据分布，偏中前的， 使用平方根变换(Square root)</li>
+<li>变换前数据分布，偏中后， 使用平方变换(Square)，或平方根反正弦变换(Arcsine, Arcsine-square)</li>
+<li>变换前数据分布，偏后， 使用指数变换(Exponential)</li>
+<li>变换前，数据接近正态分布， 直接标准化</li>
+</ol>
+<div class="figure" style="text-align: left"><span id="fig:Datatransfromsuit"></span>
+<img src="image/Datatransfromsuit.png" alt="不同转换数据大致适应的数据分布情况, 右图来自Stevens J P. Applied multivariate statistics for the social sciences[M]. Routledge, 2012." width="50%" height="50%" /><img src="image/Distributional%20transformations.png" alt="不同转换数据大致适应的数据分布情况, 右图来自Stevens J P. Applied multivariate statistics for the social sciences[M]. Routledge, 2012." width="50%" height="50%" />
+<p class="caption">
+Figure 3.9: 不同转换数据大致适应的数据分布情况, 右图来自Stevens J P. Applied multivariate statistics for the social sciences[M]. Routledge, 2012.
+</p>
+</div>
+<p>下面以介绍最常用的 对数变换做一个比较详细的示例，其他转换的逻辑是相同的，只是具体形式有所差别罢，故不累述。</p>
+<div id="对数变换" class="section level3">
+<h3><span class="header-section-number">3.4.1</span> 对数变换</h3>
+<p>对数是指对变量x的作10，或者2，或者自然对数e 为底的对数，对分布形状有很大影响的强变换。
+它通常用于减少右偏斜，并且通常适用于测量变量(一般是正态分布的)，<font color=red>不能应用于零或负值</font>。 对数刻度上的一个单
+位表示与所使用的对数的底数相乘，数增长或下降。</p>
+<p>对数变换适用于: ①对数正态分布资料，即原始数据的效应是相乘时，如抗体滴度；食品、蔬菜、水果
+中农药的残留量；环境中某些有毒有害物质的含量；某些疾病的潜伏期等资料；②各样本标准差与均数成
+比例或变异系数是常数或接近某一常数的资料。基本形式有：</p>
+<p><span class="math display">\[ X&#39;= \lg X \]</span></p>
+<p><span class="math display">\[X&#39;= \lg(X+K) , (当原始数据较小或有0值时，k=1；K还可以是负数)\]</span></p>
+<p>在R中进行日志记录的基本方法是使用log()函数，格式为log(value,base)，
+该函数返回以base为底的value的对数。 默认情况下，此函数产生自然对数值(即默认base=e)。以2为底和以10为底的函数分别为log2()，log10()。</p>
+<p>下面是单样本数据的对数转换示例：</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="第三章-总体均数的估计与假设检验.html#cb43-1"></a><span class="co">#install.packages(&quot;openintro&quot;,&quot;e1071&quot;,&quot;pryr&quot;)</span></span>
+<span id="cb43-2"><a href="第三章-总体均数的估计与假设检验.html#cb43-2"></a><span class="co">#使用mammals数据集测试</span></span>
+<span id="cb43-3"><a href="第三章-总体均数的估计与假设检验.html#cb43-3"></a><span class="kw">library</span>(openintro)</span>
+<span id="cb43-4"><a href="第三章-总体均数的估计与假设检验.html#cb43-4"></a><span class="co">#e1071包中的skewness()计算偏斜度</span></span>
+<span id="cb43-5"><a href="第三章-总体均数的估计与假设检验.html#cb43-5"></a><span class="kw">library</span>(e1071)</span>
+<span id="cb43-6"><a href="第三章-总体均数的估计与假设检验.html#cb43-6"></a><span class="co">#使用pryr包中的绘图对象保存方案</span></span>
+<span id="cb43-7"><a href="第三章-总体均数的估计与假设检验.html#cb43-7"></a><span class="kw">library</span>(pryr)</span>
+<span id="cb43-8"><a href="第三章-总体均数的估计与假设检验.html#cb43-8"></a><span class="kw">skewness</span>(mammals<span class="op">$</span>body_wt)</span>
+<span id="cb43-9"><a href="第三章-总体均数的估计与假设检验.html#cb43-9"></a><span class="co">#使用log()对body_wt数据进行转换</span></span>
+<span id="cb43-10"><a href="第三章-总体均数的估计与假设检验.html#cb43-10"></a>loged_bd_wt &lt;-<span class="st"> </span><span class="kw">log</span>(mammals<span class="op">$</span>body_wt)</span>
+<span id="cb43-11"><a href="第三章-总体均数的估计与假设检验.html#cb43-11"></a><span class="co">#skewness()计算偏斜度</span></span>
+<span id="cb43-12"><a href="第三章-总体均数的估计与假设检验.html#cb43-12"></a><span class="kw">skewness</span>(loged_bd_wt)</span>
+<span id="cb43-13"><a href="第三章-总体均数的估计与假设检验.html#cb43-13"></a><span class="co">##[1] 0.1453599</span></span>
+<span id="cb43-14"><a href="第三章-总体均数的估计与假设检验.html#cb43-14"></a></span>
+<span id="cb43-15"><a href="第三章-总体均数的估计与假设检验.html#cb43-15"></a>p1.pryr <span class="op">%&lt;a-%</span><span class="st"> </span>{</span>
+<span id="cb43-16"><a href="第三章-总体均数的估计与假设检验.html#cb43-16"></a><span class="kw">hist</span>(mammals<span class="op">$</span>body_wt,<span class="dt">breaks =</span> <span class="dv">200</span>,<span class="dt">freq=</span><span class="ot">FALSE</span>,</span>
+<span id="cb43-17"><a href="第三章-总体均数的估计与假设检验.html#cb43-17"></a> <span class="dt">xlim=</span><span class="kw">c</span>(<span class="kw">min</span>(mammals<span class="op">$</span>body_wt),<span class="kw">max</span>(mammals<span class="op">$</span>body_wt)),<span class="dt">main=</span><span class="st">&quot;Bodt wt. 数据分布&quot;</span>)</span>
+<span id="cb43-18"><a href="第三章-总体均数的估计与假设检验.html#cb43-18"></a><span class="kw">lines</span>(<span class="kw">density</span>(mammals<span class="op">$</span>body_wt), <span class="dt">col=</span><span class="st">&quot;red&quot;</span>, <span class="dt">lwd=</span><span class="dv">1</span>)</span>
+<span id="cb43-19"><a href="第三章-总体均数的估计与假设检验.html#cb43-19"></a>}</span>
+<span id="cb43-20"><a href="第三章-总体均数的估计与假设检验.html#cb43-20"></a></span>
+<span id="cb43-21"><a href="第三章-总体均数的估计与假设检验.html#cb43-21"></a>p2.pryr <span class="op">%&lt;a-%</span><span class="st"> </span>{</span>
+<span id="cb43-22"><a href="第三章-总体均数的估计与假设检验.html#cb43-22"></a>  <span class="kw">hist</span>(loged_bd_wt,<span class="dt">breaks =</span> <span class="dv">200</span>,<span class="dt">freq=</span><span class="ot">FALSE</span>,</span>
+<span id="cb43-23"><a href="第三章-总体均数的估计与假设检验.html#cb43-23"></a> <span class="dt">xlim=</span><span class="kw">c</span>(<span class="kw">min</span>(loged_bd_wt),<span class="kw">max</span>(loged_bd_wt)),<span class="dt">main=</span><span class="st">&quot;经过Log转换后Bodt wt. 数据分布&quot;</span>)</span>
+<span id="cb43-24"><a href="第三章-总体均数的估计与假设检验.html#cb43-24"></a><span class="kw">lines</span>(<span class="kw">density</span>(loged_bd_wt), <span class="dt">col=</span><span class="st">&quot;red&quot;</span>, <span class="dt">lwd=</span><span class="dv">1</span>)</span>
+<span id="cb43-25"><a href="第三章-总体均数的估计与假设检验.html#cb43-25"></a>}</span>
+<span id="cb43-26"><a href="第三章-总体均数的估计与假设检验.html#cb43-26"></a></span>
+<span id="cb43-27"><a href="第三章-总体均数的估计与假设检验.html#cb43-27"></a><span class="kw">split.screen</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb43-28"><a href="第三章-总体均数的估计与假设检验.html#cb43-28"></a><span class="kw">screen</span>(<span class="dv">1</span>)</span>
+<span id="cb43-29"><a href="第三章-总体均数的估计与假设检验.html#cb43-29"></a>p1.pryr</span>
+<span id="cb43-30"><a href="第三章-总体均数的估计与假设检验.html#cb43-30"></a><span class="kw">screen</span>(<span class="dv">2</span>)</span>
+<span id="cb43-31"><a href="第三章-总体均数的估计与假设检验.html#cb43-31"></a>p2.pryr</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:logtrans1"></span>
+<img src="MedicalStatisNotes_files/figure-html/logtrans1-1.png" alt="log转换前后的Mammal数据分布" width="90%" />
+<p class="caption">
+Figure 3.10: log转换前后的Mammal数据分布
+</p>
+</div>
+<p>下面是两组样本数据的对数转换示例，在mammals$body_wt数据上结合mammals$brain_wt数据：</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="第三章-总体均数的估计与假设检验.html#cb44-1"></a><span class="co">#使用log()对brain_wt数据进行转换</span></span>
+<span id="cb44-2"><a href="第三章-总体均数的估计与假设检验.html#cb44-2"></a>loged_br_wt &lt;-<span class="st"> </span><span class="kw">log</span>(mammals<span class="op">$</span>brain_wt)</span>
+<span id="cb44-3"><a href="第三章-总体均数的估计与假设检验.html#cb44-3"></a>p3.pryr <span class="op">%&lt;a-%</span><span class="st"> </span>{</span>
+<span id="cb44-4"><a href="第三章-总体均数的估计与假设检验.html#cb44-4"></a>  <span class="kw">plot</span>(mammals<span class="op">$</span>body_wt,mammals<span class="op">$</span>brain_wt,<span class="dt">main=</span><span class="st">&quot;body_wt vs brain_wt&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">pch=</span><span class="dv">16</span>)</span>
+<span id="cb44-5"><a href="第三章-总体均数的估计与假设检验.html#cb44-5"></a>}</span>
+<span id="cb44-6"><a href="第三章-总体均数的估计与假设检验.html#cb44-6"></a>p4.pryr <span class="op">%&lt;a-%</span><span class="st"> </span>{</span>
+<span id="cb44-7"><a href="第三章-总体均数的估计与假设检验.html#cb44-7"></a>  <span class="kw">plot</span>(loged_bd_wt,loged_br_wt,<span class="dt">main=</span><span class="st">&quot;body_wt vs brain_wt after both loged&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">pch=</span><span class="dv">16</span>)</span>
+<span id="cb44-8"><a href="第三章-总体均数的估计与假设检验.html#cb44-8"></a>}</span>
+<span id="cb44-9"><a href="第三章-总体均数的估计与假设检验.html#cb44-9"></a><span class="kw">split.screen</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb44-10"><a href="第三章-总体均数的估计与假设检验.html#cb44-10"></a><span class="kw">screen</span>(<span class="dv">1</span>)</span>
+<span id="cb44-11"><a href="第三章-总体均数的估计与假设检验.html#cb44-11"></a>p3.pryr</span>
+<span id="cb44-12"><a href="第三章-总体均数的估计与假设检验.html#cb44-12"></a><span class="kw">screen</span>(<span class="dv">2</span>)</span>
+<span id="cb44-13"><a href="第三章-总体均数的估计与假设检验.html#cb44-13"></a>p4.pryr</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:bbwtlog"></span>
+<img src="image/badywtVSbrainwt.png" alt="log转换前后的body_wt vs brain_wt" width="99%" height="99%" />
+<p class="caption">
+Figure 3.11: log转换前后的body_wt vs brain_wt
+</p>
+</div>
+<p>在建立预测模型时，数据转换也可以起到很大效果。我们可以看看用mammals$body_wt和mammals$brain_wt来构建线性模型时，使用对数转换前后的残差(Residual standard error)变化。
+计算结果显示，数据转换前的预测模型的残差是334.7，对数转换后的预测模型的残差是0.6943，相比转换前的要小非常多了。</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="第三章-总体均数的估计与假设检验.html#cb45-1"></a>lm.model &lt;-<span class="st"> </span><span class="kw">lm</span>(mammals<span class="op">$</span>brain_wt <span class="op">~</span><span class="st"> </span>mammals<span class="op">$</span>body_wt)</span>
+<span id="cb45-2"><a href="第三章-总体均数的估计与假设检验.html#cb45-2"></a>lm_log.model &lt;-<span class="st"> </span><span class="kw">lm</span>(loged_br_wt <span class="op">~</span><span class="st"> </span>loged_bd_wt)</span>
+<span id="cb45-3"><a href="第三章-总体均数的估计与假设检验.html#cb45-3"></a><span class="kw">summary</span>(lm.model)</span>
+<span id="cb45-4"><a href="第三章-总体均数的估计与假设检验.html#cb45-4"></a><span class="co">## Call:</span></span>
+<span id="cb45-5"><a href="第三章-总体均数的估计与假设检验.html#cb45-5"></a><span class="co">## lm(formula = mammals$brain_wt ~ mammals$body_wt)</span></span>
+<span id="cb45-6"><a href="第三章-总体均数的估计与假设检验.html#cb45-6"></a><span class="co">## </span></span>
+<span id="cb45-7"><a href="第三章-总体均数的估计与假设检验.html#cb45-7"></a><span class="co">## Residuals:</span></span>
+<span id="cb45-8"><a href="第三章-总体均数的估计与假设检验.html#cb45-8"></a><span class="co">##     Min      1Q  Median      3Q     Max </span></span>
+<span id="cb45-9"><a href="第三章-总体均数的估计与假设检验.html#cb45-9"></a><span class="co">## -810.07  -88.52  -79.64  -13.02 2050.33 </span></span>
+<span id="cb45-10"><a href="第三章-总体均数的估计与假设检验.html#cb45-10"></a><span class="co">## </span></span>
+<span id="cb45-11"><a href="第三章-总体均数的估计与假设检验.html#cb45-11"></a><span class="co">## Coefficients:</span></span>
+<span id="cb45-12"><a href="第三章-总体均数的估计与假设检验.html#cb45-12"></a><span class="co">##                 Estimate Std. Error t value Pr(&gt;|t|)    </span></span>
+<span id="cb45-13"><a href="第三章-总体均数的估计与假设检验.html#cb45-13"></a><span class="co">## (Intercept)     91.00440   43.55258    2.09   0.0409 *  </span></span>
+<span id="cb45-14"><a href="第三章-总体均数的估计与假设检验.html#cb45-14"></a><span class="co">## mammals$body_wt  0.96650    0.04766   20.28   &lt;2e-16 ***</span></span>
+<span id="cb45-15"><a href="第三章-总体均数的估计与假设检验.html#cb45-15"></a><span class="co">## ---</span></span>
+<span id="cb45-16"><a href="第三章-总体均数的估计与假设检验.html#cb45-16"></a><span class="co">## Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span></span>
+<span id="cb45-17"><a href="第三章-总体均数的估计与假设检验.html#cb45-17"></a><span class="co">## </span></span>
+<span id="cb45-18"><a href="第三章-总体均数的估计与假设检验.html#cb45-18"></a><span class="co">## Residual standard error: 334.7 on 60 degrees of freedom</span></span>
+<span id="cb45-19"><a href="第三章-总体均数的估计与假设检验.html#cb45-19"></a><span class="co">## Multiple R-squared:  0.8727, Adjusted R-squared:  0.8705 </span></span>
+<span id="cb45-20"><a href="第三章-总体均数的估计与假设检验.html#cb45-20"></a><span class="co">## F-statistic: 411.2 on 1 and 60 DF,  p-value: &lt; 2.2e-16</span></span>
+<span id="cb45-21"><a href="第三章-总体均数的估计与假设检验.html#cb45-21"></a><span class="kw">summary</span>(lm_log.model)</span>
+<span id="cb45-22"><a href="第三章-总体均数的估计与假设检验.html#cb45-22"></a><span class="co">##  Call:</span></span>
+<span id="cb45-23"><a href="第三章-总体均数的估计与假设检验.html#cb45-23"></a><span class="co">##  lm(formula = loged_br_wt ~ loged_bd_wt)</span></span>
+<span id="cb45-24"><a href="第三章-总体均数的估计与假设检验.html#cb45-24"></a><span class="co">##  </span></span>
+<span id="cb45-25"><a href="第三章-总体均数的估计与假设检验.html#cb45-25"></a><span class="co">##  Residuals:</span></span>
+<span id="cb45-26"><a href="第三章-总体均数的估计与假设检验.html#cb45-26"></a><span class="co">##       Min       1Q   Median       3Q      Max </span></span>
+<span id="cb45-27"><a href="第三章-总体均数的估计与假设检验.html#cb45-27"></a><span class="co">##  -1.71550 -0.49228 -0.06162  0.43597  1.94829 </span></span>
+<span id="cb45-28"><a href="第三章-总体均数的估计与假设检验.html#cb45-28"></a><span class="co">##  </span></span>
+<span id="cb45-29"><a href="第三章-总体均数的估计与假设检验.html#cb45-29"></a><span class="co">##  Coefficients:</span></span>
+<span id="cb45-30"><a href="第三章-总体均数的估计与假设检验.html#cb45-30"></a><span class="co">##              Estimate Std. Error t value Pr(&gt;|t|)    </span></span>
+<span id="cb45-31"><a href="第三章-总体均数的估计与假设检验.html#cb45-31"></a><span class="co">##  (Intercept)  2.13479    0.09604   22.23   &lt;2e-16 ***</span></span>
+<span id="cb45-32"><a href="第三章-总体均数的估计与假设检验.html#cb45-32"></a><span class="co">##  loged_bd_wt  0.75169    0.02846   26.41   &lt;2e-16 ***</span></span>
+<span id="cb45-33"><a href="第三章-总体均数的估计与假设检验.html#cb45-33"></a><span class="co">##  ---</span></span>
+<span id="cb45-34"><a href="第三章-总体均数的估计与假设检验.html#cb45-34"></a><span class="co">##  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span></span>
+<span id="cb45-35"><a href="第三章-总体均数的估计与假设检验.html#cb45-35"></a><span class="co">##  </span></span>
+<span id="cb45-36"><a href="第三章-总体均数的估计与假设检验.html#cb45-36"></a><span class="co">##  Residual standard error: 0.6943 on 60 degrees of freedom</span></span>
+<span id="cb45-37"><a href="第三章-总体均数的估计与假设检验.html#cb45-37"></a><span class="co">##  Multiple R-squared:  0.9208,    Adjusted R-squared:  0.9195 </span></span>
+<span id="cb45-38"><a href="第三章-总体均数的估计与假设检验.html#cb45-38"></a><span class="co">##  F-statistic: 697.4 on 1 and 60 DF,  p-value: &lt; 2.2e-16</span></span></code></pre></div>
 
 </div>
 </div>

@@ -17,6 +17,10 @@ fig:typeerror
 fig:hometdist
 fig:piredttest
 fig:Ieandht
+fig:Datatransfromsuit
+fig:logtrans1
+fig:bbwtlog
+简介与传送门
 简介
 第二章-计量资料的统计描述
 描述统计
@@ -66,6 +70,8 @@ t检验与z检验
 配对样本t检验
 两种独立样本t检验
 总体方差相等的t检验
-总体方差不相等的t检验
+t检验
 参数估计与假设检验的联系
 两样本方差齐性检验
+变量转换
+对数变换
