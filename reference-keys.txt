@@ -1,3 +1,4 @@
+fig:Gateway1
 tab:tab1
 fig:histgrah
 fig:dnorm
@@ -22,6 +23,8 @@ fig:logtrans1
 fig:bbwtlog
 简介与传送门
 简介
+软件准备
+传送门
 第二章-计量资料的统计描述
 描述统计
 测试数据
