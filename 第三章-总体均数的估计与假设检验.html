@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="第二章-计量资料的统计描述.html"/>
-
+<link rel="next" href="第四章-多个样本均数比较的方差分析.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -192,6 +192,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#变量转换"><i class="fa fa-check"></i><b>3.4</b> 变量转换</a><ul>
 <li class="chapter" data-level="3.4.1" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#对数变换"><i class="fa fa-check"></i><b>3.4.1</b> 对数变换</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="第四章-多个样本均数比较的方差分析.html"><a href="第四章-多个样本均数比较的方差分析.html"><i class="fa fa-check"></i><b>4</b> 第四章 多个样本均数比较的方差分析</a><ul>
+<li class="chapter" data-level="4.1" data-path="第四章-多个样本均数比较的方差分析.html"><a href="第四章-多个样本均数比较的方差分析.html#方差分析"><i class="fa fa-check"></i><b>4.1</b> 方差分析</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="第四章-多个样本均数比较的方差分析.html"><a href="第四章-多个样本均数比较的方差分析.html#f分布"><i class="fa fa-check"></i><b>4.1.1</b> <em>F</em>分布</a></li>
+<li class="chapter" data-level="4.1.2" data-path="第四章-多个样本均数比较的方差分析.html"><a href="第四章-多个样本均数比较的方差分析.html#f检验的分类原理及应用"><i class="fa fa-check"></i><b>4.1.2</b> F检验的分类、原理及应用</a></li>
+<li class="chapter" data-level="4.1.3" data-path="第四章-多个样本均数比较的方差分析.html"><a href="第四章-多个样本均数比较的方差分析.html#完全随机设计资料的方差分析"><i class="fa fa-check"></i><b>4.1.3</b> 完全随机设计资料的方差分析</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -803,7 +810,8 @@ Levene检验实质上是将原始观测值<span class="math inline">\(X_{ij}\)</
 <p><em>F</em>检验与前面介绍到的利用正态分布进行Z检验，利用<em>t</em>分布进行<em>t</em>检验一样，它是利用<em>F</em>分布来进行检验的。
 在R中，<em>F</em>分布同样拥有与正态分布，<em>t</em>分布类似的几个函数，分别是<a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Fdist.html">df()，pf()，qf()和rf()</a>，
 不过<em>F</em>分布主要收两组样品的自由度共同影响。R中用<em>F</em>检验来比较两组样本方差的函数是<a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/var.test">var.test()</a>。</p>
-<p>注意的是，方差齐性检验中的第一类错误的控制水准一般选择0.1，即<span class="math inline">\(\aplha=0.1\)</span>。</p>
+<p>注意的是，方差齐性检验中的第一类错误的控制水准一般选择0.1，即<span class="math inline">\(\alpha=0.1\)</span>，而且一般约定取较大的方差作为分子，较小的方差作为分母，
+这样计算出来的[公式]，缩小了范围，这样可以方便查表做出结论。</p>
 <p>使用《医学统计学》中的 案例3-6 和 案例3-8 的数据在R中进行总体方差齐性检验测试。</p>
 <div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="第三章-总体均数的估计与假设检验.html#cb42-1"></a><span class="co">##案例3-6 </span></span>
 <span id="cb42-2"><a href="第三章-总体均数的估计与假设检验.html#cb42-2"></a><span class="kw">library</span>(<span class="st">&quot;memisc&quot;</span>)</span>
@@ -825,25 +833,26 @@ Levene检验实质上是将原始观测值<span class="math inline">\(X_{ij}\)</
 <span id="cb42-18"><a href="第三章-总体均数的估计与假设检验.html#cb42-18"></a><span class="co">##           1.598361 </span></span>
 <span id="cb42-19"><a href="第三章-总体均数的估计与假设检验.html#cb42-19"></a></span>
 <span id="cb42-20"><a href="第三章-总体均数的估计与假设检验.html#cb42-20"></a><span class="co">##方法2</span></span>
-<span id="cb42-21"><a href="第三章-总体均数的估计与假设检验.html#cb42-21"></a><span class="co">#计算F值</span></span>
+<span id="cb42-21"><a href="第三章-总体均数的估计与假设检验.html#cb42-21"></a><span class="co">#用F公式来计算F值</span></span>
 <span id="cb42-22"><a href="第三章-总体均数的估计与假设检验.html#cb42-22"></a>f_val1&lt;-<span class="kw">var</span>(x)<span class="op">/</span><span class="kw">var</span>(y)</span>
 <span id="cb42-23"><a href="第三章-总体均数的估计与假设检验.html#cb42-23"></a><span class="co">## [1] 1.598361</span></span>
 <span id="cb42-24"><a href="第三章-总体均数的估计与假设检验.html#cb42-24"></a>p_val1 &lt;-<span class="st"> </span><span class="kw">pf</span>(f_val1, <span class="dt">df1=</span><span class="kw">length</span>(x)<span class="op">-</span><span class="dv">1</span>, <span class="dt">df2=</span><span class="kw">length</span>(y)<span class="op">-</span><span class="dv">1</span>, <span class="dt">lower.tail=</span><span class="ot">FALSE</span>)<span class="op">*</span><span class="dv">2</span></span>
 <span id="cb42-25"><a href="第三章-总体均数的估计与假设检验.html#cb42-25"></a><span class="co">## [1] 0.3152554</span></span>
-<span id="cb42-26"><a href="第三章-总体均数的估计与假设检验.html#cb42-26"></a></span>
-<span id="cb42-27"><a href="第三章-总体均数的估计与假设检验.html#cb42-27"></a></span>
-<span id="cb42-28"><a href="第三章-总体均数的估计与假设检验.html#cb42-28"></a><span class="co">##案例3-8</span></span>
-<span id="cb42-29"><a href="第三章-总体均数的估计与假设检验.html#cb42-29"></a>mean_x &lt;-<span class="st"> </span><span class="fl">1.46</span></span>
-<span id="cb42-30"><a href="第三章-总体均数的估计与假设检验.html#cb42-30"></a>mean_y &lt;-<span class="st"> </span><span class="fl">1.13</span></span>
-<span id="cb42-31"><a href="第三章-总体均数的估计与假设检验.html#cb42-31"></a>stdev_x &lt;-<span class="st"> </span><span class="fl">1.36</span></span>
-<span id="cb42-32"><a href="第三章-总体均数的估计与假设检验.html#cb42-32"></a>stdev_y &lt;-<span class="st"> </span><span class="fl">0.7</span></span>
-<span id="cb42-33"><a href="第三章-总体均数的估计与假设检验.html#cb42-33"></a>nx &lt;-<span class="st"> </span><span class="dv">20</span></span>
-<span id="cb42-34"><a href="第三章-总体均数的估计与假设检验.html#cb42-34"></a>ny &lt;-<span class="st"> </span><span class="dv">20</span></span>
-<span id="cb42-35"><a href="第三章-总体均数的估计与假设检验.html#cb42-35"></a><span class="co">#根据F分布公式，计算F值</span></span>
-<span id="cb42-36"><a href="第三章-总体均数的估计与假设检验.html#cb42-36"></a>f_val&lt;-stdev_x<span class="op">^</span><span class="dv">2</span><span class="op">/</span>stdev_y<span class="op">^</span><span class="dv">2</span></span>
-<span id="cb42-37"><a href="第三章-总体均数的估计与假设检验.html#cb42-37"></a><span class="co">## [1] 3.774694</span></span>
-<span id="cb42-38"><a href="第三章-总体均数的估计与假设检验.html#cb42-38"></a>p_val &lt;-<span class="st"> </span><span class="kw">pf</span>(f_val, <span class="dt">df1=</span>nx<span class="dv">-1</span>, <span class="dt">df2=</span>ny<span class="dv">-1</span>, <span class="dt">lower.tail=</span><span class="ot">FALSE</span>)<span class="op">*</span><span class="dv">2</span></span>
-<span id="cb42-39"><a href="第三章-总体均数的估计与假设检验.html#cb42-39"></a><span class="co">## [1] 0.005732012</span></span></code></pre></div>
+<span id="cb42-26"><a href="第三章-总体均数的估计与假设检验.html#cb42-26"></a><span class="co">#将分子分母调换，需要注意lower.tail=TRUE/FALSE的设定</span></span>
+<span id="cb42-27"><a href="第三章-总体均数的估计与假设检验.html#cb42-27"></a><span class="kw">pf</span>(<span class="kw">var</span>(y)<span class="op">/</span><span class="kw">var</span>(x), <span class="dt">df1=</span><span class="kw">length</span>(y)<span class="op">-</span><span class="dv">1</span>, <span class="dt">df2=</span><span class="kw">length</span>(x)<span class="op">-</span><span class="dv">1</span>, <span class="dt">lower.tail=</span><span class="ot">TRUE</span>)<span class="op">*</span><span class="dv">2</span></span>
+<span id="cb42-28"><a href="第三章-总体均数的估计与假设检验.html#cb42-28"></a></span>
+<span id="cb42-29"><a href="第三章-总体均数的估计与假设检验.html#cb42-29"></a><span class="co">##案例3-8</span></span>
+<span id="cb42-30"><a href="第三章-总体均数的估计与假设检验.html#cb42-30"></a>mean_x &lt;-<span class="st"> </span><span class="fl">1.46</span></span>
+<span id="cb42-31"><a href="第三章-总体均数的估计与假设检验.html#cb42-31"></a>mean_y &lt;-<span class="st"> </span><span class="fl">1.13</span></span>
+<span id="cb42-32"><a href="第三章-总体均数的估计与假设检验.html#cb42-32"></a>stdev_x &lt;-<span class="st"> </span><span class="fl">1.36</span></span>
+<span id="cb42-33"><a href="第三章-总体均数的估计与假设检验.html#cb42-33"></a>stdev_y &lt;-<span class="st"> </span><span class="fl">0.7</span></span>
+<span id="cb42-34"><a href="第三章-总体均数的估计与假设检验.html#cb42-34"></a>nx &lt;-<span class="st"> </span><span class="dv">20</span></span>
+<span id="cb42-35"><a href="第三章-总体均数的估计与假设检验.html#cb42-35"></a>ny &lt;-<span class="st"> </span><span class="dv">20</span></span>
+<span id="cb42-36"><a href="第三章-总体均数的估计与假设检验.html#cb42-36"></a><span class="co">#根据F分布公式，计算F值</span></span>
+<span id="cb42-37"><a href="第三章-总体均数的估计与假设检验.html#cb42-37"></a>f_val&lt;-stdev_x<span class="op">^</span><span class="dv">2</span><span class="op">/</span>stdev_y<span class="op">^</span><span class="dv">2</span></span>
+<span id="cb42-38"><a href="第三章-总体均数的估计与假设检验.html#cb42-38"></a><span class="co">## [1] 3.774694</span></span>
+<span id="cb42-39"><a href="第三章-总体均数的估计与假设检验.html#cb42-39"></a>p_val &lt;-<span class="st"> </span><span class="kw">pf</span>(f_val, <span class="dt">df1=</span>nx<span class="dv">-1</span>, <span class="dt">df2=</span>ny<span class="dv">-1</span>, <span class="dt">lower.tail=</span><span class="ot">FALSE</span>)<span class="op">*</span><span class="dv">2</span></span>
+<span id="cb42-40"><a href="第三章-总体均数的估计与假设检验.html#cb42-40"></a><span class="co">## [1] 0.005732012</span></span></code></pre></div>
 <p>根据计算结果，案例3-6的P值 0.3153&gt;0.1，按照α=0.1的水准，不拒绝<span class="math inline">\(H_0\)</span>，差异不具有统计学意义，两组数据的方差相等，应该采用经典的<em>t</em>检验。
 案例3-8的P值 0.0057&lt;0.1，按照α=0.1的水准，拒绝<span class="math inline">\(H_0\)</span>，差异具有统计学意义，两组数据的方差不相等，应该采用<em>t’</em>检验。</p>
 </div>
@@ -1010,8 +1019,8 @@ Figure 3.11: log转换前后的body_wt vs brain_wt
           </div>
         </div>
       </div>
-<a href="第二章-计量资料的统计描述.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="第二章-计量资料的统计描述.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="第四章-多个样本均数比较的方差分析.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

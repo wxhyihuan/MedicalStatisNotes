@@ -21,6 +21,13 @@ fig:Ieandht
 fig:Datatransfromsuit
 fig:logtrans1
 fig:bbwtlog
+fig:fdistri
+fig:xyzanova1
+fig:xyzanova2
+fig:xyzanova3
+fig:xyzanova4
+fig:Cmdftest
+tab:tab2
 简介与传送门
 简介
 软件准备
@@ -78,3 +85,13 @@ t检验
 两样本方差齐性检验
 变量转换
 对数变换
+第四章-多个样本均数比较的方差分析
+方差分析
+f分布
+f检验的分类原理及应用
+分类
+原理
+f-检验的原理示例
+f-检验的前提
+f-检验的应用
+完全随机设计资料的方差分析
