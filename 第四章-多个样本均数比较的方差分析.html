@@ -166,7 +166,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.5.3" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#正态分位函数qnorm"><i class="fa fa-check"></i><b>2.5.3</b> 正态分位函数qnorm()</a></li>
 <li class="chapter" data-level="2.5.4" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#生成正态分布函数rnorm"><i class="fa fa-check"></i><b>2.5.4</b> 生成正态分布函数rnorm()</a></li>
 </ul></li>
-<li class="chapter" data-level="2.6" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#正态分布检验"><i class="fa fa-check"></i><b>2.6</b> 正态分布检验</a></li>
+<li class="chapter" data-level="2.6" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#正态分布检验"><i class="fa fa-check"></i><b>2.6</b> 正态分布检验</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#直方图"><i class="fa fa-check"></i><b>2.6.1</b> 直方图</a></li>
+<li class="chapter" data-level="2.6.2" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#概率密度图"><i class="fa fa-check"></i><b>2.6.2</b> 概率密度图</a></li>
+<li class="chapter" data-level="2.6.3" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#qq-plot"><i class="fa fa-check"></i><b>2.6.3</b> QQ-plot</a></li>
+<li class="chapter" data-level="2.6.4" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#正态检验"><i class="fa fa-check"></i><b>2.6.4</b> 正态检验</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html"><i class="fa fa-check"></i><b>3</b> 第三章 总体均数的估计与假设检验</a><ul>
 <li class="chapter" data-level="3.1" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#推论统计"><i class="fa fa-check"></i><b>3.1</b> 推论统计</a><ul>
@@ -249,25 +254,25 @@ f(x,d_1,d_2) &amp;= \frac{\sqrt{\frac{(d_{1}x)^{d_1} d_2^{d_2}}{(d_{1}x+d_2)^{d_
 &amp;= \frac{1}{B\left(d_{1}/2,d_{2}/2\right)}\left(\frac{d_1}{d_2}\right)^{\frac{d_1}{2}}x^{\frac{d_1}{2}-1}\left(1+\frac{d_1}{d_2}x\right)^{-\frac{d_1+d_2}{2}}
 \end{aligned}\]</span></p>
 <p>在R语言中。F-分布也有几个与Z分布，<em>t</em>分布基本函数类似的工具函数，分别是<a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Fdist.html">df()，pf()，qf()和rf()</a>。</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="第四章-多个样本均数比较的方差分析.html#cb46-1"></a>f_val =<span class="st"> </span><span class="fl">2.2</span></span>
-<span id="cb46-2"><a href="第四章-多个样本均数比较的方差分析.html#cb46-2"></a>df1 =<span class="st"> </span><span class="dv">10</span></span>
-<span id="cb46-3"><a href="第四章-多个样本均数比较的方差分析.html#cb46-3"></a>df2 =<span class="st"> </span><span class="dv">20</span></span>
-<span id="cb46-4"><a href="第四章-多个样本均数比较的方差分析.html#cb46-4"></a>q_seq &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>, <span class="fl">0.999</span>)</span>
-<span id="cb46-5"><a href="第四章-多个样本均数比较的方差分析.html#cb46-5"></a></span>
-<span id="cb46-6"><a href="第四章-多个样本均数比较的方差分析.html#cb46-6"></a><span class="kw">df</span>(f_val, <span class="dt">df1 =</span> df1, <span class="dt">df2 =</span> df2)</span>
-<span id="cb46-7"><a href="第四章-多个样本均数比较的方差分析.html#cb46-7"></a><span class="co">## [1] 0.007858262</span></span>
-<span id="cb46-8"><a href="第四章-多个样本均数比较的方差分析.html#cb46-8"></a><span class="kw">pf</span>(f_val, <span class="dt">df =</span> df1, <span class="dt">df2 =</span> df2, <span class="dt">lower.tail =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb46-9"><a href="第四章-多个样本均数比较的方差分析.html#cb46-9"></a><span class="co">## [1] 0.9944622</span></span>
-<span id="cb46-10"><a href="第四章-多个样本均数比较的方差分析.html#cb46-10"></a><span class="kw">qf</span>(q_seq, <span class="dt">df1 =</span> df1, <span class="dt">df2 =</span> df2, <span class="dt">lower.tail =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb46-11"><a href="第四章-多个样本均数比较的方差分析.html#cb46-11"></a><span class="co">## [1] 0.6563936 0.9662639 1.3994874 5.0752462</span></span>
-<span id="cb46-12"><a href="第四章-多个样本均数比较的方差分析.html#cb46-12"></a></span>
-<span id="cb46-13"><a href="第四章-多个样本均数比较的方差分析.html#cb46-13"></a>x &lt;-<span class="st"> </span><span class="kw">rf</span>(<span class="dv">100000</span>, <span class="dt">df1 =</span> df1, <span class="dt">df2 =</span> df2)</span>
-<span id="cb46-14"><a href="第四章-多个样本均数比较的方差分析.html#cb46-14"></a><span class="kw">hist</span>(x, <span class="dt">col=</span><span class="st">&quot;#A8D6FF&quot;</span>,</span>
-<span id="cb46-15"><a href="第四章-多个样本均数比较的方差分析.html#cb46-15"></a>     <span class="dt">breaks =</span> <span class="st">&#39;Scott&#39;</span>, <span class="dt">freq =</span> <span class="ot">FALSE</span>, </span>
-<span id="cb46-16"><a href="第四章-多个样本均数比较的方差分析.html#cb46-16"></a>     <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">3</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),</span>
-<span id="cb46-17"><a href="第四章-多个样本均数比较的方差分析.html#cb46-17"></a>     <span class="dt">xlab =</span> <span class="st">&#39;&#39;</span>, <span class="dt">main =</span> <span class="st">&#39;Histogram for a F-distribution with df1=10, df2=20&#39;</span>, <span class="dt">cex.main=</span><span class="fl">0.9</span>)</span>
-<span id="cb46-18"><a href="第四章-多个样本均数比较的方差分析.html#cb46-18"></a></span>
-<span id="cb46-19"><a href="第四章-多个样本均数比较的方差分析.html#cb46-19"></a><span class="kw">curve</span>(<span class="kw">df</span>(x, <span class="dt">df1 =</span> df1, <span class="dt">df2 =</span> df2), <span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">3</span>, <span class="dt">n =</span> <span class="dv">10000</span>, <span class="dt">col=</span> <span class="st">&#39;red&#39;</span>, <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">add =</span> T)</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="第四章-多个样本均数比较的方差分析.html#cb43-1"></a>f_val =<span class="st"> </span><span class="fl">2.2</span></span>
+<span id="cb43-2"><a href="第四章-多个样本均数比较的方差分析.html#cb43-2"></a>df1 =<span class="st"> </span><span class="dv">10</span></span>
+<span id="cb43-3"><a href="第四章-多个样本均数比较的方差分析.html#cb43-3"></a>df2 =<span class="st"> </span><span class="dv">20</span></span>
+<span id="cb43-4"><a href="第四章-多个样本均数比较的方差分析.html#cb43-4"></a>q_seq &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>, <span class="fl">0.999</span>)</span>
+<span id="cb43-5"><a href="第四章-多个样本均数比较的方差分析.html#cb43-5"></a></span>
+<span id="cb43-6"><a href="第四章-多个样本均数比较的方差分析.html#cb43-6"></a><span class="kw">df</span>(f_val, <span class="dt">df1 =</span> df1, <span class="dt">df2 =</span> df2)</span>
+<span id="cb43-7"><a href="第四章-多个样本均数比较的方差分析.html#cb43-7"></a><span class="co">## [1] 0.007858262</span></span>
+<span id="cb43-8"><a href="第四章-多个样本均数比较的方差分析.html#cb43-8"></a><span class="kw">pf</span>(f_val, <span class="dt">df =</span> df1, <span class="dt">df2 =</span> df2, <span class="dt">lower.tail =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb43-9"><a href="第四章-多个样本均数比较的方差分析.html#cb43-9"></a><span class="co">## [1] 0.9944622</span></span>
+<span id="cb43-10"><a href="第四章-多个样本均数比较的方差分析.html#cb43-10"></a><span class="kw">qf</span>(q_seq, <span class="dt">df1 =</span> df1, <span class="dt">df2 =</span> df2, <span class="dt">lower.tail =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb43-11"><a href="第四章-多个样本均数比较的方差分析.html#cb43-11"></a><span class="co">## [1] 0.6563936 0.9662639 1.3994874 5.0752462</span></span>
+<span id="cb43-12"><a href="第四章-多个样本均数比较的方差分析.html#cb43-12"></a></span>
+<span id="cb43-13"><a href="第四章-多个样本均数比较的方差分析.html#cb43-13"></a>x &lt;-<span class="st"> </span><span class="kw">rf</span>(<span class="dv">100000</span>, <span class="dt">df1 =</span> df1, <span class="dt">df2 =</span> df2)</span>
+<span id="cb43-14"><a href="第四章-多个样本均数比较的方差分析.html#cb43-14"></a><span class="kw">hist</span>(x, <span class="dt">col=</span><span class="st">&quot;#A8D6FF&quot;</span>,</span>
+<span id="cb43-15"><a href="第四章-多个样本均数比较的方差分析.html#cb43-15"></a>     <span class="dt">breaks =</span> <span class="st">&#39;Scott&#39;</span>, <span class="dt">freq =</span> <span class="ot">FALSE</span>, </span>
+<span id="cb43-16"><a href="第四章-多个样本均数比较的方差分析.html#cb43-16"></a>     <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">3</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),</span>
+<span id="cb43-17"><a href="第四章-多个样本均数比较的方差分析.html#cb43-17"></a>     <span class="dt">xlab =</span> <span class="st">&#39;&#39;</span>, <span class="dt">main =</span> <span class="st">&#39;Histogram for a F-distribution with df1=10, df2=20&#39;</span>, <span class="dt">cex.main=</span><span class="fl">0.9</span>)</span>
+<span id="cb43-18"><a href="第四章-多个样本均数比较的方差分析.html#cb43-18"></a></span>
+<span id="cb43-19"><a href="第四章-多个样本均数比较的方差分析.html#cb43-19"></a><span class="kw">curve</span>(<span class="kw">df</span>(x, <span class="dt">df1 =</span> df1, <span class="dt">df2 =</span> df2), <span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">3</span>, <span class="dt">n =</span> <span class="dv">10000</span>, <span class="dt">col=</span> <span class="st">&#39;red&#39;</span>, <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">add =</span> T)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:fdistri"></span>
 <img src="MedicalStatisNotes_files/figure-html/fdistri-1.png" alt="F-分布的概率密度曲线测试" width="49%" />
 <p class="caption">
@@ -410,74 +415,75 @@ Figure 4.5: MSb&lt;&lt;MSw示例
 <h3><span class="header-section-number">4.2.3</span> 完全随机设计资料的方差分析</h3>
 <p>完全随机设计(Completely random design)是采用完全随机化的分组方法，将全部实验对象分配到g个组(水平组)，各组分别接受不同的处理，
 实验结束后比较各组均数之间的差别有无统计学意义，推论因素的效应。</p>
+<p>注意的是，当方差不齐的是否，可以使用oneway.test()函数进行F检验，设置var.equal为FALSE，此时即为&lt; font col=“red”&gt;Welch检验&lt; /font&gt;。</p>
 <p>使用《医学统计学》中的 案例4-2 的数据在R中进行完全随机设计资料的方差分析测试。</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="第四章-多个样本均数比较的方差分析.html#cb47-1"></a><span class="co">##案例4-2 </span></span>
-<span id="cb47-2"><a href="第四章-多个样本均数比较的方差分析.html#cb47-2"></a><span class="kw">library</span>(<span class="st">&quot;memisc&quot;</span>)</span>
-<span id="cb47-3"><a href="第四章-多个样本均数比较的方差分析.html#cb47-3"></a><span class="co">#读取数据</span></span>
-<span id="cb47-4"><a href="第四章-多个样本均数比较的方差分析.html#cb47-4"></a>rdl_sav&lt;-<span class="kw">spss.system.file</span>(<span class="st">&quot;ExampleData/SavData4MedSta/Exam04-02.sav&quot;</span>)</span>
-<span id="cb47-5"><a href="第四章-多个样本均数比较的方差分析.html#cb47-5"></a>rdl_df&lt;-<span class="kw">as.data.frame</span>(<span class="kw">as.data.set</span>(rdl_sav))</span>
-<span id="cb47-6"><a href="第四章-多个样本均数比较的方差分析.html#cb47-6"></a><span class="co">##简洁地显示任意R对象的结构</span></span>
-<span id="cb47-7"><a href="第四章-多个样本均数比较的方差分析.html#cb47-7"></a><span class="kw">str</span>(rdl_df)</span>
-<span id="cb47-8"><a href="第四章-多个样本均数比较的方差分析.html#cb47-8"></a><span class="co">## &#39;data.frame&#39;:    120 obs. of  2 variables:</span></span>
-<span id="cb47-9"><a href="第四章-多个样本均数比较的方差分析.html#cb47-9"></a><span class="co">##  $ GROUP: num  1 1 1 1 1 1 1 1 1 1 ...</span></span>
-<span id="cb47-10"><a href="第四章-多个样本均数比较的方差分析.html#cb47-10"></a><span class="co">##  $ LDL_C: num  3.53 4.59 4.34 2.66 3.59 3.13 3.3 4.04 3.53 3.56 ...</span></span>
-<span id="cb47-11"><a href="第四章-多个样本均数比较的方差分析.html#cb47-11"></a></span>
-<span id="cb47-12"><a href="第四章-多个样本均数比较的方差分析.html#cb47-12"></a><span class="co">##对不规则数组应用指定的函数，快速计算每组的均值，方差，和样本大小</span></span>
-<span id="cb47-13"><a href="第四章-多个样本均数比较的方差分析.html#cb47-13"></a><span class="kw">tapply</span>(rdl_df<span class="op">$</span>LDL_C, rdl_df<span class="op">$</span>GROUP, <span class="dt">FUN =</span> mean)</span>
-<span id="cb47-14"><a href="第四章-多个样本均数比较的方差分析.html#cb47-14"></a><span class="co">##        1        2        3        4 </span></span>
-<span id="cb47-15"><a href="第四章-多个样本均数比较的方差分析.html#cb47-15"></a><span class="co">## 3.430333 2.715333 2.698000 1.966333 </span></span>
-<span id="cb47-16"><a href="第四章-多个样本均数比较的方差分析.html#cb47-16"></a></span>
-<span id="cb47-17"><a href="第四章-多个样本均数比较的方差分析.html#cb47-17"></a><span class="kw">tapply</span>(rdl_df<span class="op">$</span>LDL_C, rdl_df<span class="op">$</span>GROUP, <span class="dt">FUN =</span> var)</span>
-<span id="cb47-18"><a href="第四章-多个样本均数比较的方差分析.html#cb47-18"></a><span class="co">##         1         2         3         4 </span></span>
-<span id="cb47-19"><a href="第四章-多个样本均数比较的方差分析.html#cb47-19"></a><span class="co">## 0.5114033 0.4072464 0.2471752 0.5571757 </span></span>
-<span id="cb47-20"><a href="第四章-多个样本均数比较的方差分析.html#cb47-20"></a></span>
-<span id="cb47-21"><a href="第四章-多个样本均数比较的方差分析.html#cb47-21"></a><span class="kw">tapply</span>(rdl_df<span class="op">$</span>LDL_C, rdl_df<span class="op">$</span>GROUP, length)</span>
-<span id="cb47-22"><a href="第四章-多个样本均数比较的方差分析.html#cb47-22"></a><span class="co">##  1  2  3  4 </span></span>
-<span id="cb47-23"><a href="第四章-多个样本均数比较的方差分析.html#cb47-23"></a><span class="co">## 30 30 30 30 </span></span>
-<span id="cb47-24"><a href="第四章-多个样本均数比较的方差分析.html#cb47-24"></a></span>
-<span id="cb47-25"><a href="第四章-多个样本均数比较的方差分析.html#cb47-25"></a><span class="co">#boxplot(rdl_df$LDL_C ~ rdl_df$GROUP,col=c(2:5))</span></span>
-<span id="cb47-26"><a href="第四章-多个样本均数比较的方差分析.html#cb47-26"></a></span>
-<span id="cb47-27"><a href="第四章-多个样本均数比较的方差分析.html#cb47-27"></a><span class="co">## 使用oneway.test()函数进行F检验，注意var.equal 默认是 FALSE，也就是说方差可以不相等，但是提供的信息相对较少。</span></span>
-<span id="cb47-28"><a href="第四章-多个样本均数比较的方差分析.html#cb47-28"></a><span class="kw">oneway.test</span>(rdl_df<span class="op">$</span>LDL_C <span class="op">~</span><span class="st"> </span>rdl_df<span class="op">$</span>GROUP,<span class="dt">var.equal=</span>T)</span>
-<span id="cb47-29"><a href="第四章-多个样本均数比较的方差分析.html#cb47-29"></a><span class="co">##  One-way analysis of means</span></span>
-<span id="cb47-30"><a href="第四章-多个样本均数比较的方差分析.html#cb47-30"></a><span class="co">## </span></span>
-<span id="cb47-31"><a href="第四章-多个样本均数比较的方差分析.html#cb47-31"></a><span class="co">## data:  rdl_df$LDL_C and rdl_df$GROUP</span></span>
-<span id="cb47-32"><a href="第四章-多个样本均数比较的方差分析.html#cb47-32"></a><span class="co">## F = 24.884, num df = 3, denom df = 116, p-value = 1.674e-12</span></span>
-<span id="cb47-33"><a href="第四章-多个样本均数比较的方差分析.html#cb47-33"></a><span class="kw">oneway.test</span>(rdl_df<span class="op">$</span>LDL_C <span class="op">~</span><span class="st"> </span>rdl_df<span class="op">$</span>GROUP,<span class="dt">var.equal=</span>F)</span>
-<span id="cb47-34"><a href="第四章-多个样本均数比较的方差分析.html#cb47-34"></a><span class="co">##  One-way analysis of means (not assuming equal variances)</span></span>
-<span id="cb47-35"><a href="第四章-多个样本均数比较的方差分析.html#cb47-35"></a><span class="co">## </span></span>
-<span id="cb47-36"><a href="第四章-多个样本均数比较的方差分析.html#cb47-36"></a><span class="co">## data:  rdl_df$LDL_C and rdl_df$GROUP</span></span>
-<span id="cb47-37"><a href="第四章-多个样本均数比较的方差分析.html#cb47-37"></a><span class="co">## F = 19.665, num df = 3.000, denom df = 63.592, p-value =</span></span>
-<span id="cb47-38"><a href="第四章-多个样本均数比较的方差分析.html#cb47-38"></a><span class="co">## 3.924e-09</span></span>
-<span id="cb47-39"><a href="第四章-多个样本均数比较的方差分析.html#cb47-39"></a></span>
-<span id="cb47-40"><a href="第四章-多个样本均数比较的方差分析.html#cb47-40"></a><span class="co">#使用aov()函数进行F检验，可以获取完整地参数信息，这里要注意aov()里面提供的group信息最好不要是数值形式的分组，否则结果非不一致，可以用</span></span>
-<span id="cb47-41"><a href="第四章-多个样本均数比较的方差分析.html#cb47-41"></a><span class="co">#as.character()将数字转换为字串形式的再使用</span></span>
-<span id="cb47-42"><a href="第四章-多个样本均数比较的方差分析.html#cb47-42"></a>aov.out =<span class="st"> </span><span class="kw">aov</span>(rdl_df<span class="op">$</span>LDL_C <span class="op">~</span><span class="st"> </span><span class="kw">as.character</span>(rdl_df<span class="op">$</span>GROUP))</span>
-<span id="cb47-43"><a href="第四章-多个样本均数比较的方差分析.html#cb47-43"></a><span class="co">##                             Df Sum Sq Mean Sq F value   Pr(&gt;F)    </span></span>
-<span id="cb47-44"><a href="第四章-多个样本均数比较的方差分析.html#cb47-44"></a><span class="co">## as.character(rdl_df$GROUP)   3  32.16  10.719   24.88 1.67e-12 ***</span></span>
-<span id="cb47-45"><a href="第四章-多个样本均数比较的方差分析.html#cb47-45"></a><span class="co">## Residuals                  116  49.97   0.431                     </span></span>
-<span id="cb47-46"><a href="第四章-多个样本均数比较的方差分析.html#cb47-46"></a><span class="co">## ---</span></span>
-<span id="cb47-47"><a href="第四章-多个样本均数比较的方差分析.html#cb47-47"></a><span class="co">## Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span></span>
-<span id="cb47-48"><a href="第四章-多个样本均数比较的方差分析.html#cb47-48"></a><span class="co">## &gt; aov.out</span></span>
-<span id="cb47-49"><a href="第四章-多个样本均数比较的方差分析.html#cb47-49"></a><span class="co">## Call:</span></span>
-<span id="cb47-50"><a href="第四章-多个样本均数比较的方差分析.html#cb47-50"></a><span class="co">##    aov(formula = rdl_df$LDL_C ~ as.character(rdl_df$GROUP))</span></span>
-<span id="cb47-51"><a href="第四章-多个样本均数比较的方差分析.html#cb47-51"></a><span class="co">## </span></span>
-<span id="cb47-52"><a href="第四章-多个样本均数比较的方差分析.html#cb47-52"></a><span class="co">## Terms:</span></span>
-<span id="cb47-53"><a href="第四章-多个样本均数比较的方差分析.html#cb47-53"></a><span class="co">##                 as.character(rdl_df$GROUP) Residuals</span></span>
-<span id="cb47-54"><a href="第四章-多个样本均数比较的方差分析.html#cb47-54"></a><span class="co">## Sum of Squares                    32.15603  49.96702</span></span>
-<span id="cb47-55"><a href="第四章-多个样本均数比较的方差分析.html#cb47-55"></a><span class="co">## Deg. of Freedom                          3       116</span></span>
-<span id="cb47-56"><a href="第四章-多个样本均数比较的方差分析.html#cb47-56"></a><span class="co">## </span></span>
-<span id="cb47-57"><a href="第四章-多个样本均数比较的方差分析.html#cb47-57"></a><span class="co">## Residual standard error: 0.6563156</span></span>
-<span id="cb47-58"><a href="第四章-多个样本均数比较的方差分析.html#cb47-58"></a><span class="co">## Estimated effects may be unbalanced</span></span>
-<span id="cb47-59"><a href="第四章-多个样本均数比较的方差分析.html#cb47-59"></a><span class="kw">summary</span>(aov.out)</span>
-<span id="cb47-60"><a href="第四章-多个样本均数比较的方差分析.html#cb47-60"></a><span class="co">##                             Df Sum Sq Mean Sq F value   Pr(&gt;F)    </span></span>
-<span id="cb47-61"><a href="第四章-多个样本均数比较的方差分析.html#cb47-61"></a><span class="co">## as.character(rdl_df$GROUP)   3  32.16  10.719   24.88 1.67e-12 ***</span></span>
-<span id="cb47-62"><a href="第四章-多个样本均数比较的方差分析.html#cb47-62"></a><span class="co">## Residuals                  116  49.97   0.431                     </span></span>
-<span id="cb47-63"><a href="第四章-多个样本均数比较的方差分析.html#cb47-63"></a><span class="co">## ---</span></span>
-<span id="cb47-64"><a href="第四章-多个样本均数比较的方差分析.html#cb47-64"></a><span class="co">## Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span></span>
-<span id="cb47-65"><a href="第四章-多个样本均数比较的方差分析.html#cb47-65"></a></span>
-<span id="cb47-66"><a href="第四章-多个样本均数比较的方差分析.html#cb47-66"></a></span>
-<span id="cb47-67"><a href="第四章-多个样本均数比较的方差分析.html#cb47-67"></a><span class="kw">boxplot</span>(rdl_df<span class="op">$</span>LDL_C <span class="op">~</span><span class="st"> </span>rdl_df<span class="op">$</span>GROUP,<span class="dt">col=</span><span class="kw">c</span>(<span class="dv">2</span><span class="op">:</span><span class="dv">5</span>),<span class="dt">ylab=</span><span class="st">&quot;rdl value&quot;</span>,<span class="dt">xlab=</span><span class="st">&quot;Group info&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="第四章-多个样本均数比较的方差分析.html#cb44-1"></a><span class="co">##案例4-2 </span></span>
+<span id="cb44-2"><a href="第四章-多个样本均数比较的方差分析.html#cb44-2"></a><span class="kw">library</span>(<span class="st">&quot;memisc&quot;</span>)</span>
+<span id="cb44-3"><a href="第四章-多个样本均数比较的方差分析.html#cb44-3"></a><span class="co">#读取数据</span></span>
+<span id="cb44-4"><a href="第四章-多个样本均数比较的方差分析.html#cb44-4"></a>rdl_sav&lt;-<span class="kw">spss.system.file</span>(<span class="st">&quot;ExampleData/SavData4MedSta/Exam04-02.sav&quot;</span>)</span>
+<span id="cb44-5"><a href="第四章-多个样本均数比较的方差分析.html#cb44-5"></a>rdl_df&lt;-<span class="kw">as.data.frame</span>(<span class="kw">as.data.set</span>(rdl_sav))</span>
+<span id="cb44-6"><a href="第四章-多个样本均数比较的方差分析.html#cb44-6"></a><span class="co">##简洁地显示任意R对象的结构</span></span>
+<span id="cb44-7"><a href="第四章-多个样本均数比较的方差分析.html#cb44-7"></a><span class="kw">str</span>(rdl_df)</span>
+<span id="cb44-8"><a href="第四章-多个样本均数比较的方差分析.html#cb44-8"></a><span class="co">## &#39;data.frame&#39;:    120 obs. of  2 variables:</span></span>
+<span id="cb44-9"><a href="第四章-多个样本均数比较的方差分析.html#cb44-9"></a><span class="co">##  $ GROUP: num  1 1 1 1 1 1 1 1 1 1 ...</span></span>
+<span id="cb44-10"><a href="第四章-多个样本均数比较的方差分析.html#cb44-10"></a><span class="co">##  $ LDL_C: num  3.53 4.59 4.34 2.66 3.59 3.13 3.3 4.04 3.53 3.56 ...</span></span>
+<span id="cb44-11"><a href="第四章-多个样本均数比较的方差分析.html#cb44-11"></a></span>
+<span id="cb44-12"><a href="第四章-多个样本均数比较的方差分析.html#cb44-12"></a><span class="co">##对不规则数组应用指定的函数，快速计算每组的均值，方差，和样本大小</span></span>
+<span id="cb44-13"><a href="第四章-多个样本均数比较的方差分析.html#cb44-13"></a><span class="kw">tapply</span>(rdl_df<span class="op">$</span>LDL_C, rdl_df<span class="op">$</span>GROUP, <span class="dt">FUN =</span> mean)</span>
+<span id="cb44-14"><a href="第四章-多个样本均数比较的方差分析.html#cb44-14"></a><span class="co">##        1        2        3        4 </span></span>
+<span id="cb44-15"><a href="第四章-多个样本均数比较的方差分析.html#cb44-15"></a><span class="co">## 3.430333 2.715333 2.698000 1.966333 </span></span>
+<span id="cb44-16"><a href="第四章-多个样本均数比较的方差分析.html#cb44-16"></a></span>
+<span id="cb44-17"><a href="第四章-多个样本均数比较的方差分析.html#cb44-17"></a><span class="kw">tapply</span>(rdl_df<span class="op">$</span>LDL_C, rdl_df<span class="op">$</span>GROUP, <span class="dt">FUN =</span> var)</span>
+<span id="cb44-18"><a href="第四章-多个样本均数比较的方差分析.html#cb44-18"></a><span class="co">##         1         2         3         4 </span></span>
+<span id="cb44-19"><a href="第四章-多个样本均数比较的方差分析.html#cb44-19"></a><span class="co">## 0.5114033 0.4072464 0.2471752 0.5571757 </span></span>
+<span id="cb44-20"><a href="第四章-多个样本均数比较的方差分析.html#cb44-20"></a></span>
+<span id="cb44-21"><a href="第四章-多个样本均数比较的方差分析.html#cb44-21"></a><span class="kw">tapply</span>(rdl_df<span class="op">$</span>LDL_C, rdl_df<span class="op">$</span>GROUP, length)</span>
+<span id="cb44-22"><a href="第四章-多个样本均数比较的方差分析.html#cb44-22"></a><span class="co">##  1  2  3  4 </span></span>
+<span id="cb44-23"><a href="第四章-多个样本均数比较的方差分析.html#cb44-23"></a><span class="co">## 30 30 30 30 </span></span>
+<span id="cb44-24"><a href="第四章-多个样本均数比较的方差分析.html#cb44-24"></a></span>
+<span id="cb44-25"><a href="第四章-多个样本均数比较的方差分析.html#cb44-25"></a><span class="co">#boxplot(rdl_df$LDL_C ~ rdl_df$GROUP,col=c(2:5))</span></span>
+<span id="cb44-26"><a href="第四章-多个样本均数比较的方差分析.html#cb44-26"></a></span>
+<span id="cb44-27"><a href="第四章-多个样本均数比较的方差分析.html#cb44-27"></a><span class="co">## 使用oneway.test()函数进行F检验，注意var.equal 默认是 FALSE，也就是说方差可以不相等(此时即为Welch检验)，但是提供的信息相对较少。</span></span>
+<span id="cb44-28"><a href="第四章-多个样本均数比较的方差分析.html#cb44-28"></a><span class="kw">oneway.test</span>(rdl_df<span class="op">$</span>LDL_C <span class="op">~</span><span class="st"> </span>rdl_df<span class="op">$</span>GROUP,<span class="dt">var.equal=</span>T)</span>
+<span id="cb44-29"><a href="第四章-多个样本均数比较的方差分析.html#cb44-29"></a><span class="co">##  One-way analysis of means</span></span>
+<span id="cb44-30"><a href="第四章-多个样本均数比较的方差分析.html#cb44-30"></a><span class="co">## </span></span>
+<span id="cb44-31"><a href="第四章-多个样本均数比较的方差分析.html#cb44-31"></a><span class="co">## data:  rdl_df$LDL_C and rdl_df$GROUP</span></span>
+<span id="cb44-32"><a href="第四章-多个样本均数比较的方差分析.html#cb44-32"></a><span class="co">## F = 24.884, num df = 3, denom df = 116, p-value = 1.674e-12</span></span>
+<span id="cb44-33"><a href="第四章-多个样本均数比较的方差分析.html#cb44-33"></a><span class="kw">oneway.test</span>(rdl_df<span class="op">$</span>LDL_C <span class="op">~</span><span class="st"> </span>rdl_df<span class="op">$</span>GROUP,<span class="dt">var.equal=</span>F)</span>
+<span id="cb44-34"><a href="第四章-多个样本均数比较的方差分析.html#cb44-34"></a><span class="co">##  One-way analysis of means (not assuming equal variances)</span></span>
+<span id="cb44-35"><a href="第四章-多个样本均数比较的方差分析.html#cb44-35"></a><span class="co">## </span></span>
+<span id="cb44-36"><a href="第四章-多个样本均数比较的方差分析.html#cb44-36"></a><span class="co">## data:  rdl_df$LDL_C and rdl_df$GROUP</span></span>
+<span id="cb44-37"><a href="第四章-多个样本均数比较的方差分析.html#cb44-37"></a><span class="co">## F = 19.665, num df = 3.000, denom df = 63.592, p-value =</span></span>
+<span id="cb44-38"><a href="第四章-多个样本均数比较的方差分析.html#cb44-38"></a><span class="co">## 3.924e-09</span></span>
+<span id="cb44-39"><a href="第四章-多个样本均数比较的方差分析.html#cb44-39"></a></span>
+<span id="cb44-40"><a href="第四章-多个样本均数比较的方差分析.html#cb44-40"></a><span class="co">#使用aov()函数进行F检验，可以获取完整地参数信息，这里要注意aov()里面提供的group信息最好不要是数值形式的分组，否则结果非不一致，可以用</span></span>
+<span id="cb44-41"><a href="第四章-多个样本均数比较的方差分析.html#cb44-41"></a><span class="co">#as.character()将数字转换为字串形式的再使用</span></span>
+<span id="cb44-42"><a href="第四章-多个样本均数比较的方差分析.html#cb44-42"></a>aov.out =<span class="st"> </span><span class="kw">aov</span>(rdl_df<span class="op">$</span>LDL_C <span class="op">~</span><span class="st"> </span><span class="kw">as.character</span>(rdl_df<span class="op">$</span>GROUP))</span>
+<span id="cb44-43"><a href="第四章-多个样本均数比较的方差分析.html#cb44-43"></a><span class="co">##                             Df Sum Sq Mean Sq F value   Pr(&gt;F)    </span></span>
+<span id="cb44-44"><a href="第四章-多个样本均数比较的方差分析.html#cb44-44"></a><span class="co">## as.character(rdl_df$GROUP)   3  32.16  10.719   24.88 1.67e-12 ***</span></span>
+<span id="cb44-45"><a href="第四章-多个样本均数比较的方差分析.html#cb44-45"></a><span class="co">## Residuals                  116  49.97   0.431                     </span></span>
+<span id="cb44-46"><a href="第四章-多个样本均数比较的方差分析.html#cb44-46"></a><span class="co">## ---</span></span>
+<span id="cb44-47"><a href="第四章-多个样本均数比较的方差分析.html#cb44-47"></a><span class="co">## Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span></span>
+<span id="cb44-48"><a href="第四章-多个样本均数比较的方差分析.html#cb44-48"></a><span class="co">## &gt; aov.out</span></span>
+<span id="cb44-49"><a href="第四章-多个样本均数比较的方差分析.html#cb44-49"></a><span class="co">## Call:</span></span>
+<span id="cb44-50"><a href="第四章-多个样本均数比较的方差分析.html#cb44-50"></a><span class="co">##    aov(formula = rdl_df$LDL_C ~ as.character(rdl_df$GROUP))</span></span>
+<span id="cb44-51"><a href="第四章-多个样本均数比较的方差分析.html#cb44-51"></a><span class="co">## </span></span>
+<span id="cb44-52"><a href="第四章-多个样本均数比较的方差分析.html#cb44-52"></a><span class="co">## Terms:</span></span>
+<span id="cb44-53"><a href="第四章-多个样本均数比较的方差分析.html#cb44-53"></a><span class="co">##                 as.character(rdl_df$GROUP) Residuals</span></span>
+<span id="cb44-54"><a href="第四章-多个样本均数比较的方差分析.html#cb44-54"></a><span class="co">## Sum of Squares                    32.15603  49.96702</span></span>
+<span id="cb44-55"><a href="第四章-多个样本均数比较的方差分析.html#cb44-55"></a><span class="co">## Deg. of Freedom                          3       116</span></span>
+<span id="cb44-56"><a href="第四章-多个样本均数比较的方差分析.html#cb44-56"></a><span class="co">## </span></span>
+<span id="cb44-57"><a href="第四章-多个样本均数比较的方差分析.html#cb44-57"></a><span class="co">## Residual standard error: 0.6563156</span></span>
+<span id="cb44-58"><a href="第四章-多个样本均数比较的方差分析.html#cb44-58"></a><span class="co">## Estimated effects may be unbalanced</span></span>
+<span id="cb44-59"><a href="第四章-多个样本均数比较的方差分析.html#cb44-59"></a><span class="kw">summary</span>(aov.out)</span>
+<span id="cb44-60"><a href="第四章-多个样本均数比较的方差分析.html#cb44-60"></a><span class="co">##                             Df Sum Sq Mean Sq F value   Pr(&gt;F)    </span></span>
+<span id="cb44-61"><a href="第四章-多个样本均数比较的方差分析.html#cb44-61"></a><span class="co">## as.character(rdl_df$GROUP)   3  32.16  10.719   24.88 1.67e-12 ***</span></span>
+<span id="cb44-62"><a href="第四章-多个样本均数比较的方差分析.html#cb44-62"></a><span class="co">## Residuals                  116  49.97   0.431                     </span></span>
+<span id="cb44-63"><a href="第四章-多个样本均数比较的方差分析.html#cb44-63"></a><span class="co">## ---</span></span>
+<span id="cb44-64"><a href="第四章-多个样本均数比较的方差分析.html#cb44-64"></a><span class="co">## Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span></span>
+<span id="cb44-65"><a href="第四章-多个样本均数比较的方差分析.html#cb44-65"></a></span>
+<span id="cb44-66"><a href="第四章-多个样本均数比较的方差分析.html#cb44-66"></a></span>
+<span id="cb44-67"><a href="第四章-多个样本均数比较的方差分析.html#cb44-67"></a><span class="kw">boxplot</span>(rdl_df<span class="op">$</span>LDL_C <span class="op">~</span><span class="st"> </span>rdl_df<span class="op">$</span>GROUP,<span class="dt">col=</span><span class="kw">c</span>(<span class="dv">2</span><span class="op">:</span><span class="dv">5</span>),<span class="dt">ylab=</span><span class="st">&quot;rdl value&quot;</span>,<span class="dt">xlab=</span><span class="st">&quot;Group info&quot;</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:Cmdftest"></span>
 <img src="MedicalStatisNotes_files/figure-html/Cmdftest-1.png" alt="案例 04-02 120例数据的箱线图预览" width="60%" />
 <p class="caption">
@@ -544,9 +550,9 @@ Figure 4.6: 案例 04-02 120例数据的箱线图预览
 <li>Scale-Location</li>
 <li>Residuals vs Leverage</li>
 </ol>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="第四章-多个样本均数比较的方差分析.html#cb48-1"></a><span class="co">##用aov()的残差诊断图检验方差分析结果</span></span>
-<span id="cb48-2"><a href="第四章-多个样本均数比较的方差分析.html#cb48-2"></a><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
-<span id="cb48-3"><a href="第四章-多个样本均数比较的方差分析.html#cb48-3"></a><span class="kw">plot</span>(aov.out)</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="第四章-多个样本均数比较的方差分析.html#cb45-1"></a><span class="co">##用aov()的残差诊断图检验方差分析结果</span></span>
+<span id="cb45-2"><a href="第四章-多个样本均数比较的方差分析.html#cb45-2"></a><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
+<span id="cb45-3"><a href="第四章-多个样本均数比较的方差分析.html#cb45-3"></a><span class="kw">plot</span>(aov.out)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:diagnosticplots1"></span>
 <img src="image/diagnosticplots.png" alt="aov()的残差诊断图" width="60%" />
 <p class="caption">

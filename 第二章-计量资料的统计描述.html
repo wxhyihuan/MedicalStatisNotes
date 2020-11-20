@@ -166,7 +166,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.5.3" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#正态分位函数qnorm"><i class="fa fa-check"></i><b>2.5.3</b> 正态分位函数qnorm()</a></li>
 <li class="chapter" data-level="2.5.4" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#生成正态分布函数rnorm"><i class="fa fa-check"></i><b>2.5.4</b> 生成正态分布函数rnorm()</a></li>
 </ul></li>
-<li class="chapter" data-level="2.6" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#正态分布检验"><i class="fa fa-check"></i><b>2.6</b> 正态分布检验</a></li>
+<li class="chapter" data-level="2.6" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#正态分布检验"><i class="fa fa-check"></i><b>2.6</b> 正态分布检验</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#直方图"><i class="fa fa-check"></i><b>2.6.1</b> 直方图</a></li>
+<li class="chapter" data-level="2.6.2" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#概率密度图"><i class="fa fa-check"></i><b>2.6.2</b> 概率密度图</a></li>
+<li class="chapter" data-level="2.6.3" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#qq-plot"><i class="fa fa-check"></i><b>2.6.3</b> QQ-plot</a></li>
+<li class="chapter" data-level="2.6.4" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#正态检验"><i class="fa fa-check"></i><b>2.6.4</b> 正态检验</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html"><i class="fa fa-check"></i><b>3</b> 第三章 总体均数的估计与假设检验</a><ul>
 <li class="chapter" data-level="3.1" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#推论统计"><i class="fa fa-check"></i><b>3.1</b> 推论统计</a><ul>
@@ -716,8 +721,8 @@ Figure 2.5: 随机正态分布数据示例
 <p>参考：</p>
 <p>刘庆武,胡志艳，如何用SPSS、SAS 统计软件进行正态性检验，湘南学院学报(自然科学版)，2005
 朱红兵，何丽娟，在SPSS10.0 中进行数据资料正态性检验的方法，首都体育学院学报，2004</p>
-<div id="直方图" class="section level4">
-<h4><span class="header-section-number">2.6.0.1</span> 直方图</h4>
+<div id="直方图" class="section level3">
+<h3><span class="header-section-number">2.6.1</span> 直方图</h3>
 <p>直方图显示了分布的分布范围和形状，因此它是评估正态性的一个很好的起点。本文开始测试的红细胞浓度遵循正态曲线，因此数据似乎遵循正态分布。</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="第二章-计量资料的统计描述.html#cb20-1"></a><span class="kw">hist</span>(RBC_v, <span class="dt">right=</span><span class="ot">FALSE</span>, </span>
 <span id="cb20-2"><a href="第二章-计量资料的统计描述.html#cb20-2"></a>      <span class="dt">breaks =</span> breaks, <span class="dt">labels =</span><span class="ot">TRUE</span>, </span>
@@ -732,8 +737,8 @@ Figure 2.6: 正态分布检验与直方图
 </p>
 </div>
 </div>
-<div id="概率密度图" class="section level4">
-<h4><span class="header-section-number">2.6.0.2</span> 概率密度图</h4>
+<div id="概率密度图" class="section level3">
+<h3><span class="header-section-number">2.6.2</span> 概率密度图</h3>
 <p>概率密度图图提供了关于数据是否服从正态分布的直观判断。它们类似于直方图，因为它们也允许分析分布的传播和形状。但是，它们是直方图的平滑版本。</p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="第二章-计量资料的统计描述.html#cb21-1"></a>maintxt&lt;-<span class="kw">paste</span>(<span class="st">&quot;N=&quot;</span>,<span class="kw">length</span>(RBC_v),<span class="st">&quot;,&quot;</span>,<span class="st">&quot;Mean=&quot;</span>,<span class="kw">round</span>(<span class="kw">mean</span>(RBC_v),<span class="dv">3</span>),<span class="st">&quot;,&quot;</span>,<span class="st">&quot;Sd=&quot;</span>,<span class="kw">round</span>(s,<span class="dv">3</span>))</span>
 <span id="cb21-2"><a href="第二章-计量资料的统计描述.html#cb21-2"></a><span class="kw">plot</span>(<span class="kw">density</span>(RBC_v),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">main =</span> maintxt)</span></code></pre></div>
@@ -744,8 +749,8 @@ Figure 2.7: 正态分布检验与密度图
 </p>
 </div>
 </div>
-<div id="qq-plot" class="section level4">
-<h4><span class="header-section-number">2.6.0.3</span> QQ-plot</h4>
+<div id="qq-plot" class="section level3">
+<h3><span class="header-section-number">2.6.3</span> QQ-plot</h3>
 <p>有的数据从直方图和密度图很难检验正态性，因此建议用qq图来确证这些图。QQ-plot，又称正态图。在QQ-plots中，
 我们只需要确定数据点是否沿着直线(有时也称为Henry’s line)，而不是查看数据的扩散情况(如直方图和密度图)。
 如果点靠近参考线并且在置信区间内，则认为满足了正态性假设。点与参考线之间的偏差越大，偏离置信区间越远，
@@ -753,29 +758,25 @@ Figure 2.7: 正态分布检验与密度图
 <p>如果qq图所示的非正态分布(系统地偏离参考线)时，通常第一步是对数据进行对数变换，
 并重新检查对数变换后的数据是否正态分布。可以应用log()函数进行对数变换。</p>
 <p>另外，qq图也是评估回归分析的残差是否服从正态分布的一种方便的方法。</p>
-<div class="figure" style="text-align: center"><span id="fig:qqplottest1"></span>
+<div class="figure" style="text-align: center"><span id="fig:qqPlottest1"></span>
 <img src="MedicalStatisNotes_files/figure-html/qqplottest1-1.png" alt="难以判断正态分布的密度图" width="49%" height="49%" />
 <p class="caption">
 Figure 2.8: 难以判断正态分布的密度图
 </p>
 </div>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="第二章-计量资料的统计描述.html#cb22-1"></a><span class="co">#qqPlot是car包中的函数，因此需要载入包</span></span>
-<span id="cb22-2"><a href="第二章-计量资料的统计描述.html#cb22-2"></a><span class="kw">library</span>(car)</span></code></pre></div>
-<pre><code>## Loading required package: carData</code></pre>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="第二章-计量资料的统计描述.html#cb24-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
-<span id="cb24-2"><a href="第二章-计量资料的统计描述.html#cb24-2"></a>dat_hist &lt;-<span class="st"> </span><span class="kw">data.frame</span>( <span class="dt">value =</span> <span class="kw">rnorm</span>(<span class="dv">12</span>, <span class="dt">mean =</span> <span class="dv">165</span>, <span class="dt">sd =</span> <span class="dv">5</span>))</span>
-<span id="cb24-3"><a href="第二章-计量资料的统计描述.html#cb24-3"></a><span class="co">##</span></span>
-<span id="cb24-4"><a href="第二章-计量资料的统计描述.html#cb24-4"></a><span class="kw">qqPlot</span>(dat_hist<span class="op">$</span>value)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="第二章-计量资料的统计描述.html#cb22-1"></a><span class="co">#qqPlot是car包中的函数，因此需要载入包，可以使用groups参数，同时对多组数据分别处理</span></span>
+<span id="cb22-2"><a href="第二章-计量资料的统计描述.html#cb22-2"></a><span class="kw">library</span>(car)</span>
+<span id="cb22-3"><a href="第二章-计量资料的统计描述.html#cb22-3"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb22-4"><a href="第二章-计量资料的统计描述.html#cb22-4"></a>dat_hist &lt;-<span class="st"> </span><span class="kw">data.frame</span>( <span class="dt">value =</span> <span class="kw">rnorm</span>(<span class="dv">12</span>, <span class="dt">mean =</span> <span class="dv">165</span>, <span class="dt">sd =</span> <span class="dv">5</span>))</span>
+<span id="cb22-5"><a href="第二章-计量资料的统计描述.html#cb22-5"></a><span class="kw">qqPlot</span>(dat_hist<span class="op">$</span>value)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:qqplot"></span>
 <img src="MedicalStatisNotes_files/figure-html/qqplot-1.png" alt="正态分布检验与QQ-plot (1)" width="49%" height="49%" />
 <p class="caption">
 Figure 2.9: 正态分布检验与QQ-plot (1)
 </p>
 </div>
-<pre><code>## [1] 12  2</code></pre>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="第二章-计量资料的统计描述.html#cb26-1"></a><span class="co">#qqPlot是car包中的函数，因此需要载入包</span></span>
-<span id="cb26-2"><a href="第二章-计量资料的统计描述.html#cb26-2"></a><span class="kw">library</span>(car)</span>
-<span id="cb26-3"><a href="第二章-计量资料的统计描述.html#cb26-3"></a><span class="kw">qqPlot</span>(<span class="kw">as.numeric</span>(RBC_v),<span class="dt">ylab=</span><span class="st">&quot;RBC&quot;</span>, <span class="dt">main=</span><span class="st">&quot;RBC QQ-plot&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="第二章-计量资料的统计描述.html#cb23-1"></a><span class="kw">library</span>(car)</span>
+<span id="cb23-2"><a href="第二章-计量资料的统计描述.html#cb23-2"></a><span class="kw">qqPlot</span>(<span class="kw">as.numeric</span>(RBC_v),<span class="dt">ylab=</span><span class="st">&quot;RBC&quot;</span>, <span class="dt">main=</span><span class="st">&quot;RBC QQ-plot&quot;</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:qqplot1"></span>
 <img src="image/qqPlot.png" alt="正态分布检验与QQ-plot (2)" width="49%" height="49%" />
 <p class="caption">
@@ -783,8 +784,8 @@ Figure 2.10: 正态分布检验与QQ-plot (2)
 </p>
 </div>
 </div>
-<div id="正态检验" class="section level4">
-<h4><span class="header-section-number">2.6.0.4</span> 正态检验</h4>
+<div id="正态检验" class="section level3">
+<h3><span class="header-section-number">2.6.4</span> 正态检验</h3>
 <p>上述3种方法是对常态的目视检查。然而，目测有时可能不可靠，因此也有可能通过统计检验正式检验数据是否服从正态分布。
 这些正态性检验将数据的分布与正态分布进行比较，以评估观察结果是否显示出偏离正态性的重要偏差。
 最常用的两种正态性检验是Shapiro-Wilk检验（K检验）和Kolmogorov-Smirnov检验（D检验）。两种测试都有相同的假设，即:</p>
@@ -792,20 +793,20 @@ Figure 2.10: 正态分布检验与QQ-plot (2)
 <p><strong><em>H1</em></strong> : 数据不服从正态分布</p>
 <p>正态性检验推荐使用Shapiro-Wilk检验，因为它比Kolmogorov-Smirnov检验提供更好的效用。
 在R中，正态性的Shapiro-Wilk检验可以通过函数shapiro.test()进行。</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="第二章-计量资料的统计描述.html#cb27-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
-<span id="cb27-2"><a href="第二章-计量资料的统计描述.html#cb27-2"></a>dat_hist &lt;-<span class="st"> </span><span class="kw">data.frame</span>( <span class="dt">value =</span> <span class="kw">rnorm</span>(<span class="dv">12</span>, <span class="dt">mean =</span> <span class="dv">165</span>, <span class="dt">sd =</span> <span class="dv">5</span>))</span>
-<span id="cb27-3"><a href="第二章-计量资料的统计描述.html#cb27-3"></a><span class="kw">shapiro.test</span>(dat_hist<span class="op">$</span>value)</span>
-<span id="cb27-4"><a href="第二章-计量资料的统计描述.html#cb27-4"></a><span class="co">##      Shapiro-Wilk normality test</span></span>
-<span id="cb27-5"><a href="第二章-计量资料的统计描述.html#cb27-5"></a><span class="co">##  </span></span>
-<span id="cb27-6"><a href="第二章-计量资料的统计描述.html#cb27-6"></a><span class="co">##  data:  dat_hist$value</span></span>
-<span id="cb27-7"><a href="第二章-计量资料的统计描述.html#cb27-7"></a><span class="co">##  W = 0.9, p-value = 0.5</span></span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="第二章-计量资料的统计描述.html#cb24-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb24-2"><a href="第二章-计量资料的统计描述.html#cb24-2"></a>dat_hist &lt;-<span class="st"> </span><span class="kw">data.frame</span>( <span class="dt">value =</span> <span class="kw">rnorm</span>(<span class="dv">12</span>, <span class="dt">mean =</span> <span class="dv">165</span>, <span class="dt">sd =</span> <span class="dv">5</span>))</span>
+<span id="cb24-3"><a href="第二章-计量资料的统计描述.html#cb24-3"></a><span class="kw">shapiro.test</span>(dat_hist<span class="op">$</span>value)</span>
+<span id="cb24-4"><a href="第二章-计量资料的统计描述.html#cb24-4"></a><span class="co">##      Shapiro-Wilk normality test</span></span>
+<span id="cb24-5"><a href="第二章-计量资料的统计描述.html#cb24-5"></a><span class="co">##  </span></span>
+<span id="cb24-6"><a href="第二章-计量资料的统计描述.html#cb24-6"></a><span class="co">##  data:  dat_hist$value</span></span>
+<span id="cb24-7"><a href="第二章-计量资料的统计描述.html#cb24-7"></a><span class="co">##  W = 0.9, p-value = 0.5</span></span></code></pre></div>
 <p>从输出中，我们看到p-value&gt;0.05意味着我们不拒绝数据服从正态分布的原假设。
 该检验与qq图的方向相同，qq图与正态性没有显著偏差(因为所有点都在置信区间内)。</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="第二章-计量资料的统计描述.html#cb28-1"></a><span class="kw">shapiro.test</span>(RBC_v)</span>
-<span id="cb28-2"><a href="第二章-计量资料的统计描述.html#cb28-2"></a><span class="co">##      Shapiro-Wilk normality test</span></span>
-<span id="cb28-3"><a href="第二章-计量资料的统计描述.html#cb28-3"></a><span class="co">##  </span></span>
-<span id="cb28-4"><a href="第二章-计量资料的统计描述.html#cb28-4"></a><span class="co">##  data:  as.numeric(RBC_v)</span></span>
-<span id="cb28-5"><a href="第二章-计量资料的统计描述.html#cb28-5"></a><span class="co">##  W = 1, p-value = 0.4</span></span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="第二章-计量资料的统计描述.html#cb25-1"></a><span class="kw">shapiro.test</span>(RBC_v)</span>
+<span id="cb25-2"><a href="第二章-计量资料的统计描述.html#cb25-2"></a><span class="co">##      Shapiro-Wilk normality test</span></span>
+<span id="cb25-3"><a href="第二章-计量资料的统计描述.html#cb25-3"></a><span class="co">##  </span></span>
+<span id="cb25-4"><a href="第二章-计量资料的统计描述.html#cb25-4"></a><span class="co">##  data:  as.numeric(RBC_v)</span></span>
+<span id="cb25-5"><a href="第二章-计量资料的统计描述.html#cb25-5"></a><span class="co">##  W = 1, p-value = 0.4</span></span></code></pre></div>
 <p>对RBC数据同样的结果。</p>
 <p>注意的是，在实践中，正态检验通常被认为过于保守，因为对于大样本(n&gt;50)，对正态条件的一个
 小偏差可能会导致违反正态判断的条件。由于正态性检验是一种假设检验，所以随着样本量的增加，其检测较小差

@@ -7,7 +7,7 @@ fig:qnorm
 fig:rnorm
 fig:histtest
 fig:densitytest
-fig:qqplottest1
+fig:qqPlottest1
 fig:qqplot
 fig:qqplot1
 fig:tdist
