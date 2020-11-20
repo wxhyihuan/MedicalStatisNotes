@@ -69,7 +69,7 @@
       "checksum": "806ab0467ea8b51e6248f2cc567b4827"
     },
     "index.html": {
-      "checksum": "33be89d58d0d737a1fd51144bab58e12"
+      "checksum": "412b3c5bd0e50da9b3a47e1ce78bcb21"
     },
     "libs/accessible-code-block-0.0.1/empty-anchor.js": {
       "checksum": "53c42ac72d71beb8e6dbffe86ab543d6"
@@ -79,6 +79,12 @@
     },
     "libs/anchor-sections-1.0/anchor-sections.js": {
       "checksum": "35155fd1c913543974de3b2fd81e7fbd"
+    },
+    "libs/bsTable-3.3.7/bootstrapTable.js": {
+      "checksum": "e768e9988e3af4dff9d2fcc76cff2a97"
+    },
+    "libs/bsTable-3.3.7/bootstrapTable.min.css": {
+      "checksum": "1819f1512f31da1bb1fb87e2ac34f74d"
     },
     "libs/chromatography-0.1/chromatography.js": {
       "checksum": "a8b61b57747dc5639a74335066ca5bb2"
@@ -154,6 +160,12 @@
     },
     "libs/jquery-2.2.3/jquery.min.js": {
       "checksum": "33cabfa15c1060aaa3d207c653afb1ee"
+    },
+    "libs/kePrint-0.0.1/kePrint.js": {
+      "checksum": "03b791fcaee0a40c261c3c14f3d85d27"
+    },
+    "libs/lightable-0.0.1/lightable.css": {
+      "checksum": "25547ce4d44910ea8f377212d34397fa"
     },
     "libs/mermaid-0.3.0/dist/mermaid.css": {
       "checksum": "86c1fa3002e8d249d1d4796ba06a2a6c"
@@ -237,22 +249,22 @@
       "checksum": "6360b41b8c095e3a19bb816eaf09bcca"
     },
     "reference-keys.txt": {
-      "checksum": "f7d1c886a3da0ef4cbc63532de291f00"
+      "checksum": "b6552b0850c3ad4eaf0d846ab6ca99bf"
     },
     "search_index.json": {
-      "checksum": "89badf3ff9f3fbe31324a3ae6632c17e"
+      "checksum": "bf49e0ce5a8c40550781651cd2e0183c"
     },
     "style.css": {
       "checksum": "19f0b33dc27d4f748874d2cde5cea5bc"
     },
     "第二章-计量资料的统计描述.html": {
-      "checksum": "2f2360c98e53a1035c9a743be9a38505"
+      "checksum": "656b007bf9dd7c9d4fc790ae9a627602"
     },
     "第三章-总体均数的估计与假设检验.html": {
-      "checksum": "072d3a0ca1a069629adb2db567f2cd05"
+      "checksum": "4410a93167826a4945464cfd19b4e1c4"
     },
     "第四章-多个样本均数比较的方差分析.html": {
-      "checksum": "be43e53262444a98935b968ca9f0edc8"
+      "checksum": "48478c3600e871d75bb42288e9e0d555"
     }
   },
   "users": null

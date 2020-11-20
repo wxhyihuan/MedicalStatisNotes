@@ -51,6 +51,10 @@
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 
 
 <style type="text/css">
@@ -202,7 +206,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2" data-path="第四章-多个样本均数比较的方差分析.html"><a href="第四章-多个样本均数比较的方差分析.html#f检验的分类原理及应用"><i class="fa fa-check"></i><b>4.2</b> <em>F</em>检验的分类、原理及应用</a><ul>
 <li class="chapter" data-level="4.2.1" data-path="第四章-多个样本均数比较的方差分析.html"><a href="第四章-多个样本均数比较的方差分析.html#分类"><i class="fa fa-check"></i><b>4.2.1</b> 分类</a></li>
 <li class="chapter" data-level="4.2.2" data-path="第四章-多个样本均数比较的方差分析.html"><a href="第四章-多个样本均数比较的方差分析.html#原理"><i class="fa fa-check"></i><b>4.2.2</b> 原理</a></li>
-<li class="chapter" data-level="4.2.3" data-path="第四章-多个样本均数比较的方差分析.html"><a href="第四章-多个样本均数比较的方差分析.html#完全随机设计资料的方差分析"><i class="fa fa-check"></i><b>4.2.3</b> 完全随机设计资料的方差分析</a></li>
+<li class="chapter" data-level="4.2.3" data-path="第四章-多个样本均数比较的方差分析.html"><a href="第四章-多个样本均数比较的方差分析.html#单因子方差分析"><i class="fa fa-check"></i><b>4.2.3</b> 单因子方差分析</a></li>
+<li class="chapter" data-level="4.2.4" data-path="第四章-多个样本均数比较的方差分析.html"><a href="第四章-多个样本均数比较的方差分析.html#双因子方差分析"><i class="fa fa-check"></i><b>4.2.4</b> 双因子方差分析</a></li>
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="第四章-多个样本均数比较的方差分析.html"><a href="第四章-多个样本均数比较的方差分析.html#方差分析的诊断图"><i class="fa fa-check"></i><b>4.3</b> 方差分析的诊断图</a></li>
 </ul></li>
@@ -300,7 +305,7 @@ Figure 4.1: F-分布的概率密度曲线测试
 </div>
 <div id="原理" class="section level3">
 <h3><span class="header-section-number">4.2.2</span> 原理</h3>
-<p>ANOVA通过分析方差来推断均值是否和总体有显著性差异(<font col="red">注意：虽然叫做方差分析，但是它的目的是检验每个组的平均数是否相同</font>)。
+<p>ANOVA通过分析方差来推断均值是否和总体有显著性差异(<font color="red">注意：虽然叫做方差分析，但是它的目的是检验每个组的平均数是否相同</font>)。
 ANOVA把方差分为处理因素(Treatment effect，真实差异)和误差(Error effect，抽样误差或个体差异)两个来源，两个方差的比值服从F分布，因为方差本身
 就是个体和均值差平方和，所以对方差组成的分析能够反映均值的差异。处理效应(Treatment effect)是不同组的均值间的差异，误差(Error effect)是组内
 个体间的差异，习惯性地称前者为组间(Between)差异，后者为组内(Wthin)差异。</p>
@@ -411,11 +416,12 @@ Figure 4.5: MSb&lt;&lt;MSw示例
 </div>
 </div>
 </div>
-<div id="完全随机设计资料的方差分析" class="section level3">
-<h3><span class="header-section-number">4.2.3</span> 完全随机设计资料的方差分析</h3>
-<p>完全随机设计(Completely random design)是采用完全随机化的分组方法，将全部实验对象分配到g个组(水平组)，各组分别接受不同的处理，
-实验结束后比较各组均数之间的差别有无统计学意义，推论因素的效应。</p>
-<p>注意的是，当方差不齐的是否，可以使用oneway.test()函数进行F检验，设置var.equal为FALSE，此时即为&lt; font col=“red”&gt;Welch检验&lt; /font&gt;。</p>
+<div id="单因子方差分析" class="section level3">
+<h3><span class="header-section-number">4.2.3</span> 单因子方差分析</h3>
+<p>完全随机设计(Completely random design)是采用完全随机化的分组方法，将全部实验对象分配到g个组(水平组)，各组按照设计因素(单因子方差分析,One-way ANOVA)
+分别接受不同水平的处理，实验结束后比较各组均数之间的差别有无统计学意义，推论因素的效应。</p>
+<p>注意的是，当方差不齐的是否，可以使用oneway.test()函数进行F检验，设置var.equal为FALSE，
+此时即为<font color="red">Welch检验</font>。</p>
 <p>使用《医学统计学》中的 案例4-2 的数据在R中进行完全随机设计资料的方差分析测试。</p>
 <div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="第四章-多个样本均数比较的方差分析.html#cb44-1"></a><span class="co">##案例4-2 </span></span>
 <span id="cb44-2"><a href="第四章-多个样本均数比较的方差分析.html#cb44-2"></a><span class="kw">library</span>(<span class="st">&quot;memisc&quot;</span>)</span>
@@ -456,80 +462,281 @@ Figure 4.5: MSb&lt;&lt;MSw示例
 <span id="cb44-37"><a href="第四章-多个样本均数比较的方差分析.html#cb44-37"></a><span class="co">## F = 19.665, num df = 3.000, denom df = 63.592, p-value =</span></span>
 <span id="cb44-38"><a href="第四章-多个样本均数比较的方差分析.html#cb44-38"></a><span class="co">## 3.924e-09</span></span>
 <span id="cb44-39"><a href="第四章-多个样本均数比较的方差分析.html#cb44-39"></a></span>
-<span id="cb44-40"><a href="第四章-多个样本均数比较的方差分析.html#cb44-40"></a><span class="co">#使用aov()函数进行F检验，可以获取完整地参数信息，这里要注意aov()里面提供的group信息最好不要是数值形式的分组，否则结果非不一致，可以用</span></span>
-<span id="cb44-41"><a href="第四章-多个样本均数比较的方差分析.html#cb44-41"></a><span class="co">#as.character()将数字转换为字串形式的再使用</span></span>
-<span id="cb44-42"><a href="第四章-多个样本均数比较的方差分析.html#cb44-42"></a>aov.out =<span class="st"> </span><span class="kw">aov</span>(rdl_df<span class="op">$</span>LDL_C <span class="op">~</span><span class="st"> </span><span class="kw">as.character</span>(rdl_df<span class="op">$</span>GROUP))</span>
-<span id="cb44-43"><a href="第四章-多个样本均数比较的方差分析.html#cb44-43"></a><span class="co">##                             Df Sum Sq Mean Sq F value   Pr(&gt;F)    </span></span>
-<span id="cb44-44"><a href="第四章-多个样本均数比较的方差分析.html#cb44-44"></a><span class="co">## as.character(rdl_df$GROUP)   3  32.16  10.719   24.88 1.67e-12 ***</span></span>
-<span id="cb44-45"><a href="第四章-多个样本均数比较的方差分析.html#cb44-45"></a><span class="co">## Residuals                  116  49.97   0.431                     </span></span>
-<span id="cb44-46"><a href="第四章-多个样本均数比较的方差分析.html#cb44-46"></a><span class="co">## ---</span></span>
-<span id="cb44-47"><a href="第四章-多个样本均数比较的方差分析.html#cb44-47"></a><span class="co">## Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span></span>
-<span id="cb44-48"><a href="第四章-多个样本均数比较的方差分析.html#cb44-48"></a><span class="co">## &gt; aov.out</span></span>
-<span id="cb44-49"><a href="第四章-多个样本均数比较的方差分析.html#cb44-49"></a><span class="co">## Call:</span></span>
-<span id="cb44-50"><a href="第四章-多个样本均数比较的方差分析.html#cb44-50"></a><span class="co">##    aov(formula = rdl_df$LDL_C ~ as.character(rdl_df$GROUP))</span></span>
-<span id="cb44-51"><a href="第四章-多个样本均数比较的方差分析.html#cb44-51"></a><span class="co">## </span></span>
-<span id="cb44-52"><a href="第四章-多个样本均数比较的方差分析.html#cb44-52"></a><span class="co">## Terms:</span></span>
-<span id="cb44-53"><a href="第四章-多个样本均数比较的方差分析.html#cb44-53"></a><span class="co">##                 as.character(rdl_df$GROUP) Residuals</span></span>
-<span id="cb44-54"><a href="第四章-多个样本均数比较的方差分析.html#cb44-54"></a><span class="co">## Sum of Squares                    32.15603  49.96702</span></span>
-<span id="cb44-55"><a href="第四章-多个样本均数比较的方差分析.html#cb44-55"></a><span class="co">## Deg. of Freedom                          3       116</span></span>
-<span id="cb44-56"><a href="第四章-多个样本均数比较的方差分析.html#cb44-56"></a><span class="co">## </span></span>
-<span id="cb44-57"><a href="第四章-多个样本均数比较的方差分析.html#cb44-57"></a><span class="co">## Residual standard error: 0.6563156</span></span>
-<span id="cb44-58"><a href="第四章-多个样本均数比较的方差分析.html#cb44-58"></a><span class="co">## Estimated effects may be unbalanced</span></span>
-<span id="cb44-59"><a href="第四章-多个样本均数比较的方差分析.html#cb44-59"></a><span class="kw">summary</span>(aov.out)</span>
-<span id="cb44-60"><a href="第四章-多个样本均数比较的方差分析.html#cb44-60"></a><span class="co">##                             Df Sum Sq Mean Sq F value   Pr(&gt;F)    </span></span>
-<span id="cb44-61"><a href="第四章-多个样本均数比较的方差分析.html#cb44-61"></a><span class="co">## as.character(rdl_df$GROUP)   3  32.16  10.719   24.88 1.67e-12 ***</span></span>
-<span id="cb44-62"><a href="第四章-多个样本均数比较的方差分析.html#cb44-62"></a><span class="co">## Residuals                  116  49.97   0.431                     </span></span>
-<span id="cb44-63"><a href="第四章-多个样本均数比较的方差分析.html#cb44-63"></a><span class="co">## ---</span></span>
-<span id="cb44-64"><a href="第四章-多个样本均数比较的方差分析.html#cb44-64"></a><span class="co">## Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span></span>
-<span id="cb44-65"><a href="第四章-多个样本均数比较的方差分析.html#cb44-65"></a></span>
+<span id="cb44-40"><a href="第四章-多个样本均数比较的方差分析.html#cb44-40"></a><span class="co">#使用aov()函数进行F检验，可以获取完整地参数信息，这里要注意aov()里面提供的group信息</span></span>
+<span id="cb44-41"><a href="第四章-多个样本均数比较的方差分析.html#cb44-41"></a><span class="co">#最好不要是数值形式的分组，否则结果容易当作线性回归处理，导致与预期不一致，可以用</span></span>
+<span id="cb44-42"><a href="第四章-多个样本均数比较的方差分析.html#cb44-42"></a><span class="co">#as.character()将数字转换为字串形式的再使用</span></span>
+<span id="cb44-43"><a href="第四章-多个样本均数比较的方差分析.html#cb44-43"></a>aov.out =<span class="st"> </span><span class="kw">aov</span>(rdl_df<span class="op">$</span>LDL_C <span class="op">~</span><span class="st"> </span><span class="kw">as.character</span>(rdl_df<span class="op">$</span>GROUP))</span>
+<span id="cb44-44"><a href="第四章-多个样本均数比较的方差分析.html#cb44-44"></a><span class="co">##                             Df Sum Sq Mean Sq F value   Pr(&gt;F)    </span></span>
+<span id="cb44-45"><a href="第四章-多个样本均数比较的方差分析.html#cb44-45"></a><span class="co">## as.character(rdl_df$GROUP)   3  32.16  10.719   24.88 1.67e-12 ***</span></span>
+<span id="cb44-46"><a href="第四章-多个样本均数比较的方差分析.html#cb44-46"></a><span class="co">## Residuals                  116  49.97   0.431                     </span></span>
+<span id="cb44-47"><a href="第四章-多个样本均数比较的方差分析.html#cb44-47"></a><span class="co">## ---</span></span>
+<span id="cb44-48"><a href="第四章-多个样本均数比较的方差分析.html#cb44-48"></a><span class="co">## Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span></span>
+<span id="cb44-49"><a href="第四章-多个样本均数比较的方差分析.html#cb44-49"></a><span class="co">## &gt; aov.out</span></span>
+<span id="cb44-50"><a href="第四章-多个样本均数比较的方差分析.html#cb44-50"></a><span class="co">## Call:</span></span>
+<span id="cb44-51"><a href="第四章-多个样本均数比较的方差分析.html#cb44-51"></a><span class="co">##    aov(formula = rdl_df$LDL_C ~ as.character(rdl_df$GROUP))</span></span>
+<span id="cb44-52"><a href="第四章-多个样本均数比较的方差分析.html#cb44-52"></a><span class="co">## </span></span>
+<span id="cb44-53"><a href="第四章-多个样本均数比较的方差分析.html#cb44-53"></a><span class="co">## Terms:</span></span>
+<span id="cb44-54"><a href="第四章-多个样本均数比较的方差分析.html#cb44-54"></a><span class="co">##                 as.character(rdl_df$GROUP) Residuals</span></span>
+<span id="cb44-55"><a href="第四章-多个样本均数比较的方差分析.html#cb44-55"></a><span class="co">## Sum of Squares                    32.15603  49.96702</span></span>
+<span id="cb44-56"><a href="第四章-多个样本均数比较的方差分析.html#cb44-56"></a><span class="co">## Deg. of Freedom                          3       116</span></span>
+<span id="cb44-57"><a href="第四章-多个样本均数比较的方差分析.html#cb44-57"></a><span class="co">## </span></span>
+<span id="cb44-58"><a href="第四章-多个样本均数比较的方差分析.html#cb44-58"></a><span class="co">## Residual standard error: 0.6563156</span></span>
+<span id="cb44-59"><a href="第四章-多个样本均数比较的方差分析.html#cb44-59"></a><span class="co">## Estimated effects may be unbalanced</span></span>
+<span id="cb44-60"><a href="第四章-多个样本均数比较的方差分析.html#cb44-60"></a><span class="kw">summary</span>(aov.out)</span>
+<span id="cb44-61"><a href="第四章-多个样本均数比较的方差分析.html#cb44-61"></a><span class="co">##                             Df Sum Sq Mean Sq F value   Pr(&gt;F)    </span></span>
+<span id="cb44-62"><a href="第四章-多个样本均数比较的方差分析.html#cb44-62"></a><span class="co">## as.character(rdl_df$GROUP)   3  32.16  10.719   24.88 1.67e-12 ***</span></span>
+<span id="cb44-63"><a href="第四章-多个样本均数比较的方差分析.html#cb44-63"></a><span class="co">## Residuals                  116  49.97   0.431                     </span></span>
+<span id="cb44-64"><a href="第四章-多个样本均数比较的方差分析.html#cb44-64"></a><span class="co">## ---</span></span>
+<span id="cb44-65"><a href="第四章-多个样本均数比较的方差分析.html#cb44-65"></a><span class="co">## Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span></span>
 <span id="cb44-66"><a href="第四章-多个样本均数比较的方差分析.html#cb44-66"></a></span>
-<span id="cb44-67"><a href="第四章-多个样本均数比较的方差分析.html#cb44-67"></a><span class="kw">boxplot</span>(rdl_df<span class="op">$</span>LDL_C <span class="op">~</span><span class="st"> </span>rdl_df<span class="op">$</span>GROUP,<span class="dt">col=</span><span class="kw">c</span>(<span class="dv">2</span><span class="op">:</span><span class="dv">5</span>),<span class="dt">ylab=</span><span class="st">&quot;rdl value&quot;</span>,<span class="dt">xlab=</span><span class="st">&quot;Group info&quot;</span>)</span></code></pre></div>
+<span id="cb44-67"><a href="第四章-多个样本均数比较的方差分析.html#cb44-67"></a><span class="co">##其他几个查看aov()对象的工具</span></span>
+<span id="cb44-68"><a href="第四章-多个样本均数比较的方差分析.html#cb44-68"></a><span class="kw">summary.aov</span>(aov.out)</span>
+<span id="cb44-69"><a href="第四章-多个样本均数比较的方差分析.html#cb44-69"></a><span class="kw">summary.lm</span>(aov.out)</span>
+<span id="cb44-70"><a href="第四章-多个样本均数比较的方差分析.html#cb44-70"></a><span class="kw">TukeyHSD</span>(aov.out)</span>
+<span id="cb44-71"><a href="第四章-多个样本均数比较的方差分析.html#cb44-71"></a></span>
+<span id="cb44-72"><a href="第四章-多个样本均数比较的方差分析.html#cb44-72"></a><span class="kw">boxplot</span>(rdl_df<span class="op">$</span>LDL_C <span class="op">~</span><span class="st"> </span>rdl_df<span class="op">$</span>GROUP,<span class="dt">col=</span><span class="kw">c</span>(<span class="dv">2</span><span class="op">:</span><span class="dv">5</span>),<span class="dt">ylab=</span><span class="st">&quot;rdl value&quot;</span>,<span class="dt">xlab=</span><span class="st">&quot;Group info&quot;</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:Cmdftest"></span>
 <img src="MedicalStatisNotes_files/figure-html/Cmdftest-1.png" alt="案例 04-02 120例数据的箱线图预览" width="60%" />
 <p class="caption">
 Figure 4.6: 案例 04-02 120例数据的箱线图预览
 </p>
 </div>
-<table>
-<caption><span id="tab:tab2">Table 4.1: </span>案例04-02f检验结果</caption>
+<table style="width:40%; margin-left: auto; margin-right: auto;" class="table">
+<caption>
+<span id="tab:tab2">Table 4.1: </span>案例04-02f检验结果
+</caption>
 <thead>
-<tr class="header">
-<th align="left"></th>
-<th align="center">组间</th>
-<th align="center">组内</th>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+组间
+</th>
+<th style="text-align:center;">
+组内
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left">自由度</td>
-<td align="center">3.000</td>
-<td align="center">116</td>
+<tr>
+<td style="text-align:left;">
+自由度
+</td>
+<td style="text-align:center;">
+3.000
+</td>
+<td style="text-align:center;">
+116.0000
+</td>
 </tr>
-<tr class="even">
-<td align="left">SS</td>
-<td align="center">32.156</td>
-<td align="center">49.96702</td>
+<tr>
+<td style="text-align:left;">
+SS
+</td>
+<td style="text-align:center;">
+32.156
+</td>
+<td style="text-align:center;">
+49.9670
+</td>
 </tr>
-<tr class="odd">
-<td align="left">MS</td>
-<td align="center">10.719</td>
-<td align="center">0.430750172413793</td>
+<tr>
+<td style="text-align:left;">
+MS
+</td>
+<td style="text-align:center;">
+10.719
+</td>
+<td style="text-align:center;">
+0.4308
+</td>
 </tr>
-<tr class="even">
-<td align="left">F值</td>
-<td align="center">24.884</td>
-<td align="center"></td>
+<tr>
+<td style="text-align:left;">
+F值
+</td>
+<td style="text-align:center;">
+24.884
+</td>
+<td style="text-align:center;">
+</td>
 </tr>
-<tr class="odd">
-<td align="left">P值</td>
-<td align="center">0.000</td>
-<td align="center"></td>
+<tr>
+<td style="text-align:left;">
+P值
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+<td style="text-align:center;">
+</td>
 </tr>
 </tbody>
 </table>
 <p>根据计算结果，F值=24.884&gt;<span class="math inline">\(F_{(0.01,(3,116))}\)</span>，P值&lt;0.01&lt;0.05，按照α=0.05的检验水准，拒绝<span class="math inline">\(H_0\)</span>，接受
 <span class="math inline">\(H_1\)</span>，认为4个处理组的总体均数不全相等。</p>
 <p>在方差分析的基本操作结束后，我们还可以利用线性回归的工具对方差分析的结果拟合情况进行评估，详细可参考<a href="第四章-多个样本均数比较的方差分析.html#方差分析的诊断图">方差分析的诊断图</a>。</p>
+</div>
+<div id="双因子方差分析" class="section level3">
+<h3><span class="header-section-number">4.2.4</span> 双因子方差分析</h3>
+<p>随机区组设计(Randomized block design)又称为配伍组设计，是配对设计的扩展。具体做法是:先按影响实验结果的
+非处理因素(如性别、体重、年龄、职业、病情、病程等)将实验对象配成区组(Block)，再分 别将各区组内的实验对象
+随机分配到各处理组或对照组。与完全随机设计相比，随机区组设计的特点是 随机分配的次数要重复多次，每次随机分
+配都对同一个区组内的实验对象进行，<font color="red">且各个处理组的实验对象数量相同，区组内均衡</font>。在进行统计分析时，将区组
+变异离均差平方和从完全随机设计的组內离均差平和 中分离出来，从而减小组内离均差平方和(误差平方和)，提高统
+计检验效率。若将区组作为另一处理因素 的不同水平，随机区组设计等同于无重复观察的两因素设计(双因子方差分析,Two-way ANOVA)。</p>
+<p>随机区组设计资料在进行统计分析时，需根据数据的分布特征选择方法，对于正态分布且方差齐同的资料，采用双向分类的
+方差分析(Two-way classification ANOVA)或配对<a href="#*t*%20检验的分类及应用"><em>t</em>检验(g=2)</a>；当不满足方差分析或<em>t</em>检验条件时，可进行变量变换后采
+用双向分类的方差分析或采用<a href="#Friedman%20M检验">Friedman M检验</a>。</p>
+<p>双向ANOVA分析是单向ANOVA的扩展，分析两个因素，我们称之为A和B，假如A有i(1<sub>g)个水平(或叫区组)，B有j(1</sub>n)个水平(处理因素的水平)，
+且每个分组的样本数目要一致，则共有<span class="math inline">\(N=ng\)</span>样本个体，记总均数为<span class="math inline">\(\bar{X}\)</span>，各处理组均数分别是<span class="math inline">\(\bar{X_i}\)</span>，
+各区组均数为<span class="math inline">\(\bar{X_{i}}\)</span>，双向ANOVA的实验数据有四个不同的变异：</p>
+<p><strong>1. 总变异</strong>，它反应所有观测值之间的变异，总离均差平方和：<span class="math inline">\(SS_{total}\)</span></p>
+<p><strong>2. 处理组间变异</strong>，它反应处理因素的不同水平作用和随机误差产生的变异：<span class="math inline">\(SS_{treat}\)</span></p>
+<p><strong>3. 区组间变异</strong>，它反应不同区组作用和随机误差产生的变异：<span class="math inline">\(SS_{block}\)</span></p>
+<p><strong>4. 误差变异</strong>，它是完全由随机误差产生的变异：<span class="math inline">\(SS_{error}\)</span></p>
+<p>对总离均差平方和及自由度的分解关系为：
+\begin{aligned}
+SS_{total} &amp;= SS_{treat}+SS_{block}+SS_{error}\
+v_{total} &amp;= v_{treat}+v_{block}+v_{error}
+\end{aligned}$$</p>
+<p>其中<span class="math inline">\(v_{total}=N-1\)</span>，<span class="math inline">\(v_{treat}=g-1\)</span>，<span class="math inline">\(v_{block}=n-1\)</span>，
+<span class="math inline">\(v_{error}=v_{treat}v_{block}=(n-1)(g-1)\)</span>。</p>
+<p>误差变异的均方差即为；<span class="math inline">\(MS_{error}=SS_{error}/v_{total}\)</span>，</p>
+<p>处理组间变异的均方差即为：<span class="math inline">\(MS_{treat}=SS_{block}/v_{treat}\)</span>，</p>
+<p>区组间变异均方差即为：<span class="math inline">\(MS_{block}=SS_{block}/v_{block}\)</span>，</p>
+<p>处理组间变异的F值公式：<span class="math inline">\(F_{treat}=\frac{MS_{treat}}{MS_{error}}\)</span></p>
+<p>区组间变异的F值公式：<span class="math inline">\(F_{block}=\frac{MS_{block}}{MS_{error}}\)</span></p>
+<p>双向ANOVA能够同时检验3个零假设：</p>
+<ol style="list-style-type: decimal">
+<li><p>单独考虑A因素，总体均值间没有差别，这相当于对A因子进行单向ANOVA</p></li>
+<li><p>单独考虑B因素，总体均值间没有差别，这相当于对B因子进行单向ANOVA</p></li>
+<li><p>A和B两个因素，没有相互作用，相当于使用二联表进行独立性分析</p></li>
+</ol>
+<p>使用《医学统计学》中的 案例4-4 的数据在R中进行双因子方差分析的测试。</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="第四章-多个样本均数比较的方差分析.html#cb45-1"></a><span class="kw">library</span>(<span class="st">&quot;memisc&quot;</span>)</span>
+<span id="cb45-2"><a href="第四章-多个样本均数比较的方差分析.html#cb45-2"></a>sarc_sav&lt;-<span class="kw">spss.system.file</span>(<span class="st">&quot;ExampleData/SavData4MedSta/Exam04-04.sav&quot;</span>)</span>
+<span id="cb45-3"><a href="第四章-多个样本均数比较的方差分析.html#cb45-3"></a>sarc_df&lt;-<span class="kw">as.data.frame</span>(<span class="kw">as.data.set</span>(sarc_sav))</span>
+<span id="cb45-4"><a href="第四章-多个样本均数比较的方差分析.html#cb45-4"></a><span class="kw">str</span>(sarc_df)</span>
+<span id="cb45-5"><a href="第四章-多个样本均数比较的方差分析.html#cb45-5"></a><span class="co">## &#39;data.frame&#39;:    15 obs. of  3 variables:</span></span>
+<span id="cb45-6"><a href="第四章-多个样本均数比较的方差分析.html#cb45-6"></a><span class="co">##  $ GROUP : num  1 2 3 4 5 1 2 3 4 5 ...</span></span>
+<span id="cb45-7"><a href="第四章-多个样本均数比较的方差分析.html#cb45-7"></a><span class="co">##  $ TREAT : num  1 1 1 1 1 2 2 2 2 2 ...</span></span>
+<span id="cb45-8"><a href="第四章-多个样本均数比较的方差分析.html#cb45-8"></a><span class="co">##  $ WEIGHT: num  0.82 0.73 0.43 0.41 0.68 0.65 0.54 0.34 0.21 0.43 ...</span></span>
+<span id="cb45-9"><a href="第四章-多个样本均数比较的方差分析.html#cb45-9"></a></span>
+<span id="cb45-10"><a href="第四章-多个样本均数比较的方差分析.html#cb45-10"></a>sarc_aov.out&lt;-<span class="kw">aov</span>(sarc_df<span class="op">$</span>WEIGHT <span class="op">~</span><span class="st"> </span><span class="kw">factor</span>(<span class="kw">as.character</span>(sarc_df<span class="op">$</span>TREAT))<span class="op">+</span><span class="kw">factor</span>(<span class="kw">as.character</span>(sarc_df<span class="op">$</span>GROUP)))</span>
+<span id="cb45-11"><a href="第四章-多个样本均数比较的方差分析.html#cb45-11"></a><span class="co">## Call:</span></span>
+<span id="cb45-12"><a href="第四章-多个样本均数比较的方差分析.html#cb45-12"></a><span class="co">##    aov(formula = sarc_df$WEIGHT ~ factor(as.character(sarc_df$TREAT)) + </span></span>
+<span id="cb45-13"><a href="第四章-多个样本均数比较的方差分析.html#cb45-13"></a><span class="co">##     factor(as.character(sarc_df$GROUP)))</span></span>
+<span id="cb45-14"><a href="第四章-多个样本均数比较的方差分析.html#cb45-14"></a><span class="co">## </span></span>
+<span id="cb45-15"><a href="第四章-多个样本均数比较的方差分析.html#cb45-15"></a><span class="co">## Terms:</span></span>
+<span id="cb45-16"><a href="第四章-多个样本均数比较的方差分析.html#cb45-16"></a><span class="co">##                 factor(as.character(sarc_df$TREAT)) factor(as.character(sarc_df$GROUP)) Residuals</span></span>
+<span id="cb45-17"><a href="第四章-多个样本均数比较的方差分析.html#cb45-17"></a><span class="co">## Sum of Squares                              0.22800                             0.22836   0.07640</span></span>
+<span id="cb45-18"><a href="第四章-多个样本均数比较的方差分析.html#cb45-18"></a><span class="co">## Deg. of Freedom                                   2                                   4         8</span></span>
+<span id="cb45-19"><a href="第四章-多个样本均数比较的方差分析.html#cb45-19"></a><span class="co">## </span></span>
+<span id="cb45-20"><a href="第四章-多个样本均数比较的方差分析.html#cb45-20"></a><span class="co">## Residual standard error: 0.0977241</span></span>
+<span id="cb45-21"><a href="第四章-多个样本均数比较的方差分析.html#cb45-21"></a><span class="co">## Estimated effects may be unbalanced</span></span>
+<span id="cb45-22"><a href="第四章-多个样本均数比较的方差分析.html#cb45-22"></a><span class="kw">summary</span>(sarc_aov.out)</span>
+<span id="cb45-23"><a href="第四章-多个样本均数比较的方差分析.html#cb45-23"></a><span class="co">##                                     Df Sum Sq Mean Sq F value  Pr(&gt;F)   </span></span>
+<span id="cb45-24"><a href="第四章-多个样本均数比较的方差分析.html#cb45-24"></a><span class="co">## factor(as.character(sarc_df$TREAT))  2 0.2280 0.11400  11.937 0.00397 **</span></span>
+<span id="cb45-25"><a href="第四章-多个样本均数比较的方差分析.html#cb45-25"></a><span class="co">## factor(as.character(sarc_df$GROUP))  4 0.2284 0.05709   5.978 0.01579 * </span></span>
+<span id="cb45-26"><a href="第四章-多个样本均数比较的方差分析.html#cb45-26"></a><span class="co">## Residuals                            8 0.0764 0.00955                   </span></span>
+<span id="cb45-27"><a href="第四章-多个样本均数比较的方差分析.html#cb45-27"></a><span class="co">## ---</span></span>
+<span id="cb45-28"><a href="第四章-多个样本均数比较的方差分析.html#cb45-28"></a><span class="co">## Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span></span>
+<span id="cb45-29"><a href="第四章-多个样本均数比较的方差分析.html#cb45-29"></a></span>
+<span id="cb45-30"><a href="第四章-多个样本均数比较的方差分析.html#cb45-30"></a><span class="co">##其他几个查看aov()对象的工具</span></span>
+<span id="cb45-31"><a href="第四章-多个样本均数比较的方差分析.html#cb45-31"></a><span class="kw">summary.aov</span>(sarc_aov.out)</span>
+<span id="cb45-32"><a href="第四章-多个样本均数比较的方差分析.html#cb45-32"></a><span class="kw">summary.lm</span>(sarc_aov.out)</span>
+<span id="cb45-33"><a href="第四章-多个样本均数比较的方差分析.html#cb45-33"></a><span class="kw">TukeyHSD</span>(sarc_aov.out)</span></code></pre></div>
+<table style="width:60%; margin-left: auto; margin-right: auto;" class="table">
+<caption>
+<span id="tab:tab3">Table 4.2: </span>案例04-04 双因子f检验结果
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+自由度
+</th>
+<th style="text-align:center;">
+SS
+</th>
+<th style="text-align:center;">
+MS
+</th>
+<th style="text-align:center;">
+F值
+</th>
+<th style="text-align:center;">
+P值
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+处理间
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+0.2280
+</td>
+<td style="text-align:center;">
+0.1140
+</td>
+<td style="text-align:center;">
+11.937
+</td>
+<td style="text-align:center;">
+0.0040
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+区组间
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+0.2284
+</td>
+<td style="text-align:center;">
+0.0571
+</td>
+<td style="text-align:center;">
+5.978
+</td>
+<td style="text-align:center;">
+0.0158
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+误差
+</td>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+0.0764
+</td>
+<td style="text-align:center;">
+0.0096
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+</tbody>
+</table>
+<p>根据计算结果，对于处理组间F值为11.937，对应P值是0.004&lt;0.01&lt;α=0.05，因此拒绝处理组间<span class="math inline">\(H_0: μ_1=μ_2=μ_3\)</span>的原假设，接受<span class="math inline">\(H_1\)</span>，即认为
+药物的肿瘤生长有统计学意义。同理，区组间的F值为5.978，对应的P值是0.0158&lt;α=0.05，因此拒绝区组间的<span class="math inline">\(H_0: μ_1=μ_2=μ_3\)</span>的原假设，
+接受<span class="math inline">\(H_1\)</span>，即体重对肿瘤生长的影响有统计学意义。</p>
+<p>现在有一个问题，是方差分析的结果可以推断多组样本的总体之间的均值是否都相等，如果不都相等，我怎么知道是具体是怎么不相等的呢？详细请看<a href="#多重比较">多重比较</a></p>
 </div>
 </div>
 <div id="方差分析的诊断图" class="section level2">
@@ -550,9 +757,10 @@ Figure 4.6: 案例 04-02 120例数据的箱线图预览
 <li>Scale-Location</li>
 <li>Residuals vs Leverage</li>
 </ol>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="第四章-多个样本均数比较的方差分析.html#cb45-1"></a><span class="co">##用aov()的残差诊断图检验方差分析结果</span></span>
-<span id="cb45-2"><a href="第四章-多个样本均数比较的方差分析.html#cb45-2"></a><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
-<span id="cb45-3"><a href="第四章-多个样本均数比较的方差分析.html#cb45-3"></a><span class="kw">plot</span>(aov.out)</span></code></pre></div>
+<p>下面是用单因子方差分析结果做示例的代码和说明。</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="第四章-多个样本均数比较的方差分析.html#cb46-1"></a><span class="co">##用aov()的残差诊断图检验方差分析结果</span></span>
+<span id="cb46-2"><a href="第四章-多个样本均数比较的方差分析.html#cb46-2"></a><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
+<span id="cb46-3"><a href="第四章-多个样本均数比较的方差分析.html#cb46-3"></a><span class="kw">plot</span>(aov.out)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:diagnosticplots1"></span>
 <img src="image/diagnosticplots.png" alt="aov()的残差诊断图" width="60%" />
 <p class="caption">

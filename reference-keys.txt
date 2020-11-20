@@ -28,6 +28,7 @@ fig:xyzanova3
 fig:xyzanova4
 fig:Cmdftest
 tab:tab2
+tab:tab3
 fig:diagnosticplots1
 fig:diagnosticplots2
 简介与传送门
@@ -97,5 +98,6 @@ f检验的原理示例
 f检验的前提和应用
 前提
 应用
-完全随机设计资料的方差分析
+单因子方差分析
+双因子方差分析
 方差分析的诊断图
