@@ -1,0 +1,259 @@
+{
+  "version": 1,
+  "locale": "zh_CN",
+  "platform": "4.0.3",
+  "metadata": {
+    "appmode": "static",
+    "primary_rmd": null,
+    "primary_html": "index.html",
+    "content_category": null,
+    "has_parameters": false
+  },
+  "packages": null,
+  "files": {
+    "image/5ba23e818daa7c71b147707f9b5dfd6.png": {
+      "checksum": "9c15a15ed9bde8f4d210a01a88a86b43"
+    },
+    "image/a1e3904af844b14d3b57d1448690aea.png": {
+      "checksum": "32fa4a059b6b463cb10ec179470320d3"
+    },
+    "image/badywtVSbrainwt.png": {
+      "checksum": "d5d639a30d9dc8d791b64c9b96031940"
+    },
+    "image/ChoiceStatisticalMethods.svg": {
+      "checksum": "106c844678898d040691242c919f8808"
+    },
+    "image/Datatransfromsuit.png": {
+      "checksum": "c25026fb1ec07c6802f6bd4d43924f9e"
+    },
+    "image/Densitytest.png": {
+      "checksum": "de729a67dc1eb3e9c888ba949a5f5039"
+    },
+    "image/diagnosticplots.png": {
+      "checksum": "c2b8148bb46b7c1a0b2c8dbaf1cf6180"
+    },
+    "image/diagnosticplots2.jpg": {
+      "checksum": "a9a4ddd147253c8decccc1f46657a2c8"
+    },
+    "image/Distributional transformations.png": {
+      "checksum": "ad108835b8a894da94a2b1d9f1c4477d"
+    },
+    "image/ieandht.png": {
+      "checksum": "c5e5c12bccd1cce0e284b5dac0cc7c70"
+    },
+    "image/Ms_logo.jpg": {
+      "checksum": "6913903f58e41b717488b7bd5df566f1"
+    },
+    "image/MSbeqMSw.svg": {
+      "checksum": "c7e2417fe7dd408153231e3c1c9ca495"
+    },
+    "image/MSbgtMSw.svg": {
+      "checksum": "6b40fd8803b5fb68baa64e3236ab9b8c"
+    },
+    "image/MSbltMSw.svg": {
+      "checksum": "d7fc869c4affa53209dd0d725c8aa23a"
+    },
+    "image/qqPlot.png": {
+      "checksum": "a3104aa46961cb34cbe7ae111fc2309b"
+    },
+    "image/SponsorshipFig.png": {
+      "checksum": "3afd6771e80a0191b59cc9354e417c4f"
+    },
+    "image/type12error.png": {
+      "checksum": "505d0d06f8e9756827cd464c9ace9a7c"
+    },
+    "image/type12error_en.png": {
+      "checksum": "bb07d11c9c1d4ebb6d6d4701dfe5c4dc"
+    },
+    "image/xyzAnovaFig.svg": {
+      "checksum": "806ab0467ea8b51e6248f2cc567b4827"
+    },
+    "index.html": {
+      "checksum": "33be89d58d0d737a1fd51144bab58e12"
+    },
+    "libs/accessible-code-block-0.0.1/empty-anchor.js": {
+      "checksum": "53c42ac72d71beb8e6dbffe86ab543d6"
+    },
+    "libs/anchor-sections-1.0/anchor-sections.css": {
+      "checksum": "98f11fa7f3ce7ed9fdda176360682403"
+    },
+    "libs/anchor-sections-1.0/anchor-sections.js": {
+      "checksum": "35155fd1c913543974de3b2fd81e7fbd"
+    },
+    "libs/chromatography-0.1/chromatography.js": {
+      "checksum": "a8b61b57747dc5639a74335066ca5bb2"
+    },
+    "libs/d3-3.3.8/d3.min.js": {
+      "checksum": "c9ddc1063ecffea499c39c74f96bccc0"
+    },
+    "libs/dagre-0.4.0/dagre-d3.min.js": {
+      "checksum": "0fac740c944fa84c3646d8d60882c17c"
+    },
+    "libs/DiagrammeR-binding-1.0.6.1/DiagrammeR.js": {
+      "checksum": "d7071cdd8eab8019d7aff6cda0a7d2a6"
+    },
+    "libs/DiagrammeR-styles-0.2/styles.css": {
+      "checksum": "4c6828671350452fdcb46bf28af7f42a"
+    },
+    "libs/gitbook-2.6.7/css/fontawesome/fontawesome-webfont.ttf": {
+      "checksum": "b06871f281fee6b241d60582ae9369b9"
+    },
+    "libs/gitbook-2.6.7/css/plugin-bookdown.css": {
+      "checksum": "44444d0f3eb8064760ba1976976a7101"
+    },
+    "libs/gitbook-2.6.7/css/plugin-clipboard.css": {
+      "checksum": "e4a3bdc1e3d5590f47cbac67976f3961"
+    },
+    "libs/gitbook-2.6.7/css/plugin-fontsettings.css": {
+      "checksum": "76af8c23a8138a4b66aa6959ca5c3a8e"
+    },
+    "libs/gitbook-2.6.7/css/plugin-highlight.css": {
+      "checksum": "467fbe4b6b5a4b88fdd75c463f8626ec"
+    },
+    "libs/gitbook-2.6.7/css/plugin-search.css": {
+      "checksum": "0d7a6bb6a50e00c7358cf61027f099f0"
+    },
+    "libs/gitbook-2.6.7/css/plugin-table.css": {
+      "checksum": "8cb82f94ce1446fa4bafe7a3933e6c65"
+    },
+    "libs/gitbook-2.6.7/css/style.css": {
+      "checksum": "11f13a161c95d0e8257d673dc27f9251"
+    },
+    "libs/gitbook-2.6.7/js/app.min.js": {
+      "checksum": "395a8093ce46450cabfaa545a0705a3b"
+    },
+    "libs/gitbook-2.6.7/js/clipboard.min.js": {
+      "checksum": "be72101c8c16ba95fd8b69760d5ebc56"
+    },
+    "libs/gitbook-2.6.7/js/jquery.highlight.js": {
+      "checksum": "999424d32e03b9857098d2c7f53928c2"
+    },
+    "libs/gitbook-2.6.7/js/lunr.js": {
+      "checksum": "fbc747c6143aabb39b0ea7c0524b7057"
+    },
+    "libs/gitbook-2.6.7/js/plugin-bookdown.js": {
+      "checksum": "36b5487b9c1020c0de1352b8f26b8a8e"
+    },
+    "libs/gitbook-2.6.7/js/plugin-clipboard.js": {
+      "checksum": "a30f95fcd3fde10637ace1fb691b7475"
+    },
+    "libs/gitbook-2.6.7/js/plugin-fontsettings.js": {
+      "checksum": "4f57689705fdfa3eabfb7b7b92614f33"
+    },
+    "libs/gitbook-2.6.7/js/plugin-search.js": {
+      "checksum": "2d4c4d47ba34946b8ebcbe41aa522756"
+    },
+    "libs/gitbook-2.6.7/js/plugin-sharing.js": {
+      "checksum": "799a983ef24c1cbe315d020a65aa1644"
+    },
+    "libs/grViz-binding-1.0.6.1/grViz.js": {
+      "checksum": "816a8c6bb033a27fc75ae05a6d363428"
+    },
+    "libs/htmlwidgets-1.5.2/htmlwidgets.js": {
+      "checksum": "4ea5c55cd0143175643435a640086c16"
+    },
+    "libs/jquery-2.2.3/jquery.min.js": {
+      "checksum": "33cabfa15c1060aaa3d207c653afb1ee"
+    },
+    "libs/mermaid-0.3.0/dist/mermaid.css": {
+      "checksum": "86c1fa3002e8d249d1d4796ba06a2a6c"
+    },
+    "libs/mermaid-0.3.0/dist/mermaid.slim.min.js": {
+      "checksum": "9042f95b3486a8ff7f4eacd9b37b48ff"
+    },
+    "libs/viz-1.8.2/viz.js": {
+      "checksum": "b9290abe772ea1ac5823a3bfa0844bd9"
+    },
+    "MedicalStatisNotes_files/figure-html/Cmdftest-1.png": {
+      "checksum": "5cdb0234da51b880ddb0f30e0aa3878e"
+    },
+    "MedicalStatisNotes_files/figure-html/dnorm-1.png": {
+      "checksum": "e72a92a97e18c8c759f409ce91a9793f"
+    },
+    "MedicalStatisNotes_files/figure-html/fdistri-1.png": {
+      "checksum": "9e77c1ec6c9890b795038a793ed60709"
+    },
+    "MedicalStatisNotes_files/figure-html/hometdist-1.png": {
+      "checksum": "fbdc2f161f639514cc3d09b59ec2f6f8"
+    },
+    "MedicalStatisNotes_files/figure-html/logtrans1-1.png": {
+      "checksum": "f26c071e97475bbfac82b2ab22870021"
+    },
+    "MedicalStatisNotes_files/figure-html/logtrans1-2.png": {
+      "checksum": "ceab64a2b713a2656972a813eb920784"
+    },
+    "MedicalStatisNotes_files/figure-html/logtrans1, -1.png": {
+      "checksum": "4a10d480d908270aa41215d7f0ac414c"
+    },
+    "MedicalStatisNotes_files/figure-html/logtrans1, -2.png": {
+      "checksum": "ceab64a2b713a2656972a813eb920784"
+    },
+    "MedicalStatisNotes_files/figure-html/logtrans2-1.png": {
+      "checksum": "04f9561946e5a4dbaaa7e61e165eba49"
+    },
+    "MedicalStatisNotes_files/figure-html/logtrans2-2.png": {
+      "checksum": "04f9561946e5a4dbaaa7e61e165eba49"
+    },
+    "MedicalStatisNotes_files/figure-html/logtrans2, -1.png": {
+      "checksum": "04f9561946e5a4dbaaa7e61e165eba49"
+    },
+    "MedicalStatisNotes_files/figure-html/piredttest-1.png": {
+      "checksum": "d124587a016bb2e016721a3d53f2fdbf"
+    },
+    "MedicalStatisNotes_files/figure-html/pnorm-1.png": {
+      "checksum": "5657f1c57f62dc00aff6639d7a006522"
+    },
+    "MedicalStatisNotes_files/figure-html/pttest-1.png": {
+      "checksum": "1372ab209215d7d9ee5906f4a0873fe5"
+    },
+    "MedicalStatisNotes_files/figure-html/qnorm-1.png": {
+      "checksum": "d6342e5e29a7302f6cdd214f63c5266e"
+    },
+    "MedicalStatisNotes_files/figure-html/qqplot-1.png": {
+      "checksum": "da86076013a801df07d48a95c7ace792"
+    },
+    "MedicalStatisNotes_files/figure-html/qqplottest1-1.png": {
+      "checksum": "bb6700622f24fd03e524a394390560f8"
+    },
+    "MedicalStatisNotes_files/figure-html/qttest-1.png": {
+      "checksum": "0bda6caeca48162b872e045189215384"
+    },
+    "MedicalStatisNotes_files/figure-html/rnorm-1.png": {
+      "checksum": "09e898d21ca739d69498199d61ef6671"
+    },
+    "MedicalStatisNotes_files/figure-html/rttest-1.png": {
+      "checksum": "6360b41b8c095e3a19bb816eaf09bcca"
+    },
+    "MedicalStatisNotes_files/figure-html/tdist-1.png": {
+      "checksum": "7cdf7213010e36ed54167d37b169766a"
+    },
+    "MedicalStatisNotes_files/figure-html/unnamed-chunk-5-1.png": {
+      "checksum": "1372ab209215d7d9ee5906f4a0873fe5"
+    },
+    "MedicalStatisNotes_files/figure-html/unnamed-chunk-7-1.png": {
+      "checksum": "0bda6caeca48162b872e045189215384"
+    },
+    "MedicalStatisNotes_files/figure-html/unnamed-chunk-8-1.png": {
+      "checksum": "6360b41b8c095e3a19bb816eaf09bcca"
+    },
+    "reference-keys.txt": {
+      "checksum": "f7d1c886a3da0ef4cbc63532de291f00"
+    },
+    "search_index.json": {
+      "checksum": "89badf3ff9f3fbe31324a3ae6632c17e"
+    },
+    "style.css": {
+      "checksum": "19f0b33dc27d4f748874d2cde5cea5bc"
+    },
+    "第二章-计量资料的统计描述.html": {
+      "checksum": "2f2360c98e53a1035c9a743be9a38505"
+    },
+    "第三章-总体均数的估计与假设检验.html": {
+      "checksum": "072d3a0ca1a069629adb2db567f2cd05"
+    },
+    "第四章-多个样本均数比较的方差分析.html": {
+      "checksum": "be43e53262444a98935b968ca9f0edc8"
+    }
+  },
+  "users": null
+}
