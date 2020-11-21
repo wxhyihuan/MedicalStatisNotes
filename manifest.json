@@ -69,7 +69,7 @@
       "checksum": "806ab0467ea8b51e6248f2cc567b4827"
     },
     "index.html": {
-      "checksum": "7b3efa43aef9ac4c86728d6c42d92674"
+      "checksum": "acb7ff11a7d5037a78ec8054c8344e7a"
     },
     "libs/accessible-code-block-0.0.1/empty-anchor.js": {
       "checksum": "53c42ac72d71beb8e6dbffe86ab543d6"
@@ -85,21 +85,6 @@
     },
     "libs/bsTable-3.3.7/bootstrapTable.min.css": {
       "checksum": "1819f1512f31da1bb1fb87e2ac34f74d"
-    },
-    "libs/chromatography-0.1/chromatography.js": {
-      "checksum": "a8b61b57747dc5639a74335066ca5bb2"
-    },
-    "libs/d3-3.3.8/d3.min.js": {
-      "checksum": "c9ddc1063ecffea499c39c74f96bccc0"
-    },
-    "libs/dagre-0.4.0/dagre-d3.min.js": {
-      "checksum": "0fac740c944fa84c3646d8d60882c17c"
-    },
-    "libs/DiagrammeR-binding-1.0.6.1/DiagrammeR.js": {
-      "checksum": "d7071cdd8eab8019d7aff6cda0a7d2a6"
-    },
-    "libs/DiagrammeR-styles-0.2/styles.css": {
-      "checksum": "4c6828671350452fdcb46bf28af7f42a"
     },
     "libs/gitbook-2.6.7/css/fontawesome/fontawesome-webfont.ttf": {
       "checksum": "b06871f281fee6b241d60582ae9369b9"
@@ -152,12 +137,6 @@
     "libs/gitbook-2.6.7/js/plugin-sharing.js": {
       "checksum": "799a983ef24c1cbe315d020a65aa1644"
     },
-    "libs/grViz-binding-1.0.6.1/grViz.js": {
-      "checksum": "816a8c6bb033a27fc75ae05a6d363428"
-    },
-    "libs/htmlwidgets-1.5.2/htmlwidgets.js": {
-      "checksum": "4ea5c55cd0143175643435a640086c16"
-    },
     "libs/jquery-2.2.3/jquery.min.js": {
       "checksum": "33cabfa15c1060aaa3d207c653afb1ee"
     },
@@ -166,15 +145,6 @@
     },
     "libs/lightable-0.0.1/lightable.css": {
       "checksum": "25547ce4d44910ea8f377212d34397fa"
-    },
-    "libs/mermaid-0.3.0/dist/mermaid.css": {
-      "checksum": "86c1fa3002e8d249d1d4796ba06a2a6c"
-    },
-    "libs/mermaid-0.3.0/dist/mermaid.slim.min.js": {
-      "checksum": "9042f95b3486a8ff7f4eacd9b37b48ff"
-    },
-    "libs/viz-1.8.2/viz.js": {
-      "checksum": "b9290abe772ea1ac5823a3bfa0844bd9"
     },
     "MedicalStatisNotes_files/figure-html/Cmdftest-1.png": {
       "checksum": "5cdb0234da51b880ddb0f30e0aa3878e"
@@ -190,24 +160,6 @@
     },
     "MedicalStatisNotes_files/figure-html/logtrans1-1.png": {
       "checksum": "f26c071e97475bbfac82b2ab22870021"
-    },
-    "MedicalStatisNotes_files/figure-html/logtrans1-2.png": {
-      "checksum": "ceab64a2b713a2656972a813eb920784"
-    },
-    "MedicalStatisNotes_files/figure-html/logtrans1, -1.png": {
-      "checksum": "4a10d480d908270aa41215d7f0ac414c"
-    },
-    "MedicalStatisNotes_files/figure-html/logtrans1, -2.png": {
-      "checksum": "ceab64a2b713a2656972a813eb920784"
-    },
-    "MedicalStatisNotes_files/figure-html/logtrans2-1.png": {
-      "checksum": "04f9561946e5a4dbaaa7e61e165eba49"
-    },
-    "MedicalStatisNotes_files/figure-html/logtrans2-2.png": {
-      "checksum": "04f9561946e5a4dbaaa7e61e165eba49"
-    },
-    "MedicalStatisNotes_files/figure-html/logtrans2, -1.png": {
-      "checksum": "04f9561946e5a4dbaaa7e61e165eba49"
     },
     "MedicalStatisNotes_files/figure-html/piredttest-1.png": {
       "checksum": "d124587a016bb2e016721a3d53f2fdbf"
@@ -239,32 +191,23 @@
     "MedicalStatisNotes_files/figure-html/tdist-1.png": {
       "checksum": "7cdf7213010e36ed54167d37b169766a"
     },
-    "MedicalStatisNotes_files/figure-html/unnamed-chunk-5-1.png": {
-      "checksum": "1372ab209215d7d9ee5906f4a0873fe5"
-    },
-    "MedicalStatisNotes_files/figure-html/unnamed-chunk-7-1.png": {
-      "checksum": "0bda6caeca48162b872e045189215384"
-    },
-    "MedicalStatisNotes_files/figure-html/unnamed-chunk-8-1.png": {
-      "checksum": "6360b41b8c095e3a19bb816eaf09bcca"
-    },
     "reference-keys.txt": {
-      "checksum": "b6552b0850c3ad4eaf0d846ab6ca99bf"
+      "checksum": "3d78c44b5047c9c8f3738062eab9c334"
     },
     "search_index.json": {
-      "checksum": "b6f860678adc696dd3d41ea662abd20a"
+      "checksum": "494f61ab63163d29f52a6592e56f0332"
     },
     "style.css": {
       "checksum": "19f0b33dc27d4f748874d2cde5cea5bc"
     },
     "第二章-计量资料的统计描述.html": {
-      "checksum": "656b007bf9dd7c9d4fc790ae9a627602"
+      "checksum": "23285e36dc919356f47ee7b960b373bd"
     },
     "第三章-总体均数的估计与假设检验.html": {
-      "checksum": "4410a93167826a4945464cfd19b4e1c4"
+      "checksum": "d6087de9a54bca4199928b4b10062bd7"
     },
     "第四章-多个样本均数比较的方差分析.html": {
-      "checksum": "48478c3600e871d75bb42288e9e0d555"
+      "checksum": "bd75dff7a89508228d8933a84f6a7d7a"
     }
   },
   "users": null
