@@ -29,8 +29,11 @@ fig:xyzanova4
 fig:Cmdftest
 tab:tab2
 tab:tab3
+tab:tab4
+tab:tab5
 fig:diagnosticplots1
 fig:diagnosticplots2
+fig:PostHocMethod
 简介与传送门
 简介
 软件准备
@@ -101,4 +104,7 @@ f检验的前提和应用
 应用
 单因子方差分析
 双因子方差分析
+拉丁方设计资料的方差分析
+两阶段交叉设计资料的方差分析
 方差分析的诊断图
+多个样本均数间的多重比较

@@ -11,6 +11,51 @@
   },
   "packages": null,
   "files": {
+    "_bookdown_files/MedicalStatisNotes_files/figure-html/Cmdftest-1.png": {
+      "checksum": "5cdb0234da51b880ddb0f30e0aa3878e"
+    },
+    "_bookdown_files/MedicalStatisNotes_files/figure-html/dnorm-1.png": {
+      "checksum": "e72a92a97e18c8c759f409ce91a9793f"
+    },
+    "_bookdown_files/MedicalStatisNotes_files/figure-html/fdistri-1.png": {
+      "checksum": "9e77c1ec6c9890b795038a793ed60709"
+    },
+    "_bookdown_files/MedicalStatisNotes_files/figure-html/hometdist-1.png": {
+      "checksum": "fbdc2f161f639514cc3d09b59ec2f6f8"
+    },
+    "_bookdown_files/MedicalStatisNotes_files/figure-html/logtrans1-1.png": {
+      "checksum": "f26c071e97475bbfac82b2ab22870021"
+    },
+    "_bookdown_files/MedicalStatisNotes_files/figure-html/piredttest-1.png": {
+      "checksum": "d124587a016bb2e016721a3d53f2fdbf"
+    },
+    "_bookdown_files/MedicalStatisNotes_files/figure-html/pnorm-1.png": {
+      "checksum": "5657f1c57f62dc00aff6639d7a006522"
+    },
+    "_bookdown_files/MedicalStatisNotes_files/figure-html/pttest-1.png": {
+      "checksum": "1372ab209215d7d9ee5906f4a0873fe5"
+    },
+    "_bookdown_files/MedicalStatisNotes_files/figure-html/qnorm-1.png": {
+      "checksum": "d6342e5e29a7302f6cdd214f63c5266e"
+    },
+    "_bookdown_files/MedicalStatisNotes_files/figure-html/qqplot-1.png": {
+      "checksum": "da86076013a801df07d48a95c7ace792"
+    },
+    "_bookdown_files/MedicalStatisNotes_files/figure-html/qqplottest1-1.png": {
+      "checksum": "bb6700622f24fd03e524a394390560f8"
+    },
+    "_bookdown_files/MedicalStatisNotes_files/figure-html/qttest-1.png": {
+      "checksum": "0bda6caeca48162b872e045189215384"
+    },
+    "_bookdown_files/MedicalStatisNotes_files/figure-html/rnorm-1.png": {
+      "checksum": "09e898d21ca739d69498199d61ef6671"
+    },
+    "_bookdown_files/MedicalStatisNotes_files/figure-html/rttest-1.png": {
+      "checksum": "6360b41b8c095e3a19bb816eaf09bcca"
+    },
+    "_bookdown_files/MedicalStatisNotes_files/figure-html/tdist-1.png": {
+      "checksum": "7cdf7213010e36ed54167d37b169766a"
+    },
     "image/5ba23e818daa7c71b147707f9b5dfd6.png": {
       "checksum": "9c15a15ed9bde8f4d210a01a88a86b43"
     },
@@ -53,6 +98,15 @@
     "image/MSbltMSw.svg": {
       "checksum": "d7fc869c4affa53209dd0d725c8aa23a"
     },
+    "image/PostHocMethod.svg": {
+      "checksum": "a4acd26a277a2f6144ab473e6f7dd6b1"
+    },
+    "image/PostHocMethodandR.png": {
+      "checksum": "d4c0efa72c058c270c67d220e4ec81b4"
+    },
+    "image/PostHocMethodandR.svg": {
+      "checksum": "612b2e57e8f06e11c7928aa269ebcd5e"
+    },
     "image/qqPlot.png": {
       "checksum": "a3104aa46961cb34cbe7ae111fc2309b"
     },
@@ -69,7 +123,7 @@
       "checksum": "806ab0467ea8b51e6248f2cc567b4827"
     },
     "index.html": {
-      "checksum": "acb7ff11a7d5037a78ec8054c8344e7a"
+      "checksum": "47ed27ceb81a2c40bd78ce6dad180a0c"
     },
     "libs/accessible-code-block-0.0.1/empty-anchor.js": {
       "checksum": "53c42ac72d71beb8e6dbffe86ab543d6"
@@ -192,22 +246,22 @@
       "checksum": "7cdf7213010e36ed54167d37b169766a"
     },
     "reference-keys.txt": {
-      "checksum": "3d78c44b5047c9c8f3738062eab9c334"
+      "checksum": "79b9dcea2143fe24369d05c080c92898"
     },
     "search_index.json": {
-      "checksum": "494f61ab63163d29f52a6592e56f0332"
+      "checksum": "af584de5b7d6f3288ff32071f5363f49"
     },
     "style.css": {
       "checksum": "19f0b33dc27d4f748874d2cde5cea5bc"
     },
     "第二章-计量资料的统计描述.html": {
-      "checksum": "23285e36dc919356f47ee7b960b373bd"
+      "checksum": "2ef921574fb2f0df3338a160c5f97f16"
     },
     "第三章-总体均数的估计与假设检验.html": {
-      "checksum": "d6087de9a54bca4199928b4b10062bd7"
+      "checksum": "a9b9d648028cae8b78c4976124da564c"
     },
     "第四章-多个样本均数比较的方差分析.html": {
-      "checksum": "bd75dff7a89508228d8933a84f6a7d7a"
+      "checksum": "aaed9a43855be380f55f2599268c4a35"
     }
   },
   "users": null
