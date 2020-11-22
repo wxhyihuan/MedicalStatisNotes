@@ -214,6 +214,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="第四章-多个样本均数比较的方差分析.html"><a href="第四章-多个样本均数比较的方差分析.html#方差分析的诊断图"><i class="fa fa-check"></i><b>4.3</b> 方差分析的诊断图</a></li>
 <li class="chapter" data-level="4.4" data-path="第四章-多个样本均数比较的方差分析.html"><a href="第四章-多个样本均数比较的方差分析.html#多个样本均数间的多重比较"><i class="fa fa-check"></i><b>4.4</b> 多个样本均数间的多重比较</a></li>
+<li class="chapter" data-level="4.5" data-path="第四章-多个样本均数比较的方差分析.html"><a href="第四章-多个样本均数比较的方差分析.html#多样本方差齐性检验"><i class="fa fa-check"></i><b>4.5</b> 多样本方差齐性检验</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="第四章-多个样本均数比较的方差分析.html"><a href="第四章-多个样本均数比较的方差分析.html#bartletts-检验"><i class="fa fa-check"></i><b>4.5.1</b> Bartlett’s 检验</a></li>
+<li class="chapter" data-level="4.5.2" data-path="第四章-多个样本均数比较的方差分析.html"><a href="第四章-多个样本均数比较的方差分析.html#levenes-检验"><i class="fa fa-check"></i><b>4.5.2</b> Levene’s 检验</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -1169,7 +1173,53 @@ DunnettTest()，代码如下：</p>
 <span id="cb49-20"><a href="第四章-多个样本均数比较的方差分析.html#cb49-20"></a></span>
 <span id="cb49-21"><a href="第四章-多个样本均数比较的方差分析.html#cb49-21"></a><span class="co">#Dunnett，加载DescTools包</span></span>
 <span id="cb49-22"><a href="第四章-多个样本均数比较的方差分析.html#cb49-22"></a><span class="kw">DunnettTest</span>(rdl_df<span class="op">$</span>LDL_C, rdl_df<span class="op">$</span>GROUP)</span></code></pre></div>
+</div>
+<div id="多样本方差齐性检验" class="section level2">
+<h2><span class="header-section-number">4.5</span> 多样本方差齐性检验</h2>
+<p>在进行方差分析时要求所对比的各组即各样本的总体方差必须是相等的，这一般需要在作方差分析之前，先对资料的方差齐性进行检验，
+特别是在样本方差相差悬殊时，应注意这个问题。对两总体方差进行<a href="第三章-总体均数的估计与假设检验.html#两样本方差齐性检验">齐性检验</a>的方法前已介绍。本节介绍多样本(也适用于两样本)方差比较的
+Bartlett’s 检验和Levene’s 检验。</p>
+<div id="bartletts-检验" class="section level3">
+<h3><span class="header-section-number">4.5.1</span> Bartlett’s 检验</h3>
+<p>该检验以Maurice Stevenson Bartlett命名的，是基于其抽样分布近似为具有(k-1)自由度的卡方分布的统计量，其中k是随机样本的数量，
+其大小可能有所不同，并且每个<font color="red">样本均来自独立的正态分布</fond>。 巴特利特的检验对偏离常态很敏感，如果样本来自非正态分布，
+那么Bartlett的检验可能就比较差。Levene检验和Brown-Forsythe检验是Bartlett检验的替代方法，对偏离正态性较不敏感。</p>
+<p>其统计量和计算公式可以参考《医学统计学》你，或者 <a href="https://en.wikipedia.org/wiki/Bartlett%27s_test">Wikipedia</a>。</p>
+<p>在R语言中的实现，可以参考下面的代码，以案例4-2数据做测试。根据计算结果，P值=0.1564&gt;0.1，方差齐性检验的通常按照α=-。1
+设置，因此不拒绝<span class="math inline">\(H_0\)</span>，即不拒绝各组之间的方向都相等。</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="第四章-多个样本均数比较的方差分析.html#cb50-1"></a><span class="kw">bartlett.test</span>(rdl_df<span class="op">$</span>LDL_C,rdl_df<span class="op">$</span>GROUP)</span>
+<span id="cb50-2"><a href="第四章-多个样本均数比较的方差分析.html#cb50-2"></a><span class="co">## </span></span>
+<span id="cb50-3"><a href="第四章-多个样本均数比较的方差分析.html#cb50-3"></a><span class="co">##  Bartlett test of homogeneity of variances</span></span>
+<span id="cb50-4"><a href="第四章-多个样本均数比较的方差分析.html#cb50-4"></a><span class="co">## </span></span>
+<span id="cb50-5"><a href="第四章-多个样本均数比较的方差分析.html#cb50-5"></a><span class="co">## data:  rdl_df$LDL_C and rdl_df$GROUP</span></span>
+<span id="cb50-6"><a href="第四章-多个样本均数比较的方差分析.html#cb50-6"></a><span class="co">## Bartlett&#39;s K-squared = 5.2192, df = 3, p-value = 0.1564</span></span></code></pre></div>
+</div>
+<div id="levenes-检验" class="section level3">
+<h3><span class="header-section-number">4.5.2</span> Levene’s 检验</h3>
+<p>Levene’s 检验是Bartlett’s 检验的替代方法，对样本整体数据不必要是正态分布,对偏离正态性较不敏感。与Levene’s 检验相似的
+还有Brown–Forsythe检验，两者的区别是用来计算各组的中心取得参数不一样，Brown–Forsythe采用的是中位数(median)，Levene’s是均值(mean)。</p>
+<p>其统计量和计算公式可以参考《医学统计学》你，或者 <a href="https://en.wikipedia.org/wiki/Levene%27s_test">Wikipedia</a>。</p>
+<p>在R语言中的实现，可以参考下面的代码，以案例4-2数据做测试。根据计算结果，P值=0.1564&gt;0.1，方差齐性检验的通常按照α=-。1
+设置，因此不拒绝<span class="math inline">\(H_0\)</span>，即不拒绝各组之间的方向都相等。</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="第四章-多个样本均数比较的方差分析.html#cb51-1"></a><span class="co">#DescTools包中的LeveneTest()</span></span>
+<span id="cb51-2"><a href="第四章-多个样本均数比较的方差分析.html#cb51-2"></a><span class="kw">library</span>(DescTools)</span>
+<span id="cb51-3"><a href="第四章-多个样本均数比较的方差分析.html#cb51-3"></a><span class="co">#Levene&#39;s是均值(mean)，center = &quot;mean&quot;</span></span>
+<span id="cb51-4"><a href="第四章-多个样本均数比较的方差分析.html#cb51-4"></a><span class="kw">LeveneTest</span>(rdl_df<span class="op">$</span>LDL_C,rdl_df<span class="op">$</span>GROUP,<span class="dt">center =</span> <span class="st">&quot;mean&quot;</span>)</span>
+<span id="cb51-5"><a href="第四章-多个样本均数比较的方差分析.html#cb51-5"></a><span class="co">## </span></span>
+<span id="cb51-6"><a href="第四章-多个样本均数比较的方差分析.html#cb51-6"></a><span class="co">## Levene&#39;s Test for Homogeneity of Variance (center = &quot;mean&quot;)</span></span>
+<span id="cb51-7"><a href="第四章-多个样本均数比较的方差分析.html#cb51-7"></a><span class="co">##        Df F value Pr(&gt;F)</span></span>
+<span id="cb51-8"><a href="第四章-多个样本均数比较的方差分析.html#cb51-8"></a><span class="co">## group   3  1.6224  0.188</span></span>
+<span id="cb51-9"><a href="第四章-多个样本均数比较的方差分析.html#cb51-9"></a><span class="co">##       116    </span></span>
+<span id="cb51-10"><a href="第四章-多个样本均数比较的方差分析.html#cb51-10"></a></span>
+<span id="cb51-11"><a href="第四章-多个样本均数比较的方差分析.html#cb51-11"></a><span class="co">#Brown–Forsythe 是中位数(median)，center = &quot;median&quot;</span></span>
+<span id="cb51-12"><a href="第四章-多个样本均数比较的方差分析.html#cb51-12"></a><span class="kw">LeveneTest</span>(rdl_df<span class="op">$</span>LDL_C,rdl_df<span class="op">$</span>GROUP,<span class="dt">center =</span> <span class="st">&quot;median&quot;</span>)</span>
+<span id="cb51-13"><a href="第四章-多个样本均数比较的方差分析.html#cb51-13"></a><span class="co">## </span></span>
+<span id="cb51-14"><a href="第四章-多个样本均数比较的方差分析.html#cb51-14"></a><span class="co">## Levene&#39;s Test for Homogeneity of Variance (center = &quot;median&quot;)</span></span>
+<span id="cb51-15"><a href="第四章-多个样本均数比较的方差分析.html#cb51-15"></a><span class="co">##        Df F value Pr(&gt;F)</span></span>
+<span id="cb51-16"><a href="第四章-多个样本均数比较的方差分析.html#cb51-16"></a><span class="co">## group   3   1.493 0.2201</span></span>
+<span id="cb51-17"><a href="第四章-多个样本均数比较的方差分析.html#cb51-17"></a><span class="co">##       116  </span></span></code></pre></div>
 
+</div>
 </div>
 </div>
             </section>
