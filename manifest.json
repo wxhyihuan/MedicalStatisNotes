@@ -68,6 +68,9 @@
     "image/ChoiceStatisticalMethods.svg": {
       "checksum": "106c844678898d040691242c919f8808"
     },
+    "image/ChoiceStatisticalMethods_href.svg": {
+      "checksum": "119b48239f461ae46717d0aa326258c7"
+    },
     "image/Datatransfromsuit.png": {
       "checksum": "c25026fb1ec07c6802f6bd4d43924f9e"
     },
@@ -123,7 +126,7 @@
       "checksum": "806ab0467ea8b51e6248f2cc567b4827"
     },
     "index.html": {
-      "checksum": "7ad51c7d7203ad52912426399e61ba8f"
+      "checksum": "890377f291b9fa03d09641a3940c2949"
     },
     "libs/accessible-code-block-0.0.1/empty-anchor.js": {
       "checksum": "53c42ac72d71beb8e6dbffe86ab543d6"
