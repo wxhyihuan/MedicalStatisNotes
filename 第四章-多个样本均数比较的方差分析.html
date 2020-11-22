@@ -1182,7 +1182,7 @@ Bartlett’s 检验和Levene’s 检验。</p>
 <div id="bartletts-检验" class="section level3">
 <h3><span class="header-section-number">4.5.1</span> Bartlett’s 检验</h3>
 <p>该检验以Maurice Stevenson Bartlett命名的，是基于其抽样分布近似为具有(k-1)自由度的卡方分布的统计量，其中k是随机样本的数量，
-其大小可能有所不同，并且每个<font color="red">样本均来自独立的正态分布</fond>。 巴特利特的检验对偏离常态很敏感，如果样本来自非正态分布，
+其大小可能有所不同，并且每个<font color="red">样本均来自独立的正态分布</font>。 巴特利特的检验对偏离常态很敏感，如果样本来自非正态分布，
 那么Bartlett的检验可能就比较差。Levene检验和Brown-Forsythe检验是Bartlett检验的替代方法，对偏离正态性较不敏感。</p>
 <p>其统计量和计算公式可以参考《医学统计学》你，或者 <a href="https://en.wikipedia.org/wiki/Bartlett%27s_test">Wikipedia</a>。</p>
 <p>在R语言中的实现，可以参考下面的代码，以案例4-2数据做测试。根据计算结果，P值=0.1564&gt;0.1，方差齐性检验的通常按照α=-。1
