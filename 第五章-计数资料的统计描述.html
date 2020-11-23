@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title> 第五章 计数资料的统计描述 | MedicalStatisNotes.utf8</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content=" 第五章 计数资料的统计描述 | MedicalStatisNotes.utf8" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content=" 第五章 计数资料的统计描述 | MedicalStatisNotes.utf8" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="第四章-多个样本均数比较的方差分析.html"/>
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="https://wxhyihuan.github.io/">医学统计学笔记与R语言</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> 简介与传送门</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#简介"><i class="fa fa-check"></i><b>1.1</b> 简介</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#软件准备"><i class="fa fa-check"></i><b>1.1.1</b> 软件准备</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#传送门"><i class="fa fa-check"></i><b>1.2</b> 传送门</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#致谢"><i class="fa fa-check"></i><b>1.3</b> 致谢</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#声明"><i class="fa fa-check"></i><b>1.4</b> 声明</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html"><i class="fa fa-check"></i><b>2</b> 第二章 计量资料的统计描述</a><ul>
+<li class="chapter" data-level="2.1" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#描述统计"><i class="fa fa-check"></i><b>2.1</b> 描述统计</a></li>
+<li class="chapter" data-level="2.2" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#测试数据"><i class="fa fa-check"></i><b>2.2</b> 测试数据</a></li>
+<li class="chapter" data-level="2.3" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#数据输入和频率统计"><i class="fa fa-check"></i><b>2.3</b> 数据输入和频率统计</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#读取数据并将数据转换成单列形式"><i class="fa fa-check"></i><b>2.3.1</b> 读取数据，并将数据转换成单列形式</a></li>
+<li class="chapter" data-level="2.3.2" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#计算极差-maxminrange"><i class="fa fa-check"></i><b>2.3.2</b> 计算极差, max()/min()/range()</a></li>
+<li class="chapter" data-level="2.3.3" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#确定组段数和组距"><i class="fa fa-check"></i><b>2.3.3</b> 确定组段数和组距</a></li>
+<li class="chapter" data-level="2.3.4" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#计算频数分布"><i class="fa fa-check"></i><b>2.3.4</b> 计算频数分布</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#描述性统计的度量"><i class="fa fa-check"></i><b>2.4</b> 描述性统计的度量</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#算术平均值"><i class="fa fa-check"></i><b>2.4.1</b> 算术平均值</a></li>
+<li class="chapter" data-level="2.4.2" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#几何平均值"><i class="fa fa-check"></i><b>2.4.2</b> 几何平均值</a></li>
+<li class="chapter" data-level="2.4.3" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#中位数与百分位数"><i class="fa fa-check"></i><b>2.4.3</b> 中位数与百分位数</a></li>
+<li class="chapter" data-level="2.4.4" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#极差"><i class="fa fa-check"></i><b>2.4.4</b> 极差</a></li>
+<li class="chapter" data-level="2.4.5" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#四分位间距"><i class="fa fa-check"></i><b>2.4.5</b> 四分位间距</a></li>
+<li class="chapter" data-level="2.4.6" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#方差与标准差"><i class="fa fa-check"></i><b>2.4.6</b> 方差与标准差</a></li>
+<li class="chapter" data-level="2.4.7" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#变异系数"><i class="fa fa-check"></i><b>2.4.7</b> 变异系数</a></li>
+<li class="chapter" data-level="2.4.8" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#其他的描述统计"><i class="fa fa-check"></i><b>2.4.8</b> 其他的描述统计</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#正态分布和标准正态分布"><i class="fa fa-check"></i><b>2.5</b> 正态分布和标准正态分布</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#概率密度函数dnorm"><i class="fa fa-check"></i><b>2.5.1</b> 概率密度函数dnorm()</a></li>
+<li class="chapter" data-level="2.5.2" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#概率累积分布函数pnorm"><i class="fa fa-check"></i><b>2.5.2</b> 概率累积分布函数pnorm()</a></li>
+<li class="chapter" data-level="2.5.3" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#正态分位函数qnorm"><i class="fa fa-check"></i><b>2.5.3</b> 正态分位函数qnorm()</a></li>
+<li class="chapter" data-level="2.5.4" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#生成正态分布函数rnorm"><i class="fa fa-check"></i><b>2.5.4</b> 生成正态分布函数rnorm()</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#正态分布检验"><i class="fa fa-check"></i><b>2.6</b> 正态分布检验</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#直方图"><i class="fa fa-check"></i><b>2.6.1</b> 直方图</a></li>
+<li class="chapter" data-level="2.6.2" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#概率密度图"><i class="fa fa-check"></i><b>2.6.2</b> 概率密度图</a></li>
+<li class="chapter" data-level="2.6.3" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#qq-plot"><i class="fa fa-check"></i><b>2.6.3</b> QQ-plot</a></li>
+<li class="chapter" data-level="2.6.4" data-path="第二章-计量资料的统计描述.html"><a href="第二章-计量资料的统计描述.html#正态检验"><i class="fa fa-check"></i><b>2.6.4</b> 正态检验</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html"><i class="fa fa-check"></i><b>3</b> 第三章 总体均数的估计与假设检验</a><ul>
+<li class="chapter" data-level="3.1" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#推论统计"><i class="fa fa-check"></i><b>3.1</b> 推论统计</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#参数估计与假设检验"><i class="fa fa-check"></i><b>3.1.1</b> 参数估计与假设检验</a></li>
+<li class="chapter" data-level="3.1.2" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#统计量与标准误"><i class="fa fa-check"></i><b>3.1.2</b> 统计量与标准误</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#t-分布"><i class="fa fa-check"></i><b>3.2</b> <em>t</em> 分布</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#概率密度函数dt"><i class="fa fa-check"></i><b>3.2.1</b> 概率密度函数dt()</a></li>
+<li class="chapter" data-level="3.2.2" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#概率累积分布函数pt"><i class="fa fa-check"></i><b>3.2.2</b> 概率累积分布函数pt()</a></li>
+<li class="chapter" data-level="3.2.3" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#求置信区间的qt"><i class="fa fa-check"></i><b>3.2.3</b> 求置信区间的qt()</a></li>
+<li class="chapter" data-level="3.2.4" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#指定t分布函数rt"><i class="fa fa-check"></i><b>3.2.4</b> 指定t分布函数rt()</a></li>
+<li class="chapter" data-level="3.2.5" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#参数估计"><i class="fa fa-check"></i><b>3.2.5</b> 参数估计</a></li>
+<li class="chapter" data-level="3.2.6" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#假设检验"><i class="fa fa-check"></i><b>3.2.6</b> 假设检验</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#t-检验的分类及应用"><i class="fa fa-check"></i><b>3.3</b> <em>t</em> 检验的分类及应用</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#t检验与z检验"><i class="fa fa-check"></i><b>3.3.1</b> <em>t</em>检验与Z检验</a></li>
+<li class="chapter" data-level="3.3.2" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#单样本t检验"><i class="fa fa-check"></i><b>3.3.2</b> 单样本<em>t</em>检验</a></li>
+<li class="chapter" data-level="3.3.3" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#配对样本t检验"><i class="fa fa-check"></i><b>3.3.3</b> 配对样本<em>t</em>检验</a></li>
+<li class="chapter" data-level="3.3.4" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#两种独立样本t检验"><i class="fa fa-check"></i><b>3.3.4</b> 两种独立样本t检验</a></li>
+<li class="chapter" data-level="3.3.5" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#两样本方差齐性检验"><i class="fa fa-check"></i><b>3.3.5</b> 两样本方差齐性检验</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#变量转换"><i class="fa fa-check"></i><b>3.4</b> 变量转换</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="第三章-总体均数的估计与假设检验.html"><a href="第三章-总体均数的估计与假设检验.html#对数变换"><i class="fa fa-check"></i><b>3.4.1</b> 对数变换</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="第四章-多个样本均数比较的方差分析.html"><a href="第四章-多个样本均数比较的方差分析.html"><i class="fa fa-check"></i><b>4</b> 第四章 多个样本均数比较的方差分析</a><ul>
+<li class="chapter" data-level="4.1" data-path="第四章-多个样本均数比较的方差分析.html"><a href="第四章-多个样本均数比较的方差分析.html#f分布"><i class="fa fa-check"></i><b>4.1</b> <em>F</em>分布</a></li>
+<li class="chapter" data-level="4.2" data-path="第四章-多个样本均数比较的方差分析.html"><a href="第四章-多个样本均数比较的方差分析.html#f检验的分类原理及应用"><i class="fa fa-check"></i><b>4.2</b> <em>F</em>检验的分类、原理及应用</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="第四章-多个样本均数比较的方差分析.html"><a href="第四章-多个样本均数比较的方差分析.html#分类"><i class="fa fa-check"></i><b>4.2.1</b> 分类</a></li>
+<li class="chapter" data-level="4.2.2" data-path="第四章-多个样本均数比较的方差分析.html"><a href="第四章-多个样本均数比较的方差分析.html#原理"><i class="fa fa-check"></i><b>4.2.2</b> 原理</a></li>
+<li class="chapter" data-level="4.2.3" data-path="第四章-多个样本均数比较的方差分析.html"><a href="第四章-多个样本均数比较的方差分析.html#单因子方差分析"><i class="fa fa-check"></i><b>4.2.3</b> 单因子方差分析</a></li>
+<li class="chapter" data-level="4.2.4" data-path="第四章-多个样本均数比较的方差分析.html"><a href="第四章-多个样本均数比较的方差分析.html#双因子方差分析"><i class="fa fa-check"></i><b>4.2.4</b> 双因子方差分析</a></li>
+<li class="chapter" data-level="4.2.5" data-path="第四章-多个样本均数比较的方差分析.html"><a href="第四章-多个样本均数比较的方差分析.html#拉丁方设计资料的方差分析"><i class="fa fa-check"></i><b>4.2.5</b> 拉丁方设计资料的方差分析</a></li>
+<li class="chapter" data-level="4.2.6" data-path="第四章-多个样本均数比较的方差分析.html"><a href="第四章-多个样本均数比较的方差分析.html#两阶段交叉设计资料的方差分析"><i class="fa fa-check"></i><b>4.2.6</b> 两阶段交叉设计资料的方差分析</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="第四章-多个样本均数比较的方差分析.html"><a href="第四章-多个样本均数比较的方差分析.html#方差分析的诊断图"><i class="fa fa-check"></i><b>4.3</b> 方差分析的诊断图</a></li>
+<li class="chapter" data-level="4.4" data-path="第四章-多个样本均数比较的方差分析.html"><a href="第四章-多个样本均数比较的方差分析.html#多个样本均数间的多重比较"><i class="fa fa-check"></i><b>4.4</b> 多个样本均数间的多重比较</a></li>
+<li class="chapter" data-level="4.5" data-path="第四章-多个样本均数比较的方差分析.html"><a href="第四章-多个样本均数比较的方差分析.html#多样本方差齐性检验"><i class="fa fa-check"></i><b>4.5</b> 多样本方差齐性检验</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="第四章-多个样本均数比较的方差分析.html"><a href="第四章-多个样本均数比较的方差分析.html#bartletts-检验"><i class="fa fa-check"></i><b>4.5.1</b> Bartlett’s 检验</a></li>
+<li class="chapter" data-level="4.5.2" data-path="第四章-多个样本均数比较的方差分析.html"><a href="第四章-多个样本均数比较的方差分析.html#levenes-检验"><i class="fa fa-check"></i><b>4.5.2</b> Levene’s 检验</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="第五章-计数资料的统计描述.html"><a href="第五章-计数资料的统计描述.html"><i class="fa fa-check"></i><b>5</b> 第五章 计数资料的统计描述</a><ul>
+<li class="chapter" data-level="5.1" data-path="第五章-计数资料的统计描述.html"><a href="第五章-计数资料的统计描述.html#常用相对数"><i class="fa fa-check"></i><b>5.1</b> 常用相对数</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="第五章-计数资料的统计描述.html"><a href="第五章-计数资料的统计描述.html#强度相对数"><i class="fa fa-check"></i><b>5.1.1</b> 强度相对数</a></li>
+<li class="chapter" data-level="5.1.2" data-path="第五章-计数资料的统计描述.html"><a href="第五章-计数资料的统计描述.html#结构相对数"><i class="fa fa-check"></i><b>5.1.2</b> 结构相对数</a></li>
+<li class="chapter" data-level="5.1.3" data-path="第五章-计数资料的统计描述.html"><a href="第五章-计数资料的统计描述.html#相对比"><i class="fa fa-check"></i><b>5.1.3</b> 相对比</a></li>
+<li class="chapter" data-level="5.1.4" data-path="第五章-计数资料的统计描述.html"><a href="第五章-计数资料的统计描述.html#应用相对数的注意点"><i class="fa fa-check"></i><b>5.1.4</b> 应用相对数的注意点</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="第五章-计数资料的统计描述.html"><a href="第五章-计数资料的统计描述.html#率的标准化"><i class="fa fa-check"></i><b>5.2</b> 率的标准化</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="第五章-计数资料的统计描述.html"><a href="第五章-计数资料的统计描述.html#标准化率的计算"><i class="fa fa-check"></i><b>5.2.1</b> 标准化率的计算</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="第五章-计数资料的统计描述.html"><a href="第五章-计数资料的统计描述.html#动态数列及其指标分析"><i class="fa fa-check"></i><b>5.3</b> 动态数列及其指标分析</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="第五章-计数资料的统计描述.html"><a href="第五章-计数资料的统计描述.html#绝对增长量"><i class="fa fa-check"></i><b>5.3.1</b> 绝对增长量</a></li>
+<li class="chapter" data-level="5.3.2" data-path="第五章-计数资料的统计描述.html"><a href="第五章-计数资料的统计描述.html#发展速度与增长速度"><i class="fa fa-check"></i><b>5.3.2</b> 发展速度与增长速度</a></li>
+<li class="chapter" data-level="5.3.3" data-path="第五章-计数资料的统计描述.html"><a href="第五章-计数资料的统计描述.html#平均发展速度与平均增长速度"><i class="fa fa-check"></i><b>5.3.3</b> 平均发展速度与平均增长速度</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="第五章-计数资料的统计描述" class="section level1">
+<h1><span class="header-section-number"></span> 第五章 计数资料的统计描述</h1>
+<p>日期: 2020-11-22
+作者：wxhyihuan</p>
+<p>本章节主要时计数资料相关的概念和统计基础，概念的细节比较多，是后面进行离散变量的统计的基础！可以结合树上的案例，更好的理解和引用概念，此处不累述。</p>
+<p>计数资料(Enumeration data,Categorical data)，又称定性资料或无序分类资料，是相对于计量资料(Measurement data,又称连续型变量资料，
+是指由数值变量的测量值组成的资料)的一个统计概念，是指先将观察单位按其性质或类别分组，然后清点各组观察单位个数所得的资料。
+其特点是对每组观察单位主要研究其数量的多少，属非连续性资料。</p>
+<p>计数资料常见的数据形式是绝对数，如某病的出院人数、治愈人数等，但绝对数通常不具有可比性，如甲、乙两个医院某病出院人数不同时，
+比较两医院该病的死亡人数没有意义，因此需要在绝对数的基础上计算相对数。常用的相对数指标有比、比例和率三种：</p>
+<ol style="list-style-type: decimal">
+<li>当比例与时间有关系时称为率(Rate)，或称强度相对数；</li>
+<li>当比的分子是分母的一部分时，称为比例(Proportion)，或称结构相对数；</li>
+<li>两个有关指标之比称为比(Ratio)，或称相对比；</li>
+</ol>
+<div id="常用相对数" class="section level2">
+<h2><span class="header-section-number">5.1</span> 常用相对数</h2>
+<div id="强度相对数" class="section level3">
+<h3><span class="header-section-number">5.1.1</span> 强度相对数</h3>
+<p>强度相对数也称强度相对指标或强度指标，是指同一时期内两个性质不同而又有一定联系的总量指标之比。它可以反映社会经济现象的强度、密度和普遍程度。
+其计算公式为：
+<span class="math display">\[强度相对数(率)=\frac{某时期内发生某现象的观察单位数}{同时期内可能发生某现象的观察单位总数}\times比例基数\]</span></p>
+<p>比例基数主要是调整通过百分/千分/万分等基数，是计算结果能保留适当有效位数，便于阅读。另外就是要注意，不要忽略公式中时间的范畴，所赋予计算结果是
+特定观察时期内的，在结果解释时，这个周期(比如年，月，周，天，时)的含义体现。</p>
+</div>
+<div id="结构相对数" class="section level3">
+<h3><span class="header-section-number">5.1.2</span> 结构相对数</h3>
+<p>结构相对数又称比重指标或结构相对指标，是在分组情况下，总体内部各组的数值与总体数值相比计算得到的相对数。它反映总体内部的构成情况，
+表明总体中各部分所占比重的大小、一般用百分数表示，计算公式为：
+<span class="math display">\[结构相对数(比例)=\frac{某一构成部分的观察单位数}{同一事物各组成部分的观察单位总数}\times100\%\]</span></p>
+<p>显然，全体内各组结构相对数的总和应为100%。注意的是，各部分之间是互相影响，某部分的比例既受到自身观察数量变化的影响，
+也受到其他部分的观察数量的变化影响。</p>
+</div>
+<div id="相对比" class="section level3">
+<h3><span class="header-section-number">5.1.3</span> 相对比</h3>
+<p>表示两个有关事物指标之比，常以百分数和倍数表示，用以说明一个指标是另一个指标的百分之几或几倍，其计算公式为：
+<span class="math display">\[相对比(比)=\frac{指标甲}{指标乙}(\times100\%)\]</span></p>
+<p>指标甲乙可以是绝对数，相对数或平均数。</p>
+</div>
+<div id="应用相对数的注意点" class="section level3">
+<h3><span class="header-section-number">5.1.4</span> 应用相对数的注意点</h3>
+<ol style="list-style-type: decimal">
+<li>比例不能代替率，即结构相对数不能代替强度相对数</li>
+<li>计算相对数应该有足够的数量</li>
+<li>正确计算合计率 对分组资料计算合计表(或称平均率)时，不能简单的由各组率相加或平均而得，要用合计的有关实际数字进行计算</li>
+<li>注意资料的可比性在比较相对数时，除了要对比的因素(如不同的药物)，其余的影响因素应尽可能相同或相近。在临床研究和动物实验时，应遵循随机抽样原则进行分组。下列因素可能影响对比组之间的可比性:</li>
+</ol>
+<ul>
+<li><p>观察对象是否同质，研究方法是否相同，观察时间是否相等，以及地区、周围环境、风俗习惯和经 济条件是否一致或相近等。</p></li>
+<li><p>观察对象内部结构是否相同，若两组资料的年龄、性别等构成不同，可以分别进行同年龄别、同性 别的小组率比较或对总率(合计率)进行<a href="第五章-计数资料的统计描述.html#率的标准化">标准化</a>后再作比较。</p></li>
+</ul>
+<ol start="5" style="list-style-type: decimal">
+<li><p>对比不同时期资料应注意客观条件是否相同，例如，疾病报告制度完善和资料完整的地区或年份，发病率可以“升高”；居民因医疗普及，就诊机会增加，或诊断技术提高，也会引起发病率升高”。因此在分析讨论时，应根据各方面情形全面考虑，慎重对待。</p></li>
+<li><p>样本率(或构成比)的抽样误差不能仅凭数字表面相差大小下结论，而应进行样本率(或构成比)差别的假设检验。</p></li>
+</ol>
+</div>
+</div>
+<div id="率的标准化" class="section level2">
+<h2><span class="header-section-number">5.2</span> 率的标准化</h2>
+<p>当比较的两组资料，其内部各小组率明显不同，且各小组观察例数的构成比，诸如年龄、性别、工龄、病情轻重、病程长短等也明显不同时，
+直接比较两个合计率是不合理的。因为其内部构成不同，往往影响 合计率大小。</p>
+<p>因此，一种为在两个以上总率(总均数)进行对比时，消除内部构成不同的影响，采用统一的内部构成，分别计算标准化率(Standardized rate)后再做对比的方法，即为标准化方法(Standardization method)，是2014年公布的全科医学与社区卫生名词。标准化法的基本思想是：采用某影响因素的统一标准构成以消除构成不同对合计率的影响，
+使通过标准化后的合计率具有可比性。注意的是，它与数据的标准化(Normalization)的概念不同，数据的标准化是将数据按比例缩放，使之落入一个小的特定区间。</p>
+<div id="标准化率的计算" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> 标准化率的计算</h3>
+<p>标准化法计算的关键是选择统一的标准构成。常用的标准化方法有直接标准化法和间接标准化法，简称直接法和间接法。根据已有资料的条件，采用不同的方法计算标准化率。如对死亡率的年龄构成标准化，若已知年龄别死亡率，可采用直接法;若只 有总死亡数和年龄别人口数而缺乏年龄别死亡率时，或各年龄组人口数较小，年龄别死亡率不稳定时，宜用间接法。</p>
+<p><span class="math inline">\(N_i\)</span>表示标准年龄别人口数，<span class="math inline">\(p_i\)</span>为实际年龄别死亡率，N为标准人口众数，选择标准构成的方法通常有三种:</p>
+<ol style="list-style-type: decimal">
+<li><p>两组资料中任选组资料的人口数(或人口构成)作为两者的“共同标准”。这种方法适用于直接法。标准化率的计算公式:
+<span class="math display">\[p&#39;=\frac{\sum N_ip_i}{N}\]</span></p></li>
+<li><p>两组资料各部分人口之和组成的人口数(或人口构成)作为两者的“共同标准”。这种方法适用于直接法。标准化率的计算公式:
+<span class="math display">\[p&#39;=\sum\left(\frac{N_i}{N}\right)p_i\]</span></p></li>
+<li><p>另外选用一个通用的或便于比较的标准作为两者的“共同标准”,如采用全国、全省或全地区的数据作为标准，这种方法适用于直接法和间接法。标准化率的计算公式:
+<span class="math display">\[p&#39;=P\left(\frac{r}{\sum n_iP_i}\right)=P\times SMR\]</span></p></li>
+</ol>
+<p><span class="math inline">\(SMR=r/\sum n_iP_i\)</span>为标准化死亡比(Standardized mortalitu ratio,SMR)。<a href="https://baike.baidu.com/item/%E6%A0%87%E5%87%86%E5%8C%96%E6%AD%BB%E4%BA%A1%E6%AF%94">标准化死亡比</a>是被标化组实际死亡数与预期死亡数之比，用SMR表示。若SMR&gt;1，表示被标化人群的死亡率高于标准组；反之，若SMR&lt;1，表示被标化人群的死亡率低于标准组。标准化死亡比可反映某一人群与标准人群的人口死亡的相对水平。</p>
+</div>
+</div>
+<div id="动态数列及其指标分析" class="section level2">
+<h2><span class="header-section-number">5.3</span> 动态数列及其指标分析</h2>
+<p>动态数列(Dynamic series)是一系列按时间顺序排列起来的统计指标(可以为绝对数，相对数或平均 数)，用以观察和比较该事物在时间上的变化和发展趋势。常用的动态数列分析指标有：绝对增长量、发展速度与增长速度、平均发展速度与平均增长速度。</p>
+<div id="绝对增长量" class="section level3">
+<h3><span class="header-section-number">5.3.1</span> 绝对增长量</h3>
+<p>绝对增长量是只事物在一定时间增长的绝对值，可分为：</p>
+<ul>
+<li>累计增长量，即特定时间段内的终末指标值与起始指标值之差。</li>
+<li>逐年增长量，即以年为一周期， 今年的指标值与去年的指标值之差。</li>
+</ul>
+</div>
+<div id="发展速度与增长速度" class="section level3">
+<h3><span class="header-section-number">5.3.2</span> 发展速度与增长速度</h3>
+<p>发展速度与增长速度均为相对比，说明事物在一定时期的速度变化。发展速度表示报告期指标的水 平相当于基期水平的百分之多少或若干倍，根据基期的确定，对发展速度可以计算：</p>
+<ul>
+<li>定基比：即报告期指标与基期指标之比；</li>
+<li>环比：即报告期指标与其前一期指标之比。</li>
+</ul>
+</div>
+<div id="平均发展速度与平均增长速度" class="section level3">
+<h3><span class="header-section-number">5.3.3</span> 平均发展速度与平均增长速度</h3>
+<p>平均发展速度是各环比发展速度的几何均数，说明某事物在一个较长时期中逐期(如逐年)平均发展 的程度。平均增长速度是各环比增长速度的平均数，说明某事物在一个较长时期中逐期平均增长的程度。以<span class="math inline">\(a_0\)</span>表示基期指标; <span class="math inline">\(a_n\)</span>为第n期指标，则其计算公式为：</p>
+<p><span class="math display">\[\begin{aligned}
+平均发展速度 &amp; = \sqrt[n]{a_n/a_0}\\ \\
+平均增长速度 &amp;=  平均发展速度 - 1 \\ \\
+&amp; = \sqrt[n]{a_n/a_0} -1
+\end{aligned}\]</span></p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="第四章-多个样本均数比较的方差分析.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "Sepia",
+"family": "serif",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/04-Categoricaldata.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"search": true,
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
