@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title> 第五章 计数资料的统计描述 | MedicalStatisNotes.utf8</title>
+  <title> 第六章 计数资料的统计描述 | MedicalStatisNotes.utf8</title>
   <meta name="description" content="" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content=" 第五章 计数资料的统计描述 | MedicalStatisNotes.utf8" />
+  <meta property="og:title" content=" 第六章 计数资料的统计描述 | MedicalStatisNotes.utf8" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content=" 第五章 计数资料的统计描述 | MedicalStatisNotes.utf8" />
+  <meta name="twitter:title" content=" 第六章 计数资料的统计描述 | MedicalStatisNotes.utf8" />
   
   
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="第四章-多个样本均数比较的方差分析.html"/>
-<link rel="next" href="第六章-计数资料的统计描述.html"/>
+<link rel="prev" href="第五章-计数资料的统计描述.html"/>
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -266,112 +266,141 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="第五章-计数资料的统计描述" class="section level1">
-<h1><span class="header-section-number"></span> 第五章 计数资料的统计描述</h1>
-<p>日期: 2020-11-22
+<div id="第六章-计数资料的统计描述" class="section level1">
+<h1><span class="header-section-number"></span> 第六章 计数资料的统计描述</h1>
+<p>日期: 2020-11-24
 作者：wxhyihuan</p>
-<p>本章节主要时计数资料相关的概念和统计基础，概念的细节比较多，是后面进行离散变量的统计的基础！可以结合树上的案例，更好的理解和引用概念，此处不累述。</p>
-<p>计数资料(Enumeration data,Categorical data)，又称定性资料或无序分类资料，是相对于计量资料(Measurement data,又称连续型变量资料，
-是指由数值变量的测量值组成的资料)的一个统计概念，是指先将观察单位按其性质或类别分组，然后清点各组观察单位个数所得的资料。
-其特点是对每组观察单位主要研究其数量的多少，属非连续性资料。</p>
-<p>计数资料常见的数据形式是绝对数，如某病的出院人数、治愈人数等，但绝对数通常不具有可比性，如甲、乙两个医院某病出院人数不同时，
-比较两医院该病的死亡人数没有意义，因此需要在绝对数的基础上计算相对数。常用的相对数指标有比、比例和率三种：</p>
+<p>随机变量有连续型和离散型之分，相应的概率分布就可分为连续型分布(如 u分布、t分布和F分布)和离散型分布，常用的离散型分布有 二项分布、泊松分布，负二项分布，多项分布。</p>
+<div id="二项分布" class="section level2">
+<h2><span class="header-section-number">6.1</span> 二项分布</h2>
+<p>二项分布(Binomial distribution)是<span class="math inline">\(n\)</span>个独立的 成功/失败(或阴/阳，或是/非) 试验中“成功”的次数<span class="math inline">\(X\)</span>(即取值[0~n]之间)的离散概率分布，其中每次试验的“成功”概率为<span class="math inline">\(p\)</span>，记为B(n,p)。这样的<strong>单次</strong>成功/失败试验又称为伯努利试验，即当<span class="math inline">\(n = 1\)</span>时，二项分布就是<a href="https://zh.wikipedia.org/wiki/%E4%BC%AF%E5%8A%AA%E5%88%A9%E5%88%86%E5%B8%83">伯努利分布，0-1分布</a>。二项分布是显著性差异的二项试验的基础。一般地，如果随机变量<span class="math inline">\(X\)</span>(即取值[0~n]之间)服从参数为<span class="math inline">\(n\)</span>和<span class="math inline">\(p\)</span>的二项分布时，那么<span class="math inline">\(n\)</span>次试验中正好得到<span class="math inline">\(x\)</span>次成功的概率分布函数即为：
+<span class="math display">\[P(x)=\frac{n!}{x!(n-x)!}p^x(1-p)^{n-x}, x\in[0,n]\]</span></p>
+<p>P(x)就是<a href="https://zh.wikipedia.org/wiki/%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86">二项式</a><span class="math inline">\([p+(1-p)]^n\)</span>展开式的通项，<span class="math inline">\(n!/x!(n-x)!\)</span>为二项系数，且<span class="math inline">\(\sum_{x=0}^nP(x)=1\)</span>。</p>
+<p><strong>注意</strong></p>
+<p>对二项分布的资料进行抽样时，如果是有返回(放回)随机抽去n个个体，则依旧是刚才的<span class="math inline">\(P(x)\)</span>分布函数；如果时无返回(不放回)的随机抽样，自由当n远小于总体个数N(如n &lt; N/10)时，也可做近似<span class="math inline">\(P(x)\)</span>分布函数处理。</p>
+<p><strong>适用的条件</strong></p>
 <ol style="list-style-type: decimal">
-<li>当比例与时间有关系时称为率(Rate)，或称强度相对数；</li>
-<li>当比的分子是分母的一部分时，称为比例(Proportion)，或称结构相对数；</li>
-<li>两个有关指标之比称为比(Ratio)，或称相对比；</li>
+<li>每次实验结果只有发生和不发生两种情形(如成功/失败)，且每次实验中，成功/失败事件发生的概率都相同</li>
+<li>重复实验是相互独立</li>
 </ol>
-<div id="常用相对数" class="section level2">
-<h2><span class="header-section-number">5.1</span> 常用相对数</h2>
-<div id="强度相对数" class="section level3">
-<h3><span class="header-section-number">5.1.1</span> 强度相对数</h3>
-<p>强度相对数也称强度相对指标或强度指标，是指同一时期内两个性质不同而又有一定联系的总量指标之比。它可以反映社会经济现象的强度、密度和普遍程度。
-其计算公式为：
-<span class="math display">\[强度相对数(率)=\frac{某时期内发生某现象的观察单位数}{同时期内可能发生某现象的观察单位总数}\times比例基数\]</span></p>
-<p>比例基数主要是调整通过百分/千分/万分等基数，是计算结果能保留适当有效位数，便于阅读。另外就是要注意，不要忽略公式中时间的范畴，所赋予计算结果是
-特定观察时期内的，在结果解释时，这个周期(比如年，月，周，天，时)的含义体现。</p>
 </div>
-<div id="结构相对数" class="section level3">
-<h3><span class="header-section-number">5.1.2</span> 结构相对数</h3>
-<p>结构相对数又称比重指标或结构相对指标，是在分组情况下，总体内部各组的数值与总体数值相比计算得到的相对数。它反映总体内部的构成情况，
-表明总体中各部分所占比重的大小、一般用百分数表示，计算公式为：
-<span class="math display">\[结构相对数(比例)=\frac{某一构成部分的观察单位数}{同一事物各组成部分的观察单位总数}\times100\%\]</span></p>
-<p>显然，全体内各组结构相对数的总和应为100%。注意的是，各部分之间是互相影响，某部分的比例既受到自身观察数量变化的影响，
-也受到其他部分的观察数量的变化影响。</p>
+<div id="二项分布的性质" class="section level2">
+<h2><span class="header-section-number">6.2</span> 二项分布的性质</h2>
+<div id="均数与标准差" class="section level3">
+<h3><span class="header-section-number">6.2.1</span> 均数与标准差</h3>
+<p><strong>1.“成功”次数的性质</strong></p>
+<p><strong>X的总体均数标准差</strong></p>
+<p>在n次独立重复实验中，出现“成功”次数X的总体均数，方差和标准差分别是，
+X的总体均数：
+<span class="math display">\[μ=np\]</span>
+X的总方差：
+<span class="math display">\[σ^2=np(1-p)\]</span>
+X的总标准差：
+<span class="math display">\[σ=\sqrt{np(1-p)}\]</span></p>
+<p><strong>率p的总体均数标准差</strong>
+在n次独立重复实验中，出现“成功”次数的率p(p=0/n,1/n,2/n…,n/n])的总体均数，方差和标准差分别是，
+“成功”次数的率p的总体均数：
+<span class="math display">\[μ_p=p\]</span></p>
+<p>“成功”次数的率p的总方差：
+<span class="math display">\[σ^2=\frac{p(1-p)}{n}=Var_p\]</span></p>
+<p>“成功”次数的率p的总标准差：
+<span class="math display">\[σ=\sqrt{\frac{p(1-p)}{n}}=S_p\]</span></p>
+<p>一般的，总体的p往往不知道，因此用样本资料计算样本的“成功”率<span class="math inline">\(p=X/n\)</span>，来计算<span class="math inline">\(Var_p和S_p\)</span>。</p>
 </div>
-<div id="相对比" class="section level3">
-<h3><span class="header-section-number">5.1.3</span> 相对比</h3>
-<p>表示两个有关事物指标之比，常以百分数和倍数表示，用以说明一个指标是另一个指标的百分之几或几倍，其计算公式为：
-<span class="math display">\[相对比(比)=\frac{指标甲}{指标乙}(\times100\%)\]</span></p>
-<p>指标甲乙可以是绝对数，相对数或平均数。</p>
-</div>
-<div id="应用相对数的注意点" class="section level3">
-<h3><span class="header-section-number">5.1.4</span> 应用相对数的注意点</h3>
+<div id="二项分布的图像" class="section level3">
+<h3><span class="header-section-number">6.2.2</span> 二项分布的图像</h3>
+<p>二项分布的图像偏态主要由p和n决定：</p>
 <ol style="list-style-type: decimal">
-<li>比例不能代替率，即结构相对数不能代替强度相对数</li>
-<li>计算相对数应该有足够的数量</li>
-<li>正确计算合计率 对分组资料计算合计表(或称平均率)时，不能简单的由各组率相加或平均而得，要用合计的有关实际数字进行计算</li>
-<li>注意资料的可比性在比较相对数时，除了要对比的因素(如不同的药物)，其余的影响因素应尽可能相同或相近。在临床研究和动物实验时，应遵循随机抽样原则进行分组。下列因素可能影响对比组之间的可比性:</li>
-</ol>
-<ul>
-<li><p>观察对象是否同质，研究方法是否相同，观察时间是否相等，以及地区、周围环境、风俗习惯和经 济条件是否一致或相近等。</p></li>
-<li><p>观察对象内部结构是否相同，若两组资料的年龄、性别等构成不同，可以分别进行同年龄别、同性 别的小组率比较或对总率(合计率)进行<a href="第五章-计数资料的统计描述.html#率的标准化">标准化</a>后再作比较。</p></li>
-</ul>
-<ol start="5" style="list-style-type: decimal">
-<li><p>对比不同时期资料应注意客观条件是否相同，例如，疾病报告制度完善和资料完整的地区或年份，发病率可以“升高”；居民因医疗普及，就诊机会增加，或诊断技术提高，也会引起发病率升高”。因此在分析讨论时，应根据各方面情形全面考虑，慎重对待。</p></li>
-<li><p>样本率(或构成比)的抽样误差不能仅凭数字表面相差大小下结论，而应进行样本率(或构成比)差别的假设检验。</p></li>
+<li>当p=0.5时，分布呈对称分布</li>
+<li>当p≠0.5时，图形呈偏态，随着n增大，分布呈逐渐趋向于对称</li>
+<li>当p不太靠近0或1，n-&gt;∞时，分布呈近似于正态分布</li>
 </ol>
 </div>
-</div>
-<div id="率的标准化" class="section level2">
-<h2><span class="header-section-number">5.2</span> 率的标准化</h2>
-<p>当比较的两组资料，其内部各小组率明显不同，且各小组观察例数的构成比，诸如年龄、性别、工龄、病情轻重、病程长短等也明显不同时，
-直接比较两个合计率是不合理的。因为其内部构成不同，往往影响 合计率大小。</p>
-<p>因此，一种为在两个以上总率(总均数)进行对比时，消除内部构成不同的影响，采用统一的内部构成，分别计算标准化率(Standardized rate)后再做对比的方法，即为标准化方法(Standardization method)，是2014年公布的全科医学与社区卫生名词。标准化法的基本思想是：采用某影响因素的统一标准构成以消除构成不同对合计率的影响，
-使通过标准化后的合计率具有可比性。注意的是，它与数据的标准化(Normalization)的概念不同，数据的标准化是将数据按比例缩放，使之落入一个小的特定区间。</p>
-<div id="标准化率的计算" class="section level3">
-<h3><span class="header-section-number">5.2.1</span> 标准化率的计算</h3>
-<p>标准化法计算的关键是选择统一的标准构成。常用的标准化方法有直接标准化法和间接标准化法，简称直接法和间接法。根据已有资料的条件，采用不同的方法计算标准化率。如对死亡率的年龄构成标准化，若已知年龄别死亡率，可采用直接法;若只 有总死亡数和年龄别人口数而缺乏年龄别死亡率时，或各年龄组人口数较小，年龄别死亡率不稳定时，宜用间接法。</p>
-<p><span class="math inline">\(N_i\)</span>表示标准年龄别人口数，<span class="math inline">\(p_i\)</span>为实际年龄别死亡率，N为标准人口众数，选择标准构成的方法通常有三种:</p>
+<div id="与其他分布的关系" class="section level3">
+<h3><span class="header-section-number">6.2.3</span> 与其他分布的关系</h3>
 <ol style="list-style-type: decimal">
-<li><p>两组资料中任选组资料的人口数(或人口构成)作为两者的“共同标准”。这种方法适用于直接法。标准化率的计算公式:
-<span class="math display">\[p&#39;=\frac{\sum N_ip_i}{N}\]</span></p></li>
-<li><p>两组资料各部分人口之和组成的人口数(或人口构成)作为两者的“共同标准”。这种方法适用于直接法。标准化率的计算公式:
-<span class="math display">\[p&#39;=\sum\left(\frac{N_i}{N}\right)p_i\]</span></p></li>
-<li><p>另外选用一个通用的或便于比较的标准作为两者的“共同标准”,如采用全国、全省或全地区的数据作为标准，这种方法适用于直接法和间接法。标准化率的计算公式:
-<span class="math display">\[p&#39;=P\left(\frac{r}{\sum n_iP_i}\right)=P\times SMR\]</span></p></li>
+<li>伯努利分布是二项分布在n= 1时的特殊情况。X~ B(1,p)与X~ Bern(p)的意思是相同的。相反，任何二项分布B(n,p)都是n次独立伯努利试验的和，每次试验成功的概率为p。</li>
+<li>泊松近似 当试验的次数n-&gt;∞，而乘积np固定时，二项分布收敛于<a href="https://zh.wikipedia.org/zh-hans/%E6%B3%8A%E6%9D%BE%E5%88%86%E4%BD%88">泊松分布</a>。因此参数为λ=np的泊松分布可以作为二项分布B(n,p)的近似，近似成立的前提要求n足够大，而p足够小，np不是很小。</li>
+<li>正态近似 如果n足够大，那么分布的偏度就比较小。在这种情况下，如果使用适当的连续性校正，那么B(n,p)的一个很好的近似是正态分布:N(np,np(1-p))。当n越大（至少20）且p不接近0或1时近似效果更好。不同的经验法则可以用来决定n是否足够大,以及p是否距离0或1足够远,其中一个常用的规则是np和n(1 −p)都必须大于5。</li>
 </ol>
-<p><span class="math inline">\(SMR=r/\sum n_iP_i\)</span>为标准化死亡比(Standardized mortalitu ratio,SMR)。<a href="https://baike.baidu.com/item/%E6%A0%87%E5%87%86%E5%8C%96%E6%AD%BB%E4%BA%A1%E6%AF%94">标准化死亡比</a>是被标化组实际死亡数与预期死亡数之比，用SMR表示。若SMR&gt;1，表示被标化人群的死亡率高于标准组；反之，若SMR&lt;1，表示被标化人群的死亡率低于标准组。标准化死亡比可反映某一人群与标准人群的人口死亡的相对水平。</p>
 </div>
 </div>
-<div id="动态数列及其指标分析" class="section level2">
-<h2><span class="header-section-number">5.3</span> 动态数列及其指标分析</h2>
-<p>动态数列(Dynamic series)是一系列按时间顺序排列起来的统计指标(可以为绝对数，相对数或平均 数)，用以观察和比较该事物在时间上的变化和发展趋势。常用的动态数列分析指标有：绝对增长量、发展速度与增长速度、平均发展速度与平均增长速度。</p>
-<div id="绝对增长量" class="section level3">
-<h3><span class="header-section-number">5.3.1</span> 绝对增长量</h3>
-<p>绝对增长量是只事物在一定时间增长的绝对值，可分为：</p>
-<ul>
-<li>累计增长量，即特定时间段内的终末指标值与起始指标值之差；</li>
-<li>逐年增长量，即以年为周期， 今年的指标值与去年的指标值之差。</li>
-</ul>
+<div id="二项分布的应用" class="section level2">
+<h2><span class="header-section-number">6.3</span> 二项分布的应用</h2>
+<p>利用二项分布及其正态近似性，可进行总体率的区间估计和差异推断，也可用于研究非遗传性疾病的家族集聚性和做群检验。对于二分类事物的构成问题，对其中一类的构成比进行统计推断，其方法则类似总体率。</p>
+<div id="总体率的估计" class="section level3">
+<h3><span class="header-section-number">6.3.1</span> 总体率的估计</h3>
+<div id="精确法直接法" class="section level4">
+<h4><span class="header-section-number">6.3.1.1</span> 精确法/直接法</h4>
+<p>对于n≤50的小样本资料，用查表法可以获取百分率的可信区间，即了得到其总体的1-α(α一般取0.05，或0.01)的可信区间。</p>
+<p>R语言中的二项分布相关的函数与之前介绍的连续性分布(u分布，t分布和f分布)类似，主要有
+<a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Binomial.html">dbinom(),pbinom(),qbinom()和rbinom()</a>。
+用于进行参数估计和假设检验的函数主要有<a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/binom.test.html">binom.test()</a>。</p>
+<p>使用《医学统计学》中的 案例6-2 的数据在R中进行二项分布的精确法/查表法分析测试。</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="第六章-计数资料的统计描述.html#cb52-1"></a>n &lt;-<span class="st"> </span><span class="dv">13</span></span>
+<span id="cb52-2"><a href="第六章-计数资料的统计描述.html#cb52-2"></a>x &lt;-<span class="st"> </span><span class="dv">6</span></span>
+<span id="cb52-3"><a href="第六章-计数资料的统计描述.html#cb52-3"></a>ratio &lt;-<span class="st"> </span>x<span class="op">/</span>n</span>
+<span id="cb52-4"><a href="第六章-计数资料的统计描述.html#cb52-4"></a><span class="kw">binom.test</span>(x, n, <span class="dt">p =</span> <span class="fl">0.5</span>)</span>
+<span id="cb52-5"><a href="第六章-计数资料的统计描述.html#cb52-5"></a><span class="kw">binom.test</span>(x, n, <span class="dt">p =</span> <span class="fl">0.5</span>, <span class="dt">alternative =</span> <span class="st">&quot;two.sided&quot;</span>, <span class="dt">conf.level =</span> <span class="fl">0.95</span>)</span>
+<span id="cb52-6"><a href="第六章-计数资料的统计描述.html#cb52-6"></a><span class="co">##  Exact binomial test</span></span>
+<span id="cb52-7"><a href="第六章-计数资料的统计描述.html#cb52-7"></a><span class="co">## </span></span>
+<span id="cb52-8"><a href="第六章-计数资料的统计描述.html#cb52-8"></a><span class="co">## data:  x and n</span></span>
+<span id="cb52-9"><a href="第六章-计数资料的统计描述.html#cb52-9"></a><span class="co">## number of successes = 6, number of trials = 13, p-value = 1</span></span>
+<span id="cb52-10"><a href="第六章-计数资料的统计描述.html#cb52-10"></a><span class="co">## alternative hypothesis: true probability of success is not equal to 0.5</span></span>
+<span id="cb52-11"><a href="第六章-计数资料的统计描述.html#cb52-11"></a><span class="co">## 95 percent confidence interval:</span></span>
+<span id="cb52-12"><a href="第六章-计数资料的统计描述.html#cb52-12"></a><span class="co">##  0.1922324 0.7486545</span></span>
+<span id="cb52-13"><a href="第六章-计数资料的统计描述.html#cb52-13"></a><span class="co">## sample estimates:</span></span>
+<span id="cb52-14"><a href="第六章-计数资料的统计描述.html#cb52-14"></a><span class="co">## probability of success </span></span>
+<span id="cb52-15"><a href="第六章-计数资料的统计描述.html#cb52-15"></a><span class="co">##              0.4615385 </span></span>
+<span id="cb52-16"><a href="第六章-计数资料的统计描述.html#cb52-16"></a></span>
+<span id="cb52-17"><a href="第六章-计数资料的统计描述.html#cb52-17"></a><span class="co">#使用Hmisc包中的binconf()函数</span></span>
+<span id="cb52-18"><a href="第六章-计数资料的统计描述.html#cb52-18"></a><span class="co">#install.packages(&quot;Hmisc&quot;)</span></span>
+<span id="cb52-19"><a href="第六章-计数资料的统计描述.html#cb52-19"></a><span class="kw">library</span>(Hmisc)</span>
+<span id="cb52-20"><a href="第六章-计数资料的统计描述.html#cb52-20"></a><span class="kw">binconf</span>(x, n, <span class="dt">alpha=</span><span class="fl">0.05</span>, <span class="dt">method=</span><span class="st">&quot;all&quot;</span>)</span>
+<span id="cb52-21"><a href="第六章-计数资料的统计描述.html#cb52-21"></a><span class="co">##             PointEst     Lower     Upper</span></span>
+<span id="cb52-22"><a href="第六章-计数资料的统计描述.html#cb52-22"></a><span class="co">## Exact      0.4615385 0.1922324 0.7486545</span></span>
+<span id="cb52-23"><a href="第六章-计数资料的统计描述.html#cb52-23"></a><span class="co">## Wilson     0.4615385 0.2320607 0.7085620</span></span>
+<span id="cb52-24"><a href="第六章-计数资料的统计描述.html#cb52-24"></a><span class="co">## Asymptotic 0.4615385 0.1905457 0.7325312</span></span></code></pre></div>
 </div>
-<div id="发展速度与增长速度" class="section level3">
-<h3><span class="header-section-number">5.3.2</span> 发展速度与增长速度</h3>
-<p>发展速度与增长速度均为相对比，说明事物在一定时期的速度变化。发展速度表示报告期指标的水 平相当于基期水平的百分之多少或若干倍，根据基期的确定，对发展速度可以计算：</p>
-<ul>
-<li>定基比：即报告期指标与基期指标之比；</li>
-<li>环比：即报告期指标与其前一期指标之比。</li>
-</ul>
-</div>
-<div id="平均发展速度与平均增长速度" class="section level3">
-<h3><span class="header-section-number">5.3.3</span> 平均发展速度与平均增长速度</h3>
-<p>平均发展速度是各环比发展速度的几何均数，说明某事物在一个较长时期中逐期(如逐年)平均发展 的程度。平均增长速度是各环比增长速度的平均数，说明某事物在一个较长时期中逐期平均增长的程度。以<span class="math inline">\(a_0\)</span>表示基期指标; <span class="math inline">\(a_n\)</span>为第n期指标，则其计算公式为：</p>
-<p><span class="math display">\[\begin{aligned}
-平均发展速度 &amp; = \sqrt[n]{a_n/a_0}\\ \\
-平均增长速度 &amp; =  平均发展速度 - 1 \\ \\
-&amp; = \sqrt[n]{a_n/a_0} -1
-\end{aligned}\]</span></p>
+<div id="正态近似法" class="section level4">
+<h4><span class="header-section-number">6.3.1.2</span> 正态近似法</h4>
+<p>如果n足够大，那么二项分布的偏度就比较小。在这种情况下，如果使用适当的连续性校正，
+那么B(n,p)的一个很好的近似是正态分布:N(np,np(1-p))，对应的样本率p也近似正态分布:
+N(p,p(1-p)/n)。当n越大（至少20）且p不接近0或1时近似效果更好。
+不同的经验法则可以用来决定n是否足够大，以及p是否距离0或1足够远，
+其中一个常用的规则是np和n(1 −p)都必须大于5时，可利用样本率p的分布近似正态分布来估计总体的1-α(α=0.05或0.01)的可信区间：
+<span class="math display">\[(p-u_{a/2}S_p,p+u_{a/2}S_p) ,\]</span>
+<span class="math inline">\(S_p\)</span>为样本资料计算样本的“成功”率<span class="math inline">\(S_p=\sqrt{{p(1-p)}/{n}}，p=X/N\)</span>，α=0.05时，<span class="math inline">\(u_{a/2}=1.96\)</span>；α=0.01时，<span class="math inline">\(u_{a/2}=2.58\)</span></p>
+<p>使用《医学统计学》中的 案例6-3 的数据在R中进行二项分布的正态近似法分析测试。</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="第六章-计数资料的统计描述.html#cb53-1"></a><span class="co">##用正态分布近似计算</span></span>
+<span id="cb53-2"><a href="第六章-计数资料的统计描述.html#cb53-2"></a>n1 &lt;-<span class="st"> </span><span class="dv">100</span></span>
+<span id="cb53-3"><a href="第六章-计数资料的统计描述.html#cb53-3"></a>x1 &lt;-<span class="st"> </span><span class="dv">55</span></span>
+<span id="cb53-4"><a href="第六章-计数资料的统计描述.html#cb53-4"></a>p1 &lt;-<span class="st"> </span>x1<span class="op">/</span>n1</span>
+<span id="cb53-5"><a href="第六章-计数资料的统计描述.html#cb53-5"></a>S_p1=<span class="kw">sqrt</span>(p1<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>p1)<span class="op">/</span>n1)</span>
+<span id="cb53-6"><a href="第六章-计数资料的统计描述.html#cb53-6"></a>p1 <span class="op">+</span><span class="st"> </span><span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>)<span class="op">*</span><span class="kw">qnorm</span>(<span class="fl">0.975</span>)<span class="op">*</span>S_p1</span>
+<span id="cb53-7"><a href="第六章-计数资料的统计描述.html#cb53-7"></a><span class="co">## [1] 0.452493 0.647507</span></span>
+<span id="cb53-8"><a href="第六章-计数资料的统计描述.html#cb53-8"></a></span>
+<span id="cb53-9"><a href="第六章-计数资料的统计描述.html#cb53-9"></a><span class="co">##用精确法计算</span></span>
+<span id="cb53-10"><a href="第六章-计数资料的统计描述.html#cb53-10"></a><span class="kw">binom.test</span>(x1, n1, <span class="fl">0.5</span>, <span class="dt">alternative=</span><span class="st">&quot;two.sided&quot;</span>, <span class="dt">conf.level=</span><span class="fl">0.95</span>)</span>
+<span id="cb53-11"><a href="第六章-计数资料的统计描述.html#cb53-11"></a><span class="co">##  Exact binomial test</span></span>
+<span id="cb53-12"><a href="第六章-计数资料的统计描述.html#cb53-12"></a><span class="co">## </span></span>
+<span id="cb53-13"><a href="第六章-计数资料的统计描述.html#cb53-13"></a><span class="co">## data:  x1 and n1</span></span>
+<span id="cb53-14"><a href="第六章-计数资料的统计描述.html#cb53-14"></a><span class="co">## number of successes = 55, number of trials = 100, p-value = 0.3682</span></span>
+<span id="cb53-15"><a href="第六章-计数资料的统计描述.html#cb53-15"></a><span class="co">## alternative hypothesis: true probability of success is not equal to 0.5</span></span>
+<span id="cb53-16"><a href="第六章-计数资料的统计描述.html#cb53-16"></a><span class="co">## 95 percent confidence interval:</span></span>
+<span id="cb53-17"><a href="第六章-计数资料的统计描述.html#cb53-17"></a><span class="co">##  0.4472802 0.6496798</span></span>
+<span id="cb53-18"><a href="第六章-计数资料的统计描述.html#cb53-18"></a><span class="co">## sample estimates:</span></span>
+<span id="cb53-19"><a href="第六章-计数资料的统计描述.html#cb53-19"></a><span class="co">## probability of success </span></span>
+<span id="cb53-20"><a href="第六章-计数资料的统计描述.html#cb53-20"></a><span class="co">##                   0.55 </span></span>
+<span id="cb53-21"><a href="第六章-计数资料的统计描述.html#cb53-21"></a></span>
+<span id="cb53-22"><a href="第六章-计数资料的统计描述.html#cb53-22"></a><span class="co">#使用Hmisc包中的binconf()函数</span></span>
+<span id="cb53-23"><a href="第六章-计数资料的统计描述.html#cb53-23"></a><span class="kw">binconf</span>(x1, n1, <span class="dt">alpha=</span><span class="fl">0.05</span>, <span class="dt">method=</span><span class="st">&quot;all&quot;</span>)</span>
+<span id="cb53-24"><a href="第六章-计数资料的统计描述.html#cb53-24"></a><span class="co">##            PointEst     Lower     Upper</span></span>
+<span id="cb53-25"><a href="第六章-计数资料的统计描述.html#cb53-25"></a><span class="co">## Exact          0.55 0.4472802 0.6496798</span></span>
+<span id="cb53-26"><a href="第六章-计数资料的统计描述.html#cb53-26"></a><span class="co">## Wilson         0.55 0.4524460 0.6438546</span></span>
+<span id="cb53-27"><a href="第六章-计数资料的统计描述.html#cb53-27"></a><span class="co">## Asymptotic     0.55 0.4524930 0.6475070</span></span></code></pre></div>
 
+</div>
 </div>
 </div>
 </div>
@@ -380,8 +409,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="第四章-多个样本均数比较的方差分析.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="第六章-计数资料的统计描述.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="第五章-计数资料的统计描述.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -412,7 +441,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/04-Categoricaldata.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/05-Discretedistribution.Rmd",
 "text": "Edit"
 },
 "history": {
