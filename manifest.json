@@ -126,7 +126,7 @@
       "checksum": "806ab0467ea8b51e6248f2cc567b4827"
     },
     "index.html": {
-      "checksum": "d431c87de4d07ee57750352fae6fe199"
+      "checksum": "2cdf7cd305612b448562ea9cd0d00523"
     },
     "libs/accessible-code-block-0.0.1/empty-anchor.js": {
       "checksum": "53c42ac72d71beb8e6dbffe86ab543d6"
@@ -194,6 +194,9 @@
     "libs/gitbook-2.6.7/js/plugin-sharing.js": {
       "checksum": "799a983ef24c1cbe315d020a65aa1644"
     },
+    "libs/header-attrs-2.5/header-attrs.js": {
+      "checksum": "9c32b58ed5fd8fe2efbd5bd7023cdef0"
+    },
     "libs/jquery-2.2.3/jquery.min.js": {
       "checksum": "33cabfa15c1060aaa3d207c653afb1ee"
     },
@@ -249,28 +252,28 @@
       "checksum": "7cdf7213010e36ed54167d37b169766a"
     },
     "reference-keys.txt": {
-      "checksum": "9ccd8859ff744535fd83148165a09ab5"
+      "checksum": "81d8abde05da0f45fad5b742a6a73d0a"
     },
     "search_index.json": {
-      "checksum": "2856a370e2e06a93edef45e821b62439"
+      "checksum": "461a44beb42b47f1b044dd8f5b3a7b36"
     },
     "style.css": {
       "checksum": "19f0b33dc27d4f748874d2cde5cea5bc"
     },
     "第二章-计量资料的统计描述.html": {
-      "checksum": "cdafbc207e2627b5a5d2c6fc693a836f"
+      "checksum": "7fb36a4a6e84e839d852cd60b73f4d0b"
     },
     "第六章-计数资料的统计描述.html": {
-      "checksum": "4efb156c204a8b6e88c56b6b8b0070ea"
+      "checksum": "c28897012318b4900171f96c826dd32e"
     },
     "第三章-总体均数的估计与假设检验.html": {
-      "checksum": "c7a5b515b2b894434505a01d635bfd07"
+      "checksum": "6f4e306dea9227a05bc38c9345813a49"
     },
     "第四章-多个样本均数比较的方差分析.html": {
-      "checksum": "61267a722f377520f529fdf044c207f4"
+      "checksum": "65efd238550a7d5c62128eac73894531"
     },
     "第五章-计数资料的统计描述.html": {
-      "checksum": "b0e4a4b99aa08643c67f13c54b1c2173"
+      "checksum": "957600ed9ae2e06f836514bfd1e213ab"
     }
   },
   "users": null
