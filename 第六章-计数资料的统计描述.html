@@ -700,12 +700,12 @@ S_{p_1-p_2} &amp;= \sqrt{\frac{X_1+X_2}{n_1+n_2}(1-\frac{X_1+X_2}{n_1+n_2})(\fra
 <h4><span class="header-section-number">6.2.2.3</span> 两样本均数的比较(正态近似)</h4>
 <p>对服从 Poisson 分布的样本，其样本计数可看作是样本均数。两个样本均数的比较，目的在于推断两样
 本所代表的两总体均数是否有差别。设两个样本计数分别为<span class="math inline">\(X_1\)</span>和<span class="math inline">\(X_2\)</span>，可利用正态近似法进行比较，有下面两种情况：</p>
-<p><strong>象个样本的观察单位数相等，即<span class="math inline">\(n_1=n_2\)</span></strong>
+<p><strong>两个样本的观察单位数相等，即<span class="math inline">\(n_1=n_2\)</span></strong>
 当<span class="math inline">\(X_1+X_2≥20\)</span>时：
 <span class="math display">\[u=\frac{X_1-X_2}{\sqrt{X_1+X_2}}\]</span>
 当<span class="math inline">\(5＜X_1+X_2＜20\)</span>时：
 <span class="math display">\[u=\frac{|X_1-X_2|-1}{\sqrt{X_1+X_2}}\]</span></p>
-<p><strong>象个样本的观察单位数不相等，即<span class="math inline">\(n_1≠n_2\)</span></strong>：
+<p><strong>两个样本的观察单位数不相等，即<span class="math inline">\(n_1≠n_2\)</span></strong>：
 当<span class="math inline">\(X_1+X_2≥20\)</span>时：
 <span class="math display">\[u=\frac{\bar{X_1}-\bar{X_2}}{\sqrt{X_1/n_1^2+X_2/n_2^2}}\]</span>
 当<span class="math inline">\(5＜X_1+X_2＜20\)</span>时：
@@ -742,8 +742,8 @@ S_{p_1-p_2} &amp;= \sqrt{\frac{X_1+X_2}{n_1+n_2}(1-\frac{X_1+X_2}{n_1+n_2})(\fra
 <span id="cb64-28"><a href="第六章-计数资料的统计描述.html#cb64-28" aria-hidden="true" tabindex="-1"></a><span class="co">#案例6-15</span></span>
 <span id="cb64-29"><a href="第六章-计数资料的统计描述.html#cb64-29" aria-hidden="true" tabindex="-1"></a><span class="fu">posi_twosamplecomp_uAsym</span>(<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">32</span>,<span class="dv">12</span>)</span>
 <span id="cb64-30"><a href="第六章-计数资料的统计描述.html#cb64-30" aria-hidden="true" tabindex="-1"></a><span class="co"># [1] 0.03619123</span></span></code></pre></div>
-<p>根据计算结果，案例6-14的p值为0.3326193&gt;0.05，按照α=0.05的检验水准，不拒绝原假设<span class="math inline">\(H_0\)</span>。
-根据计算结果，案例6-15的p值为0.03619123&lt;0.05，按照α=0.05的检验水准，拒绝原假设<span class="math inline">\(H_0\)</span>，接受<span class="math inline">\(H_1H_1\)</span>。</p>
+<p>根据计算结果，案例6-14的p值为0.3326193&gt;0.05，按照α=0.05的检验水准，不拒绝原假设<span class="math inline">\(H_0\)</span>。</p>
+<p>根据计算结果，案例6-15的p值为0.03619123&lt;0.05，按照α=0.05的检验水准，拒绝原假设<span class="math inline">\(H_0\)</span>，接受<span class="math inline">\(H_1H_1\)</span>。</p>
 
 </div>
 </div>
