@@ -126,7 +126,7 @@
       "checksum": "806ab0467ea8b51e6248f2cc567b4827"
     },
     "index.html": {
-      "checksum": "112ef73a71cf53533b3fd758df7366d7"
+      "checksum": "c3c3498dcbe3adbf9323b84cc37ec335"
     },
     "libs/accessible-code-block-0.0.1/empty-anchor.js": {
       "checksum": "53c42ac72d71beb8e6dbffe86ab543d6"
@@ -252,28 +252,28 @@
       "checksum": "7cdf7213010e36ed54167d37b169766a"
     },
     "reference-keys.txt": {
-      "checksum": "1437477112cee04ad0767e5c9c85fc63"
+      "checksum": "92564ee153854945bd27c78e2bf82ce9"
     },
     "search_index.json": {
-      "checksum": "337881d7c062b5e36643adce89d087c6"
+      "checksum": "3786aa0b538f3431b5c77b4b3f983ac2"
     },
     "style.css": {
       "checksum": "19f0b33dc27d4f748874d2cde5cea5bc"
     },
     "第二章-计量资料的统计描述.html": {
-      "checksum": "4314242047b10345b6662a47749b27b5"
+      "checksum": "b800cf01ff549176e854cfff1174154e"
     },
     "第六章-计数资料的统计描述.html": {
-      "checksum": "39bcaa3238c8e4af033a60622e0ebaec"
+      "checksum": "6bd863982878aa2e3d1dc3d5c36a26d3"
     },
     "第三章-总体均数的估计与假设检验.html": {
-      "checksum": "08cf18f4cbd92047d4715cf3e1066f0f"
+      "checksum": "2279cdf56351e6a27b11e958f0f92717"
     },
     "第四章-多个样本均数比较的方差分析.html": {
-      "checksum": "1c26b5595a7902fcaa161a562f7b64f8"
+      "checksum": "c47866754eb05e5c00d330961dbf71c9"
     },
     "第五章-计数资料的统计描述.html": {
-      "checksum": "9e0776d3c3752fe4e9171ec64cda610a"
+      "checksum": "d02b22e757b2e801df1b1c9fbbfc2521"
     }
   },
   "users": null

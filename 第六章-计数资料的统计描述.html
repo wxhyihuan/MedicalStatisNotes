@@ -265,6 +265,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.2.1" data-path="第六章-计数资料的统计描述.html"><a href="第六章-计数资料的统计描述.html#泊松分布的性质"><i class="fa fa-check"></i><b>6.2.1</b> 泊松分布的性质</a></li>
 <li class="chapter" data-level="6.2.2" data-path="第六章-计数资料的统计描述.html"><a href="第六章-计数资料的统计描述.html#泊松分布的应用"><i class="fa fa-check"></i><b>6.2.2</b> 泊松分布的应用</a></li>
 </ul></li>
+<li class="chapter" data-level="6.3" data-path="第六章-计数资料的统计描述.html"><a href="第六章-计数资料的统计描述.html#负二项分布"><i class="fa fa-check"></i><b>6.3</b> 负二项分布</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="第六章-计数资料的统计描述.html"><a href="第六章-计数资料的统计描述.html#负二项分布的性质"><i class="fa fa-check"></i><b>6.3.1</b> 负二项分布的性质</a></li>
+<li class="chapter" data-level="6.3.2" data-path="第六章-计数资料的统计描述.html"><a href="第六章-计数资料的统计描述.html#负二项分布的参数估计"><i class="fa fa-check"></i><b>6.3.2</b> 负二项分布的参数估计</a></li>
+<li class="chapter" data-level="6.3.3" data-path="第六章-计数资料的统计描述.html"><a href="第六章-计数资料的统计描述.html#负二项分布的应用"><i class="fa fa-check"></i><b>6.3.3</b> 负二项分布的应用</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -294,8 +300,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="二项分布" class="section level2" number="6.1">
 <h2><span class="header-section-number">6.1</span> 二项分布</h2>
 <p>二项分布(Binomial distribution)是<span class="math inline">\(n\)</span>个独立的 成功/失败(或阴/阳，或是/非) 试验中“成功”的次数<span class="math inline">\(X\)</span>(即取值[0~n]之间)的离散概率分布，其中每次试验的“成功”概率为<span class="math inline">\(p\)</span>，记为B(n,p)。这样的<strong>单次</strong>成功/失败试验又称为伯努利试验，即当<span class="math inline">\(n = 1\)</span>时，二项分布就是<a href="https://zh.wikipedia.org/wiki/%E4%BC%AF%E5%8A%AA%E5%88%A9%E5%88%86%E5%B8%83">伯努利分布，0-1分布</a>。二项分布是显著性差异的二项试验的基础。一般地，如果随机变量<span class="math inline">\(X\)</span>(即取值[0~n]之间)服从参数为<span class="math inline">\(n\)</span>和<span class="math inline">\(p\)</span>的二项分布时，那么<span class="math inline">\(n\)</span>次试验中正好得到<span class="math inline">\(x\)</span>次成功的<a href="https://zh.wikipedia.org/wiki/%E6%A6%82%E7%8E%87%E8%B4%A8%E9%87%8F%E5%87%BD%E6%95%B0">概率质量函数</a>即为：
-<span class="math display">\[P(x)=\frac{n!}{x!(n-x)!}p^x(1-p)^{n-x}, x\in[0,n]\]</span></p>
-<p>P(x)就是<a href="https://zh.wikipedia.org/wiki/%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86">二项式</a><span class="math inline">\([p+(1-p)]^n\)</span>展开式的通项，<span class="math inline">\(n!/x!(n-x)!\)</span>为二项系数，且<span class="math inline">\(\sum_{x=0}^nP(x)=1\)</span>。</p>
+<span class="math display">\[\begin{aligned}
+ f(x,n,p)=P(x,n,p) &amp; = \binom{x}{n}p^x(1-p)^{n-x} \\
+ &amp; = \frac{n!}{x!(n-x)!}p^x(1-p)^{n-x}, x\in[0,n]
+ \end{aligned}\]</span>
+P(x)就是<a href="https://zh.wikipedia.org/wiki/%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86">二项式</a><span class="math inline">\([p+(1-p)]^n\)</span>展开式的通项，<span class="math inline">\(n!/x!(n-x)!\)</span>为二项系数，且<span class="math inline">\(\sum_{x=0}^nP(x)=1\)</span>。</p>
 <p><strong>注意</strong></p>
 <p>对二项分布的资料进行抽样时，如果是有返回(放回)随机抽去n个个体，则依旧是刚才的<span class="math inline">\(P(x)\)</span>分布函数；如果时无返回(不放回)的随机抽样，自由当n远小于总体个数N(如n &lt; N/10)时，也可做近似<span class="math inline">\(P(x)\)</span>分布函数处理。</p>
 <p><strong>适用的条件</strong></p>
@@ -338,7 +347,7 @@ X的总标准差：
 <div id="与其他分布的关系" class="section level4" number="6.1.1.3">
 <h4><span class="header-section-number">6.1.1.3</span> 与其他分布的关系</h4>
 <ol style="list-style-type: decimal">
-<li>伯努利分布是二项分布在n= 1时的特殊情况。X~ B(1,p)与X~ Bern(p)的意思是相同的。相反，任何二项分布B(n,p)都是n次独立伯努利试验的和，每次试验成功的概率为p。</li>
+<li>伯努利分布是二项分布在n=1时的特殊情况。X~ B(1,p)与X~ Bern(p)的意思是相同的。相反，任何二项分布B(n,p)都是n次独立伯努利试验的和，每次试验成功的概率为p。</li>
 <li>泊松近似 当试验的次数n-&gt;∞，而乘积np固定时，二项分布收敛于<a href="https://zh.wikipedia.org/zh-hans/%E6%B3%8A%E6%9D%BE%E5%88%86%E4%BD%88">泊松分布</a>。因此参数为λ=np的泊松分布可以作为二项分布B(n,p)的近似，近似成立的前提要求n足够大，而p足够小，np不是很小。</li>
 <li>正态近似 如果n足够大，那么分布的偏度就比较小。在这种情况下，如果使用适当的连续性校正，那么B(n,p)的一个很好的近似是正态分布:N(np,np(1-p))。当n越大（至少20）且p不接近0或1时近似效果更好。不同的经验法则可以用来决定n是否足够大,以及p是否距离0或1足够远,其中一个常用的规则是np和n(1 −p)都必须大于5。</li>
 </ol>
@@ -717,7 +726,7 @@ S_{p_1-p_2} &amp;= \sqrt{\frac{X_1+X_2}{n_1+n_2}(1-\frac{X_1+X_2}{n_1+n_2})(\fra
 <span id="cb64-3"><a href="第六章-计数资料的统计描述.html#cb64-3" aria-hidden="true" tabindex="-1"></a>x1<span class="ot">&lt;-</span><span class="dv">4</span></span>
 <span id="cb64-4"><a href="第六章-计数资料的统计描述.html#cb64-4" aria-hidden="true" tabindex="-1"></a>x2<span class="ot">&lt;-</span><span class="dv">7</span></span>
 <span id="cb64-5"><a href="第六章-计数资料的统计描述.html#cb64-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb64-6"><a href="第六章-计数资料的统计描述.html#cb64-6" aria-hidden="true" tabindex="-1"></a>posi_twosamplecomp_uAsym<span class="ot">&lt;-</span><span class="cf">function</span>(n1,n2,x1,x2){</span>
+<span id="cb64-6"><a href="第六章-计数资料的统计描述.html#cb64-6" aria-hidden="true" tabindex="-1"></a>posi_twosamplecom_puAsym <span class="ot">&lt;-</span><span class="cf">function</span>(n1,n2,x1,x2){</span>
 <span id="cb64-7"><a href="第六章-计数资料的统计描述.html#cb64-7" aria-hidden="true" tabindex="-1"></a>  u_val<span class="ot">&lt;-</span><span class="cn">NULL</span></span>
 <span id="cb64-8"><a href="第六章-计数资料的统计描述.html#cb64-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(n1<span class="sc">==</span>n2){</span>
 <span id="cb64-9"><a href="第六章-计数资料的统计描述.html#cb64-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>((x1<span class="sc">+</span>x2)<span class="sc">&gt;=</span><span class="dv">20</span>)</span>
@@ -744,6 +753,151 @@ S_{p_1-p_2} &amp;= \sqrt{\frac{X_1+X_2}{n_1+n_2}(1-\frac{X_1+X_2}{n_1+n_2})(\fra
 <span id="cb64-30"><a href="第六章-计数资料的统计描述.html#cb64-30" aria-hidden="true" tabindex="-1"></a><span class="co"># [1] 0.03619123</span></span></code></pre></div>
 <p>根据计算结果，案例6-14的p值为0.3326193&gt;0.05，按照α=0.05的检验水准，不拒绝原假设<span class="math inline">\(H_0\)</span>。</p>
 <p>根据计算结果，案例6-15的p值为0.03619123&lt;0.05，按照α=0.05的检验水准，拒绝原假设<span class="math inline">\(H_0\)</span>，接受<span class="math inline">\(H_1H_1\)</span>。</p>
+</div>
+</div>
+</div>
+<div id="负二项分布" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> 负二项分布</h2>
+<p>负二项分布是统计学上一种描述在一系列独立同分布的伯努利试验中，
+“成功”(或“失败”)次数到达指定次数（记为r）时“失败”(或“成功”)的次数(记为k)的离散概率分布。
+根据参数r是否为整数，负二项分布有两种，当r为整数时，也称为帕斯卡分布(Pascal distribution)；
+当r为延申到非整数时，也称为波利亚分布(Polya distribution)。
+这里仅考虑r为整数时，也就是帕斯卡分布的情况，其定义有下面两种形式：</p>
+<ol style="list-style-type: decimal">
+<li>在一系列伯努利试验中，失败次数到达指定次数时，成功次数的离散概率分布</li>
+<li>在一系列伯努利试验中，成功次数到达指定次数（指定值，记为r）时，失败次数（观察变量，记为k）的离散概率分布</li>
+</ol>
+<p>这两种定义只是将“成功”和“失败”对调，其本质上没差别。一般的，为方便与之前的分布概念保持一直，便于理解，
+都采用第二种形式。记r是成功的次数，为固定值；k是失败的次数，为自变量；p是伯努利试验成功的概率，失败概率则为1-p；因此下面将以第二种形式为例。
+其概率质量函数为：
+<span class="math display">\[\begin{aligned}
+f(k,r,p)=P(k,r,p)=p(x=k) &amp; = \binom{k+r-1}{r-1}p^r(1-p)^k\\
+&amp; = \frac{(k+r-1)!}{k!(r-1)!}p^r(1-p)^k ,k=0,1,2,\dots\\
+&amp; = (-1)^k\binom{-r}{k}p^r(1-p)^k
+\end{aligned}\]</span>
+该表达式可以写成带负值参数<span class="math inline">\((-1)^k\)</span>的二项系数的形式，解释了“负二项”名称的来源。</p>
+<p><strong>注意</strong>
+有些资料对负二项分布的定义可能与这里的资料略有不同。最常见的变化是随机变量X计算不同的东西。
+这些变化可以在这里的<a href="https://en.wikipedia.org/wiki/Negative_binomial_distribution#Alternative_formulations">表格</a>中看到。</p>
+<div id="负二项分布的性质" class="section level3" number="6.3.1">
+<h3><span class="header-section-number">6.3.1</span> 负二项分布的性质</h3>
+<div id="均数与标准差-2" class="section level4" number="6.3.1.1">
+<h4><span class="header-section-number">6.3.1.1</span> 均数与标准差</h4>
+<p>负二项分布的概率分布依赖参数p和r，其总体的均值和方差，标准差为：</p>
+<p>X的总体均数：
+<span class="math display">\[μ=r\frac{1-p}{p}\]</span>
+X的方差：
+<span class="math display">\[σ^2=r\frac{1-p}{p^2}=\frac{μ}{p}=μ+μ^2/r\]</span>
+X的标准差：
+<span class="math display">\[σ=\frac{\sqrt{r(1-p)}}{p}\]</span></p>
+</div>
+<div id="负二项分布的图像" class="section level4" number="6.3.1.2">
+<h4><span class="header-section-number">6.3.1.2</span> 负二项分布的图像</h4>
+<ol style="list-style-type: decimal">
+<li>负二项分布的图像偏态主要由p和n决定：</li>
+<li>负二项分布 与 二项分布 的区别在于：“二项分布”是固定试验总次数N的独立试验中，成功次数k的分布；而“负二项分布”是所有到r次成功时即终止的独立试验中，失败次数k的分布。</li>
+<li>正态近似 如果n足够大，那么分布的偏度就比较小</li>
+</ol>
+</div>
+<div id="与其他分布的关系-1" class="section level4" number="6.3.1.3">
+<h4><span class="header-section-number">6.3.1.3</span> 与其他分布的关系</h4>
+<ol style="list-style-type: decimal">
+<li>负二项分布 与 二项分布 的区别在于：“二项分布”是固定试验总次数N的独立试验中，成功次数k的分布；而“负二项分布”是所有到r次成功时即终止的独立试验中，失败次数k的分布。</li>
+<li>当r=1时，负二项分布退化为<a href="https://zh.wikipedia.org/zh-cn/%E5%B9%BE%E4%BD%95%E5%88%86%E4%BD%88">几何分布</a></li>
+</ol>
+</div>
+</div>
+<div id="负二项分布的参数估计" class="section level3" number="6.3.2">
+<h3><span class="header-section-number">6.3.2</span> 负二项分布的参数估计</h3>
+<p>负二项分布有两个参数即u和r。r值越大，分布的方差与均数的比值就越接近 1；
+而r值越小，分布的方差与均数的比值就越大。为此，可以用r值的大小来衡量
+分布的离散程度即聚集 趋向的程度，常称为聚集指数(Cluster index)。</p>
+<p>负二项分布的参数一般可用样本均数<span class="math inline">\(\bar{k}\)</span>作为其估计值，即<span class="math inline">\(u=\bar{k}\)</span>，
+但参数r的估计就复杂一些。关于r的估计方法常用的有矩法、零频数法和最大似然法等。</p>
+<p><strong>矩法</strong>
+用样本的均数<span class="math inline">\(\bar{k}\)</span>和方差<span class="math inline">\(S^2\)</span>分别作为负二项分布的均数μ和方差<span class="math inline">\(\sigma^2\)</span>的估计值，
+可以利用公式：
+<span class="math display">\[\bar{r}=\frac{\bar{k}^2}{S^2-\bar{k}}, \bar{k}=\sum{fk}/N, S^2=(\sum{fk^2}-(\sum{fk})^2/N)/(N-1)\]</span>
+式子中的<span class="math inline">\(f\)</span>为样本观察到的“失败”数k所对应的频数，N为观察但总数。</p>
+<p>使用《医学统计学》中的 案例6-16 的数据在R中进行矩法估计聚集指数r(Cluster index)分析测试。</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="第六章-计数资料的统计描述.html#cb65-1" aria-hidden="true" tabindex="-1"></a>arr1<span class="ot">&lt;-</span><span class="fu">array</span>(<span class="at">dim=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">7</span>))</span>
+<span id="cb65-2"><a href="第六章-计数资料的统计描述.html#cb65-2" aria-hidden="true" tabindex="-1"></a>arr1[<span class="dv">1</span>,]<span class="ot">&lt;-</span><span class="dv">0</span><span class="sc">:</span><span class="dv">6</span></span>
+<span id="cb65-3"><a href="第六章-计数资料的统计描述.html#cb65-3" aria-hidden="true" tabindex="-1"></a>arr1[<span class="dv">2</span>,]<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">30</span>,<span class="dv">14</span>,<span class="dv">8</span>,<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">2</span>)</span>
+<span id="cb65-4"><a href="第六章-计数资料的统计描述.html#cb65-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-5"><a href="第六章-计数资料的统计描述.html#cb65-5" aria-hidden="true" tabindex="-1"></a>negbino_jufa_restim<span class="ot">&lt;-</span><span class="cf">function</span>(k_val,freq){</span>
+<span id="cb65-6"><a href="第六章-计数资料的统计描述.html#cb65-6" aria-hidden="true" tabindex="-1"></a>  N<span class="ot">&lt;-</span><span class="fu">sum</span>(freq)</span>
+<span id="cb65-7"><a href="第六章-计数资料的统计描述.html#cb65-7" aria-hidden="true" tabindex="-1"></a>  sum_fk<span class="ot">&lt;-</span><span class="fu">sum</span>(k_val <span class="sc">*</span> freq)</span>
+<span id="cb65-8"><a href="第六章-计数资料的统计描述.html#cb65-8" aria-hidden="true" tabindex="-1"></a>  sum_fkk<span class="ot">&lt;-</span><span class="fu">sum</span>(k_val<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> freq)</span>
+<span id="cb65-9"><a href="第六章-计数资料的统计描述.html#cb65-9" aria-hidden="true" tabindex="-1"></a>  mean_val<span class="ot">&lt;-</span>sum_fk<span class="sc">/</span>N</span>
+<span id="cb65-10"><a href="第六章-计数资料的统计描述.html#cb65-10" aria-hidden="true" tabindex="-1"></a>  var_val<span class="ot">&lt;-</span>(sum_fkk<span class="sc">-</span>sum_fk<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>N)<span class="sc">/</span>(N<span class="dv">-1</span>)</span>
+<span id="cb65-11"><a href="第六章-计数资料的统计描述.html#cb65-11" aria-hidden="true" tabindex="-1"></a>  <span class="co">#print(paste(N, mean_val ,var_val, sep = &quot;   &quot;))</span></span>
+<span id="cb65-12"><a href="第六章-计数资料的统计描述.html#cb65-12" aria-hidden="true" tabindex="-1"></a>  r_estim<span class="ot">&lt;-</span>mean_val<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>(var_val<span class="sc">-</span>mean_val)</span>
+<span id="cb65-13"><a href="第六章-计数资料的统计描述.html#cb65-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(r_estim)</span>
+<span id="cb65-14"><a href="第六章-计数资料的统计描述.html#cb65-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb65-15"><a href="第六章-计数资料的统计描述.html#cb65-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-16"><a href="第六章-计数资料的统计描述.html#cb65-16" aria-hidden="true" tabindex="-1"></a><span class="fu">negbino_jufa_restim</span>(arr1[<span class="dv">1</span>,],arr1[<span class="dv">2</span>,])</span>
+<span id="cb65-17"><a href="第六章-计数资料的统计描述.html#cb65-17" aria-hidden="true" tabindex="-1"></a><span class="co"># [1] 1.033333</span></span></code></pre></div>
+<p><strong>零频数法</strong></p>
+<p>零频法(Zero frequency method)是利用样本计数k=0时，所对应的频数<span class="math inline">\(f_0\)</span>占观察单位总数的比例，即
+<span class="math inline">\(f_0/N\)</span>来估计r值，即求解满足下面的方程的r值：
+<span class="math display">\[r\lg(1+\bar{k}/r)=\lg(N/f_0)\]</span>
+<em>使用此方法要注意满足适当的条件。</em>
+- <span class="math inline">\(\frac{f_0}{N}＞\frac{1}{3}\)</span>
+- 当<span class="math inline">\(\bar{r}&lt;10\)</span>时，还必须有充分的<span class="math inline">\(f_0\)</span>项，以满足不等式：<span class="math inline">\((\bar{r}_0.17)(\frac{f_0}{N}-0.32)＞0.20\)</span>
+- 往往需要使用线性内插法(Linear interpolation method)才能求得r的估计值。</p>
+<p><strong>最大似然法</strong></p>
+<p>最大似然法(Maximum likelihood method)是满足下面是指的z=0的r值：
+<span class="math display">\[z=\sum_{k=0}^m\frac{A_k}{r+k}-N\ln(1+\bar{k}/r)\]</span>
+公式中<span class="math inline">\(m=k_max\)</span>，即样本计数k所取得的最大值；<span class="math inline">\(A_k=\sum_{i=k+1}^mf_i\)</span>，即样本中所有计数发育k的频数之和。</p>
+<p>需要使用线性内插法(Linear interpolation method)才能求得r的估计值，该方法的估计更为精确，但是计算很复杂。</p>
+</div>
+<div id="负二项分布的应用" class="section level3" number="6.3.3">
+<h3><span class="header-section-number">6.3.3</span> 负二项分布的应用</h3>
+<p>R语言中的二项分布相关的函数与之前介绍的连续性分布(u分布，t分布和f分布)类似，主要有
+<a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/NegBinomial.html">dnbinom(),pnbinom(),qnbinom()和rnbinom()</a>。</p>
+<div id="拟合优度检验" class="section level4" number="6.3.3.1">
+<h4><span class="header-section-number">6.3.3.1</span> 拟合优度检验</h4>
+<p>是通过理论频数和实际频数的比较，对样本分布拟合负二项分布的适合情况进行检验。类似二项分布。此方法需要先进行r值估计，然后计算出
+不同样本频数的理论概率和理论频数，因此比较麻烦。目前在R语言中在那时没找到相应的包和函数可以比较好作者部分处理，后期看能否自己开发相应的工具代码吧。</p>
+<p>具体案例和内容请先参考<b>《医学统计学》P92页</b>的内容。
+<!--
+```r 
+arr1<-array(dim=c(3,7))
+arr1[1,]<-0:6
+arr1[2,]<-c(30,14,8,4,2,0,2)
+k_val<-arr1[1,]
+freq<-arr1[2,]
+negbino_ml_restim<-function(k_val,freq){
+  N<-sum(freq)
+  p_vals<-freq/N
+  freqsum_uder5<-sum(freq[which(freq<=5)])
+  p_vals_frequder5<-sum(p_vals[which(freq<=5)])
+
+  x<-c(freq[which(freq>5)],freqsum_uder5)
+  p<-c(p_vals[which(freq>5)],p_vals_frequder5)
+  chisq.test( x, p)
+
+  sum_fk<-sum(k_val * freq)
+  sum_fkk<-sum(k_val^2 * freq)
+  mean_val<-sum_fk/N
+  var_val<-(sum_fkk-sum_fk^2/N)/(N-1)
+  #print(paste(N, mean_val ,var_val, sep = "   "))
+  r_estim<-mean_val^2/(var_val-mean_val)
+  return(r_estim)
+}
+
+negbino_ml_restim(arr1[1,],arr1[2,])
+```
+!--></p>
+</div>
+<div id="两样本均数比较" class="section level4" number="6.3.3.2">
+<h4><span class="header-section-number">6.3.3.2</span> 两样本均数比较</h4>
+<p>对服从负二项分布的两个样本均数的比较，以推断其所代表的两个总体有无差别。先将两个样本的原始观察数据按公式：
+<span class="math display">\[Y_i=\ln(k_i+0.5r_c)\]</span>
+进行转换，然后再对所得到两组转换数据做<a href="第三章-总体均数的估计与假设检验.html#单样本t检验"><em>T</em>检验</a>。公式中，<span class="math inline">\(k_i\)</span>为每一组独立试验的样本计数，
+<span class="math inline">\(r_c\)</span>代表两样本的负二项分布的参数<span class="math inline">\(r_1\)</span>和<span class="math inline">\(r_2\)</span>的合并至，采用矩法估计的公式为：
+<span class="math display">\[r_c=\frac{\bar{k1}^2(S_1^2-\bar{k1})+\bar{k2}^2(S_2^2-\bar{k2})}{(S_1^2-\bar{k1})^2+(S_2^2-\bar{k2})^2}\]</span>
+公式中，<span class="math inline">\(\bar{k1}，S_1\)</span>分别是第一个样本计数的均数和方差；<span class="math inline">\(\bar{k2}，S_2\)</span>分别是第二个样本计数的均数和方差。</p>
 
 </div>
 </div>
