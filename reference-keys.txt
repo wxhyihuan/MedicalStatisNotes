@@ -34,6 +34,9 @@ tab:tab5
 fig:diagnosticplots1
 fig:diagnosticplots2
 fig:PostHocMethod
+fig:chisquaredfig
+tab:chisqtab
+tab:chisqtab1
 简介与传送门
 简介
 软件准备
@@ -160,3 +163,10 @@ levenes-检验
 负二项分布的应用
 拟合优度检验
 两样本均数比较
+第七章-chi2检验
+卡方分布
+概率密度函数
+卡方检验
+卡方检验的基本思想
+四格资料表的卡方检验
+四格资料表的卡方检验的校正公式

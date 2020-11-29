@@ -126,7 +126,7 @@
       "checksum": "806ab0467ea8b51e6248f2cc567b4827"
     },
     "index.html": {
-      "checksum": "c3c3498dcbe3adbf9323b84cc37ec335"
+      "checksum": "ddbbc5c8c1f8ddd313a55a7cb98cc059"
     },
     "libs/accessible-code-block-0.0.1/empty-anchor.js": {
       "checksum": "53c42ac72d71beb8e6dbffe86ab543d6"
@@ -206,6 +206,9 @@
     "libs/lightable-0.0.1/lightable.css": {
       "checksum": "25547ce4d44910ea8f377212d34397fa"
     },
+    "MedicalStatisNotes_files/figure-html/chisquaredfig-1.png": {
+      "checksum": "868a1f5dc21d6c405110c63797917627"
+    },
     "MedicalStatisNotes_files/figure-html/Cmdftest-1.png": {
       "checksum": "5cdb0234da51b880ddb0f30e0aa3878e"
     },
@@ -216,7 +219,7 @@
       "checksum": "9e77c1ec6c9890b795038a793ed60709"
     },
     "MedicalStatisNotes_files/figure-html/hometdist-1.png": {
-      "checksum": "fbdc2f161f639514cc3d09b59ec2f6f8"
+      "checksum": "a84e4666d3b3cc6650767bfaf91123f6"
     },
     "MedicalStatisNotes_files/figure-html/logtrans1-1.png": {
       "checksum": "f26c071e97475bbfac82b2ab22870021"
@@ -252,28 +255,31 @@
       "checksum": "7cdf7213010e36ed54167d37b169766a"
     },
     "reference-keys.txt": {
-      "checksum": "92564ee153854945bd27c78e2bf82ce9"
+      "checksum": "31bf11cfbe5541b7cd34d003ccf3e7a2"
     },
     "search_index.json": {
-      "checksum": "3786aa0b538f3431b5c77b4b3f983ac2"
+      "checksum": "4f756c054c55253ee824d55fe979a2b6"
     },
     "style.css": {
       "checksum": "19f0b33dc27d4f748874d2cde5cea5bc"
     },
     "第二章-计量资料的统计描述.html": {
-      "checksum": "b800cf01ff549176e854cfff1174154e"
+      "checksum": "8e111123b1321e52fcca5d9df33fa366"
     },
     "第六章-计数资料的统计描述.html": {
-      "checksum": "6bd863982878aa2e3d1dc3d5c36a26d3"
+      "checksum": "170c7cb910143e118838c6dbdd636d49"
+    },
+    "第七章-chi2检验.html": {
+      "checksum": "dc68f9f123c6ababc1a3278ebfabd186"
     },
     "第三章-总体均数的估计与假设检验.html": {
-      "checksum": "2279cdf56351e6a27b11e958f0f92717"
+      "checksum": "5249ebe315b22b53bccd9344a0d896d9"
     },
     "第四章-多个样本均数比较的方差分析.html": {
-      "checksum": "c47866754eb05e5c00d330961dbf71c9"
+      "checksum": "d878c0b55dbb6edebf8659db413910ea"
     },
     "第五章-计数资料的统计描述.html": {
-      "checksum": "d02b22e757b2e801df1b1c9fbbfc2521"
+      "checksum": "5400fb653861070d546798cfeaa6e3cf"
     }
   },
   "users": null
