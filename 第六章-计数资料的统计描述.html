@@ -264,6 +264,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.1" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#多个样本率的比较r-times-2表"><i class="fa fa-check"></i><b>7.3.1</b> 多个样本率的比较(<span class="math inline">\(R \times 2\)</span>表)</a></li>
 <li class="chapter" data-level="7.3.2" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#样本构成比的比较2-times-c表"><i class="fa fa-check"></i><b>7.3.2</b> 样本构成比的比较(<span class="math inline">\(2 \times C\)</span>表)</a></li>
 <li class="chapter" data-level="7.3.3" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#双向无序分组资料的关联性检验"><i class="fa fa-check"></i><b>7.3.3</b> 双向无序分组资料的关联性检验</a></li>
+<li class="chapter" data-level="7.3.4" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#双向有序分组资料的线性趋势检验"><i class="fa fa-check"></i><b>7.3.4</b> 双向有序分组资料的线性趋势检验</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -427,12 +428,16 @@ N(p,p(1-p)/n)。当n越大（至少20）且p不接近0或1时近似效果更好�
 <h4><span class="header-section-number">6.1.2.2</span> 样本率与总体率的比较</h4>
 <div id="直接法" class="section level5">
 <h5><span class="header-section-number">6.1.2.2.1</span> 直接法</h5>
-<p>使用直接法时，需要注意是单侧检验还是双侧检验。一般的有：
-1. 单侧检验的情况：
-- 若是回答“差/低”的问题计算的“成功”<strong>至多</strong>是k次的概率，即是<span class="math inline">\(P(X≤k)\)</span>；
-- 若是回答“优/高”的问题计算的的“成功”<strong>至少</strong>是k次的概率，即<span class="math inline">\(P(X≥k)\)</span>的概率。
-2. 双侧检验的情况：
-主要是回答“有无差别”，及备择假设是<span class="math inline">\(p≠p_0\)</span>是否成立，因此计算的是实际样本“成功”k次出现的概率，与更背离原假设的事件出现的概率和。</p>
+<p>使用直接法时，需要注意是单侧检验还是双侧检验。一般的有：</p>
+<ol style="list-style-type: decimal">
+<li>单侧检验的情况：
+<ul>
+<li>若是回答“差/低”的问题计算的“成功”<strong>至多</strong>是k次的概率，即是<span class="math inline">\(P(X≤k)\)</span>；</li>
+<li>若是回答“优/高”的问题计算的的“成功”<strong>至少</strong>是k次的概率，即<span class="math inline">\(P(X≥k)\)</span>的率。</li>
+</ul></li>
+<li>双侧检验的情况：
+主要是回答“有无差别”，及备择假设是<span class="math inline">\(p≠p_0\)</span>是否成立，因此计算的是实际样本“成功”k次出现的概率，与更背离原假设的事件出现的概率和。</li>
+</ol>
 <p>使用《医学统计学》中的 案例6-4的数据在R中进行二项分布的样本率与总体率的比较的直接法分析测试。</p>
 <div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="第六章-计数资料的统计描述.html#cb54-1"></a><span class="co">#比较的是至少9次，或者零一对象最多8次的概率，所以：</span></span>
 <span id="cb54-2"><a href="第六章-计数资料的统计描述.html#cb54-2"></a>p_<span class="dv">8</span>&lt;-<span class="kw">pbinom</span>(<span class="dv">8</span>,<span class="dv">10</span>,<span class="fl">0.55</span>)</span>

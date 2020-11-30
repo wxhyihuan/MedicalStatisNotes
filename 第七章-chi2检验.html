@@ -264,6 +264,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.1" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#多个样本率的比较r-times-2表"><i class="fa fa-check"></i><b>7.3.1</b> 多个样本率的比较(<span class="math inline">\(R \times 2\)</span>表)</a></li>
 <li class="chapter" data-level="7.3.2" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#样本构成比的比较2-times-c表"><i class="fa fa-check"></i><b>7.3.2</b> 样本构成比的比较(<span class="math inline">\(2 \times C\)</span>表)</a></li>
 <li class="chapter" data-level="7.3.3" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#双向无序分组资料的关联性检验"><i class="fa fa-check"></i><b>7.3.3</b> 双向无序分组资料的关联性检验</a></li>
+<li class="chapter" data-level="7.3.4" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#双向有序分组资料的线性趋势检验"><i class="fa fa-check"></i><b>7.3.4</b> 双向有序分组资料的线性趋势检验</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -985,10 +986,12 @@ R语言中与超几何分布相关的主要函数有<a href="https://stat.ethz.c
 <div id="r行-times-c列资料表的卡方检验" class="section level2">
 <h2><span class="header-section-number">7.3</span> R行 <span class="math inline">\(\times\)</span> C列资料表的卡方检验</h2>
 <p>行x列表资料的卡方检验用于多个样本率的比较、两个或多个构成比的比较以及双向无序分类资料的 关联性检验。
-其基本数据有以下3种情况:
-1. 多个样本率比较时，有R行2列，称为Rx2表；
-2. 两个样本 的构成比比较时，有2行C列，称2xC表；
-3. 多个样本的构成比比较以及双向无序分类资料关联性检验时，有R行C列，称为RxC表。</p>
+其基本数据有以下3种情况:</p>
+<ol style="list-style-type: decimal">
+<li><p>多个样本率比较时，有R行2列，称为Rx2表；</p></li>
+<li><p>两个样本 的构成比比较时，有2行C列，称2xC表；</p></li>
+<li><p>多个样本的构成比比较以及双向无序分类资料关联性检验时，有R行C列，称为RxC表。</p></li>
+</ol>
 <p>以上3种情况可统称为行×列表资料。行x列表资料的检验仍用 Pearsony <span class="math inline">\(\chi^2\)</span>公式 计算检验统计量值。
 因该式需先计算理论频数 <span class="math inline">\(T_{rc}\)</span>，化简后得行×列表资料检验的专用公式和自由度为：
 <span class="math display">\[\chi^2=n(\sum\frac{A^2}{n_{r}n_{c}}-1)，v=(行数-1)(列数-1)\]</span></p>
@@ -1113,7 +1116,7 @@ R语言中与超几何分布相关的主要函数有<a href="https://stat.ethz.c
 </div>
 <div id="样本构成比的比较2-times-c表" class="section level3">
 <h3><span class="header-section-number">7.3.2</span> 样本构成比的比较(<span class="math inline">\(2 \times C\)</span>表)</h3>
-<table style='width:60; font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;' class=" lightable-classic">
+<table style='width:60%; font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;' class=" lightable-classic">
 <caption>
 <span id="tab:chisqtab5">Table 7.6: </span>案例07-07 2x3 表资料的多个样本率的比较测试数据
 </caption>
@@ -1220,7 +1223,7 @@ RxC表资料，常常分析两个分类变量之间有无关系?关系的密切�
 其计算公式为：
 <span class="math display">\[C=\sqrt{\frac{\chi^2}{n+\chi^2}}\]</span></p>
 <p>式中<span class="math inline">\(\chi^2\)</span>为行×列表资料的<span class="math inline">\(\chi^2\)</span>值，n为样本含量。列联系数C取值范围在0~1之间，愈接近于0，关系愈不密切;愈接近于1，关系愈密切。</p>
-<table style='width:60; font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;' class=" lightable-classic">
+<table style='width:60%; font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;' class=" lightable-classic">
 <caption>
 <span id="tab:chisqtab6">Table 7.7: </span>案例07-08 rxc 表资料的双向无序分组资料的关联性检验测试数据
 </caption>
@@ -1399,17 +1402,22 @@ AB
 <li>无序分类变量，指所分类别zhi或属性之间无程度和dao顺序的差别。无序分类又可分为：
 <ul>
 <li>二项分类，如性别（男、女），药物反应（阴性，阳性）等；</li>
-<li>多项分类，如血型（O、A、B、AB），职业（工、农、商、学、兵）等。</li>
+<li>多项分类，如血型（O、A、B、AB），职业（工、农、商、学、兵）等。
+对于无序分类变量的分析，应先按类别分组，清点各组的观察单位数，编制分类变量的频数表，所得资料为无序分类资料，
+亦称计数资料。</li>
 </ul></li>
+<li>有序分类变量，指各类别之间有程度的差别。
+如尿糖化验结果按-、±、+、++、+++分类；疗效按治愈、显效、好转、无效分类。
+对于有序分类变量，应先按等级顺序分组，清点各组的观察单位个数，编制有序变量的频数表，所得资料称为等级资料。</li>
 </ol>
-<p>对于无序分类变量的分析，应先按类别分组，清点各组的观察单位数，编制分类变量的频数表，所得资料为无序分类资料，
-亦称计数资料。</p>
-<ol start="2" style="list-style-type: decimal">
-<li>有序分类变量，指各类别之间有程度的差别。</li>
-</ol>
-<p>如尿糖化验结果按-、±、+、++、+++分类；疗效按治愈、显效、好转、无效分类。
-对于有序分类变量，应先按等级顺序分组，清点各组的观察单位个数，编制有序变量的频数表，所得资料称为等级资料。</p>
 <hr />
+</div>
+<div id="双向有序分组资料的线性趋势检验" class="section level3">
+<h3><span class="header-section-number">7.3.4</span> 双向有序分组资料的线性趋势检验</h3>
+<p>对双向有序属性不同的RxC表资料，除可推断两个分类变量是否存在相关关系外，还可通过分解推断其相关是否为线性相关。
+其基本思想是：首先计算RxC表资料的值，然后将总的值分解成<em>线性回归分量</em>与<em>偏离线性回归分量</em>。若两分量均有统计学意义，
+说明两个分类变量存在相关关系，但关系不是简单的直线关系；若线性回归分量有统计学意义，偏离线性回归分量无统计学意义时，
+说明两个分类变量存在直线相关关系。</p>
 
 </div>
 </div>
