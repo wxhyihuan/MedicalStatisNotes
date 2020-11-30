@@ -256,6 +256,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7.2" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#卡方检验"><i class="fa fa-check"></i><b>7.2</b> 卡方检验</a><ul>
 <li class="chapter" data-level="7.2.1" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#卡方检验的基本思想"><i class="fa fa-check"></i><b>7.2.1</b> 卡方检验的基本思想</a></li>
+<li class="chapter" data-level="7.2.2" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#四格资料表的卡方检验"><i class="fa fa-check"></i><b>7.2.2</b> 四格资料表的卡方检验</a></li>
+<li class="chapter" data-level="7.2.3" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#配对的四格资料表的卡方检验"><i class="fa fa-check"></i><b>7.2.3</b> 配对的四格资料表的卡方检验</a></li>
+<li class="chapter" data-level="7.2.4" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#四格资料表的fisher确切概率法"><i class="fa fa-check"></i><b>7.2.4</b> 四格资料表的Fisher确切概率法</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#r行-times-c列资料表的卡方检验"><i class="fa fa-check"></i><b>7.3</b> R行 <span class="math inline">\(\times\)</span> C列资料表的卡方检验</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#多个样本率的比较r-times-2表"><i class="fa fa-check"></i><b>7.3.1</b> 多个样本率的比较(<span class="math inline">\(R \times 2\)</span>表)</a></li>
+<li class="chapter" data-level="7.3.2" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#样本构成比的比较2-times-c表"><i class="fa fa-check"></i><b>7.3.2</b> 样本构成比的比较(<span class="math inline">\(2 \times C\)</span>表)</a></li>
+<li class="chapter" data-level="7.3.3" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#双向无序分组资料的关联性检验"><i class="fa fa-check"></i><b>7.3.3</b> 双向无序分组资料的关联性检验</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -446,7 +454,7 @@ N(p,p(1-p)/n)。当n越大（至少20）且p不接近0或1时近似效果更好�
 <span id="cb56-4"><a href="第六章-计数资料的统计描述.html#cb56-4"></a><span class="co">#计算的是出现9次的概率：</span></span>
 <span id="cb56-5"><a href="第六章-计数资料的统计描述.html#cb56-5"></a>p4&lt;-<span class="kw">dbinom</span>(x3,n3,p3)</span>
 <span id="cb56-6"><a href="第六章-计数资料的统计描述.html#cb56-6"></a><span class="co"># [1] 0.04031078</span></span>
-<span id="cb56-7"><a href="第六章-计数资料的统计描述.html#cb56-7"></a><span class="co">#计算的是出现更背离原假设的时间，即：</span></span>
+<span id="cb56-7"><a href="第六章-计数资料的统计描述.html#cb56-7"></a><span class="co">#计算出现更背离原假设的事件及概率，即：</span></span>
 <span id="cb56-8"><a href="第六章-计数资料的统计描述.html#cb56-8"></a>p4_<span class="dv">1</span>&lt;-<span class="kw">sum</span>(<span class="kw">dbinom</span>(<span class="dv">0</span><span class="op">:</span>n3,n3,p3)[<span class="kw">which</span>(<span class="kw">dbinom</span>(<span class="dv">0</span><span class="op">:</span>n3,n3,p3)<span class="op">&lt;</span><span class="kw">dbinom</span>(x3,n3,p3))])</span>
 <span id="cb56-9"><a href="第六章-计数资料的统计描述.html#cb56-9"></a><span class="co"># [1] 0.01834117</span></span>
 <span id="cb56-10"><a href="第六章-计数资料的统计描述.html#cb56-10"></a><span class="co">#双侧检验的p值为：</span></span>

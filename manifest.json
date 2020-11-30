@@ -86,6 +86,9 @@
     "image/Distributional transformations.png": {
       "checksum": "ad108835b8a894da94a2b1d9f1c4477d"
     },
+    "image/Fisherchitest.png": {
+      "checksum": "795f7c99107451bea9073444eb7249f8"
+    },
     "image/ieandht.png": {
       "checksum": "c5e5c12bccd1cce0e284b5dac0cc7c70"
     },
@@ -126,7 +129,7 @@
       "checksum": "806ab0467ea8b51e6248f2cc567b4827"
     },
     "index.html": {
-      "checksum": "ddbbc5c8c1f8ddd313a55a7cb98cc059"
+      "checksum": "e75a577a37d32ffabf11928d3d3ad1e9"
     },
     "libs/accessible-code-block-0.0.1/empty-anchor.js": {
       "checksum": "53c42ac72d71beb8e6dbffe86ab543d6"
@@ -255,31 +258,31 @@
       "checksum": "7cdf7213010e36ed54167d37b169766a"
     },
     "reference-keys.txt": {
-      "checksum": "31bf11cfbe5541b7cd34d003ccf3e7a2"
+      "checksum": "63d557f834800be7dd488a7e0d201f2b"
     },
     "search_index.json": {
-      "checksum": "4f756c054c55253ee824d55fe979a2b6"
+      "checksum": "6cd6514f569f94cc2aaac7bb1c202844"
     },
     "style.css": {
       "checksum": "19f0b33dc27d4f748874d2cde5cea5bc"
     },
     "第二章-计量资料的统计描述.html": {
-      "checksum": "8e111123b1321e52fcca5d9df33fa366"
+      "checksum": "4d687f1ce1f962793bca532865d2cb3d"
     },
     "第六章-计数资料的统计描述.html": {
-      "checksum": "170c7cb910143e118838c6dbdd636d49"
+      "checksum": "17711bbb042367a022b5ba0bbd22d0c8"
     },
     "第七章-chi2检验.html": {
-      "checksum": "dc68f9f123c6ababc1a3278ebfabd186"
+      "checksum": "73b7c4952fe88cb3cc8b3ae3432d1075"
     },
     "第三章-总体均数的估计与假设检验.html": {
-      "checksum": "5249ebe315b22b53bccd9344a0d896d9"
+      "checksum": "4112247a68c84f87b2020a17b5931a8e"
     },
     "第四章-多个样本均数比较的方差分析.html": {
-      "checksum": "d878c0b55dbb6edebf8659db413910ea"
+      "checksum": "9c56137fc7bd7e1d4d5e1ea317fbdd87"
     },
     "第五章-计数资料的统计描述.html": {
-      "checksum": "5400fb653861070d546798cfeaa6e3cf"
+      "checksum": "a2485d6c4fa6f81492b8ac26e5eac7cc"
     }
   },
   "users": null

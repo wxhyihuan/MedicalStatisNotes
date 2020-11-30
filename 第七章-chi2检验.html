@@ -256,6 +256,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7.2" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#卡方检验"><i class="fa fa-check"></i><b>7.2</b> 卡方检验</a><ul>
 <li class="chapter" data-level="7.2.1" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#卡方检验的基本思想"><i class="fa fa-check"></i><b>7.2.1</b> 卡方检验的基本思想</a></li>
+<li class="chapter" data-level="7.2.2" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#四格资料表的卡方检验"><i class="fa fa-check"></i><b>7.2.2</b> 四格资料表的卡方检验</a></li>
+<li class="chapter" data-level="7.2.3" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#配对的四格资料表的卡方检验"><i class="fa fa-check"></i><b>7.2.3</b> 配对的四格资料表的卡方检验</a></li>
+<li class="chapter" data-level="7.2.4" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#四格资料表的fisher确切概率法"><i class="fa fa-check"></i><b>7.2.4</b> 四格资料表的Fisher确切概率法</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#r行-times-c列资料表的卡方检验"><i class="fa fa-check"></i><b>7.3</b> R行 <span class="math inline">\(\times\)</span> C列资料表的卡方检验</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#多个样本率的比较r-times-2表"><i class="fa fa-check"></i><b>7.3.1</b> 多个样本率的比较(<span class="math inline">\(R \times 2\)</span>表)</a></li>
+<li class="chapter" data-level="7.3.2" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#样本构成比的比较2-times-c表"><i class="fa fa-check"></i><b>7.3.2</b> 样本构成比的比较(<span class="math inline">\(2 \times C\)</span>表)</a></li>
+<li class="chapter" data-level="7.3.3" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#双向无序分组资料的关联性检验"><i class="fa fa-check"></i><b>7.3.3</b> 双向无序分组资料的关联性检验</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -340,10 +348,11 @@ Figure 7.1: 不同自由度情况下的卡方分布概率密度曲线图
 <p>卡方检验分为<strong>拟合度的卡方检验</strong>和<strong>卡方独立性检验</strong>。</p>
 <div id="卡方检验的基本思想" class="section level3">
 <h3><span class="header-section-number">7.2.1</span> 卡方检验的基本思想</h3>
-<div id="四格资料表的卡方检验" class="section level4">
-<h4><span class="header-section-number">7.2.1.1</span> 四格资料表的卡方检验</h4>
-<p>这里使用《医学统计学》中的 案例07-01 的数据，即两样本率比较的<span class="math inline">\(\chi^2\)</span>检验为例，
-介绍<span class="math inline">\(\chi^2\)</span>检验的基本思想。</p>
+<p>这里使用《医学统计学》中的 案例07-01 的数据，介绍<span class="math inline">\(\chi^2\)</span>检验的基本思想，详细见<a href="第七章-chi2检验.html#四格资料表的卡方检验">四格资料表的卡方检验</a>。</p>
+</div>
+<div id="四格资料表的卡方检验" class="section level3">
+<h3><span class="header-section-number">7.2.2</span> 四格资料表的卡方检验</h3>
+<p>《医学统计学》中的 案例07-01 的数据，即四格资料表的比较为例，介绍<span class="math inline">\(\chi^2\)</span>检验的基本思想。</p>
 <table style='width:70%; font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;' class=" lightable-classic">
 <caption>
 <span id="tab:chisqtab">Table 7.1: </span>案例07-01 四格资料表
@@ -493,9 +502,8 @@ v=(行数-1)(列数-1)\]</span>
 <span id="cb67-35"><a href="第七章-chi2检验.html#cb67-35"></a>     <span class="kw">return</span> (p_val)</span>
 <span id="cb67-36"><a href="第七章-chi2检验.html#cb67-36"></a>}</span>
 <span id="cb67-37"><a href="第七章-chi2检验.html#cb67-37"></a><span class="kw">chisquare_fourfoldtable_test1</span>(actual_matrix)</span></code></pre></div>
-</div>
 <div id="四格资料表的卡方检验的校正公式" class="section level4">
-<h4><span class="header-section-number">7.2.1.2</span> 四格资料表的卡方检验的校正公式</h4>
+<h4><span class="header-section-number">7.2.2.1</span> 四格资料表的卡方检验的校正公式</h4>
 <p>计数资料中的实际频数A为分类资料，是非连续的，由此使用卡方检验的统计量计算的<span class="math inline">\(\chi^2\)</span>值也是非连续的，
 当自由度v特别小，尤其是四格表这样只有1的时候，计算出的卡方值会偏小，导致p值偏大，导致第一类错误的概率增大。
 为此，美国统计学家F. Yates在1934年提出了一个计算卡方值的连续性校正公式：
@@ -646,8 +654,763 @@ v=(行数-1)(列数-1)\]</span>
 <span id="cb68-56"><a href="第七章-chi2检验.html#cb68-56"></a>     <span class="co">#p_val&lt;-dchisq(chi_val,df)</span></span>
 <span id="cb68-57"><a href="第七章-chi2检验.html#cb68-57"></a>     <span class="kw">return</span> (chi_val)</span>
 <span id="cb68-58"><a href="第七章-chi2检验.html#cb68-58"></a>}</span></code></pre></div>
-
 </div>
+</div>
+<div id="配对的四格资料表的卡方检验" class="section level3">
+<h3><span class="header-section-number">7.2.3</span> 配对的四格资料表的卡方检验</h3>
+<p>计数资料的配对设计常用于两种检验方法、培养方法、诊断方法的比较。其特点是对样本中各观察单位分别用两种方法处理，
+然后观察两种处理方法的某两分类变量的计数结果。观察结果有四种情况：</p>
+<ol style="list-style-type: decimal">
+<li>两种检测方法皆为阳性数(a);</li>
+<li>两种检测方法皆为阴性数(d);</li>
+<li>免疫荧光法为阳性，乳胶凝集法为阴性数(b);</li>
+<li>乳胶凝集法为阳性，免疫荧光法为阴性数(c)。</li>
+</ol>
+可整理成下表的形式，以《医学统计学》中的 案例07-07 的数据为例。
+<table style='width:70%; font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;' class=" lightable-classic">
+<caption>
+<span id="tab:chisqtab2">Table 7.3: </span>案例07-07 配对四格资料表
+</caption>
+<thead>
+<tr>
+<th style="empty-cells: hide;border-bottom:hidden;" colspan="1">
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+乳胶凝集法
+</div>
+</th>
+<th style="empty-cells: hide;border-bottom:hidden;" colspan="1">
+</th>
+</tr>
+<tr>
+<th style="text-align:center;">
+免疫荧光法
+</th>
+<th style="text-align:center;">
+阳性
+</th>
+<th style="text-align:center;">
+阴性
+</th>
+<th style="text-align:center;">
+合计
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+阳性
+</td>
+<td style="text-align:center;">
+11(a)
+</td>
+<td style="text-align:center;">
+2(c)
+</td>
+<td style="text-align:center;">
+13(a+c)
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+阴性
+</td>
+<td style="text-align:center;">
+12(b)
+</td>
+<td style="text-align:center;">
+33(d)
+</td>
+<td style="text-align:center;">
+45(b+d)
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+合计
+</td>
+<td style="text-align:center;">
+23(a+b)
+</td>
+<td style="text-align:center;">
+35(c+d)
+</td>
+<td style="text-align:center;">
+58(n)
+</td>
+</tr>
+</tbody>
+</table>
+<p>其中，a、d为两法观察结果一致的两种情况，b、c为两法观察结果不一致的两种情况。当两种处理方法无差别时，根据<a href="https://www.statisticssolutions.com/mcnemar-marginal-homogeneity-sign-wilcoxon-tests/">边际同质性</a>的零假设规定，
+每个结果两个边缘概率是相同的，<span class="math inline">\(p_a + p_b = p_a + p_c\)</span> 并且 <span class="math inline">\(p_c + p_d = p_b + p_d\)</span>，即两总体率相等<span class="math inline">\(p_b=p_c\)</span>，由于在抽样研究中，抽样误差是不可避免的，样本中的b和c往往不等
+(b≠c，即两样本率不等:<span class="math inline">\(p_b=p_c\)</span>)。为此，需进行<a href="https://en.wikipedia.org/wiki/McNemar%27s_test">麦克尼马尔假设检验(McNemar’s test)</a>，其检验统计量为：</p>
+<p><strong>当 <b>(b+c)≥40</b> 时</strong>：
+<span class="math display">\[\chi^2=\frac{(b-c)^2}{b+c}, v=1\]</span>
+<strong>或者当 <b>(b+c)&lt;40</b> 时</strong>：
+<span class="math display">\[\chi^2=\frac{(|b-c|-1)^2}{b+c}, v=1\]</span>
+值得注意的时，麦克尼马尔假设检验一般用于样本含量不太大的资料，因为它只考虑了两种处理不一致的情况(b,c)，
+而没有考虑样本含量n和两种处理结果一致的情况(a,d)，所以行n很大，且a，d的数值也很大时，b，c相对较小，
+检验结果的实际意义就不明确了。</p>
+<p>使用《医学统计学》中的 案例07-07 的数据，做麦克尼马尔假设检验的R实现。</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="第七章-chi2检验.html#cb69-1"></a>a&lt;-<span class="dv">11</span></span>
+<span id="cb69-2"><a href="第七章-chi2检验.html#cb69-2"></a>b&lt;-<span class="dv">12</span></span>
+<span id="cb69-3"><a href="第七章-chi2检验.html#cb69-3"></a>c&lt;-<span class="dv">2</span></span>
+<span id="cb69-4"><a href="第七章-chi2检验.html#cb69-4"></a>d&lt;-<span class="dv">33</span></span>
+<span id="cb69-5"><a href="第七章-chi2检验.html#cb69-5"></a>actual_matrix &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">data =</span> <span class="kw">c</span>(a,b,c,d), <span class="dt">nrow =</span> <span class="dv">2</span>, <span class="dt">ncol =</span> <span class="dv">2</span>,<span class="dt">byrow =</span> T)</span>
+<span id="cb69-6"><a href="第七章-chi2检验.html#cb69-6"></a></span>
+<span id="cb69-7"><a href="第七章-chi2检验.html#cb69-7"></a>chisquare_pairedfourfoldtable_test&lt;-<span class="cf">function</span>(actual_matrix){</span>
+<span id="cb69-8"><a href="第七章-chi2检验.html#cb69-8"></a>     n&lt;-<span class="kw">sum</span>(actual_matrix)</span>
+<span id="cb69-9"><a href="第七章-chi2检验.html#cb69-9"></a>     df&lt;-(<span class="kw">dim</span>(actual_matrix)[<span class="dv">1</span>]<span class="op">-</span><span class="dv">1</span>)<span class="op">*</span>(<span class="kw">dim</span>(actual_matrix)[<span class="dv">2</span>]<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb69-10"><a href="第七章-chi2检验.html#cb69-10"></a>     <span class="co">#chi_val&lt;-0</span></span>
+<span id="cb69-11"><a href="第七章-chi2检验.html#cb69-11"></a>     un_same&lt;-actual_matrix[<span class="dv">1</span>,<span class="dv">2</span>]<span class="op">+</span>actual_matrix[<span class="dv">2</span>,<span class="dv">1</span>]</span>
+<span id="cb69-12"><a href="第七章-chi2检验.html#cb69-12"></a>     <span class="cf">if</span>(un_same <span class="op">&gt;=</span><span class="st"> </span><span class="dv">40</span>){</span>
+<span id="cb69-13"><a href="第七章-chi2检验.html#cb69-13"></a>          <span class="kw">print</span>(<span class="st">&quot;chisquare_pairedfourfoldtable_classical&quot;</span>)</span>
+<span id="cb69-14"><a href="第七章-chi2检验.html#cb69-14"></a>          chi_val&lt;-<span class="kw">chisquare_pairedfourfoldtable_classical</span>(actual_matrix,n)</span>
+<span id="cb69-15"><a href="第七章-chi2检验.html#cb69-15"></a>     }<span class="cf">else</span> <span class="cf">if</span>(un_same <span class="op">&lt;</span><span class="st"> </span><span class="dv">40</span>){</span>
+<span id="cb69-16"><a href="第七章-chi2检验.html#cb69-16"></a>          <span class="kw">print</span>(<span class="st">&quot;chisquare_fourfoldtable_updated&quot;</span>)</span>
+<span id="cb69-17"><a href="第七章-chi2检验.html#cb69-17"></a>          chi_val&lt;-<span class="kw">chisquare_pairedfourfoldtable_updated</span>(actual_matrix,n)</span>
+<span id="cb69-18"><a href="第七章-chi2检验.html#cb69-18"></a>     }</span>
+<span id="cb69-19"><a href="第七章-chi2检验.html#cb69-19"></a>     p_val&lt;-<span class="kw">pchisq</span>(chi_val,df,<span class="dt">lower.tail=</span>F)</span>
+<span id="cb69-20"><a href="第七章-chi2检验.html#cb69-20"></a>     <span class="co">#cat(paste(&quot;chi_val&quot;,chi_val,&quot;\n p_val &quot;,p_val,sep=&quot;\t&quot;))</span></span>
+<span id="cb69-21"><a href="第七章-chi2检验.html#cb69-21"></a>     <span class="kw">return</span> (p_val)</span>
+<span id="cb69-22"><a href="第七章-chi2检验.html#cb69-22"></a>}</span>
+<span id="cb69-23"><a href="第七章-chi2检验.html#cb69-23"></a></span>
+<span id="cb69-24"><a href="第七章-chi2检验.html#cb69-24"></a>chisquare_pairedfourfoldtable_classical&lt;-<span class="cf">function</span>(actual_matrix,n){</span>
+<span id="cb69-25"><a href="第七章-chi2检验.html#cb69-25"></a>     n&lt;-<span class="kw">sum</span>(actual_matrix)</span>
+<span id="cb69-26"><a href="第七章-chi2检验.html#cb69-26"></a>     df&lt;-(<span class="kw">dim</span>(actual_matrix)[<span class="dv">1</span>]<span class="op">-</span><span class="dv">1</span>)<span class="op">*</span>(<span class="kw">dim</span>(actual_matrix)[<span class="dv">2</span>]<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb69-27"><a href="第七章-chi2检验.html#cb69-27"></a>     chi_val&lt;-(actual_matrix[<span class="dv">1</span>,<span class="dv">2</span>]<span class="op">-</span>actual_matrix[<span class="dv">2</span>,<span class="dv">1</span>])<span class="op">^</span><span class="dv">2</span><span class="op">/</span>(actual_matrix[<span class="dv">1</span>,<span class="dv">2</span>]<span class="op">+</span>actual_matrix[<span class="dv">2</span>,<span class="dv">1</span>])</span>
+<span id="cb69-28"><a href="第七章-chi2检验.html#cb69-28"></a>     <span class="co">#p_val&lt;-dchisq(chi_val,df)</span></span>
+<span id="cb69-29"><a href="第七章-chi2检验.html#cb69-29"></a>     <span class="kw">return</span> (chi_val)</span>
+<span id="cb69-30"><a href="第七章-chi2检验.html#cb69-30"></a>}</span>
+<span id="cb69-31"><a href="第七章-chi2检验.html#cb69-31"></a></span>
+<span id="cb69-32"><a href="第七章-chi2检验.html#cb69-32"></a>chisquare_pairedfourfoldtable_updated&lt;-<span class="cf">function</span>(actual_matrix,n){</span>
+<span id="cb69-33"><a href="第七章-chi2检验.html#cb69-33"></a>     n&lt;-<span class="kw">sum</span>(actual_matrix)</span>
+<span id="cb69-34"><a href="第七章-chi2检验.html#cb69-34"></a>     df&lt;-(<span class="kw">dim</span>(actual_matrix)[<span class="dv">1</span>]<span class="op">-</span><span class="dv">1</span>)<span class="op">*</span>(<span class="kw">dim</span>(actual_matrix)[<span class="dv">2</span>]<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb69-35"><a href="第七章-chi2检验.html#cb69-35"></a>     chi_val&lt;-((<span class="kw">abs</span>(actual_matrix[<span class="dv">1</span>,<span class="dv">2</span>]<span class="op">-</span>actual_matrix[<span class="dv">2</span>,<span class="dv">1</span>])<span class="op">-</span><span class="dv">1</span>)<span class="op">^</span><span class="dv">2</span>)<span class="op">/</span>(actual_matrix[<span class="dv">1</span>,<span class="dv">2</span>]<span class="op">+</span>actual_matrix[<span class="dv">2</span>,<span class="dv">1</span>])</span>
+<span id="cb69-36"><a href="第七章-chi2检验.html#cb69-36"></a>          <span class="co">#p_val&lt;-dchisq(chi_val,df)</span></span>
+<span id="cb69-37"><a href="第七章-chi2检验.html#cb69-37"></a>     <span class="kw">return</span> (chi_val)</span>
+<span id="cb69-38"><a href="第七章-chi2检验.html#cb69-38"></a>}</span>
+<span id="cb69-39"><a href="第七章-chi2检验.html#cb69-39"></a><span class="kw">chisquare_pairedfourfoldtable_test</span>(actual_matrix)</span>
+<span id="cb69-40"><a href="第七章-chi2检验.html#cb69-40"></a><span class="co">#[1] 0.01615693</span></span>
+<span id="cb69-41"><a href="第七章-chi2检验.html#cb69-41"></a></span>
+<span id="cb69-42"><a href="第七章-chi2检验.html#cb69-42"></a><span class="co">#或者使用函数mcnemar.test()</span></span>
+<span id="cb69-43"><a href="第七章-chi2检验.html#cb69-43"></a><span class="kw">mcnemar.test</span>(actual_matrix)</span>
+<span id="cb69-44"><a href="第七章-chi2检验.html#cb69-44"></a><span class="co">##      McNemar&#39;s Chi-squared test with continuity correction</span></span>
+<span id="cb69-45"><a href="第七章-chi2检验.html#cb69-45"></a><span class="co">##  </span></span>
+<span id="cb69-46"><a href="第七章-chi2检验.html#cb69-46"></a><span class="co">##  data:  actual_matrix</span></span>
+<span id="cb69-47"><a href="第七章-chi2检验.html#cb69-47"></a><span class="co">##  McNemar&#39;s chi-squared = 5.7857, df = 1, p-value = 0.01616</span></span></code></pre></div>
+<p>根据计算结果，P值=0.01615693&lt;0.05，按α=0.05的检验水准，拒绝<span class="math inline">\(H_0\)</span>，接受<span class="math inline">\(H_1\)</span>，
+即可认为两种方法的检验效率不一样。</p>
+</div>
+<div id="四格资料表的fisher确切概率法" class="section level3">
+<h3><span class="header-section-number">7.2.4</span> 四格资料表的Fisher确切概率法</h3>
+<p>四格表的Fisher确切概率法，即<a href="https://en.wikipedia.org/wiki/Fisher%27s_exact_test">Fisher精确检验(Fisher’s exact test)</a>又称四格表概率的直接计算，
+常用于四格表资料的假设检验的补充，即通常对四格表中出现n&lt;40或T&lt;1，或用经典计算卡方值后的 P值≈α的情况，需改用Fisher确切概率法计算。
+其基本思想是： 在四格表的<strong>周边合计</strong>不变的条件下，直接计算表内四个实际频数(a,b,c,d)的所有组合的概率<span class="math inline">\(P_i\)</span>，并且有<span class="math inline">\(\sum{P_i}\)</span>=1。
+各组合的概率服从<a href="https://zh.wikipedia.org/zh-hans/%E8%B6%85%E5%87%A0%E4%BD%95%E5%88%86%E5%B8%83">超几何分布</a>，
+按检验假设取单侧或双侧的<strong>累计概率P</strong>，即可按所取检验水准作出推断结论。</p>
+使用《医学统计学》中的 案例07-04 的数据，做四格表的Fisher确切概率法的R实现。
+<table style='width:67%; font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;' class=" lightable-classic">
+<caption>
+<span id="tab:chisqtab3">Table 7.4: </span>案例07-04 Fisher确切概率法四格资料表
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+组别
+</th>
+<th style="text-align:center;">
+阳性
+</th>
+<th style="text-align:center;">
+阴性
+</th>
+<th style="text-align:center;">
+合计
+</th>
+<th style="text-align:center;">
+感染率(%)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+预防注射组
+</td>
+<td style="text-align:center;">
+4 | a
+</td>
+<td style="text-align:center;">
+18 | b
+</td>
+<td style="text-align:center;">
+22 | a+b
+</td>
+<td style="text-align:center;">
+18.18
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+非预防组
+</td>
+<td style="text-align:center;">
+5 | c
+</td>
+<td style="text-align:center;">
+6 | d
+</td>
+<td style="text-align:center;">
+11 | c+d
+</td>
+<td style="text-align:center;">
+45.45
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+合计
+</td>
+<td style="text-align:center;">
+9 | a+c
+</td>
+<td style="text-align:center;">
+24 | b+d
+</td>
+<td style="text-align:center;">
+33 | n
+</td>
+<td style="text-align:center;">
+27.27
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>第一步：计算实际频数(a,b,c,d)的所有组合的概率<span class="math inline">\(P_i\)</span></strong></p>
+<p>在四格表的周边合计不变的条件下，实际频数(a,b,c,d)的所有组合的的可能性共有“周边合计最小数+1”个，如案例07-04的实际频数
+组合情况有min(a+c,a+b,c+d,b+d)+1=9+1=10种，详细见下图：</p>
+<div class="figure" style="text-align: center"><span id="fig:Fisherchitest"></span>
+<img src="image/Fisherchitest.png" alt="案例 07-04的实际频数组合情况" width="70%" />
+<p class="caption">
+Figure 7.2: 案例 07-04的实际频数组合情况
+</p>
+</div>
+<p>各组合的概率<span class="math inline">\(P_i\)</span>服从超几何分布，<span class="math inline">\(P_i\)</span>的计算公式为：
+<span class="math display">\[P_i=\frac{(a+c)!(a+b)!(c+d)!(b+d)!}{a!b!c!d!n!}\]</span></p>
+<p><strong>第二步：计算累积概率的P值</strong></p>
+<p>一般的规定，<span class="math inline">\(P_i\)</span>(i=1,2,3,…)对应a从小到大的概率，那么各种组合下累计概率的计算，分单、双侧检验两种情况：</p>
+<ol style="list-style-type: decimal">
+<li>单侧检验：现有样本的实际观察频率(记作<span class="math inline">\(P_a\)</span>)的左侧为左侧概率(记作<span class="math inline">\(P_l\)</span>)，备择假设<span class="math inline">\(H_1\)</span>为 <span class="math inline">\(p_1 &gt; p_2\)</span>；
+现有样本的实际观察频率(记作<span class="math inline">\(P_a\)</span>)的右侧为右侧概率(记作<span class="math inline">\(P_r\)</span>)，备择假设<span class="math inline">\(H_1\)</span>为 <span class="math inline">\(p_1 &lt; p_2\)</span>；</li>
+<li>双侧检验： 若遇到a+b=c+d或a+c=b+d时，四格表各组序列呈对称分布，此时只计算<span class="math inline">\(P_i≤P_a\)</span>的单侧概率，然后乘以2即算的双侧的累积概率值。</li>
+</ol>
+<p>注意的是，Fisher精确检验依赖的时<a href="https://zh.wikipedia.org/zh-hans/%E8%B6%85%E5%87%A0%E4%BD%95%E5%88%86%E5%B8%83">超几何分布(Hypergeometric distribution)</a>，
+R语言中与超几何分布相关的主要函数有<a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Hypergeometric.html">dhyper(),phyper(),qhyper()和rhyper()</a>。</p>
+<hr />
+<p>超几何分布：从一个有限的总体中进行不放回抽样，设其中包含有n个黑球(阳性/成功)，m个白球(阴性/失败)，若从中不放回地随机抽取k个(<span class="math inline">\(k\in[0,m+n]\)</span>)，
+其中含有的不白球的个数为x(x=1,2,3,…,k)，则X的个数对应的概率即是服从超几何分布，记为X~h(k, n, m)。
+案例07-04的数据可以视作：从一个总体为33的数据中进行不放回抽样，设其中包含有24个黑球(阳性/成功)，9个白球(阴性/失败)，若从中不放回地随机抽取22个(<span class="math inline">\(k\in[0,m+n]\)</span>)，
+其中含有的白球的个数为x=1:9(m=9 &lt; k=22)，则X的个数对应的概率即是服从超几何分布，记为X~h(22, 24, 9)。</p>
+<hr />
+<p>假设预防组和非预防组的来自同一总体，即<span class="math inline">\(H_0:p_1=p_2=9/33\)</span>，<span class="math inline">\(H_1:p_1≠p_2\)</span>，
+同二项分布的应用中类似，主要是回答“有无差别”，及备择假设是<span class="math inline">\(p≠p_0\)</span>是否成立，因此计算的是实际样本“成功”x次(实际频数,A=a)出现的概率，
+与更背离原假设的事件出现的概率和。</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="第七章-chi2检验.html#cb70-1"></a>a&lt;-<span class="dv">4</span>;b&lt;-<span class="dv">18</span>;</span>
+<span id="cb70-2"><a href="第七章-chi2检验.html#cb70-2"></a>c&lt;-<span class="dv">5</span>;d&lt;-<span class="dv">6</span>;</span>
+<span id="cb70-3"><a href="第七章-chi2检验.html#cb70-3"></a>actual_matrix &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">data =</span> <span class="kw">c</span>(a,b,c,d), <span class="dt">nrow =</span> <span class="dv">2</span>, <span class="dt">ncol =</span> <span class="dv">2</span>,<span class="dt">byrow =</span> T)</span>
+<span id="cb70-4"><a href="第七章-chi2检验.html#cb70-4"></a></span>
+<span id="cb70-5"><a href="第七章-chi2检验.html#cb70-5"></a>m&lt;-a<span class="op">+</span>c;n&lt;-b<span class="op">+</span>d;k&lt;-a<span class="op">+</span>b;</span>
+<span id="cb70-6"><a href="第七章-chi2检验.html#cb70-6"></a></span>
+<span id="cb70-7"><a href="第七章-chi2检验.html#cb70-7"></a><span class="co">##使用dhyper()计算不同x值得p值</span></span>
+<span id="cb70-8"><a href="第七章-chi2检验.html#cb70-8"></a><span class="kw">dhyper</span>(<span class="dt">x=</span><span class="dv">0</span><span class="op">:</span><span class="dv">9</span>, <span class="dt">m=</span>m, <span class="dt">n=</span>n, <span class="dt">k=</span>k)</span>
+<span id="cb70-9"><a href="第七章-chi2检验.html#cb70-9"></a><span class="kw">dhyper</span>(<span class="dt">x=</span>a, <span class="dt">m=</span>m, <span class="dt">n=</span>n, <span class="dt">k=</span>k)</span>
+<span id="cb70-10"><a href="第七章-chi2检验.html#cb70-10"></a><span class="co">#0.08762728</span></span>
+<span id="cb70-11"><a href="第七章-chi2检验.html#cb70-11"></a></span>
+<span id="cb70-12"><a href="第七章-chi2检验.html#cb70-12"></a><span class="co">#计算出现4次各情况的累计概率值</span></span>
+<span id="cb70-13"><a href="第七章-chi2检验.html#cb70-13"></a>p4&lt;-<span class="kw">dhyper</span>(<span class="dt">x=</span>a, <span class="dt">m=</span>m, <span class="dt">n=</span>n, <span class="dt">k=</span>k)</span>
+<span id="cb70-14"><a href="第七章-chi2检验.html#cb70-14"></a><span class="co">#0.08762728</span></span>
+<span id="cb70-15"><a href="第七章-chi2检验.html#cb70-15"></a><span class="co">#计算出现更背离原假设的事件及概率，即：</span></span>
+<span id="cb70-16"><a href="第七章-chi2检验.html#cb70-16"></a>p4_<span class="dv">1</span>&lt;-<span class="kw">sum</span>(<span class="kw">dhyper</span>(<span class="dv">0</span><span class="op">:</span>m, <span class="dt">m=</span>m, <span class="dt">n=</span>n, <span class="dt">k=</span>k)[<span class="kw">which</span>(<span class="kw">dhyper</span>(<span class="dv">0</span><span class="op">:</span>m, <span class="dt">m=</span>m, <span class="dt">n=</span>n, <span class="dt">k=</span>k)<span class="op">&lt;</span><span class="kw">dhyper</span>(<span class="dt">x=</span>a, <span class="dt">m=</span>m, <span class="dt">n=</span>n, <span class="dt">k=</span>k))])</span>
+<span id="cb70-17"><a href="第七章-chi2检验.html#cb70-17"></a><span class="co"># [1] 0.03341747</span></span>
+<span id="cb70-18"><a href="第七章-chi2检验.html#cb70-18"></a><span class="co">#双侧检验的p值为：</span></span>
+<span id="cb70-19"><a href="第七章-chi2检验.html#cb70-19"></a>p4<span class="op">+</span>p4_<span class="dv">1</span></span>
+<span id="cb70-20"><a href="第七章-chi2检验.html#cb70-20"></a><span class="co"># [1] 0.1210448</span></span>
+<span id="cb70-21"><a href="第七章-chi2检验.html#cb70-21"></a></span>
+<span id="cb70-22"><a href="第七章-chi2检验.html#cb70-22"></a><span class="co">#或者直接用which()函数一并计算</span></span>
+<span id="cb70-23"><a href="第七章-chi2检验.html#cb70-23"></a><span class="kw">sum</span>(<span class="kw">dhyper</span>(<span class="dv">0</span><span class="op">:</span>m, <span class="dt">m=</span>m, <span class="dt">n=</span>n, <span class="dt">k=</span>k)[<span class="kw">which</span>(<span class="kw">dhyper</span>(<span class="dv">0</span><span class="op">:</span>m, <span class="dt">m=</span>m, <span class="dt">n=</span>n, <span class="dt">k=</span>k)<span class="op">&lt;=</span><span class="kw">dhyper</span>(<span class="dt">x=</span>a, <span class="dt">m=</span>m, <span class="dt">n=</span>n, <span class="dt">k=</span>k))])</span>
+<span id="cb70-24"><a href="第七章-chi2检验.html#cb70-24"></a><span class="co"># [1] 0.1210448</span></span>
+<span id="cb70-25"><a href="第七章-chi2检验.html#cb70-25"></a></span>
+<span id="cb70-26"><a href="第七章-chi2检验.html#cb70-26"></a><span class="co">#或者使用fisher.test()</span></span>
+<span id="cb70-27"><a href="第七章-chi2检验.html#cb70-27"></a><span class="kw">fisher.test</span>(actual_matrix)</span>
+<span id="cb70-28"><a href="第七章-chi2检验.html#cb70-28"></a><span class="co">##      Fisher&#39;s Exact Test for Count Data</span></span>
+<span id="cb70-29"><a href="第七章-chi2检验.html#cb70-29"></a><span class="co">##  </span></span>
+<span id="cb70-30"><a href="第七章-chi2检验.html#cb70-30"></a><span class="co">##  data:  actual_matrix</span></span>
+<span id="cb70-31"><a href="第七章-chi2检验.html#cb70-31"></a><span class="co">##  p-value = 0.121</span></span>
+<span id="cb70-32"><a href="第七章-chi2检验.html#cb70-32"></a><span class="co">##  alternative hypothesis: true odds ratio is not equal to 1</span></span>
+<span id="cb70-33"><a href="第七章-chi2检验.html#cb70-33"></a><span class="co">##  95 percent confidence interval:</span></span>
+<span id="cb70-34"><a href="第七章-chi2检验.html#cb70-34"></a><span class="co">##   0.03974151 1.76726409</span></span>
+<span id="cb70-35"><a href="第七章-chi2检验.html#cb70-35"></a><span class="co">##  sample estimates:</span></span>
+<span id="cb70-36"><a href="第七章-chi2检验.html#cb70-36"></a><span class="co">##  odds ratio </span></span>
+<span id="cb70-37"><a href="第七章-chi2检验.html#cb70-37"></a><span class="co">##   0.2791061 </span></span></code></pre></div>
+<p>根据计算结果，p值=0.1210448&gt;0.05，不拒绝<span class="math inline">\(H_0: p_1=p_1\)</span>，即还不能认为两种处理得感染率不同。</p>
+<p>使用《医学统计学》中的 案例07-05 的数据，做四格表的Fisher确切概率法的R实现。</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="第七章-chi2检验.html#cb71-1"></a>a&lt;-<span class="dv">6</span>;b&lt;-<span class="dv">4</span>;</span>
+<span id="cb71-2"><a href="第七章-chi2检验.html#cb71-2"></a>c&lt;-<span class="dv">1</span>;d&lt;-<span class="dv">9</span>;</span>
+<span id="cb71-3"><a href="第七章-chi2检验.html#cb71-3"></a>actual_matrix &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">data =</span> <span class="kw">c</span>(a,b,c,d), <span class="dt">nrow =</span> <span class="dv">2</span>, <span class="dt">ncol =</span> <span class="dv">2</span>,<span class="dt">byrow =</span> T)</span>
+<span id="cb71-4"><a href="第七章-chi2检验.html#cb71-4"></a></span>
+<span id="cb71-5"><a href="第七章-chi2检验.html#cb71-5"></a>m&lt;-a<span class="op">+</span>c;n&lt;-b<span class="op">+</span>d;k&lt;-a<span class="op">+</span>b;</span>
+<span id="cb71-6"><a href="第七章-chi2检验.html#cb71-6"></a><span class="kw">sum</span>(<span class="kw">dhyper</span>(<span class="dv">0</span><span class="op">:</span>m, <span class="dt">m=</span>m, <span class="dt">n=</span>n, <span class="dt">k=</span>k)[<span class="kw">which</span>(<span class="kw">dhyper</span>(<span class="dv">0</span><span class="op">:</span>m, <span class="dt">m=</span>m, <span class="dt">n=</span>n, <span class="dt">k=</span>k)<span class="op">&lt;=</span><span class="kw">dhyper</span>(<span class="dt">x=</span>a, <span class="dt">m=</span>m, <span class="dt">n=</span>n, <span class="dt">k=</span>k))])</span>
+<span id="cb71-7"><a href="第七章-chi2检验.html#cb71-7"></a><span class="co"># [1] 0.05727554</span></span>
+<span id="cb71-8"><a href="第七章-chi2检验.html#cb71-8"></a></span>
+<span id="cb71-9"><a href="第七章-chi2检验.html#cb71-9"></a><span class="co">#或者使用fisher.test()</span></span>
+<span id="cb71-10"><a href="第七章-chi2检验.html#cb71-10"></a><span class="kw">fisher.test</span>(actual_matrix)</span>
+<span id="cb71-11"><a href="第七章-chi2检验.html#cb71-11"></a><span class="co">##      Fisher&#39;s Exact Test for Count Data</span></span>
+<span id="cb71-12"><a href="第七章-chi2检验.html#cb71-12"></a><span class="co">##  </span></span>
+<span id="cb71-13"><a href="第七章-chi2检验.html#cb71-13"></a><span class="co">##  data:  actual_matrix</span></span>
+<span id="cb71-14"><a href="第七章-chi2检验.html#cb71-14"></a><span class="co">##  p-value = 0.05728</span></span>
+<span id="cb71-15"><a href="第七章-chi2检验.html#cb71-15"></a><span class="co">##  alternative hypothesis: true odds ratio is not equal to 1</span></span>
+<span id="cb71-16"><a href="第七章-chi2检验.html#cb71-16"></a><span class="co">##  95 percent confidence interval:</span></span>
+<span id="cb71-17"><a href="第七章-chi2检验.html#cb71-17"></a><span class="co">##     0.9487882 684.4235629</span></span>
+<span id="cb71-18"><a href="第七章-chi2检验.html#cb71-18"></a><span class="co">##  sample estimates:</span></span>
+<span id="cb71-19"><a href="第七章-chi2检验.html#cb71-19"></a><span class="co">##  odds ratio </span></span>
+<span id="cb71-20"><a href="第七章-chi2检验.html#cb71-20"></a><span class="co">##     11.6367 </span></span></code></pre></div>
+<p>根据计算结果，p值=0.05727554&gt;0.05，不拒绝<span class="math inline">\(H_0: p_1=p_1\)</span>，记即还不能认为两种肿瘤中<span class="math inline">\(P_{53}\)</span>基因的表达率不同。</p>
+<p><b>注意的是，如果专业上有理由肿瘤A中的<span class="math inline">\(P_{53}\)</span>基因的表达率高于肿瘤B中，那么这里应该进行单侧检验，<span class="math inline">\(H_1: p_1&gt;p_2\)</span>，
+计算P值应该是<span class="math inline">\(P_r\)</span>，反之可以计算<span class="math inline">\(P_l\)</span>。</b></p>
+</div>
+</div>
+<div id="r行-times-c列资料表的卡方检验" class="section level2">
+<h2><span class="header-section-number">7.3</span> R行 <span class="math inline">\(\times\)</span> C列资料表的卡方检验</h2>
+<p>行x列表资料的卡方检验用于多个样本率的比较、两个或多个构成比的比较以及双向无序分类资料的 关联性检验。
+其基本数据有以下3种情况:
+1. 多个样本率比较时，有R行2列，称为Rx2表；
+2. 两个样本 的构成比比较时，有2行C列，称2xC表；
+3. 多个样本的构成比比较以及双向无序分类资料关联性检验时，有R行C列，称为RxC表。</p>
+<p>以上3种情况可统称为行×列表资料。行x列表资料的检验仍用 Pearsony <span class="math inline">\(\chi^2\)</span>公式 计算检验统计量值。
+因该式需先计算理论频数 <span class="math inline">\(T_{rc}\)</span>，化简后得行×列表资料检验的专用公式和自由度为：
+<span class="math display">\[\chi^2=n(\sum\frac{A^2}{n_{r}n_{c}}-1)，v=(行数-1)(列数-1)\]</span></p>
+<p>其中的A代表实际观察频数(Actual frequency)，n_{r}<span class="math inline">\(和\)</span>n_{c}$分别是相应第r行的合计样本数和第c列的合计样本数。</p>
+<div id="多个样本率的比较r-times-2表" class="section level3">
+<h3><span class="header-section-number">7.3.1</span> 多个样本率的比较(<span class="math inline">\(R \times 2\)</span>表)</h3>
+<table style='width:67%; font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;' class=" lightable-classic">
+<caption>
+<span id="tab:chisqtab4">Table 7.5: </span>案例07-06 3x2 表资料的多个样本率的比较测试数据
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+疗法
+</th>
+<th style="text-align:center;">
+有效
+</th>
+<th style="text-align:center;">
+无效
+</th>
+<th style="text-align:center;">
+合计
+</th>
+<th style="text-align:center;">
+有效率(%)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+物理疗法组
+</td>
+<td style="text-align:center;">
+199
+</td>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+206
+</td>
+<td style="text-align:center;">
+96.60
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+药物疗法组
+</td>
+<td style="text-align:center;">
+164
+</td>
+<td style="text-align:center;">
+18
+</td>
+<td style="text-align:center;">
+182
+</td>
+<td style="text-align:center;">
+90.11
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+外用膏药组
+</td>
+<td style="text-align:center;">
+118
+</td>
+<td style="text-align:center;">
+26
+</td>
+<td style="text-align:center;">
+144
+</td>
+<td style="text-align:center;">
+81.94
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+合计
+</td>
+<td style="text-align:center;">
+481
+</td>
+<td style="text-align:center;">
+51
+</td>
+<td style="text-align:center;">
+532
+</td>
+<td style="text-align:center;">
+90.41
+</td>
+</tr>
+</tbody>
+</table>
+<p>设置的原假设<span class="math inline">\(H_0: p_1=p_2=p_3\)</span>，即三种疗法的治疗的有效率是一样的；相应的备择假设$H_1:$3种治疗方法的有效率不都一样。</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="第七章-chi2检验.html#cb72-1"></a>actual_matrix &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">data =</span> <span class="kw">as.numeric</span>( <span class="kw">c</span>(<span class="st">&quot;199&quot;</span>,<span class="st">&quot;164&quot;</span>,<span class="st">&quot;118&quot;</span>,<span class="st">&quot;7&quot;</span>,<span class="st">&quot;18&quot;</span>,<span class="st">&quot;26&quot;</span>)), </span>
+<span id="cb72-2"><a href="第七章-chi2检验.html#cb72-2"></a><span class="dt">nrow =</span> <span class="dv">3</span>, <span class="dt">ncol =</span> <span class="dv">2</span>,<span class="dt">byrow =</span> F)</span>
+<span id="cb72-3"><a href="第七章-chi2检验.html#cb72-3"></a></span>
+<span id="cb72-4"><a href="第七章-chi2检验.html#cb72-4"></a>chisquare_rctable_multiratio_test&lt;-<span class="cf">function</span>(actual_matrix){</span>
+<span id="cb72-5"><a href="第七章-chi2检验.html#cb72-5"></a>     n=<span class="kw">sum</span>(actual_matrix)</span>
+<span id="cb72-6"><a href="第七章-chi2检验.html#cb72-6"></a>     df&lt;-(<span class="kw">dim</span>(actual_matrix)[<span class="dv">1</span>]<span class="op">-</span><span class="dv">1</span>)<span class="op">*</span>(<span class="kw">dim</span>(actual_matrix)[<span class="dv">2</span>]<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb72-7"><a href="第七章-chi2检验.html#cb72-7"></a>     chi_val&lt;-n<span class="op">*</span>(<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb72-8"><a href="第七章-chi2检验.html#cb72-8"></a>     <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">dim</span>(actual_matrix)[<span class="dv">1</span>]){</span>
+<span id="cb72-9"><a href="第七章-chi2检验.html#cb72-9"></a>          <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">dim</span>(actual_matrix)[<span class="dv">2</span>]){</span>
+<span id="cb72-10"><a href="第七章-chi2检验.html#cb72-10"></a>               chi_val&lt;-chi_val<span class="op">+</span>n<span class="op">*</span>(actual_matrix[i,j]<span class="op">^</span><span class="dv">2</span><span class="op">/</span>(<span class="kw">sum</span>(actual_matrix[i,])<span class="op">*</span><span class="kw">sum</span>(actual_matrix[,j])))</span>
+<span id="cb72-11"><a href="第七章-chi2检验.html#cb72-11"></a>          }</span>
+<span id="cb72-12"><a href="第七章-chi2检验.html#cb72-12"></a>     }</span>
+<span id="cb72-13"><a href="第七章-chi2检验.html#cb72-13"></a>     <span class="co">#cat(&quot;chi_val: &quot;,chi_val)</span></span>
+<span id="cb72-14"><a href="第七章-chi2检验.html#cb72-14"></a>     p_val&lt;-<span class="kw">pchisq</span>(chi_val,df,<span class="dt">lower.tail=</span>F)<span class="op">*</span><span class="dv">2</span> </span>
+<span id="cb72-15"><a href="第七章-chi2检验.html#cb72-15"></a>     <span class="kw">return</span>(p_val)</span>
+<span id="cb72-16"><a href="第七章-chi2检验.html#cb72-16"></a>}</span>
+<span id="cb72-17"><a href="第七章-chi2检验.html#cb72-17"></a><span class="kw">chisquare_rctable_multiratio_test</span>(actual_matrix)</span>
+<span id="cb72-18"><a href="第七章-chi2检验.html#cb72-18"></a><span class="co"># [1] 5.404583e-05</span></span></code></pre></div>
+<p>根据计算结果，p值=5.404583e-05&lt;0.001&lt;0.01&lt;0.05，即拒绝原假设<span class="math inline">\(H_0\)</span>，接受<span class="math inline">\(H_1\)</span>，认为三种治疗方法的有效率不都一样。
+<b>注意，这里同方差分析类似，我们后面还会进一步讨论这种情况的多组比较，即探讨三种疗法具体谁比较好，谁比较差。</b></p>
+</div>
+<div id="样本构成比的比较2-times-c表" class="section level3">
+<h3><span class="header-section-number">7.3.2</span> 样本构成比的比较(<span class="math inline">\(2 \times C\)</span>表)</h3>
+<table style='width:60; font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;' class=" lightable-classic">
+<caption>
+<span id="tab:chisqtab5">Table 7.6: </span>案例07-07 2x3 表资料的多个样本率的比较测试数据
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+组别
+</th>
+<th style="text-align:center;">
+DD
+</th>
+<th style="text-align:center;">
+ID
+</th>
+<th style="text-align:center;">
+II
+</th>
+<th style="text-align:center;">
+合计
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+DN组
+</td>
+<td style="text-align:center;">
+42
+</td>
+<td style="text-align:center;">
+48
+</td>
+<td style="text-align:center;">
+21
+</td>
+<td style="text-align:center;">
+111
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+无DN组
+</td>
+<td style="text-align:center;">
+30
+</td>
+<td style="text-align:center;">
+72
+</td>
+<td style="text-align:center;">
+36
+</td>
+<td style="text-align:center;">
+138
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+合计
+</td>
+<td style="text-align:center;">
+72
+</td>
+<td style="text-align:center;">
+120
+</td>
+<td style="text-align:center;">
+57
+</td>
+<td style="text-align:center;">
+249
+</td>
+</tr>
+</tbody>
+</table>
+<p>设置的原假设<span class="math inline">\(H_0:\)</span> 即在某疾病的两组亚型涉及的基因A的基因型的总体构成比是一样的；相应的备择假设<span class="math inline">\(H_1:\)</span>某疾病的两组亚型涉及的基因A的基因型的总体构成比不都一样。</p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="第七章-chi2检验.html#cb73-1"></a>actual_matrix &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">data =</span> <span class="kw">as.numeric</span>( <span class="kw">c</span>(<span class="st">&quot;42&quot;</span>,<span class="st">&quot;30&quot;</span>,<span class="st">&quot;48&quot;</span>,<span class="st">&quot;72&quot;</span>,<span class="st">&quot;21&quot;</span>,<span class="st">&quot;36&quot;</span>)), </span>
+<span id="cb73-2"><a href="第七章-chi2检验.html#cb73-2"></a><span class="dt">nrow =</span> <span class="dv">2</span>, <span class="dt">ncol =</span> <span class="dv">3</span>,<span class="dt">byrow =</span> F)</span>
+<span id="cb73-3"><a href="第七章-chi2检验.html#cb73-3"></a></span>
+<span id="cb73-4"><a href="第七章-chi2检验.html#cb73-4"></a>chisquare_rctable_multiratio_test&lt;-<span class="cf">function</span>(actual_matrix){</span>
+<span id="cb73-5"><a href="第七章-chi2检验.html#cb73-5"></a>     n=<span class="kw">sum</span>(actual_matrix)</span>
+<span id="cb73-6"><a href="第七章-chi2检验.html#cb73-6"></a>     df&lt;-(<span class="kw">dim</span>(actual_matrix)[<span class="dv">1</span>]<span class="op">-</span><span class="dv">1</span>)<span class="op">*</span>(<span class="kw">dim</span>(actual_matrix)[<span class="dv">2</span>]<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb73-7"><a href="第七章-chi2检验.html#cb73-7"></a>     chi_val&lt;-n<span class="op">*</span>(<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb73-8"><a href="第七章-chi2检验.html#cb73-8"></a>     <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">dim</span>(actual_matrix)[<span class="dv">1</span>]){</span>
+<span id="cb73-9"><a href="第七章-chi2检验.html#cb73-9"></a>          <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">dim</span>(actual_matrix)[<span class="dv">2</span>]){</span>
+<span id="cb73-10"><a href="第七章-chi2检验.html#cb73-10"></a>               chi_val&lt;-chi_val<span class="op">+</span>n<span class="op">*</span>(actual_matrix[i,j]<span class="op">^</span><span class="dv">2</span><span class="op">/</span>(<span class="kw">sum</span>(actual_matrix[i,])<span class="op">*</span><span class="kw">sum</span>(actual_matrix[,j])))</span>
+<span id="cb73-11"><a href="第七章-chi2检验.html#cb73-11"></a>          }</span>
+<span id="cb73-12"><a href="第七章-chi2检验.html#cb73-12"></a>     }</span>
+<span id="cb73-13"><a href="第七章-chi2检验.html#cb73-13"></a>     <span class="co">#cat(&quot;chi_val: &quot;,chi_val)</span></span>
+<span id="cb73-14"><a href="第七章-chi2检验.html#cb73-14"></a>     p_val&lt;-<span class="kw">pchisq</span>(chi_val,df,<span class="dt">lower.tail=</span>F)<span class="op">*</span><span class="dv">2</span> </span>
+<span id="cb73-15"><a href="第七章-chi2检验.html#cb73-15"></a>     <span class="kw">return</span>(p_val)</span>
+<span id="cb73-16"><a href="第七章-chi2检验.html#cb73-16"></a>}</span>
+<span id="cb73-17"><a href="第七章-chi2检验.html#cb73-17"></a><span class="kw">chisquare_rctable_multiratio_test</span>(actual_matrix)</span>
+<span id="cb73-18"><a href="第七章-chi2检验.html#cb73-18"></a><span class="co"># [1] 0.01913288</span></span></code></pre></div>
+<p>根据计算结果，p值=0.01913288&lt;0.05，即拒绝原假设<span class="math inline">\(H_0\)</span>，接受<span class="math inline">\(H_1\)</span>，认为两组亚型涉及的基因A的基因型的
+总体构成比不都一样。</p>
+</div>
+<div id="双向无序分组资料的关联性检验" class="section level3">
+<h3><span class="header-section-number">7.3.3</span> 双向无序分组资料的关联性检验</h3>
+<p>对于两个分类变量皆为 <strong>无序分类变量</strong> 的行x列表资料料，又称为双向无序RxC表资料。若是一个样本的双向无序
+RxC表资料，常常分析两个分类变量之间有无关系?关系的密切程度如何? 此时可用行x列表资料<span class="math inline">\(\chi^2\)</span>检验来推断两
+个分类变量之间有无关系(或关联); 在有关系的前提下，若须进一步分析关系的密切程度时，可计算 Pearson 列联系数C，
+其计算公式为：
+<span class="math display">\[C=\sqrt{\frac{\chi^2}{n+\chi^2}}\]</span></p>
+<p>式中<span class="math inline">\(\chi^2\)</span>为行×列表资料的<span class="math inline">\(\chi^2\)</span>值，n为样本含量。列联系数C取值范围在0~1之间，愈接近于0，关系愈不密切;愈接近于1，关系愈密切。</p>
+<table style='width:60; font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;' class=" lightable-classic">
+<caption>
+<span id="tab:chisqtab6">Table 7.7: </span>案例07-08 rxc 表资料的双向无序分组资料的关联性检验测试数据
+</caption>
+<thead>
+<tr>
+<th style="empty-cells: hide;border-bottom:hidden;" colspan="1">
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="3">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+MN血型
+</div>
+</th>
+<th style="empty-cells: hide;border-bottom:hidden;" colspan="1">
+</th>
+</tr>
+<tr>
+<th style="text-align:center;">
+ABO血型
+</th>
+<th style="text-align:center;">
+M
+</th>
+<th style="text-align:center;">
+N
+</th>
+<th style="text-align:center;">
+MN
+</th>
+<th style="text-align:center;">
+合计
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+O
+</td>
+<td style="text-align:center;">
+431
+</td>
+<td style="text-align:center;">
+490
+</td>
+<td style="text-align:center;">
+902
+</td>
+<td style="text-align:center;">
+1823
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+A
+</td>
+<td style="text-align:center;">
+388
+</td>
+<td style="text-align:center;">
+410
+</td>
+<td style="text-align:center;">
+800
+</td>
+<td style="text-align:center;">
+1598
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+B
+</td>
+<td style="text-align:center;">
+495
+</td>
+<td style="text-align:center;">
+587
+</td>
+<td style="text-align:center;">
+950
+</td>
+<td style="text-align:center;">
+2032
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+AB
+</td>
+<td style="text-align:center;">
+137
+</td>
+<td style="text-align:center;">
+179
+</td>
+<td style="text-align:center;">
+32
+</td>
+<td style="text-align:center;">
+348
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+合计
+</td>
+<td style="text-align:center;">
+1451
+</td>
+<td style="text-align:center;">
+1666
+</td>
+<td style="text-align:center;">
+2684
+</td>
+<td style="text-align:center;">
+5801
+</td>
+</tr>
+</tbody>
+</table>
+<p>设置的原假设<span class="math inline">\(H_0:\)</span> 两种血型系统之间没有关联；相应的备择假设<span class="math inline">\(H_1:\)</span>两种血型系统之间有关联。</p>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="第七章-chi2检验.html#cb74-1"></a></span>
+<span id="cb74-2"><a href="第七章-chi2检验.html#cb74-2"></a>actual_matrix &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">data =</span> <span class="kw">as.numeric</span>( <span class="kw">c</span>(<span class="st">&quot;431&quot;</span>,<span class="st">&quot;388&quot;</span>,<span class="st">&quot;495&quot;</span>,<span class="st">&quot;137&quot;</span>,<span class="st">&quot;490&quot;</span>,<span class="st">&quot;410&quot;</span>,<span class="st">&quot;587&quot;</span>,<span class="st">&quot;179&quot;</span>,<span class="st">&quot;902&quot;</span>,<span class="st">&quot;800&quot;</span>,<span class="st">&quot;950&quot;</span>,<span class="st">&quot;32&quot;</span>)), </span>
+<span id="cb74-3"><a href="第七章-chi2检验.html#cb74-3"></a><span class="dt">nrow =</span> <span class="dv">4</span>, <span class="dt">ncol =</span> <span class="dv">3</span>,<span class="dt">byrow =</span> F)</span>
+<span id="cb74-4"><a href="第七章-chi2检验.html#cb74-4"></a></span>
+<span id="cb74-5"><a href="第七章-chi2检验.html#cb74-5"></a>chisquare_rctable_multiratio_test&lt;-<span class="cf">function</span>(actual_matrix){</span>
+<span id="cb74-6"><a href="第七章-chi2检验.html#cb74-6"></a>     n=<span class="kw">sum</span>(actual_matrix)</span>
+<span id="cb74-7"><a href="第七章-chi2检验.html#cb74-7"></a>     df&lt;-(<span class="kw">dim</span>(actual_matrix)[<span class="dv">1</span>]<span class="op">-</span><span class="dv">1</span>)<span class="op">*</span>(<span class="kw">dim</span>(actual_matrix)[<span class="dv">2</span>]<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb74-8"><a href="第七章-chi2检验.html#cb74-8"></a>     chi_val&lt;-<span class="kw">chisquare_chivaler</span>(actual_matrix)</span>
+<span id="cb74-9"><a href="第七章-chi2检验.html#cb74-9"></a>     <span class="co">#cat(&quot;chi_val: &quot;,chi_val,&quot;\n df: &quot;,df)</span></span>
+<span id="cb74-10"><a href="第七章-chi2检验.html#cb74-10"></a>     p_val&lt;-<span class="kw">pchisq</span>(chi_val,df,<span class="dt">lower.tail=</span>F)<span class="op">*</span><span class="dv">2</span> </span>
+<span id="cb74-11"><a href="第七章-chi2检验.html#cb74-11"></a>     <span class="kw">return</span>(p_val)</span>
+<span id="cb74-12"><a href="第七章-chi2检验.html#cb74-12"></a>}</span>
+<span id="cb74-13"><a href="第七章-chi2检验.html#cb74-13"></a></span>
+<span id="cb74-14"><a href="第七章-chi2检验.html#cb74-14"></a>chisquare_rctable_pearsonC&lt;-<span class="cf">function</span>(actual_matrix){</span>
+<span id="cb74-15"><a href="第七章-chi2检验.html#cb74-15"></a>     n=<span class="kw">sum</span>(actual_matrix)</span>
+<span id="cb74-16"><a href="第七章-chi2检验.html#cb74-16"></a>     chi_val&lt;-<span class="kw">chisquare_chivaler</span>(actual_matrix)</span>
+<span id="cb74-17"><a href="第七章-chi2检验.html#cb74-17"></a>     pearsonC&lt;-<span class="kw">sqrt</span>(chi_val<span class="op">/</span>(n<span class="op">+</span>chi_val))</span>
+<span id="cb74-18"><a href="第七章-chi2检验.html#cb74-18"></a>     <span class="kw">return</span>(pearsonC)</span>
+<span id="cb74-19"><a href="第七章-chi2检验.html#cb74-19"></a>}</span>
+<span id="cb74-20"><a href="第七章-chi2检验.html#cb74-20"></a></span>
+<span id="cb74-21"><a href="第七章-chi2检验.html#cb74-21"></a>chisquare_chivaler&lt;-<span class="cf">function</span>(actual_matrix){</span>
+<span id="cb74-22"><a href="第七章-chi2检验.html#cb74-22"></a>     n=<span class="kw">sum</span>(actual_matrix)</span>
+<span id="cb74-23"><a href="第七章-chi2检验.html#cb74-23"></a>     chi_val&lt;-n<span class="op">*</span>(<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb74-24"><a href="第七章-chi2检验.html#cb74-24"></a>     <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">dim</span>(actual_matrix)[<span class="dv">1</span>]){</span>
+<span id="cb74-25"><a href="第七章-chi2检验.html#cb74-25"></a>          <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">dim</span>(actual_matrix)[<span class="dv">2</span>]){</span>
+<span id="cb74-26"><a href="第七章-chi2检验.html#cb74-26"></a>               chi_val&lt;-chi_val<span class="op">+</span>n<span class="op">*</span>(actual_matrix[i,j]<span class="op">^</span><span class="dv">2</span><span class="op">/</span>(<span class="kw">sum</span>(actual_matrix[i,])<span class="op">*</span><span class="kw">sum</span>(actual_matrix[,j])))</span>
+<span id="cb74-27"><a href="第七章-chi2检验.html#cb74-27"></a>          }</span>
+<span id="cb74-28"><a href="第七章-chi2检验.html#cb74-28"></a>     }</span>
+<span id="cb74-29"><a href="第七章-chi2检验.html#cb74-29"></a>     <span class="kw">return</span>(chi_val)</span>
+<span id="cb74-30"><a href="第七章-chi2检验.html#cb74-30"></a>}</span>
+<span id="cb74-31"><a href="第七章-chi2检验.html#cb74-31"></a></span>
+<span id="cb74-32"><a href="第七章-chi2检验.html#cb74-32"></a><span class="kw">chisquare_rctable_multiratio_test</span>(actual_matrix)</span>
+<span id="cb74-33"><a href="第七章-chi2检验.html#cb74-33"></a><span class="co"># [1] 5.971112e-43</span></span>
+<span id="cb74-34"><a href="第七章-chi2检验.html#cb74-34"></a><span class="kw">chisquare_rctable_pearsonC</span>(actual_matrix)</span>
+<span id="cb74-35"><a href="第七章-chi2检验.html#cb74-35"></a><span class="co"># [1] 0.1882638</span></span>
+<span id="cb74-36"><a href="第七章-chi2检验.html#cb74-36"></a></span>
+<span id="cb74-37"><a href="第七章-chi2检验.html#cb74-37"></a><span class="co">##或者可以用chisq.test()计算，但是p值可能和ncp(非中心化参数)有关，</span></span>
+<span id="cb74-38"><a href="第七章-chi2检验.html#cb74-38"></a><span class="co">##默认情况返回的P值与上面的计算不一致</span></span>
+<span id="cb74-39"><a href="第七章-chi2检验.html#cb74-39"></a><span class="kw">chisq.test</span>(actual_matrix)</span>
+<span id="cb74-40"><a href="第七章-chi2检验.html#cb74-40"></a><span class="co">##      Pearson&#39;s Chi-squared test</span></span>
+<span id="cb74-41"><a href="第七章-chi2检验.html#cb74-41"></a><span class="co">##  </span></span>
+<span id="cb74-42"><a href="第七章-chi2检验.html#cb74-42"></a><span class="co">##  data:  actual_matrix</span></span>
+<span id="cb74-43"><a href="第七章-chi2检验.html#cb74-43"></a><span class="co">##  X-squared = 213.16, df = 6, p-value &lt; 2.2e-16</span></span>
+<span id="cb74-44"><a href="第七章-chi2检验.html#cb74-44"></a></span>
+<span id="cb74-45"><a href="第七章-chi2检验.html#cb74-45"></a><span class="co">##列联系数也可以用DescTools包中的ContCoef()计算</span></span>
+<span id="cb74-46"><a href="第七章-chi2检验.html#cb74-46"></a>DescTools<span class="op">::</span><span class="kw">ContCoef</span>(actual_matrix)</span>
+<span id="cb74-47"><a href="第七章-chi2检验.html#cb74-47"></a><span class="co"># [1] 0.1882638</span></span></code></pre></div>
+<p>根据计算结果，p值=5.971112e-43&lt;0.01&lt;0.05，因此拒绝原假设<span class="math inline">\(H_0\)</span>。接受<span class="math inline">\(H_1\)</span>，即认为两种血型系统之间有关联。
+其关联程度按照列联系数C=0.1882638，数值较小，虽然有统计学意义，但是关系不大，关于统计显著与专业意义的关系
+可以<a href="第三章-总体均数的估计与假设检验.html#参数估计与假设检验的联系">参考参数估计与假设检验</a>的联系的内容。</p>
+<hr />
+<p>分类变量可分为无序变量和有序变量两大类：</p>
+<ol style="list-style-type: decimal">
+<li>无序分类变量，指所分类别zhi或属性之间无程度和dao顺序的差别。无序分类又可分为：
+<ul>
+<li>二项分类，如性别（男、女），药物反应（阴性，阳性）等；</li>
+<li>多项分类，如血型（O、A、B、AB），职业（工、农、商、学、兵）等。</li>
+</ul></li>
+</ol>
+<p>对于无序分类变量的分析，应先按类别分组，清点各组的观察单位数，编制分类变量的频数表，所得资料为无序分类资料，
+亦称计数资料。</p>
+<ol start="2" style="list-style-type: decimal">
+<li>有序分类变量，指各类别之间有程度的差别。</li>
+</ol>
+<p>如尿糖化验结果按-、±、+、++、+++分类；疗效按治愈、显效、好转、无效分类。
+对于有序分类变量，应先按等级顺序分组，清点各组的观察单位个数，编制有序变量的频数表，所得资料称为等级资料。</p>
+<hr />
+
 </div>
 </div>
 </div>
