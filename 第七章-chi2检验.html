@@ -260,11 +260,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2.3" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#配对的四格资料表的卡方检验"><i class="fa fa-check"></i><b>7.2.3</b> 配对的四格资料表的卡方检验</a></li>
 <li class="chapter" data-level="7.2.4" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#四格资料表的fisher确切概率法"><i class="fa fa-check"></i><b>7.2.4</b> 四格资料表的Fisher确切概率法</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#r行-times-c列资料表的卡方检验"><i class="fa fa-check"></i><b>7.3</b> R行 <span class="math inline">\(\times\)</span> C列资料表的卡方检验</a><ul>
+<li class="chapter" data-level="7.3" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#行列资料表的卡方检验"><i class="fa fa-check"></i><b>7.3</b> 行列资料表的卡方检验</a><ul>
 <li class="chapter" data-level="7.3.1" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#多个样本率的比较r-times-2表"><i class="fa fa-check"></i><b>7.3.1</b> 多个样本率的比较(<span class="math inline">\(R \times 2\)</span>表)</a></li>
 <li class="chapter" data-level="7.3.2" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#样本构成比的比较2-times-c表"><i class="fa fa-check"></i><b>7.3.2</b> 样本构成比的比较(<span class="math inline">\(2 \times C\)</span>表)</a></li>
 <li class="chapter" data-level="7.3.3" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#双向无序分组资料的关联性检验"><i class="fa fa-check"></i><b>7.3.3</b> 双向无序分组资料的关联性检验</a></li>
 <li class="chapter" data-level="7.3.4" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#双向有序分组资料的线性趋势检验"><i class="fa fa-check"></i><b>7.3.4</b> 双向有序分组资料的线性趋势检验</a></li>
+<li class="chapter" data-level="7.3.5" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#卡方检验的注意事项与选择思路"><i class="fa fa-check"></i><b>7.3.5</b> 卡方检验的注意事项与选择思路</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -983,8 +984,8 @@ R语言中与超几何分布相关的主要函数有<a href="https://stat.ethz.c
 计算P值应该是<span class="math inline">\(P_r\)</span>，反之可以计算<span class="math inline">\(P_l\)</span>。</b></p>
 </div>
 </div>
-<div id="r行-times-c列资料表的卡方检验" class="section level2">
-<h2><span class="header-section-number">7.3</span> R行 <span class="math inline">\(\times\)</span> C列资料表的卡方检验</h2>
+<div id="行列资料表的卡方检验" class="section level2">
+<h2><span class="header-section-number">7.3</span> 行列资料表的卡方检验</h2>
 <p>行x列表资料的卡方检验用于多个样本率的比较、两个或多个构成比的比较以及双向无序分类资料的 关联性检验。
 其基本数据有以下3种情况:</p>
 <ol style="list-style-type: decimal">
@@ -1418,7 +1419,333 @@ AB
 其基本思想是：首先计算RxC表资料的值，然后将总的值分解成<em>线性回归分量</em>与<em>偏离线性回归分量</em>。若两分量均有统计学意义，
 说明两个分类变量存在相关关系，但关系不是简单的直线关系；若线性回归分量有统计学意义，偏离线性回归分量无统计学意义时，
 说明两个分类变量存在直线相关关系。</p>
+<p>计算过程如大致下：
+1. 按照先前介绍的 行×列表资料检验的专用公式 <span class="math inline">\(\chi_{tol}^2=n(\sum\frac{A^2}{n_{r}n_{c}}-1)\)</span>计算中的<span class="math inline">\(\chi^2\)</span>值，自由度为<span class="math inline">\(v_{tol}=(行数-1)\times(列数-1)\)</span>。
+2. 计算线性回归分量<span class="math inline">\(\chi_{reg}^2\)</span> 先给两个有序变量分别赋值(如X变量有-，+，++，其对应赋值1,2,3,···；Y变量有治愈、显效、好转、无效+对应赋值1,2,3,4···)，再计算线性回归的<span class="math inline">\(\chi_{reg}^2\)</span>恒量：
+<span class="math display">\[\chi_{reg}^2=\frac{b^2}{S_b^2}, v_{reg}=1，v_{reg}=1\]</span>
+其中b为回归系数，<span class="math inline">\(S_b^2\)</span>为b的方差，<span class="math inline">\(b=l_{xy}/l_{xx}\)</span>，<span class="math inline">\(S_b^2=l_{yy}/(n*l_{xx})\)</span>，<span class="math inline">\(l_{xx}，l_{yy}\)</span>分别是
+变量X，Y的离差平方和；<span class="math inline">\(l_{xy}\)</span>是变量X，Y的离均差积和，f为样本观察频率即：
+<span class="math display">\[l_{xx}=\sum fx^2-\frac{(\sum fx)^2}{\sum f}\]</span>
+<span class="math display">\[l_{yy}=\sum fy^2-\frac{(\sum fy)^2}{\sum f}\]</span>
+<span class="math display">\[l_{xy}=\sum f(xy)-\frac{(\sum fx)(\sum fy)}{\sum f}\]</span>
+3. 计算偏离线性回归分量<span class="math inline">\(\chi_{wide}^2\)</span>，公式为：
+<span class="math display">\[\chi_{wide}^2=\chi_{tol}^2-\chi_{reg}^2，v_{wide}=v_{tol}-v_{reg}\]</span></p>
+使用《医学统计学》中的 案例07-09 的数据，做双向有序分组资料的线性趋势检验的R实现。
+<table style='width:60%; font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;' class=" lightable-classic">
+<caption>
+<span id="tab:chisqtab7">Table 7.8: </span>案例07-09 rxc 双向有序分组资料的线性趋势检验测试数据
+</caption>
+<thead>
+<tr>
+<th style="empty-cells: hide;border-bottom:hidden;" colspan="1">
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="4">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+冠状动脉硬化等级(Y)
+</div>
+</th>
+<th style="empty-cells: hide;border-bottom:hidden;" colspan="1">
+</th>
+</tr>
+<tr>
+<th style="text-align:center;">
+年龄(岁)X
+</th>
+<th style="text-align:center;">
+<ul>
+<li></th>
+<th style="text-align:center;">
+<ul>
+<li></th>
+<th style="text-align:center;">
+++
+</th>
+<th style="text-align:center;">
++++
+</th>
+<th style="text-align:center;">
+合计
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+20~
+</td>
+<td style="text-align:center;">
+70
+</td>
+<td style="text-align:center;">
+22
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+98
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+30~
+</td>
+<td style="text-align:center;">
+27
+</td>
+<td style="text-align:center;">
+24
+</td>
+<td style="text-align:center;">
+9
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+62
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+40~
+</td>
+<td style="text-align:center;">
+16
+</td>
+<td style="text-align:center;">
+23
+</td>
+<td style="text-align:center;">
+13
+</td>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+59
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+≤50
+</td>
+<td style="text-align:center;">
+9
+</td>
+<td style="text-align:center;">
+20
+</td>
+<td style="text-align:center;">
+15
+</td>
+<td style="text-align:center;">
+14
+</td>
+<td style="text-align:center;">
+58
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+合计
+</td>
+<td style="text-align:center;">
+122
+</td>
+<td style="text-align:center;">
+89
+</td>
+<td style="text-align:center;">
+41
+</td>
+<td style="text-align:center;">
+26
+</td>
+<td style="text-align:center;">
+278
+</td>
+</tr>
+</tbody>
+</table>
+设置的原假设<span class="math inline">\(H_0:\)</span> 年龄与动脉硬化等级之间没有线性关系；相应的备择假设<span class="math inline">\(H_1:\)</span>年龄与动脉硬化等级之间有线性关系。</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="第七章-chi2检验.html#cb75-1"></a>actual_matrix &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">data =</span> <span class="kw">as.numeric</span>( <span class="kw">c</span>(<span class="st">&quot;70&quot;</span>,<span class="st">&quot;27&quot;</span>,<span class="st">&quot;16&quot;</span>,<span class="st">&quot;9&quot;</span>,<span class="st">&quot;22&quot;</span>,<span class="st">&quot;24&quot;</span>,<span class="st">&quot;23&quot;</span>,<span class="st">&quot;20&quot;</span>,<span class="st">&quot;4&quot;</span>,<span class="st">&quot;9&quot;</span>,<span class="st">&quot;13&quot;</span>,<span class="st">&quot;15&quot;</span>,<span class="st">&quot;2&quot;</span>,<span class="st">&quot;3&quot;</span>,<span class="st">&quot;7&quot;</span>,<span class="st">&quot;14&quot;</span>)), </span>
+<span id="cb75-2"><a href="第七章-chi2检验.html#cb75-2"></a><span class="dt">nrow =</span> <span class="dv">4</span>, <span class="dt">ncol =</span> <span class="dv">4</span>,<span class="dt">byrow =</span> F)</span>
+<span id="cb75-3"><a href="第七章-chi2检验.html#cb75-3"></a></span>
+<span id="cb75-4"><a href="第七章-chi2检验.html#cb75-4"></a><span class="co">#计算总的卡方</span></span>
+<span id="cb75-5"><a href="第七章-chi2检验.html#cb75-5"></a>chisquare_chivaler&lt;-<span class="cf">function</span>(actual_matrix){</span>
+<span id="cb75-6"><a href="第七章-chi2检验.html#cb75-6"></a>     n=<span class="kw">sum</span>(actual_matrix)</span>
+<span id="cb75-7"><a href="第七章-chi2检验.html#cb75-7"></a>     chi_val&lt;-n<span class="op">*</span>(<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb75-8"><a href="第七章-chi2检验.html#cb75-8"></a>     <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">dim</span>(actual_matrix)[<span class="dv">1</span>]){</span>
+<span id="cb75-9"><a href="第七章-chi2检验.html#cb75-9"></a>          <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">dim</span>(actual_matrix)[<span class="dv">2</span>]){</span>
+<span id="cb75-10"><a href="第七章-chi2检验.html#cb75-10"></a>               chi_val&lt;-chi_val<span class="op">+</span>n<span class="op">*</span>(actual_matrix[i,j]<span class="op">^</span><span class="dv">2</span><span class="op">/</span>(<span class="kw">sum</span>(actual_matrix[i,])<span class="op">*</span><span class="kw">sum</span>(actual_matrix[,j])))</span>
+<span id="cb75-11"><a href="第七章-chi2检验.html#cb75-11"></a>          }</span>
+<span id="cb75-12"><a href="第七章-chi2检验.html#cb75-12"></a>     }</span>
+<span id="cb75-13"><a href="第七章-chi2检验.html#cb75-13"></a>     <span class="kw">return</span>(chi_val)</span>
+<span id="cb75-14"><a href="第七章-chi2检验.html#cb75-14"></a>}</span>
+<span id="cb75-15"><a href="第七章-chi2检验.html#cb75-15"></a></span>
+<span id="cb75-16"><a href="第七章-chi2检验.html#cb75-16"></a><span class="co">#计算线性回归分量对应的卡方</span></span>
+<span id="cb75-17"><a href="第七章-chi2检验.html#cb75-17"></a>chisquare_chivaler_4reg&lt;-<span class="cf">function</span>(actual_matrix){</span>
+<span id="cb75-18"><a href="第七章-chi2检验.html#cb75-18"></a>     n=<span class="kw">sum</span>(actual_matrix)</span>
+<span id="cb75-19"><a href="第七章-chi2检验.html#cb75-19"></a>     actual_matrix_squ&lt;-actual_matrix<span class="op">^</span><span class="dv">2</span></span>
+<span id="cb75-20"><a href="第七章-chi2检验.html#cb75-20"></a>     chi_val_reg&lt;-<span class="dv">0</span></span>
+<span id="cb75-21"><a href="第七章-chi2检验.html#cb75-21"></a>     fsum=n</span>
+<span id="cb75-22"><a href="第七章-chi2检验.html#cb75-22"></a>     fXsum&lt;-<span class="kw">sum</span>(<span class="kw">apply</span>(actual_matrix, <span class="dv">1</span>, sum)<span class="op">*</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">dim</span>(actual_matrix)[<span class="dv">1</span>]))</span>
+<span id="cb75-23"><a href="第七章-chi2检验.html#cb75-23"></a>     fXXsum&lt;-<span class="kw">sum</span>(<span class="kw">apply</span>(actual_matrix, <span class="dv">1</span>, sum)<span class="op">*</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">dim</span>(actual_matrix)[<span class="dv">1</span>])<span class="op">^</span><span class="dv">2</span>)</span>
+<span id="cb75-24"><a href="第七章-chi2检验.html#cb75-24"></a>     fYsum&lt;-<span class="kw">sum</span>(<span class="kw">apply</span>(actual_matrix, <span class="dv">2</span>, sum)<span class="op">*</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">dim</span>(actual_matrix)[<span class="dv">2</span>]))</span>
+<span id="cb75-25"><a href="第七章-chi2检验.html#cb75-25"></a>     fYYsum&lt;-<span class="kw">sum</span>(<span class="kw">apply</span>(actual_matrix, <span class="dv">2</span>, sum)<span class="op">*</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">dim</span>(actual_matrix)[<span class="dv">2</span>])<span class="op">^</span><span class="dv">2</span>)</span>
+<span id="cb75-26"><a href="第七章-chi2检验.html#cb75-26"></a>     fXYsum&lt;-<span class="dv">0</span></span>
+<span id="cb75-27"><a href="第七章-chi2检验.html#cb75-27"></a>     <span class="cf">for</span>(x <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">dim</span>(actual_matrix)[<span class="dv">1</span>]){</span>
+<span id="cb75-28"><a href="第七章-chi2检验.html#cb75-28"></a>          <span class="cf">for</span>(y <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">dim</span>(actual_matrix)[<span class="dv">2</span>]){</span>
+<span id="cb75-29"><a href="第七章-chi2检验.html#cb75-29"></a>               fXYsum&lt;-fXYsum<span class="op">+</span>actual_matrix[x,y]<span class="op">*</span>x<span class="op">*</span>y</span>
+<span id="cb75-30"><a href="第七章-chi2检验.html#cb75-30"></a>          }</span>
+<span id="cb75-31"><a href="第七章-chi2检验.html#cb75-31"></a>     }</span>
+<span id="cb75-32"><a href="第七章-chi2检验.html#cb75-32"></a>     <span class="co">#cat(&quot;fsum=&quot;,fsum,&quot;fXsum=&quot;,fXsum,&quot;fXXsum=&quot;,fXXsum,&quot;fYsum=&quot;,fYsum,&quot;fYYsum=&quot;,fYYsum,&quot;fXYsum=&quot;,fXYsum)</span></span>
+<span id="cb75-33"><a href="第七章-chi2检验.html#cb75-33"></a>     l_xx&lt;-fXXsum<span class="op">-</span>fXsum<span class="op">^</span><span class="dv">2</span><span class="op">/</span>fsum</span>
+<span id="cb75-34"><a href="第七章-chi2检验.html#cb75-34"></a>     l_yy&lt;-fYYsum<span class="op">-</span>fYsum<span class="op">^</span><span class="dv">2</span><span class="op">/</span>fsum</span>
+<span id="cb75-35"><a href="第七章-chi2检验.html#cb75-35"></a>     l_xy&lt;-fXYsum<span class="op">-</span>fXsum<span class="op">*</span>fYsum<span class="op">/</span>fsum</span>
+<span id="cb75-36"><a href="第七章-chi2检验.html#cb75-36"></a>     b&lt;-l_xy<span class="op">/</span>l_xx</span>
+<span id="cb75-37"><a href="第七章-chi2检验.html#cb75-37"></a>     SS_b&lt;-l_yy<span class="op">/</span>(l_xx<span class="op">*</span>fsum)</span>
+<span id="cb75-38"><a href="第七章-chi2检验.html#cb75-38"></a>     chi_val&lt;-b<span class="op">^</span><span class="dv">2</span><span class="op">/</span>SS_b</span>
+<span id="cb75-39"><a href="第七章-chi2检验.html#cb75-39"></a>     <span class="co">#cat(&quot;b=&quot;,b,&quot;SS_b=&quot;,SS_b)</span></span>
+<span id="cb75-40"><a href="第七章-chi2检验.html#cb75-40"></a>     <span class="kw">return</span>(chi_val)</span>
+<span id="cb75-41"><a href="第七章-chi2检验.html#cb75-41"></a>}</span>
+<span id="cb75-42"><a href="第七章-chi2检验.html#cb75-42"></a></span>
+<span id="cb75-43"><a href="第七章-chi2检验.html#cb75-43"></a>chi_tol&lt;-<span class="kw">chisquare_chivaler</span>(actual_matrix)</span>
+<span id="cb75-44"><a href="第七章-chi2检验.html#cb75-44"></a><span class="co"># [1] 71.43249</span></span>
+<span id="cb75-45"><a href="第七章-chi2检验.html#cb75-45"></a>chi_reg&lt;-<span class="kw">chisquare_chivaler_4reg</span>(actual_matrix)</span>
+<span id="cb75-46"><a href="第七章-chi2检验.html#cb75-46"></a><span class="co"># [1] 63.61832</span></span>
+<span id="cb75-47"><a href="第七章-chi2检验.html#cb75-47"></a>chi_wide&lt;-chi_tol<span class="op">-</span>chi_reg</span>
+<span id="cb75-48"><a href="第七章-chi2检验.html#cb75-48"></a><span class="co"># [1] 7.814174</span></span>
+<span id="cb75-49"><a href="第七章-chi2检验.html#cb75-49"></a><span class="kw">pchisq</span>(chi_tol,(<span class="dv">4-1</span>)<span class="op">*</span>(<span class="dv">4-1</span>),<span class="dt">lower.tail=</span>F)</span>
+<span id="cb75-50"><a href="第七章-chi2检验.html#cb75-50"></a><span class="co"># [1] 7.969604e-12</span></span>
+<span id="cb75-51"><a href="第七章-chi2检验.html#cb75-51"></a><span class="kw">pchisq</span>(chi_reg,<span class="dv">1</span>,<span class="dt">lower.tail=</span>F)</span>
+<span id="cb75-52"><a href="第七章-chi2检验.html#cb75-52"></a><span class="co"># [1] 1.510182e-15</span></span>
+<span id="cb75-53"><a href="第七章-chi2检验.html#cb75-53"></a><span class="kw">pchisq</span>(chi_wide,(<span class="dv">4-1</span>)<span class="op">*</span>(<span class="dv">4-1</span>)<span class="op">-</span><span class="dv">1</span>,<span class="dt">lower.tail=</span>F)</span>
+<span id="cb75-54"><a href="第七章-chi2检验.html#cb75-54"></a><span class="co"># [1] 0.4518296</span></span></code></pre></div>
+<table style='width:60%; font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;' class=" lightable-classic">
+<caption>
+<span id="tab:chisqtab8">Table 7.9: </span>双向有序分组资料的线性趋势检验测试结果
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+变异来源
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(\chi^2\)</span>
+</th>
+<th style="text-align:center;">
+自由度
+</th>
+<th style="text-align:center;">
+P值
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+总变异
+</td>
+<td style="text-align:center;">
+71.43249
+</td>
+<td style="text-align:center;">
+9
+</td>
+<td style="text-align:center;">
+7.969604e-12
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+线性回归分量
+</td>
+<td style="text-align:center;">
+63.61832
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1.510182e-15
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+偏离线性回归分量
+</td>
+<td style="text-align:center;">
+7.814174
+</td>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+0.4518296
+</td>
+</tr>
+</tbody>
+</table>
+<p>根据计算结果，线性回归分量的卡方P值=1.510182e-15&lt;0.005&lt;0.05，具有统计学意义；偏离线性回归分量的卡方P值=0.4518296&gt;0.05，pchisq
+不具有同继续意义，因此可以认为年龄与冠状动脉硬化之间存在线性相关的关系，结合资料表说明时随年龄增加动脉硬化风险升高。</p>
+</div>
+<div id="卡方检验的注意事项与选择思路" class="section level3">
+<h3><span class="header-section-number">7.3.5</span> 卡方检验的注意事项与选择思路</h3>
+<div id="注意事项" class="section level4">
+<h4><span class="header-section-number">7.3.5.1</span> 注意事项</h4>
+<ol style="list-style-type: decimal">
+<li><p>一般认为，行×列表资料中各格的理论频数不应小于1，并且1&lt;7&lt;5的格子数不宜超过格子总数 的1/5。若出现上述情况，可通过以下方法尝试解决：</p>
+<ul>
+<li>最好是增加样本含量，使理论频数增大;</li>
+<li>根据专业知识，考虑能否删去理论频数太小的行或列，能否将理论频数太小的行或列与性质相近的邻行或邻列合并;</li>
+<li>改用双向无序R×C表资料的 Fisher 确切概率法。</li>
+</ul></li>
+<li><p>多个样本率比较，若所得统计推断为拒绝日，接受<span class="math inline">\(H_0\)</span>时，只能认为各总休率之间总的来说有差別，
+但不能说明任两个总体率之间均有差别。要进一步推断哪两两总体字之间有差别，需进一步做<a href="#多个样本率的多重比较">多个样本率的多重比较</a>。</p></li>
+<li><p>医学期刊中常见这样的情况:不管RxC表资料中的两个分类变量是有序还是无序，均用<span class="math inline">\(\chi^2\)</span>检验分析。这种做法是不妥的。对于有序的R×C表资料不宜用<span class="math inline">\(\chi^2\)</span>检验，
+因为行×列表资料的<span class="math inline">\(\chi^2\)</span>检验与分类变量的顺序无关，当有序变量的R×C表资料中的分类顺序固定不变时，无论将任何两行(或两列)频数互换，所得值皆不变，
+其结论相同，这显然是不妥的。因此在实际应用中，对于RxC表资料要根据其分类类型和研究目的选用恰当的检验方法。</p></li>
+</ol>
+</div>
+<div id="选择思路" class="section level4">
+<h4><span class="header-section-number">7.3.5.2</span> 选择思路</h4>
+<p>RxC表资料可以分为双向无序、单向有序、双向有序属性相同和双向有序属性不同4类。</p>
+<ol style="list-style-type: decimal">
+<li><p>双向无序RxC表资料
+RxC表资料中两个分类变量皆为无序分类变量。对于该类资料，</p>
+<ul>
+<li>若研究目的为多个样本率(或构成比)的比较，可用<a href="#多个样本率的比较">RxC表资料的<span class="math inline">\(\chi^2\)</span>检验</a>;</li>
+<li>若研究目的为分析两个分类变量之间有无关联性以及关系的密切程度时，可用RxC表资料的<span class="math inline">\(\chi^2\)</span>检验以及<a href="第七章-chi2检验.html#双向无序分组资料的关联性检验">Pearson 列联系数进行分析</a>。</li>
+</ul></li>
+<li><p>单向有序RxC表资料
+对于该类资料，有两种形式，</p>
+<ul>
+<li>若RxC表资料中的分组变量(如年龄)是有序的，而指标变量(如传染病的类型)是无序的。其研究目的通常是分析不同年龄组各种传染病的构成情况，
+此种<a href="第七章-chi2检验.html#行列资料表的卡方检验">单向有序RxC表资料可用行x列表资料的<span class="math inline">\(\chi^2\)</span>检验</a>进行分析。</li>
+<li>若RxC表资料中的分组变量 (如疗法)为无序的，而指标变量(如疗效按等级分组)是有序的。其研究目的为比较不同疗法的疗效，此种向有序RXC表资
+料宜用<a href="#秩转换的非参数检验">秩转换的非参数检验</a>进行分析。</li>
+</ul></li>
+<li><p>双向有序属性相同的RxC表资料
+RxC表资料中的个分类变量皆为有序且属性相同。实际上是配对四格表资料的扩展，即水平数≥3 的配伍资料，
+如用两种检测方法同时对同一批样品的测定结果。其研究目的通常是分析两种检测方法的一致性，
+此时宜用一致性检验或称<a href="https://en.wikipedia.org/wiki/Cohen%27s_kappa">Kappa 检验</a>;也可用特殊模型分析方法。</p></li>
+<li><p>双向有序属性不同的RxC表资料
+RxC表资料中两个分类变量皆为有序的，但属性不同。对于该类资料，</p>
+<ul>
+<li>若研究目的为分析不同年龄组患者疗效之间有无差别时，可把它视为单向有序 RxC表资料，选用<a href="#秩转换的非参数检验">秩转换的非参数检验</a>；</li>
+<li>若研究目的为分析两个有序分类变量间是否存在相关关系，宜用<a href="#等级相关分析">等级相关分析</a>;</li>
+<li>若研究目的为分析两个有序分类变量间是否存在线性变化趋势，可用前述的<a href="第七章-chi2检验.html#双向有序分组资料的线性趋势检验">双向有序分组资料的线性趋势检验</a>(Test for linear trend)。</li>
+</ul></li>
+</ol>
 
+</div>
 </div>
 </div>
 </div>
