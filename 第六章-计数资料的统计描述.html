@@ -255,7 +255,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.1.1" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#概率密度函数"><i class="fa fa-check"></i><b>7.1.1</b> 概率密度函数</a></li>
 </ul></li>
 <li class="chapter" data-level="7.2" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#卡方检验"><i class="fa fa-check"></i><b>7.2</b> 卡方检验</a><ul>
-<li class="chapter" data-level="7.2.1" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#卡方检验的基本思想"><i class="fa fa-check"></i><b>7.2.1</b> 卡方检验的基本思想</a></li>
+<li class="chapter" data-level="7.2.1" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#卡方独立性检验的基本思想"><i class="fa fa-check"></i><b>7.2.1</b> 卡方独立性检验的基本思想</a></li>
 <li class="chapter" data-level="7.2.2" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#四格资料表的卡方检验"><i class="fa fa-check"></i><b>7.2.2</b> 四格资料表的卡方检验</a></li>
 <li class="chapter" data-level="7.2.3" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#配对的四格资料表的卡方检验"><i class="fa fa-check"></i><b>7.2.3</b> 配对的四格资料表的卡方检验</a></li>
 <li class="chapter" data-level="7.2.4" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#四格资料表的fisher确切概率法"><i class="fa fa-check"></i><b>7.2.4</b> 四格资料表的Fisher确切概率法</a></li>
@@ -266,7 +266,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.3" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#双向无序分组资料的关联性检验"><i class="fa fa-check"></i><b>7.3.3</b> 双向无序分组资料的关联性检验</a></li>
 <li class="chapter" data-level="7.3.4" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#双向有序分组资料的线性趋势检验"><i class="fa fa-check"></i><b>7.3.4</b> 双向有序分组资料的线性趋势检验</a></li>
 <li class="chapter" data-level="7.3.5" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#卡方检验的注意事项与选择思路"><i class="fa fa-check"></i><b>7.3.5</b> 卡方检验的注意事项与选择思路</a></li>
+<li class="chapter" data-level="7.3.6" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#多个样本率的多重比较"><i class="fa fa-check"></i><b>7.3.6</b> 多个样本率的多重比较</a></li>
 </ul></li>
+<li class="chapter" data-level="7.4" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#cochran-mantel-haenszel卡方统计量检验"><i class="fa fa-check"></i><b>7.4</b> Cochran-Mantel-Haenszel卡方统计量检验</a></li>
+<li class="chapter" data-level="7.5" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#频数分布的拟合优度检验"><i class="fa fa-check"></i><b>7.5</b> 频数分布的拟合优度检验</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -540,7 +543,7 @@ S_{p_1-p_2} &amp;= \sqrt{\frac{X_1+X_2}{n_1+n_2}(1-\frac{X_1+X_2}{n_1+n_2})(\fra
 <p>非遗传性疾病的家族集聚性(Clustering in familes)，系指该疾病的发生在家族成员间是否有传染性，如果没有传染性，则家族成员间的患病是独立的，该疾病无家族集聚性。
 否则，家族成员间的患病是非独立的，该疾病存在家族集聚性。</p>
 <p>当这种遗传性疾病无家族集聚性时，以家族为样本，在n个成员中，出现X个成员患病的概率分布可认为服从二项分布; 否则，使不服从二项分布。
-实际资料与二项分布进行拟和优度(Goodness of fit)的<a href="第七章-chi2检验.html#卡方检验">卡方检验</a>得出p值。</p>
+实际资料与二项分布进行<a href="第六章-计数资料的统计描述.html#拟合优度检验">拟合优度(Goodness of fit)的卡方检验</a>得出p值。</p>
 </div>
 <div id="群检验" class="section level4">
 <h4><span class="header-section-number">6.1.2.5</span> 群检验</h4>

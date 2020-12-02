@@ -45,6 +45,9 @@ tab:chisqtab5
 tab:chisqtab6
 tab:chisqtab7
 tab:chisqtab8
+tab:chisqtab9
+tab:chisqtab10
+tab:chisqtab11
 简介与传送门
 简介
 软件准备
@@ -175,7 +178,7 @@ levenes-检验
 卡方分布
 概率密度函数
 卡方检验
-卡方检验的基本思想
+卡方独立性检验的基本思想
 四格资料表的卡方检验
 四格资料表的卡方检验的校正公式
 配对的四格资料表的卡方检验
@@ -188,3 +191,9 @@ levenes-检验
 卡方检验的注意事项与选择思路
 注意事项
 选择思路
+多个样本率的多重比较
+卡方分割法
+cochran-mantel-haenszel卡方统计量检验
+频数分布的拟合优度检验
+观察数据的无分布预期
+观察数据的有预期分布

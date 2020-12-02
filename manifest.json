@@ -75,7 +75,7 @@
       "checksum": "806ab0467ea8b51e6248f2cc567b4827"
     },
     "index.html": {
-      "checksum": "fb32280fa650bab23bd59d934cd2bb09"
+      "checksum": "c9cbbe4222ed8039c47b0166dd92b824"
     },
     "libs/accessible-code-block-0.0.1/empty-anchor.js": {
       "checksum": "53c42ac72d71beb8e6dbffe86ab543d6"
@@ -201,31 +201,31 @@
       "checksum": "7cdf7213010e36ed54167d37b169766a"
     },
     "reference-keys.txt": {
-      "checksum": "0273dd87922baef88624703df582c954"
+      "checksum": "e792674f8a4158ff44950c33e82a9445"
     },
     "search_index.json": {
-      "checksum": "bb6207ee0fd9faa0e35dba0e532331c2"
+      "checksum": "f7514a21729592d51aa778502a9a4b31"
     },
     "style.css": {
       "checksum": "19f0b33dc27d4f748874d2cde5cea5bc"
     },
     "第二章-计量资料的统计描述.html": {
-      "checksum": "649114ed00ed315ba2fe208640a71790"
+      "checksum": "a83bc121b709570c4c015552e393063b"
     },
     "第六章-计数资料的统计描述.html": {
-      "checksum": "9c9cb58a47adfb798a553b0a71eaeb38"
+      "checksum": "ab1c934654185ff7bd9c84cdfca2a196"
     },
     "第七章-chi2检验.html": {
-      "checksum": "4708ea63c0e53c2620f35887fa372475"
+      "checksum": "c001b319cea306d8e13c63b072c572cd"
     },
     "第三章-总体均数的估计与假设检验.html": {
-      "checksum": "f7db3685b42f00c203e7553a06487f9b"
+      "checksum": "b665fab8fae32f328419a19c81e79114"
     },
     "第四章-多个样本均数比较的方差分析.html": {
-      "checksum": "219edc9144b04d360d9f09c5e0fbd8f3"
+      "checksum": "49f38c9179bd4ddb78844914b0a74e36"
     },
     "第五章-计数资料的统计描述.html": {
-      "checksum": "0687b77d98414cdbada0aafcfe1767e8"
+      "checksum": "706c98f1988a9fb019403863b82ca4c9"
     }
   },
   "users": null
