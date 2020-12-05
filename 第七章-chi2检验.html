@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="第六章-计数资料的统计描述.html"/>
-
+<link rel="next" href="第八章-秩转换的非参数检验.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -269,7 +269,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.6" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#多个样本率的多重比较"><i class="fa fa-check"></i><b>7.3.6</b> 多个样本率的多重比较</a></li>
 </ul></li>
 <li class="chapter" data-level="7.4" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#cochran-mantel-haenszel卡方统计量检验"><i class="fa fa-check"></i><b>7.4</b> Cochran-Mantel-Haenszel卡方统计量检验</a></li>
-<li class="chapter" data-level="7.5" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#频数分布的拟合优度检验"><i class="fa fa-check"></i><b>7.5</b> 频数分布的拟合优度检验</a></li>
+<li class="chapter" data-level="7.5" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#频数分布的拟合优度检验"><i class="fa fa-check"></i><b>7.5</b> 频数分布的拟合优度检验</a><ul>
+<li class="chapter" data-level="7.5.1" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#观察数据的无分布预期"><i class="fa fa-check"></i><b>7.5.1</b> 观察数据的无分布预期</a></li>
+<li class="chapter" data-level="7.5.2" data-path="第七章-chi2检验.html"><a href="第七章-chi2检验.html#观察数据的有预期分布"><i class="fa fa-check"></i><b>7.5.2</b> 观察数据的有预期分布</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="第八章-秩转换的非参数检验.html"><a href="第八章-秩转换的非参数检验.html"><i class="fa fa-check"></i><b>8</b> 第八章 秩转换的非参数检验</a><ul>
+<li class="chapter" data-level="8.1" data-path="第八章-秩转换的非参数检验.html"><a href="第八章-秩转换的非参数检验.html#wilcoxon符号秩检验"><i class="fa fa-check"></i><b>8.1</b> Wilcoxon符号秩检验</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="第八章-秩转换的非参数检验.html"><a href="第八章-秩转换的非参数检验.html#wilcoxon符号秩检验的原理与过程"><i class="fa fa-check"></i><b>8.1.1</b> Wilcoxon符号秩检验的原理与过程</a></li>
+<li class="chapter" data-level="8.1.2" data-path="第八章-秩转换的非参数检验.html"><a href="第八章-秩转换的非参数检验.html#单组样本与总体的中位数的wilcoxon符号秩检验"><i class="fa fa-check"></i><b>8.1.2</b> 单组样本与总体的中位数的Wilcoxon符号秩检验</a></li>
+<li class="chapter" data-level="8.1.3" data-path="第八章-秩转换的非参数检验.html"><a href="第八章-秩转换的非参数检验.html#配对样本差值的中位数和0比较"><i class="fa fa-check"></i><b>8.1.3</b> 配对样本差值的中位数和0比较</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="第八章-秩转换的非参数检验.html"><a href="第八章-秩转换的非参数检验.html#两个独立样本的比较的wilcoxon秩和检验"><i class="fa fa-check"></i><b>8.2</b> 两个独立样本的比较的Wilcoxon秩和检验</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -2236,8 +2247,8 @@ Pearson <span class="math inline">\(\chi^2\)</span>统计量。此类 <span clas
 </tr>
 </tbody>
 </table>
-<div id="观察数据的无分布预期" class="section level4">
-<h4><span class="header-section-number">7.5.0.1</span> 观察数据的无分布预期</h4>
+<div id="观察数据的无分布预期" class="section level3">
+<h3><span class="header-section-number">7.5.1</span> 观察数据的无分布预期</h3>
 <p><strong>卡方拟合优度检验</strong></p>
 <div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="第七章-chi2检验.html#cb80-1"></a>gof_tib&lt;-<span class="st"> </span><span class="kw">tibble</span>(</span>
 <span id="cb80-2"><a href="第七章-chi2检验.html#cb80-2"></a>  <span class="st">&#39;sample&#39;</span> =<span class="st"> </span><span class="kw">c</span>(<span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">7</span>, <span class="dv">1</span>),<span class="st">&quot;≥8&quot;</span> ), </span>
@@ -2294,8 +2305,8 @@ Pearson <span class="math inline">\(\chi^2\)</span>统计量。此类 <span clas
 <span id="cb82-17"><a href="第七章-chi2检验.html#cb82-17"></a><span class="co">##         Events    fObs    p.value</span></span>
 <span id="cb82-18"><a href="第七章-chi2检验.html#cb82-18"></a><span class="co">##   1.034643e+15       0          0</span></span></code></pre></div>
 </div>
-<div id="观察数据的有预期分布" class="section level4">
-<h4><span class="header-section-number">7.5.0.2</span> 观察数据的有预期分布</h4>
+<div id="观察数据的有预期分布" class="section level3">
+<h3><span class="header-section-number">7.5.2</span> 观察数据的有预期分布</h3>
 <p><strong>泊松分布的拟合优化检验</strong>
 使用《医学统计学》中的07-13的数据测试检验数据是否服从某个指定分布。设置<span class="math inline">\(H_0:\)</span>抽样数据符合泊松分布，
 并根据抽样计算出均值和方差和<span class="math inline">\(\lambda\)</span>，并计算相应观察值对应的理论概率。</p>
@@ -2389,7 +2400,6 @@ X
 82
 </td>
 <td style="text-align:center;">
-1
 </td>
 </tr>
 </tbody>
@@ -2410,6 +2420,7 @@ X
 <span id="cb84-14"><a href="第七章-chi2检验.html#cb84-14"></a><span class="kw">pchisq</span>(chi_val,<span class="dt">df=</span><span class="dv">2</span>,<span class="dt">lower.tail =</span> F)</span>
 <span id="cb84-15"><a href="第七章-chi2检验.html#cb84-15"></a><span class="co">#[1] 1.610495e-13</span></span></code></pre></div>
 <p>根据计算结果P值&lt;0.005&lt;0.1，按照α=0.1的水准拒绝<span class="math inline">\(H_0\)</span>，接受<span class="math inline">\(H_1\)</span>，即还不能认为数据符合假设的分布(二项分布)，即该疾病具有家族遗传性。</p>
+<p><strong><font color="red">注意的是，按照《医学统计学》上的表格，theoreticalP的和是不为1的，因此在计算式没有使用书上提供的高铝数值，计算的卡方检验值(58.91413)也与书上相差有点大。</font></strong></p>
 
 </div>
 </div>
@@ -2419,8 +2430,8 @@ X
           </div>
         </div>
       </div>
-<a href="第六章-计数资料的统计描述.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="第六章-计数资料的统计描述.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="第八章-秩转换的非参数检验.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

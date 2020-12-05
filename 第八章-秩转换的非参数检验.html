@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title> 第五章 计数资料的统计描述 | MedicalStatisNotes.utf8</title>
+  <title> 第八章 秩转换的非参数检验 | MedicalStatisNotes.utf8</title>
   <meta name="description" content="" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content=" 第五章 计数资料的统计描述 | MedicalStatisNotes.utf8" />
+  <meta property="og:title" content=" 第八章 秩转换的非参数检验 | MedicalStatisNotes.utf8" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content=" 第五章 计数资料的统计描述 | MedicalStatisNotes.utf8" />
+  <meta name="twitter:title" content=" 第八章 秩转换的非参数检验 | MedicalStatisNotes.utf8" />
   
   
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="第四章-多个样本均数比较的方差分析.html"/>
-<link rel="next" href="第六章-计数资料的统计描述.html"/>
+<link rel="prev" href="第七章-chi2检验.html"/>
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -302,113 +302,209 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="第五章-计数资料的统计描述" class="section level1">
-<h1><span class="header-section-number"></span> 第五章 计数资料的统计描述</h1>
-<p>日期: 2020-11-22
-作者：wxhyihuan</p>
-<p>本章节主要时计数资料相关的概念和统计基础，概念的细节比较多，是后面进行离散变量的统计的基础！可以结合树上的案例，更好的理解和引用概念，此处不累述。</p>
-<p>计数资料(Enumeration data,Categorical data)，又称定性资料或无序分类资料，是相对于计量资料(Measurement data,又称连续型变量资料，
-是指由数值变量的测量值组成的资料)的一个统计概念，是指先将观察单位按其性质或类别分组，然后清点各组观察单位个数所得的资料。
-其特点是对每组观察单位主要研究其数量的多少，属非连续性资料。</p>
-<p>计数资料常见的数据形式是绝对数，如某病的出院人数、治愈人数等，但绝对数通常不具有可比性，如甲、乙两个医院某病出院人数不同时，
-比较两医院该病的死亡人数没有意义，因此需要在绝对数的基础上计算相对数。常用的相对数指标有比、比例和率三种：</p>
+<div id="第八章-秩转换的非参数检验" class="section level1">
+<h1><span class="header-section-number"></span> 第八章 秩转换的非参数检验</h1>
+<p>非参数检验(Nonparametric test)是相对于参数检验(Parametric test)而言的。如果总体分布为已知的数学形式，
+<strong>对其总体参数作假设检验</strong>称为参数检验。本书前面介绍的计量资料的对正态总体均数作假设检验的1检验和F检验就为
+参数检验。但当总体分布不能由已知的数学形式表达、没有总体参数时，也就谈不上参数检验了。若两个或多个正
+态总体方差不等，也不能对其总体均数进行1检验或F检验的参数检 验。对于计量资料，不满足参数检验条件的假设
+检验方法，一是可尝试变量变换使其满足参数检验条件， 但有时达不到目的;二是用非参数检验。对于等级资料，
+常用非参数检验。</p>
+<p>非参数检验对总体分布不作严格假定，又称任意分布检验(Distribution-free test)，它直接<strong>对总体分布的位置是否相同作假设检验</strong>。
+非参数检验的优点是它不受总体分布的限制，适用范围广。其中<strong>秩转换(Rank transformation)的非参数检验</strong>，
+是推断一个总体表达分布位置的<em>中位数</em>M(非参数)和已知<span class="math inline">\(M_0\)</span>、两个或多个总体的分布是否有差别。秩转换的非参数
+检验是先将数值变量资料从小到大，或等级资料从弱到强转换成秩后，再计算检验统计量，其特点是假设检验的
+结果对总体分布的形状差别不敏感，只对总体分布的位 置差别敏感。</p>
+<p>对于计量资料，若满足正态和方差齐性条件，这时小样本资料选检验或F检验是不妥的，更适合采用秩转换的非参数检验；
+对于分布不知是否正态的小样本资料，为保险起见，宜选秩转换的非参数检验；对于一端或两端是不确定数值
+(如&lt;0.5、5.0 等)的资料，不管是否正态分布，只能选秩转换的非参数 检验。对于等级资料，若选行x列表资料的<span class="math inline">\(\chi^2\)</span>检验，只
+能推断构成比差别，而选秩转换的非参数检验，可推断等级强度差别。如果已知计量资料满足(或近似满足) 检验或F检验条件，当然选检验或F检验， 因为这时若选秩转换的非参数检验，会降低检验效能。</p>
+<p>符号秩本身代表一种类型的数据转换，即将实验数据先转化成符号秩。 当一组数据符号秩求和该总和用作检验统计量。 符号秩检验是一种<strong>具有对称的类似正态的分布，是离散分布的而f非连续分布</strong>。</p>
+<hr />
 <ol style="list-style-type: decimal">
-<li>当比例与时间有关系时称为率(Rate)，或称强度相对数；</li>
-<li>当比的分子是分母的一部分时，称为比例(Proportion)，或称结构相对数；</li>
-<li>两个有关指标之比称为比(Ratio)，或称相对比；</li>
+<li><b>什么是 对总体分布的<strong>位置</strong>是否相同作假设检验?</b></li>
 </ol>
-<div id="常用相对数" class="section level2">
-<h2><span class="header-section-number">5.1</span> 常用相对数</h2>
-<div id="强度相对数" class="section level3">
-<h3><span class="header-section-number">5.1.1</span> 强度相对数</h3>
-<p>强度相对数也称强度相对指标或强度指标，是指同一时期内两个性质不同而又有一定联系的总量指标之比。它可以反映社会经济现象的强度、密度和普遍程度。
-其计算公式为：
-<span class="math display">\[强度相对数(率)=\frac{某时期内发生某现象的观察单位数}{同时期内可能发生某现象的观察单位总数}\times比例基数\]</span></p>
-<p>比例基数主要是调整通过百分/千分/万分等基数，是计算结果能保留适当有效位数，便于阅读。另外就是要注意，不要忽略公式中时间的范畴，所赋予计算结果是
-特定观察时期内的，在结果解释时，这个周期(比如年，月，周，天，时)的含义体现。</p>
-</div>
-<div id="结构相对数" class="section level3">
-<h3><span class="header-section-number">5.1.2</span> 结构相对数</h3>
-<p>结构相对数又称比重指标或结构相对指标，是在分组情况下，总体内部各组的数值与总体数值相比计算得到的相对数。它反映总体内部的构成情况，
-表明总体中各部分所占比重的大小、一般用百分数表示，计算公式为：
-<span class="math display">\[结构相对数(比例)=\frac{某一构成部分的观察单位数}{同一事物各组成部分的观察单位总数}\times100\%\]</span></p>
-<p>显然，全体内各组结构相对数的总和应为100%。注意的是，各部分之间是互相影响，某部分的比例既受到自身观察数量变化的影响，
-也受到其他部分的观察数量的变化影响。</p>
-</div>
-<div id="相对比" class="section level3">
-<h3><span class="header-section-number">5.1.3</span> 相对比</h3>
-<p>表示两个有关事物指标之比，常以百分数和倍数表示，用以说明一个指标是另一个指标的百分之几或几倍，其计算公式为：
-<span class="math display">\[相对比(比)=\frac{指标甲}{指标乙}(\times100\%)\]</span></p>
-<p>指标甲乙可以是绝对数，相对数或平均数。</p>
-</div>
-<div id="应用相对数的注意点" class="section level3">
-<h3><span class="header-section-number">5.1.4</span> 应用相对数的注意点</h3>
+<p>这里的“位置”应该是是指反应分布特征的位置参数，即均值和中位数，其他的位置参数如众数，四分位等一般难以反映整体，因此用的比较少。
+一般均值和中位数代表数据集的中心点。</p>
+<ol start="2" style="list-style-type: decimal">
+<li><b>为什么是<font color="red">中位数</font>不是<font color="red">均值</font>?又或者为什么不是其他非参数内的参数呢??</b></li>
+</ol>
+<p>首先，这里需要回答一下，什么是参数累和会参数累位置参数？均值这一类位置参数由于在计算时，会受到样本容量n的大小影响，及计算公式中涉及到样本容量这个变化的参数，因此是属于[参数]类。而中位数，百分位数，
+在计算是没有其以来其他参数，直接给予数据本身就可以计算出来，因此是参数类。</p>
+<p>其次，在逻辑上我们通常回去寻找数据的中心(这样可以尽量保证统计的稳健性和有效性)，最俱代表性的的是中位数。实际上，均值是数据呈对称分布时的中位数；而在数据分布有偏移时，中位数则一般不同于均数，
+使用中位数更能代表数据中心，这也是相比众数，4分位等非参数分布参数的优势。</p>
+<p>最后，也有路径依赖的原因，因为早期很多数据都被假设是符合正态的，或者是近似符合正太分布的，可能那时候因为计算受限，
+这样的假设处理比较方便而且能解决大部分情况。均值计算起来更加方便快捷，百分位数则需要对所有数据排序，然后再计算。</p>
+<hr />
+<p>R 语言中的主要函数有：
+1. Wilcoxon符号秩检验，Wilcoxon Signed Rank Statistic的<a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/SignRank">dsignrank(),psignrank(),qsignrank(),rsignrank()</a>
+2. Wilcoxon符号秩和检验，Wilcoxon Rank Sum Statistic<a href="https://www.rdocumentation.org/link/pwilcox?package=stats&amp;version=3.6.2">dwilcox(),pwilcox(),qwilcox()和rwilcox()</a>
+3. 相应的检验函数有<a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/wilcox.test">wilcox.test()</a>。</p>
+<div id="wilcoxon符号秩检验" class="section level2">
+<h2><span class="header-section-number">8.1</span> Wilcoxon符号秩检验</h2>
+<p>Wilcoxon符号秩检验(Wilcoxon singed-rank test)可用于单样本中位数和总体中位数比较，还可用于配对样本差值的中位数和0比较。</p>
+<div id="wilcoxon符号秩检验的原理与过程" class="section level3">
+<h3><span class="header-section-number">8.1.1</span> Wilcoxon符号秩检验的原理与过程</h3>
+<p><strong>单组样本与总体的中位数的Wilcoxon符号秩检验</strong></p>
+<p>为了推断样本说来自的总体中位数M与某个已知的总体的中位数<span class="math inline">\(M_0\)</span>是否有差别。用样本变量和<span class="math inline">\(M_0\)</span>的差值，来推断差值的总体位置值和0是否有差别。比如一个样本容量为n的<span class="math inline">\(X\)</span>变量，观察的值为<span class="math inline">\(x_1,x_2,x_3,\dots,x_n,\)</span>；假设要将<span class="math inline">\(X\)</span>变量代表的总体与已知位置值<span class="math inline">\(M_0=m\)</span>的总体进行比较的过程如下：</p>
 <ol style="list-style-type: decimal">
-<li>比例不能代替率，即结构相对数不能代替强度相对数</li>
-<li>计算相对数应该有足够的数量</li>
-<li>正确计算合计率 对分组资料计算合计表(或称平均率)时，不能简单的由各组率相加或平均而得，要用合计的有关实际数字进行计算</li>
-<li>注意资料的可比性在比较相对数时，除了要对比的因素(如不同的药物)，其余的影响因素应尽可能相同或相近。在临床研究和动物实验时，应遵循随机抽样原则进行分组。下列因素可能影响对比组之间的可比性:</li>
-</ol>
+<li>计算X中观察值与m的差值，即<span class="math inline">\(d_i=x_i-m，Sgn_i=Sgn(d_i)，i\in[1,n]\)</span>；
 <ul>
-<li><p>观察对象是否同质，研究方法是否相同，观察时间是否相等，以及地区、周围环境、风俗习惯和经 济条件是否一致或相近等。</p></li>
-<li><p>观察对象内部结构是否相同，若两组资料的年龄、性别等构成不同，可以分别进行同年龄别、同性 别的小组率比较或对总率(合计率)进行<a href="第五章-计数资料的统计描述.html#率的标准化">标准化</a>后再作比较。</p></li>
-</ul>
-<ol start="5" style="list-style-type: decimal">
-<li><p>对比不同时期资料应注意客观条件是否相同，例如，疾病报告制度完善和资料完整的地区或年份，发病率可以“升高”；居民因医疗普及，就诊机会增加，或诊断技术提高，也会引起发病率升高”。因此在分析讨论时，应根据各方面情形全面考虑，慎重对待。</p></li>
-<li><p>样本率(或构成比)的抽样误差不能仅凭数字表面相差大小下结论，而应进行样本率(或构成比)差别的假设检验。</p></li>
+<li>如果<span class="math inline">\(x_i&gt;m\)</span>，对应的对<span class="math inline">\(d_i&gt;0\)</span>，<em>秩符号</em>为1，即Sgn_i=Sgn(d_i)=1</li>
+<li>如果<span class="math inline">\(x_i=m\)</span>，对应的对<span class="math inline">\(d_i=0\)</span>，<em>秩符号</em>为0，即Sgn_i=Sgn(d_i)=0</li>
+<li>如果<span class="math inline">\(x_i&lt;m\)</span>，对应的对<span class="math inline">\(d_i&lt;0\)</span>，<em>秩符号</em>为-1，即Sgn_i=Sgn(d_i)=-1</li>
+</ul></li>
+<li>将样本变换为带符号的秩向量，即对<span class="math inline">\(|d_i|\)</span>按从小到大进行排序，<span class="math inline">\(|d_i|\)</span>排序后的秩(即排序值)记作<span class="math inline">\(R_i\)</span>。这里要注意过滤<span class="math inline">\(d_i=0\)</span>(秩符号为0)的数据，同时，<strong>对应的样本量n会发生相应的减少为n’</strong>。</li>
+<li>原始向量值的<em>有符号秩</em>为<span class="math inline">\(R_i*Sgn_i，i\in[1,n]\)</span>，</li>
 </ol>
-</div>
-</div>
-<div id="率的标准化" class="section level2">
-<h2><span class="header-section-number">5.2</span> 率的标准化</h2>
-<p>当比较的两组资料，其内部各小组率明显不同，且各小组观察例数的构成比，诸如年龄、性别、工龄、病情轻重、病程长短等也明显不同时，
-直接比较两个合计率是不合理的。因为其内部构成不同，往往影响 合计率大小。</p>
-<p>因此，一种为在两个以上总率(总均数)进行对比时，消除内部构成不同的影响，采用统一的内部构成，分别计算标准化率(Standardized rate)后再做对比的方法，即为标准化方法(Standardization method)，是2014年公布的全科医学与社区卫生名词。标准化法的基本思想是：采用某影响因素的统一标准构成以消除构成不同对合计率的影响，
-使通过标准化后的合计率具有可比性。注意的是，它与数据的标准化(Normalization)的概念不同，数据的标准化是将数据按比例缩放，使之落入一个小的特定区间。</p>
-<div id="标准化率的计算" class="section level3">
-<h3><span class="header-section-number">5.2.1</span> 标准化率的计算</h3>
-<p>标准化法计算的关键是选择统一的标准构成。常用的标准化方法有直接标准化法和间接标准化法，简称直接法和间接法。根据已有资料的条件，采用不同的方法计算标准化率。如对死亡率的年龄构成标准化，若已知年龄别死亡率，可采用直接法;若只 有总死亡数和年龄别人口数而缺乏年龄别死亡率时，或各年龄组人口数较小，年龄别死亡率不稳定时，宜用间接法。</p>
-<p><span class="math inline">\(N_i\)</span>表示标准年龄别人口数，<span class="math inline">\(p_i\)</span>为实际年龄别死亡率，N为标准人口众数，选择标准构成的方法通常有三种:</p>
+<p><strong>配对样本比较的Wilcoxon符号秩检验</strong></p>
+<p>实验样本中配对组之间的差异也代表一个数据向量，这就是为什么使用基于符号秩(Signed Rank Statistic)检验而不是符号秩和检验(Rank Sum Statistic)。</p>
+<p>为了推断配对的两个相关样本说来自的两个总体中位数是否有差别。比如两个容量为n的配对样本<span class="math inline">\(X\text{与}Y\)</span>变量，观察的值为<span class="math inline">\(x_1,x_2,x_3,\dots,x_n,\)</span>和<span class="math inline">\(y_1,y_2,y_3,\dots,y_n,\)</span>；这里将<span class="math inline">\(X\text{与}Y\)</span>的差值与0进行检验，判断是否有差别。</p>
 <ol style="list-style-type: decimal">
-<li><p>两组资料中任选组资料的人口数(或人口构成)作为两者的“共同标准”。这种方法适用于直接法。标准化率的计算公式:
-<span class="math display">\[p&#39;=\frac{\sum N_ip_i}{N}\]</span></p></li>
-<li><p>两组资料各部分人口之和组成的人口数(或人口构成)作为两者的“共同标准”。这种方法适用于直接法。标准化率的计算公式:
-<span class="math display">\[p&#39;=\sum\left(\frac{N_i}{N}\right)p_i\]</span></p></li>
-<li><p>另外选用一个通用的或便于比较的标准作为两者的“共同标准”,如采用全国、全省或全地区的数据作为标准，这种方法适用于直接法和间接法。标准化率的计算公式:
-<span class="math display">\[p&#39;=P\left(\frac{r}{\sum n_iP_i}\right)=P\times SMR\]</span></p></li>
+<li>计算X中观察值与m的差值，即<span class="math inline">\(d_i=x_i-y_i，Sgn_i=Sgn(d_i)，i\in[1,n]\)</span>；
+<ul>
+<li>如果<span class="math inline">\(d_i&gt;0\)</span>，<em>秩符号</em>为1，即Sgn_i=Sgn(d_i)=1</li>
+<li>如果<span class="math inline">\(d_i=0\)</span>，<em>秩符号</em>为0，即Sgn_i=Sgn(d_i)=0</li>
+<li>如果<span class="math inline">\(d_i&lt;0\)</span>，<em>秩符号</em>为-1，即Sgn_i=Sgn(d_i)=-1</li>
+</ul></li>
+<li>将样本变换为带符号的秩向量，即对<span class="math inline">\(|d_i|\)</span>按从小到大进行排序，<span class="math inline">\(|d_i|\)</span>排序后的秩(即排序值)记作<span class="math inline">\(R_i\)</span>。这里要注意过滤<span class="math inline">\(d_i=0\)</span>(秩符号为0)的数据，同时，<strong>对应的样本量n会发生相应的减少为n’</strong>。</li>
+<li>原始向量值的<em>有符号秩</em>为<span class="math inline">\(R_i*Sgn_i，i\in[1,n]\)</span>，</li>
 </ol>
-<p><span class="math inline">\(SMR=r/\sum n_iP_i\)</span>为标准化死亡比(Standardized mortalitu ratio,SMR)。<a href="https://baike.baidu.com/item/%E6%A0%87%E5%87%86%E5%8C%96%E6%AD%BB%E4%BA%A1%E6%AF%94">标准化死亡比</a>是被标化组实际死亡数与预期死亡数之比，用SMR表示。若SMR&gt;1，表示被标化人群的死亡率高于标准组；反之，若SMR&lt;1，表示被标化人群的死亡率低于标准组。标准化死亡比可反映某一人群与标准人群的人口死亡的相对水平。</p>
+<p><strong>Wilcoxon符号秩检验的统计量</strong></p>
+<p>单样本和配对样本的符号秩检验统计量的计算方式一样的，但是不同软件对这个统计量的定义略有差异，主要有两种情况：</p>
+<ol style="list-style-type: decimal">
+<li>按照正秩和负秩()两个值分别计算计算的情况如下：</li>
+</ol>
+<p>正秩：
+<span class="math display">\[V_{&gt;0}=\sum_i^{n&#39;}R_i*Sgn_i，Sgn_i&gt;0\]</span>
+负秩：
+<span class="math display">\[V_{&lt;0}=|\sum_i^{n&#39;}R_i*Sgn_i|，Sgn_i&lt;0\]</span></p>
+<p>它具有从V=0的最小值到最大值V=n’(n’+1)/2的对称分布，因此在计算P值时候，计算正秩/负秩的效果是一样的，但仍然需要注意时单侧还是双侧检验的使用环境。R语言中自带工具采用的时这一类方式，这里也主要以此为参考。</p>
+<ol start="2" style="list-style-type: decimal">
+<li>按照<a href="https://en.wikipedia.org/wiki/Wilcoxon_signed-rank_test">总符号秩</a>计算的情况如下：
+总秩：
+<span class="math display">\[W=\sum_i^{n&#39;}R_i*Sgn_i\]</span></li>
+</ol>
+</div>
+<div id="单组样本与总体的中位数的wilcoxon符号秩检验" class="section level3">
+<h3><span class="header-section-number">8.1.2</span> 单组样本与总体的中位数的Wilcoxon符号秩检验</h3>
+<p>这里以案例8-2的数据进行测试，设置的原假设<span class="math inline">\(H_0:\)</span>尿氟含量的总体中位数M=45.30；备择假设<span class="math inline">\(H_1:\)</span>M&gt;43.5，是单侧检验；</p>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="第八章-秩转换的非参数检验.html#cb85-1"></a><span class="kw">library</span>(<span class="st">&quot;memisc&quot;</span>)</span>
+<span id="cb85-2"><a href="第八章-秩转换的非参数检验.html#cb85-2"></a><span class="kw">library</span>(<span class="st">&quot;kableExtra&quot;</span>)</span>
+<span id="cb85-3"><a href="第八章-秩转换的非参数检验.html#cb85-3"></a><span class="co">#读取数据</span></span>
+<span id="cb85-4"><a href="第八章-秩转换的非参数检验.html#cb85-4"></a>urine&lt;-<span class="kw">c</span>(<span class="fl">44.21</span>,<span class="fl">45.30</span>,<span class="fl">46.39</span>,<span class="fl">49.47</span>,<span class="fl">51.05</span>,<span class="fl">53.16</span>,<span class="fl">53.26</span>,<span class="fl">54.37</span>,<span class="fl">57.16</span>,<span class="fl">67.37</span>,<span class="fl">71.05</span>,<span class="fl">87.37</span>)</span>
+<span id="cb85-5"><a href="第八章-秩转换的非参数检验.html#cb85-5"></a>m0&lt;-<span class="fl">45.30</span></span>
+<span id="cb85-6"><a href="第八章-秩转换的非参数检验.html#cb85-6"></a></span>
+<span id="cb85-7"><a href="第八章-秩转换的非参数检验.html#cb85-7"></a>diff_val&lt;-urine<span class="op">-</span>m0</span>
+<span id="cb85-8"><a href="第八章-秩转换的非参数检验.html#cb85-8"></a>diff_no0&lt;-diff_val[<span class="kw">which</span>(diff_val <span class="op">!=</span><span class="st"> </span><span class="dv">0</span>)]</span>
+<span id="cb85-9"><a href="第八章-秩转换的非参数检验.html#cb85-9"></a>abs_diff_val&lt;-<span class="kw">abs</span>(diff_no0)</span>
+<span id="cb85-10"><a href="第八章-秩转换的非参数检验.html#cb85-10"></a>rank_vals&lt;-<span class="kw">rank</span>(abs_diff_val)</span>
+<span id="cb85-11"><a href="第八章-秩转换的非参数检验.html#cb85-11"></a>sum_plusrank&lt;-<span class="kw">sum</span>(rank_vals[<span class="kw">which</span>(diff_no0 <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>)])</span>
+<span id="cb85-12"><a href="第八章-秩转换的非参数检验.html#cb85-12"></a>sum_minusrank&lt;-<span class="kw">sum</span>(rank_vals[<span class="kw">which</span>(diff_no0 <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>)])</span>
+<span id="cb85-13"><a href="第八章-秩转换的非参数检验.html#cb85-13"></a>n_<span class="dv">1</span>&lt;-<span class="kw">length</span>(diff_no0)</span>
+<span id="cb85-14"><a href="第八章-秩转换的非参数检验.html#cb85-14"></a><span class="kw">barplot</span>(diff_no0,<span class="dt">col=</span><span class="st">&quot;dark gray&quot;</span>,<span class="dt">xlab=</span><span class="st">&quot;Difference in Likert&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;Frequency&quot;</span>)</span>
+<span id="cb85-15"><a href="第八章-秩转换的非参数检验.html#cb85-15"></a><span class="kw">psignrank</span>(sum_plusrank,n_<span class="dv">1</span>,<span class="dt">low.tail=</span>F)</span>
+<span id="cb85-16"><a href="第八章-秩转换的非参数检验.html#cb85-16"></a><span class="co"># [1] 0.0004882812</span></span>
+<span id="cb85-17"><a href="第八章-秩转换的非参数检验.html#cb85-17"></a><span class="kw">wilcox.test</span>(serum_df<span class="op">$</span>原法,serum_df<span class="op">$</span>新法,<span class="dt">mu=</span><span class="fl">45.3</span>,<span class="dt">paired =</span> T,<span class="dt">alternative =</span> <span class="kw">c</span>(<span class="st">&quot;less&quot;</span>),<span class="dt">exact=</span>T,<span class="dt">correct =</span> F)</span>
+<span id="cb85-18"><a href="第八章-秩转换的非参数检验.html#cb85-18"></a><span class="co">#   Wilcoxon signed rank exact test</span></span>
+<span id="cb85-19"><a href="第八章-秩转换的非参数检验.html#cb85-19"></a><span class="co">#  </span></span>
+<span id="cb85-20"><a href="第八章-秩转换的非参数检验.html#cb85-20"></a><span class="co">#  data:  serum_df$原法 and serum_df$新法</span></span>
+<span id="cb85-21"><a href="第八章-秩转换的非参数检验.html#cb85-21"></a><span class="co">#  V = 1, p-value = 0.0004883</span></span>
+<span id="cb85-22"><a href="第八章-秩转换的非参数检验.html#cb85-22"></a><span class="co">#  alternative hypothesis: true location shift is less than 45.3</span></span>
+<span id="cb85-23"><a href="第八章-秩转换的非参数检验.html#cb85-23"></a></span>
+<span id="cb85-24"><a href="第八章-秩转换的非参数检验.html#cb85-24"></a><span class="kw">wilcox.test</span>(serum_df<span class="op">$</span>原法,serum_df<span class="op">$</span>新法,<span class="dt">mu=</span><span class="fl">45.3</span>,<span class="dt">paired =</span> T,<span class="dt">alternative =</span> <span class="kw">c</span>(<span class="st">&quot;less&quot;</span>),<span class="dt">exact=</span>F,<span class="dt">correct =</span> T)</span>
+<span id="cb85-25"><a href="第八章-秩转换的非参数检验.html#cb85-25"></a><span class="co">##      Wilcoxon signed rank test with continuity correction</span></span>
+<span id="cb85-26"><a href="第八章-秩转换的非参数检验.html#cb85-26"></a><span class="co">##  </span></span>
+<span id="cb85-27"><a href="第八章-秩转换的非参数检验.html#cb85-27"></a><span class="co">##  data:  serum_df$原法 and serum_df$新法</span></span>
+<span id="cb85-28"><a href="第八章-秩转换的非参数检验.html#cb85-28"></a><span class="co">##  V = 1, p-value = 0.001632</span></span>
+<span id="cb85-29"><a href="第八章-秩转换的非参数检验.html#cb85-29"></a><span class="co">##  alternative hypothesis: true location shift is less than 45.3</span></span></code></pre></div>
+<p>根据计算结果，p值&lt;0.05，因此拒绝原假设<span class="math inline">\(H_0\)</span>，接受<span class="math inline">\(H_1\)</span>，可以认为工人的尿氟比正常人的尿氟含量高。</p>
+</div>
+<div id="配对样本差值的中位数和0比较" class="section level3">
+<h3><span class="header-section-number">8.1.3</span> 配对样本差值的中位数和0比较</h3>
+<p>这里以案例8-1的数据进行测试，设置的原假设<span class="math inline">\(H_0:\)</span>两组数据的差值中位数等于0；备择假设<span class="math inline">\(H_1:\)</span>两组数据的差值中位数不等于0，是双侧检验；</p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="第八章-秩转换的非参数检验.html#cb86-1"></a><span class="kw">library</span>(<span class="st">&quot;memisc&quot;</span>)</span>
+<span id="cb86-2"><a href="第八章-秩转换的非参数检验.html#cb86-2"></a><span class="kw">library</span>(<span class="st">&quot;kableExtra&quot;</span>)</span>
+<span id="cb86-3"><a href="第八章-秩转换的非参数检验.html#cb86-3"></a><span class="co">#读取数据</span></span>
+<span id="cb86-4"><a href="第八章-秩转换的非参数检验.html#cb86-4"></a>serum&lt;-<span class="kw">spss.system.file</span>(<span class="st">&quot;ExampleData/SavData4MedSta/Exam08-01.sav&quot;</span>)</span>
+<span id="cb86-5"><a href="第八章-秩转换的非参数检验.html#cb86-5"></a>serum_df&lt;-<span class="kw">as.data.frame</span>(<span class="kw">as.data.set</span>(serum))</span>
+<span id="cb86-6"><a href="第八章-秩转换的非参数检验.html#cb86-6"></a></span>
+<span id="cb86-7"><a href="第八章-秩转换的非参数检验.html#cb86-7"></a><span class="co"># 1 计算两种方法的差值</span></span>
+<span id="cb86-8"><a href="第八章-秩转换的非参数检验.html#cb86-8"></a>diff_val&lt;-serum_df[,<span class="dv">1</span>]<span class="op">-</span>serum_df[,<span class="dv">2</span>]</span>
+<span id="cb86-9"><a href="第八章-秩转换的非参数检验.html#cb86-9"></a><span class="co"># 2 省略diff_val中为0的对子数(网上的一些有的方法可能没有这一步),并计算差值的绝对值</span></span>
+<span id="cb86-10"><a href="第八章-秩转换的非参数检验.html#cb86-10"></a>diff_no0&lt;-diff_val[<span class="kw">which</span>(diff_val <span class="op">!=</span><span class="st"> </span><span class="dv">0</span>)]</span>
+<span id="cb86-11"><a href="第八章-秩转换的非参数检验.html#cb86-11"></a>abs_diff_val&lt;-<span class="kw">abs</span>(diff_no0)</span>
+<span id="cb86-12"><a href="第八章-秩转换的非参数检验.html#cb86-12"></a><span class="co"># 3 使用rank()函数计算差值绝对值的秩</span></span>
+<span id="cb86-13"><a href="第八章-秩转换的非参数检验.html#cb86-13"></a>rank_vals&lt;-<span class="kw">rank</span>(abs_diff_val)</span>
+<span id="cb86-14"><a href="第八章-秩转换的非参数检验.html#cb86-14"></a><span class="co"># 4 取正秩和或者负秩和</span></span>
+<span id="cb86-15"><a href="第八章-秩转换的非参数检验.html#cb86-15"></a>sum_plusrank&lt;-<span class="kw">sum</span>(rank_vals[<span class="kw">which</span>(diff_no0 <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>)])</span>
+<span id="cb86-16"><a href="第八章-秩转换的非参数检验.html#cb86-16"></a>sum_minusrank&lt;-<span class="kw">sum</span>(rank_vals[<span class="kw">which</span>(diff_no0 <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>)])</span>
+<span id="cb86-17"><a href="第八章-秩转换的非参数检验.html#cb86-17"></a><span class="co"># 5 确定有效对子数，即差值不为0的对子数, n</span></span>
+<span id="cb86-18"><a href="第八章-秩转换的非参数检验.html#cb86-18"></a>n_<span class="dv">1</span>&lt;-<span class="kw">length</span>(diff_no0)</span>
+<span id="cb86-19"><a href="第八章-秩转换的非参数检验.html#cb86-19"></a></span>
+<span id="cb86-20"><a href="第八章-秩转换的非参数检验.html#cb86-20"></a><span class="co">#这里可以预先查看一下diff_no0的数据状况</span></span>
+<span id="cb86-21"><a href="第八章-秩转换的非参数检验.html#cb86-21"></a><span class="kw">barplot</span>(diff_no0,<span class="dt">col=</span><span class="st">&quot;dark gray&quot;</span>,<span class="dt">xlab=</span><span class="st">&quot;Difference in Likert&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;Frequency&quot;</span>)</span>
+<span id="cb86-22"><a href="第八章-秩转换的非参数检验.html#cb86-22"></a></span>
+<span id="cb86-23"><a href="第八章-秩转换的非参数检验.html#cb86-23"></a><span class="co">##使用psignrank()计算P值，需要注意的是符号秩时会连续分布，因此针对11.5/54.5这样的小鼠，在计算P值是否需要注意左侧右侧的边际问题</span></span>
+<span id="cb86-24"><a href="第八章-秩转换的非参数检验.html#cb86-24"></a><span class="kw">psignrank</span>(sum_plusrank,n_<span class="dv">1</span>)<span class="op">+</span><span class="kw">psignrank</span>(sum_minusrank,n_<span class="dv">1</span>,<span class="dt">lower.tail =</span> F)</span>
+<span id="cb86-25"><a href="第八章-秩转换的非参数检验.html#cb86-25"></a><span class="co"># [1] 0.0546875</span></span>
+<span id="cb86-26"><a href="第八章-秩转换的非参数检验.html#cb86-26"></a><span class="kw">psignrank</span>(sum_plusrank,n_<span class="dv">1</span>)<span class="op">*</span><span class="dv">2</span></span>
+<span id="cb86-27"><a href="第八章-秩转换的非参数检验.html#cb86-27"></a><span class="co"># [1] 0.06738281</span></span>
+<span id="cb86-28"><a href="第八章-秩转换的非参数检验.html#cb86-28"></a><span class="kw">psignrank</span>(sum_minusrank,n_<span class="dv">1</span>,<span class="dt">lower.tail =</span> F)<span class="op">*</span><span class="dv">2</span></span>
+<span id="cb86-29"><a href="第八章-秩转换的非参数检验.html#cb86-29"></a><span class="co"># [1] 0.04199219</span></span>
+<span id="cb86-30"><a href="第八章-秩转换的非参数检验.html#cb86-30"></a></span>
+<span id="cb86-31"><a href="第八章-秩转换的非参数检验.html#cb86-31"></a><span class="co">##或者使用wilcox.test()函数工具，对于N小于20的样本，一般采用exact=T计算</span></span>
+<span id="cb86-32"><a href="第八章-秩转换的非参数检验.html#cb86-32"></a><span class="kw">wilcox.test</span>(serum_df<span class="op">$</span>原法,serum_df<span class="op">$</span>新法,<span class="dt">mu=</span><span class="dv">0</span>,<span class="dt">paired =</span> T,<span class="dt">alternative =</span> <span class="kw">c</span>(<span class="st">&quot;two.sided&quot;</span>),<span class="dt">exact=</span>T,<span class="dt">correct =</span> F)</span>
+<span id="cb86-33"><a href="第八章-秩转换的非参数检验.html#cb86-33"></a><span class="co">##  Wilcoxon signed rank test</span></span>
+<span id="cb86-34"><a href="第八章-秩转换的非参数检验.html#cb86-34"></a><span class="co">## </span></span>
+<span id="cb86-35"><a href="第八章-秩转换的非参数检验.html#cb86-35"></a><span class="co">## data:  serum_df$原法 and serum_df$新法</span></span>
+<span id="cb86-36"><a href="第八章-秩转换的非参数检验.html#cb86-36"></a><span class="co">## V = 11.5, p-value = 0.05581</span></span>
+<span id="cb86-37"><a href="第八章-秩转换的非参数检验.html#cb86-37"></a><span class="co">## alternative hypothesis: true location shift is not equal to 0</span></span>
+<span id="cb86-38"><a href="第八章-秩转换的非参数检验.html#cb86-38"></a><span class="co">## </span></span>
+<span id="cb86-39"><a href="第八章-秩转换的非参数检验.html#cb86-39"></a><span class="co">## Warning messages:</span></span>
+<span id="cb86-40"><a href="第八章-秩转换的非参数检验.html#cb86-40"></a><span class="co">## 1: In wilcox.test.default(serum_df$原法, serum_df$新法, mu = 0, paired = T,  :</span></span>
+<span id="cb86-41"><a href="第八章-秩转换的非参数检验.html#cb86-41"></a><span class="co">##   无法精確計算带连结的p值</span></span>
+<span id="cb86-42"><a href="第八章-秩转换的非参数检验.html#cb86-42"></a><span class="co">## 2: In wilcox.test.default(serum_df$原法, serum_df$新法, mu = 0, paired = T,  :</span></span>
+<span id="cb86-43"><a href="第八章-秩转换的非参数检验.html#cb86-43"></a><span class="co">##   有0时无法計算精確的p值</span></span>
+<span id="cb86-44"><a href="第八章-秩转换的非参数检验.html#cb86-44"></a></span>
+<span id="cb86-45"><a href="第八章-秩转换的非参数检验.html#cb86-45"></a><span class="kw">wilcox.test</span>(serum_df<span class="op">$</span>原法,serum_df<span class="op">$</span>新法,<span class="dt">mu=</span><span class="dv">0</span>,<span class="dt">paired =</span> T,<span class="dt">alternative =</span> <span class="kw">c</span>(<span class="st">&quot;two.sided&quot;</span>),<span class="dt">exact=</span>F,<span class="dt">correct =</span> T)</span>
+<span id="cb86-46"><a href="第八章-秩转换的非参数检验.html#cb86-46"></a><span class="co">##  Wilcoxon signed rank test with continuity correction</span></span>
+<span id="cb86-47"><a href="第八章-秩转换的非参数检验.html#cb86-47"></a><span class="co">## </span></span>
+<span id="cb86-48"><a href="第八章-秩转换的非参数检验.html#cb86-48"></a><span class="co">## data:  serum_df$原法 and serum_df$新法</span></span>
+<span id="cb86-49"><a href="第八章-秩转换的非参数检验.html#cb86-49"></a><span class="co">## V = 11.5, p-value = 0.06175</span></span>
+<span id="cb86-50"><a href="第八章-秩转换的非参数检验.html#cb86-50"></a><span class="co">## alternative hypothesis: true location shift is not equal to 0</span></span></code></pre></div>
+<p>根据计算结果，p值&gt;0.05，因此不拒绝原假设<span class="math inline">\(H_0\)</span>，即还不能认为两种方法有差异。</p>
+<div id="配对的等级资料的中位数和0比较" class="section level4">
+<h4><span class="header-section-number">8.1.3.1</span> 配对的等级资料的中位数和0比较</h4>
+<p>符号秩检验若用于配对的等级资料，则先把等级从弱到强转换成秩(1， 2，3，…)；然后求各对秩的差值，省略所有差值为0的对子数，
+令余下的有效对子数为;最后按n个差值编正秩和负秩，求正秩和或负 秩和。但对于等级资料，相同秩多，
+小样本的检验结果会存在偏性，最好用大样本。</p>
+<p><font color="red">此处的R代码待后续有合适的测试数据再补充。</font></p>
+</div>
+<div id="正态近似法-4" class="section level4">
+<h4><span class="header-section-number">8.1.3.2</span> 正态近似法</h4>
+<p>对于n&gt;50的情况，根据中心极限定理，可以采用正态近似法做<span class="math inline">\(u\)</span>检验，按照下式计算u值：
+<span class="math display">\[u=\frac{T-n(n+1)/4}{\sqrt{\frac{n(n+1)(2n+1)}{24}-\frac{\sum(t_j^3-t_j)}{48}}}\]</span>
+其中<span class="math inline">\(t_j(j=1,2,...)\)</span>为第j个相同秩的个数，T即为按照符号秩计算的统计量。</p>
+<p><font color="red">此处的R代码待后续有合适的测试数据再补充。</font></p>
 </div>
 </div>
-<div id="动态数列及其指标分析" class="section level2">
-<h2><span class="header-section-number">5.3</span> 动态数列及其指标分析</h2>
-<p>动态数列(Dynamic series)是一系列按时间顺序排列起来的统计指标(可以为绝对数，相对数或平均 数)，用以观察和比较该事物在时间上的变化和发展趋势。常用的动态数列分析指标有：绝对增长量、发展速度与增长速度、平均发展速度与平均增长速度。</p>
-<div id="绝对增长量" class="section level3">
-<h3><span class="header-section-number">5.3.1</span> 绝对增长量</h3>
-<p>绝对增长量是只事物在一定时间增长的绝对值，可分为：</p>
-<ul>
-<li>累计增长量，即特定时间段内的终末指标值与起始指标值之差；</li>
-<li>逐年增长量，即以年为周期， 今年的指标值与去年的指标值之差。</li>
-</ul>
 </div>
-<div id="发展速度与增长速度" class="section level3">
-<h3><span class="header-section-number">5.3.2</span> 发展速度与增长速度</h3>
-<p>发展速度与增长速度均为相对比，说明事物在一定时期的速度变化。发展速度表示报告期指标的水 平相当于基期水平的百分之多少或若干倍，根据基期的确定，对发展速度可以计算：</p>
-<ul>
-<li>定基比：即报告期指标与基期指标之比；</li>
-<li>环比：即报告期指标与其前一期指标之比。</li>
-</ul>
-</div>
-<div id="平均发展速度与平均增长速度" class="section level3">
-<h3><span class="header-section-number">5.3.3</span> 平均发展速度与平均增长速度</h3>
-<p>平均发展速度是各环比发展速度的几何均数，说明某事物在一个较长时期中逐期(如逐年)平均发展 的程度。平均增长速度是各环比增长速度的平均数，说明某事物在一个较长时期中逐期平均增长的程度。以<span class="math inline">\(a_0\)</span>表示基期指标; <span class="math inline">\(a_n\)</span>为第n期指标，则其计算公式为：</p>
-<p><span class="math display">\[\begin{aligned}
-平均发展速度 &amp; = \sqrt[n]{a_n/a_0}\\ \\
-平均增长速度 &amp; =  平均发展速度 - 1 \\ \\
-&amp; = \sqrt[n]{a_n/a_0} -1
-\end{aligned}\]</span></p>
+<div id="两个独立样本的比较的wilcoxon秩和检验" class="section level2">
+<h2><span class="header-section-number">8.2</span> 两个独立样本的比较的Wilcoxon秩和检验</h2>
+<p>Wilcoxon 秩和检验(Wilcoxon rink sum test)，用于推断计量资料或等级资料的两个独立样本所来自的
+两个总体分布是否有差别。</p>
+<p>在理论上检验假设<span class="math inline">\(H_0\)</span>应为两个总体分布相同，即两个样本来自同一总体。由 于秩和检验对两个总体分布的形状差别不敏感，
+对于<strong>位置</strong>相同、形状不同但类似的两个总体分布，如均数 相等、方差不等的两个正态分布，推断不出两个总体分布(形状)
+有差别，故对立的各择假设<span class="math inline">\(H_1\)</span>不能为两 个总体分布不同，而只能为两个总体分布位置不同(对单侧检验可写作某个
+总体分布位置比另一个总体分 布位置要右或要左一些)。考虑到对方差不等、即总体分布不同的两个正态分布，可用秩
+和检验来推断两 个总体分布位置是否有差别，故在实际应用中检验假设<span class="math inline">\(H_0\)</span>可写作两个总体分布位置相同。总之，不管两
+个总体分布的形状有无差别，<strong>秩和检验的目的是推断两个总体分布的位置是否有差别，这正是实践中所需要的</strong>，
+如要推断两个不同人群的某项指标值的大小是否有差别或哪个人群的大，可用其指标值分布的位置差别反映，
+而不关心其指标值分布的形状有无差别。两个总体分布位置相同或不同，实际情况一般是两个
+总体分布形状相同或 类似，这时可简化为两个总体中位数相等或不等。注意的是，理论上一个总体分布为正偏态、
+另一个总体分布为负偏态时，也可能两个总体中位数相等，这时认为正偏态总体分布位置比负偏态总体分布位置要右一些。</p>
 
-</div>
 </div>
 </div>
             </section>
@@ -416,8 +512,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="第四章-多个样本均数比较的方差分析.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="第六章-计数资料的统计描述.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="第七章-chi2检验.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -448,7 +544,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/04-Categoricaldata.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/07-Nonparametrictest.rmd",
 "text": "Edit"
 },
 "history": {
