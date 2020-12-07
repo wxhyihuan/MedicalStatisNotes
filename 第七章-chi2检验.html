@@ -280,7 +280,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1.2" data-path="第八章-秩转换的非参数检验.html"><a href="第八章-秩转换的非参数检验.html#单组样本与总体的中位数的wilcoxon符号秩检验"><i class="fa fa-check"></i><b>8.1.2</b> 单组样本与总体的中位数的Wilcoxon符号秩检验</a></li>
 <li class="chapter" data-level="8.1.3" data-path="第八章-秩转换的非参数检验.html"><a href="第八章-秩转换的非参数检验.html#配对样本差值的中位数和0比较"><i class="fa fa-check"></i><b>8.1.3</b> 配对样本差值的中位数和0比较</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="第八章-秩转换的非参数检验.html"><a href="第八章-秩转换的非参数检验.html#两个独立样本的比较的wilcoxon秩和检验"><i class="fa fa-check"></i><b>8.2</b> 两个独立样本的比较的Wilcoxon秩和检验</a></li>
+<li class="chapter" data-level="8.2" data-path="第八章-秩转换的非参数检验.html"><a href="第八章-秩转换的非参数检验.html#wilcoxon秩和检验"><i class="fa fa-check"></i><b>8.2</b> Wilcoxon秩和检验</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="第八章-秩转换的非参数检验.html"><a href="第八章-秩转换的非参数检验.html#wilcoxon秩和检验的原理与过程"><i class="fa fa-check"></i><b>8.2.1</b> Wilcoxon秩和检验的原理与过程</a></li>
+<li class="chapter" data-level="8.2.2" data-path="第八章-秩转换的非参数检验.html"><a href="第八章-秩转换的非参数检验.html#连续型资料的两样本比较"><i class="fa fa-check"></i><b>8.2.2</b> 连续型资料的两样本比较</a></li>
+<li class="chapter" data-level="8.2.3" data-path="第八章-秩转换的非参数检验.html"><a href="第八章-秩转换的非参数检验.html#非连续型资料的两样本比较"><i class="fa fa-check"></i><b>8.2.3</b> 非连续型资料的两样本比较</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="第八章-秩转换的非参数检验.html"><a href="第八章-秩转换的非参数检验.html#完全随即设计多个样本比较的kruskal-wallis-h-检验"><i class="fa fa-check"></i><b>8.3</b> 完全随即设计多个样本比较的Kruskal-Wallis H 检验</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="第八章-秩转换的非参数检验.html"><a href="第八章-秩转换的非参数检验.html#原始数据的多个样本比较"><i class="fa fa-check"></i><b>8.3.1</b> 原始数据的多个样本比较</a></li>
+<li class="chapter" data-level="8.3.2" data-path="第八章-秩转换的非参数检验.html"><a href="第八章-秩转换的非参数检验.html#频数表资料和登记资料的多个样本比较"><i class="fa fa-check"></i><b>8.3.2</b> 频数表资料和登记资料的多个样本比较</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="第八章-秩转换的非参数检验.html"><a href="第八章-秩转换的非参数检验.html#多个独立样本两两比较的nemenyi法检验"><i class="fa fa-check"></i><b>8.4</b> 多个独立样本两两比较的Nemenyi法检验</a></li>
+<li class="chapter" data-level="8.5" data-path="第八章-秩转换的非参数检验.html"><a href="第八章-秩转换的非参数检验.html#随机区组设计多个相关样本的friedman-m-检验"><i class="fa fa-check"></i><b>8.5</b> 随机区组设计多个相关样本的Friedman M 检验</a><ul>
+<li class="chapter" data-level="8.5.1" data-path="第八章-秩转换的非参数检验.html"><a href="第八章-秩转换的非参数检验.html#多个相关样本的两两比较"><i class="fa fa-check"></i><b>8.5.1</b> 多个相关样本的两两比较</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -303,7 +315,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="第七章-chi2检验" class="section level1">
-<h1><span class="header-section-number"></span> 第七章 <span class="math inline">\(\chi^2\)</span>检验</h1>
+<h1><span class="header-section-number"> </span> 第七章 <span class="math inline">\(\chi^2\)</span>检验</h1>
 <p>日期: 2020-11-28
 作者：wxhyihuan</p>
 <p>在十九世纪，统计分析方法主要被用于生物数据分析。当时主流意见认为正态分布普遍适用于此类数据，例如乔治·比德尔·艾里以及梅里曼教授，
@@ -369,7 +381,7 @@ Figure 7.1: 不同自由度情况下的卡方分布概率密度曲线图
 <div id="四格资料表的卡方检验" class="section level3">
 <h3><span class="header-section-number">7.2.2</span> 四格资料表的卡方检验</h3>
 <p>《医学统计学》中的 案例07-01 的数据，即四格资料表的比较为例，介绍<span class="math inline">\(\chi^2\)</span>检验的基本思想。</p>
-<table style='width:70%; font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;' class=" lightable-classic">
+<table class=" lightable-paper lightable-striped lightable-classic" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto; font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;'>
 <caption>
 <span id="tab:chisqtab">Table 7.1: </span>案例07-01 四格资料表
 </caption>
@@ -539,7 +551,7 @@ v=(行数-1)(列数-1)\]</span>
 <li>当n&lt;40或1&gt;T时，用卡方检验的<a href="#Fisher确切概率法">Fisher确切概率法</a>；</li>
 </ol>
 <p>使用《医学统计学》中的 案例07-02 的数据，即两样本率比较的<span class="math inline">\(\chi^2\)</span>检验为例，</p>
-<table style='width:70%; font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;' class=" lightable-classic">
+<table class=" lightable-paper lightable-striped lightable-classic" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto; font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;'>
 <caption>
 <span id="tab:chisqtab1">Table 7.2: </span>案例07-02 四格资料表
 </caption>
@@ -691,7 +703,7 @@ v=(行数-1)(列数-1)\]</span>
 <li>乳胶凝集法为阳性，免疫荧光法为阴性数(c)。</li>
 </ol>
 可整理成下表的形式，以《医学统计学》中的 案例07-07 的数据为例。
-<table style='width:70%; font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;' class=" lightable-classic">
+<table class=" lightable-paper lightable-striped lightable-classic" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto; font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;'>
 <caption>
 <span id="tab:chisqtab2">Table 7.3: </span>案例07-07 配对四格资料表
 </caption>
@@ -836,7 +848,7 @@ v=(行数-1)(列数-1)\]</span>
 各组合的概率服从<a href="https://zh.wikipedia.org/zh-hans/%E8%B6%85%E5%87%A0%E4%BD%95%E5%88%86%E5%B8%83">超几何分布</a>，
 按检验假设取单侧或双侧的<strong>累计概率P</strong>，即可按所取检验水准作出推断结论。</p>
 使用《医学统计学》中的 案例07-04 的数据，做四格表的Fisher确切概率法的R实现。
-<table style='width:67%; font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;' class=" lightable-classic">
+<table class=" lightable-paper lightable-striped lightable-classic" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto; font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;'>
 <caption>
 <span id="tab:chisqtab3">Table 7.4: </span>案例07-04 Fisher确切概率法四格资料表
 </caption>
@@ -1022,7 +1034,7 @@ R语言中与超几何分布相关的主要函数有<a href="https://stat.ethz.c
 <div id="多个样本率的比较r-times-2表" class="section level3">
 <h3><span class="header-section-number">7.3.1</span> 多个样本率的比较(<span class="math inline">\(R \times 2\)</span>表)</h3>
 <p>使用《医学统计学》中的 案例07-06 的数据，做多个样本率的比较的卡方检验和R实现。</p>
-<table style='width:67%; font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;' class=" lightable-classic">
+<table class=" lightable-paper lightable-striped lightable-classic" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto; font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;'>
 <caption>
 <span id="tab:chisqtab4">Table 7.5: </span>案例07-06 3x2 表资料的多个样本率的比较测试数据
 </caption>
@@ -1140,7 +1152,7 @@ R语言中与超几何分布相关的主要函数有<a href="https://stat.ethz.c
 </div>
 <div id="样本构成比的比较2-times-c表" class="section level3">
 <h3><span class="header-section-number">7.3.2</span> 样本构成比的比较(<span class="math inline">\(2 \times C\)</span>表)</h3>
-<table style='width:60%; font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;' class=" lightable-classic">
+<table class=" lightable-paper lightable-striped lightable-classic" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto; font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;'>
 <caption>
 <span id="tab:chisqtab5">Table 7.6: </span>案例07-07 2x3 表资料的多个样本率的比较测试数据
 </caption>
@@ -1247,7 +1259,7 @@ RxC表资料，常常分析两个分类变量之间有无关系?关系的密切�
 其计算公式为：
 <span class="math display">\[C=\sqrt{\frac{\chi^2}{n+\chi^2}}\]</span></p>
 <p>式中<span class="math inline">\(\chi^2\)</span>为行×列表资料的<span class="math inline">\(\chi^2\)</span>值，n为样本含量。列联系数C取值范围在0~1之间，愈接近于0，关系愈不密切;愈接近于1，关系愈密切。</p>
-<table style='width:60%; font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;' class=" lightable-classic">
+<table class=" lightable-paper lightable-striped lightable-classic" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto; font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;'>
 <caption>
 <span id="tab:chisqtab6">Table 7.7: </span>案例07-08 rxc 表资料的双向无序分组资料的关联性检验测试数据
 </caption>
@@ -1454,7 +1466,7 @@ AB
 3. 计算偏离线性回归分量<span class="math inline">\(\chi_{wide}^2\)</span>，公式为：
 <span class="math display">\[\chi_{wide}^2=\chi_{tol}^2-\chi_{reg}^2，v_{wide}=v_{tol}-v_{reg}\]</span></p>
 使用《医学统计学》中的 案例07-09 的数据，做双向有序分组资料的线性趋势检验的R实现。
-<table style='width:60%; font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;' class=" lightable-classic">
+<table class=" lightable-paper lightable-striped lightable-classic" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto; font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;'>
 <caption>
 <span id="tab:chisqtab7">Table 7.8: </span>案例07-09 rxc 双向有序分组资料的线性趋势检验测试数据
 </caption>
@@ -1651,7 +1663,7 @@ AB
 <span id="cb75-54"><a href="第七章-chi2检验.html#cb75-54"></a></span>
 <span id="cb75-55"><a href="第七章-chi2检验.html#cb75-55"></a><span class="co">##或者可以用chisq.test()计算总的卡方和p值</span></span>
 <span id="cb75-56"><a href="第七章-chi2检验.html#cb75-56"></a><span class="kw">chisq.test</span>(actual_matrix)</span></code></pre></div>
-<table style='width:60%; font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;' class=" lightable-classic">
+<table class=" lightable-paper lightable-striped lightable-classic" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto; font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;'>
 <caption>
 <span id="tab:chisqtab8">Table 7.9: </span>双向有序分组资料的线性趋势检验测试结果
 </caption>
@@ -1894,7 +1906,7 @@ Pearson <span class="math inline">\(\chi^2\)</span>统计量。此类 <span clas
 计软件来完成。下面仅介绍R语言中的几个工具。</p>
 使用《医学统计学》中的 案例07-12 的数据，做CMH检验测试。设置的<span class="math inline">\(H_0\)</span>：各年龄组的心肌梗死的发生均与口服避孕药无关；
 <span class="math inline">\(H_1:\)</span>至少有一个年龄组的心肌梗死的发生与口服避孕药有关。
-<table style='width:50%; font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;' class=" lightable-classic">
+<table class=" lightable-classic lightable-paper lightable-striped" style='font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto; font-family: "Arial Narrow", arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;'>
 <caption>
 <span id="tab:chisqtab9">Table 7.10: </span>按年龄分成的心肌梗死于近期使用口服避孕药的病例对照数据
 </caption>
@@ -2118,7 +2130,7 @@ Pearson <span class="math inline">\(\chi^2\)</span>统计量。此类 <span clas
 一般目的是检验数据是否服从某个指定分布，一般使用卡方拟合优度检验。</p></li>
 </ol>
 使用《医学统计学》中的07-13的数据测试不同拟合优度是检验数据。
-<table style='width:50%; font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;' class=" lightable-classic">
+<table class=" lightable-paper lightable-striped lightable-classic" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto; font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;'>
 <caption>
 <span id="tab:chisqtab10">Table 7.11: </span>某克山病去的克山病空间分布抽样数据与经验概率
 </caption>
@@ -2330,7 +2342,7 @@ Pearson <span class="math inline">\(\chi^2\)</span>统计量。此类 <span clas
 <p><strong>二项分布的拟合优化检验</strong></p>
 <p>使用《医学统计学》中的06-08的数据测试不同拟合优度是检验数据是否服从某个二项分布，设置<span class="math inline">\(H_0:\)</span>抽样数据符合二项分布，
 并根据抽样计算的阳性和阴性对应的概率。</p>
-<table style='width:40%; font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;' class=" lightable-classic">
+<table class=" lightable-paper lightable-striped lightable-classic" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto; font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;'>
 <caption>
 <span id="tab:chisqtab11">Table 7.12: </span>患病数据资料与二项分布拟合优度测试数据
 </caption>

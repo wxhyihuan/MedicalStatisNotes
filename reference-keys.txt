@@ -48,6 +48,10 @@ tab:chisqtab8
 tab:chisqtab9
 tab:chisqtab10
 tab:chisqtab11
+tab:ranktab1
+tab:ranktab2
+tab:ranktab3
+tab:ranktab4
 简介与传送门
 简介
 软件准备
@@ -204,4 +208,13 @@ wilcoxon符号秩检验的原理与过程
 配对样本差值的中位数和0比较
 配对的等级资料的中位数和0比较
 正态近似法-4
-两个独立样本的比较的wilcoxon秩和检验
+wilcoxon秩和检验
+wilcoxon秩和检验的原理与过程
+连续型资料的两样本比较
+非连续型资料的两样本比较
+完全随即设计多个样本比较的kruskal-wallis-h-检验
+原始数据的多个样本比较
+频数表资料和登记资料的多个样本比较
+多个独立样本两两比较的nemenyi法检验
+随机区组设计多个相关样本的friedman-m-检验
+多个相关样本的两两比较

@@ -280,7 +280,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1.2" data-path="第八章-秩转换的非参数检验.html"><a href="第八章-秩转换的非参数检验.html#单组样本与总体的中位数的wilcoxon符号秩检验"><i class="fa fa-check"></i><b>8.1.2</b> 单组样本与总体的中位数的Wilcoxon符号秩检验</a></li>
 <li class="chapter" data-level="8.1.3" data-path="第八章-秩转换的非参数检验.html"><a href="第八章-秩转换的非参数检验.html#配对样本差值的中位数和0比较"><i class="fa fa-check"></i><b>8.1.3</b> 配对样本差值的中位数和0比较</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="第八章-秩转换的非参数检验.html"><a href="第八章-秩转换的非参数检验.html#两个独立样本的比较的wilcoxon秩和检验"><i class="fa fa-check"></i><b>8.2</b> 两个独立样本的比较的Wilcoxon秩和检验</a></li>
+<li class="chapter" data-level="8.2" data-path="第八章-秩转换的非参数检验.html"><a href="第八章-秩转换的非参数检验.html#wilcoxon秩和检验"><i class="fa fa-check"></i><b>8.2</b> Wilcoxon秩和检验</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="第八章-秩转换的非参数检验.html"><a href="第八章-秩转换的非参数检验.html#wilcoxon秩和检验的原理与过程"><i class="fa fa-check"></i><b>8.2.1</b> Wilcoxon秩和检验的原理与过程</a></li>
+<li class="chapter" data-level="8.2.2" data-path="第八章-秩转换的非参数检验.html"><a href="第八章-秩转换的非参数检验.html#连续型资料的两样本比较"><i class="fa fa-check"></i><b>8.2.2</b> 连续型资料的两样本比较</a></li>
+<li class="chapter" data-level="8.2.3" data-path="第八章-秩转换的非参数检验.html"><a href="第八章-秩转换的非参数检验.html#非连续型资料的两样本比较"><i class="fa fa-check"></i><b>8.2.3</b> 非连续型资料的两样本比较</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="第八章-秩转换的非参数检验.html"><a href="第八章-秩转换的非参数检验.html#完全随即设计多个样本比较的kruskal-wallis-h-检验"><i class="fa fa-check"></i><b>8.3</b> 完全随即设计多个样本比较的Kruskal-Wallis H 检验</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="第八章-秩转换的非参数检验.html"><a href="第八章-秩转换的非参数检验.html#原始数据的多个样本比较"><i class="fa fa-check"></i><b>8.3.1</b> 原始数据的多个样本比较</a></li>
+<li class="chapter" data-level="8.3.2" data-path="第八章-秩转换的非参数检验.html"><a href="第八章-秩转换的非参数检验.html#频数表资料和登记资料的多个样本比较"><i class="fa fa-check"></i><b>8.3.2</b> 频数表资料和登记资料的多个样本比较</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="第八章-秩转换的非参数检验.html"><a href="第八章-秩转换的非参数检验.html#多个独立样本两两比较的nemenyi法检验"><i class="fa fa-check"></i><b>8.4</b> 多个独立样本两两比较的Nemenyi法检验</a></li>
+<li class="chapter" data-level="8.5" data-path="第八章-秩转换的非参数检验.html"><a href="第八章-秩转换的非参数检验.html#随机区组设计多个相关样本的friedman-m-检验"><i class="fa fa-check"></i><b>8.5</b> 随机区组设计多个相关样本的Friedman M 检验</a><ul>
+<li class="chapter" data-level="8.5.1" data-path="第八章-秩转换的非参数检验.html"><a href="第八章-秩转换的非参数检验.html#多个相关样本的两两比较"><i class="fa fa-check"></i><b>8.5.1</b> 多个相关样本的两两比较</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -303,7 +315,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="第八章-秩转换的非参数检验" class="section level1">
-<h1><span class="header-section-number"></span> 第八章 秩转换的非参数检验</h1>
+<h1><span class="header-section-number"> </span> 第八章 秩转换的非参数检验</h1>
 <p>非参数检验(Nonparametric test)是相对于参数检验(Parametric test)而言的。如果总体分布为已知的数学形式，
 <strong>对其总体参数作假设检验</strong>称为参数检验。本书前面介绍的计量资料的对正态总体均数作假设检验的1检验和F检验就为
 参数检验。但当总体分布不能由已知的数学形式表达、没有总体参数时，也就谈不上参数检验了。若两个或多个正
@@ -315,6 +327,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 是推断一个总体表达分布位置的<em>中位数</em>M(非参数)和已知<span class="math inline">\(M_0\)</span>、两个或多个总体的分布是否有差别。秩转换的非参数
 检验是先将数值变量资料从小到大，或等级资料从弱到强转换成秩后，再计算检验统计量，其特点是假设检验的
 结果对总体分布的形状差别不敏感，只对总体分布的位 置差别敏感。</p>
+<p>关于参数检验与非参数校验的比较可以参考知乎上的一篇<a href="https://zhuanlan.zhihu.com/p/93196547">《非参数检验思路总结》</a>。</p>
 <p>对于计量资料，若满足正态和方差齐性条件，这时小样本资料选检验或F检验是不妥的，更适合采用秩转换的非参数检验；
 对于分布不知是否正态的小样本资料，为保险起见，宜选秩转换的非参数检验；对于一端或两端是不确定数值
 (如&lt;0.5、5.0 等)的资料，不管是否正态分布，只能选秩转换的非参数 检验。对于等级资料，若选行x列表资料的<span class="math inline">\(\chi^2\)</span>检验，只
@@ -368,8 +381,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>如果<span class="math inline">\(d_i&lt;0\)</span>，<em>秩符号</em>为-1，即Sgn_i=Sgn(d_i)=-1</li>
 </ul></li>
 <li>将样本变换为带符号的秩向量，即对<span class="math inline">\(|d_i|\)</span>按从小到大进行排序，<span class="math inline">\(|d_i|\)</span>排序后的秩(即排序值)记作<span class="math inline">\(R_i\)</span>。这里要注意过滤<span class="math inline">\(d_i=0\)</span>(秩符号为0)的数据，同时，<strong>对应的样本量n会发生相应的减少为n’</strong>。</li>
-<li>原始向量值的<em>有符号秩</em>为<span class="math inline">\(R_i*Sgn_i，i\in[1,n]\)</span>，</li>
+<li>原始向量值的<em>有符号秩</em>为<span class="math inline">\(R_i*Sgn_i，i\in[1,n]\)</span>。</li>
 </ol>
+<p>需要注意的是，有的时候会出现计算的差值绝对值相同，即相同秩(Ties)的情况，这种情况一般是取秩的平均数(ties.method=“average”)，有的也可能选择其他方式。</p>
 <p><strong>Wilcoxon符号秩检验的统计量</strong></p>
 <p>单样本和配对样本的符号秩检验统计量的计算方式一样的，但是不同软件对这个统计量的定义略有差异，主要有两种情况：</p>
 <ol style="list-style-type: decimal">
@@ -379,12 +393,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span class="math display">\[V_{&gt;0}=\sum_i^{n&#39;}R_i*Sgn_i，Sgn_i&gt;0\]</span>
 负秩：
 <span class="math display">\[V_{&lt;0}=|\sum_i^{n&#39;}R_i*Sgn_i|，Sgn_i&lt;0\]</span></p>
-<p>它具有从V=0的最小值到最大值V=n’(n’+1)/2的对称分布，因此在计算P值时候，计算正秩/负秩的效果是一样的，但仍然需要注意时单侧还是双侧检验的使用环境。R语言中自带工具采用的时这一类方式，这里也主要以此为参考。</p>
+<p>它具有从V=0的最小值到最大值V=n’(n’+1)/2的对称分布，因此在计算P值时候，计算正秩/负秩的效果是一样的，但仍然需要注意时单侧还是双侧检验的使用环境。</p>
 <ol start="2" style="list-style-type: decimal">
 <li>按照<a href="https://en.wikipedia.org/wiki/Wilcoxon_signed-rank_test">总符号秩</a>计算的情况如下：
 总秩：
 <span class="math display">\[W=\sum_i^{n&#39;}R_i*Sgn_i\]</span></li>
 </ol>
+<p>R语言中自带工具函数针对非独立的样本之间的比较采用的是第一种统计量V；针对独立样品组之间比较时，采用了第二种统计量W。</p>
 </div>
 <div id="单组样本与总体的中位数的wilcoxon符号秩检验" class="section level3">
 <h3><span class="header-section-number">8.1.2</span> 单组样本与总体的中位数的Wilcoxon符号秩检验</h3>
@@ -423,56 +438,58 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="配对样本差值的中位数和0比较" class="section level3">
 <h3><span class="header-section-number">8.1.3</span> 配对样本差值的中位数和0比较</h3>
 <p>这里以案例8-1的数据进行测试，设置的原假设<span class="math inline">\(H_0:\)</span>两组数据的差值中位数等于0；备择假设<span class="math inline">\(H_1:\)</span>两组数据的差值中位数不等于0，是双侧检验；</p>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="第八章-秩转换的非参数检验.html#cb86-1"></a><span class="kw">library</span>(<span class="st">&quot;memisc&quot;</span>)</span>
-<span id="cb86-2"><a href="第八章-秩转换的非参数检验.html#cb86-2"></a><span class="kw">library</span>(<span class="st">&quot;kableExtra&quot;</span>)</span>
-<span id="cb86-3"><a href="第八章-秩转换的非参数检验.html#cb86-3"></a><span class="co">#读取数据</span></span>
-<span id="cb86-4"><a href="第八章-秩转换的非参数检验.html#cb86-4"></a>serum&lt;-<span class="kw">spss.system.file</span>(<span class="st">&quot;ExampleData/SavData4MedSta/Exam08-01.sav&quot;</span>)</span>
-<span id="cb86-5"><a href="第八章-秩转换的非参数检验.html#cb86-5"></a>serum_df&lt;-<span class="kw">as.data.frame</span>(<span class="kw">as.data.set</span>(serum))</span>
-<span id="cb86-6"><a href="第八章-秩转换的非参数检验.html#cb86-6"></a></span>
-<span id="cb86-7"><a href="第八章-秩转换的非参数检验.html#cb86-7"></a><span class="co"># 1 计算两种方法的差值</span></span>
-<span id="cb86-8"><a href="第八章-秩转换的非参数检验.html#cb86-8"></a>diff_val&lt;-serum_df[,<span class="dv">1</span>]<span class="op">-</span>serum_df[,<span class="dv">2</span>]</span>
-<span id="cb86-9"><a href="第八章-秩转换的非参数检验.html#cb86-9"></a><span class="co"># 2 省略diff_val中为0的对子数(网上的一些有的方法可能没有这一步),并计算差值的绝对值</span></span>
-<span id="cb86-10"><a href="第八章-秩转换的非参数检验.html#cb86-10"></a>diff_no0&lt;-diff_val[<span class="kw">which</span>(diff_val <span class="op">!=</span><span class="st"> </span><span class="dv">0</span>)]</span>
-<span id="cb86-11"><a href="第八章-秩转换的非参数检验.html#cb86-11"></a>abs_diff_val&lt;-<span class="kw">abs</span>(diff_no0)</span>
-<span id="cb86-12"><a href="第八章-秩转换的非参数检验.html#cb86-12"></a><span class="co"># 3 使用rank()函数计算差值绝对值的秩</span></span>
-<span id="cb86-13"><a href="第八章-秩转换的非参数检验.html#cb86-13"></a>rank_vals&lt;-<span class="kw">rank</span>(abs_diff_val)</span>
-<span id="cb86-14"><a href="第八章-秩转换的非参数检验.html#cb86-14"></a><span class="co"># 4 取正秩和或者负秩和</span></span>
-<span id="cb86-15"><a href="第八章-秩转换的非参数检验.html#cb86-15"></a>sum_plusrank&lt;-<span class="kw">sum</span>(rank_vals[<span class="kw">which</span>(diff_no0 <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>)])</span>
-<span id="cb86-16"><a href="第八章-秩转换的非参数检验.html#cb86-16"></a>sum_minusrank&lt;-<span class="kw">sum</span>(rank_vals[<span class="kw">which</span>(diff_no0 <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>)])</span>
-<span id="cb86-17"><a href="第八章-秩转换的非参数检验.html#cb86-17"></a><span class="co"># 5 确定有效对子数，即差值不为0的对子数, n</span></span>
-<span id="cb86-18"><a href="第八章-秩转换的非参数检验.html#cb86-18"></a>n_<span class="dv">1</span>&lt;-<span class="kw">length</span>(diff_no0)</span>
-<span id="cb86-19"><a href="第八章-秩转换的非参数检验.html#cb86-19"></a></span>
-<span id="cb86-20"><a href="第八章-秩转换的非参数检验.html#cb86-20"></a><span class="co">#这里可以预先查看一下diff_no0的数据状况</span></span>
-<span id="cb86-21"><a href="第八章-秩转换的非参数检验.html#cb86-21"></a><span class="kw">barplot</span>(diff_no0,<span class="dt">col=</span><span class="st">&quot;dark gray&quot;</span>,<span class="dt">xlab=</span><span class="st">&quot;Difference in Likert&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;Frequency&quot;</span>)</span>
-<span id="cb86-22"><a href="第八章-秩转换的非参数检验.html#cb86-22"></a></span>
-<span id="cb86-23"><a href="第八章-秩转换的非参数检验.html#cb86-23"></a><span class="co">##使用psignrank()计算P值，需要注意的是符号秩时会连续分布，因此针对11.5/54.5这样的小鼠，在计算P值是否需要注意左侧右侧的边际问题</span></span>
-<span id="cb86-24"><a href="第八章-秩转换的非参数检验.html#cb86-24"></a><span class="kw">psignrank</span>(sum_plusrank,n_<span class="dv">1</span>)<span class="op">+</span><span class="kw">psignrank</span>(sum_minusrank,n_<span class="dv">1</span>,<span class="dt">lower.tail =</span> F)</span>
-<span id="cb86-25"><a href="第八章-秩转换的非参数检验.html#cb86-25"></a><span class="co"># [1] 0.0546875</span></span>
-<span id="cb86-26"><a href="第八章-秩转换的非参数检验.html#cb86-26"></a><span class="kw">psignrank</span>(sum_plusrank,n_<span class="dv">1</span>)<span class="op">*</span><span class="dv">2</span></span>
-<span id="cb86-27"><a href="第八章-秩转换的非参数检验.html#cb86-27"></a><span class="co"># [1] 0.06738281</span></span>
-<span id="cb86-28"><a href="第八章-秩转换的非参数检验.html#cb86-28"></a><span class="kw">psignrank</span>(sum_minusrank,n_<span class="dv">1</span>,<span class="dt">lower.tail =</span> F)<span class="op">*</span><span class="dv">2</span></span>
-<span id="cb86-29"><a href="第八章-秩转换的非参数检验.html#cb86-29"></a><span class="co"># [1] 0.04199219</span></span>
-<span id="cb86-30"><a href="第八章-秩转换的非参数检验.html#cb86-30"></a></span>
-<span id="cb86-31"><a href="第八章-秩转换的非参数检验.html#cb86-31"></a><span class="co">##或者使用wilcox.test()函数工具，对于N小于20的样本，一般采用exact=T计算</span></span>
-<span id="cb86-32"><a href="第八章-秩转换的非参数检验.html#cb86-32"></a><span class="kw">wilcox.test</span>(serum_df<span class="op">$</span>原法,serum_df<span class="op">$</span>新法,<span class="dt">mu=</span><span class="dv">0</span>,<span class="dt">paired =</span> T,<span class="dt">alternative =</span> <span class="kw">c</span>(<span class="st">&quot;two.sided&quot;</span>),<span class="dt">exact=</span>T,<span class="dt">correct =</span> F)</span>
-<span id="cb86-33"><a href="第八章-秩转换的非参数检验.html#cb86-33"></a><span class="co">##  Wilcoxon signed rank test</span></span>
-<span id="cb86-34"><a href="第八章-秩转换的非参数检验.html#cb86-34"></a><span class="co">## </span></span>
-<span id="cb86-35"><a href="第八章-秩转换的非参数检验.html#cb86-35"></a><span class="co">## data:  serum_df$原法 and serum_df$新法</span></span>
-<span id="cb86-36"><a href="第八章-秩转换的非参数检验.html#cb86-36"></a><span class="co">## V = 11.5, p-value = 0.05581</span></span>
-<span id="cb86-37"><a href="第八章-秩转换的非参数检验.html#cb86-37"></a><span class="co">## alternative hypothesis: true location shift is not equal to 0</span></span>
-<span id="cb86-38"><a href="第八章-秩转换的非参数检验.html#cb86-38"></a><span class="co">## </span></span>
-<span id="cb86-39"><a href="第八章-秩转换的非参数检验.html#cb86-39"></a><span class="co">## Warning messages:</span></span>
-<span id="cb86-40"><a href="第八章-秩转换的非参数检验.html#cb86-40"></a><span class="co">## 1: In wilcox.test.default(serum_df$原法, serum_df$新法, mu = 0, paired = T,  :</span></span>
-<span id="cb86-41"><a href="第八章-秩转换的非参数检验.html#cb86-41"></a><span class="co">##   无法精確計算带连结的p值</span></span>
-<span id="cb86-42"><a href="第八章-秩转换的非参数检验.html#cb86-42"></a><span class="co">## 2: In wilcox.test.default(serum_df$原法, serum_df$新法, mu = 0, paired = T,  :</span></span>
-<span id="cb86-43"><a href="第八章-秩转换的非参数检验.html#cb86-43"></a><span class="co">##   有0时无法計算精確的p值</span></span>
-<span id="cb86-44"><a href="第八章-秩转换的非参数检验.html#cb86-44"></a></span>
-<span id="cb86-45"><a href="第八章-秩转换的非参数检验.html#cb86-45"></a><span class="kw">wilcox.test</span>(serum_df<span class="op">$</span>原法,serum_df<span class="op">$</span>新法,<span class="dt">mu=</span><span class="dv">0</span>,<span class="dt">paired =</span> T,<span class="dt">alternative =</span> <span class="kw">c</span>(<span class="st">&quot;two.sided&quot;</span>),<span class="dt">exact=</span>F,<span class="dt">correct =</span> T)</span>
-<span id="cb86-46"><a href="第八章-秩转换的非参数检验.html#cb86-46"></a><span class="co">##  Wilcoxon signed rank test with continuity correction</span></span>
-<span id="cb86-47"><a href="第八章-秩转换的非参数检验.html#cb86-47"></a><span class="co">## </span></span>
-<span id="cb86-48"><a href="第八章-秩转换的非参数检验.html#cb86-48"></a><span class="co">## data:  serum_df$原法 and serum_df$新法</span></span>
-<span id="cb86-49"><a href="第八章-秩转换的非参数检验.html#cb86-49"></a><span class="co">## V = 11.5, p-value = 0.06175</span></span>
-<span id="cb86-50"><a href="第八章-秩转换的非参数检验.html#cb86-50"></a><span class="co">## alternative hypothesis: true location shift is not equal to 0</span></span></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="第八章-秩转换的非参数检验.html#cb86-1"></a><span class="kw">library</span>(<span class="st">&quot;dplyr&quot;</span>)</span>
+<span id="cb86-2"><a href="第八章-秩转换的非参数检验.html#cb86-2"></a><span class="kw">library</span>(<span class="st">&quot;memisc&quot;</span>)</span>
+<span id="cb86-3"><a href="第八章-秩转换的非参数检验.html#cb86-3"></a><span class="kw">library</span>(<span class="st">&quot;kableExtra&quot;</span>)</span>
+<span id="cb86-4"><a href="第八章-秩转换的非参数检验.html#cb86-4"></a><span class="co">#读取数据</span></span>
+<span id="cb86-5"><a href="第八章-秩转换的非参数检验.html#cb86-5"></a>serum&lt;-<span class="kw">spss.system.file</span>(<span class="st">&quot;ExampleData/SavData4MedSta/Exam08-01.sav&quot;</span>)</span>
+<span id="cb86-6"><a href="第八章-秩转换的非参数检验.html#cb86-6"></a>serum_df&lt;-<span class="kw">as.data.frame</span>(<span class="kw">as.data.set</span>(serum))</span>
+<span id="cb86-7"><a href="第八章-秩转换的非参数检验.html#cb86-7"></a></span>
+<span id="cb86-8"><a href="第八章-秩转换的非参数检验.html#cb86-8"></a><span class="co"># 1 计算两种方法的差值</span></span>
+<span id="cb86-9"><a href="第八章-秩转换的非参数检验.html#cb86-9"></a>diff_val&lt;-serum_df[,<span class="dv">1</span>]<span class="op">-</span>serum_df[,<span class="dv">2</span>]</span>
+<span id="cb86-10"><a href="第八章-秩转换的非参数检验.html#cb86-10"></a><span class="co"># 2 省略diff_val中为0的对子数(网上的一些有的方法可能没有这一步),并计算差值的绝对值</span></span>
+<span id="cb86-11"><a href="第八章-秩转换的非参数检验.html#cb86-11"></a>diff_no0&lt;-diff_val[<span class="kw">which</span>(diff_val <span class="op">!=</span><span class="st"> </span><span class="dv">0</span>)]</span>
+<span id="cb86-12"><a href="第八章-秩转换的非参数检验.html#cb86-12"></a>abs_diff_val&lt;-<span class="kw">abs</span>(diff_no0)</span>
+<span id="cb86-13"><a href="第八章-秩转换的非参数检验.html#cb86-13"></a><span class="co"># 3 使用rank()函数计算差值绝对值的秩</span></span>
+<span id="cb86-14"><a href="第八章-秩转换的非参数检验.html#cb86-14"></a>rank_vals&lt;-<span class="kw">rank</span>(abs_diff_val)</span>
+<span id="cb86-15"><a href="第八章-秩转换的非参数检验.html#cb86-15"></a><span class="co"># 4 取正秩和或者负秩和</span></span>
+<span id="cb86-16"><a href="第八章-秩转换的非参数检验.html#cb86-16"></a>sum_plusrank&lt;-<span class="kw">sum</span>(rank_vals[<span class="kw">which</span>(diff_no0 <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>)])</span>
+<span id="cb86-17"><a href="第八章-秩转换的非参数检验.html#cb86-17"></a>sum_minusrank&lt;-<span class="kw">sum</span>(rank_vals[<span class="kw">which</span>(diff_no0 <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>)])</span>
+<span id="cb86-18"><a href="第八章-秩转换的非参数检验.html#cb86-18"></a><span class="co"># 5 确定有效对子数，即差值不为0的对子数, n</span></span>
+<span id="cb86-19"><a href="第八章-秩转换的非参数检验.html#cb86-19"></a>n_<span class="dv">1</span>&lt;-<span class="kw">length</span>(diff_no0)</span>
+<span id="cb86-20"><a href="第八章-秩转换的非参数检验.html#cb86-20"></a></span>
+<span id="cb86-21"><a href="第八章-秩转换的非参数检验.html#cb86-21"></a><span class="co">#这里可以预先查看一下diff_no0的数据状况</span></span>
+<span id="cb86-22"><a href="第八章-秩转换的非参数检验.html#cb86-22"></a><span class="kw">barplot</span>(diff_no0,<span class="dt">col=</span><span class="st">&quot;dark gray&quot;</span>,<span class="dt">xlab=</span><span class="st">&quot;Difference in Likert&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;Frequency&quot;</span>)</span>
+<span id="cb86-23"><a href="第八章-秩转换的非参数检验.html#cb86-23"></a></span>
+<span id="cb86-24"><a href="第八章-秩转换的非参数检验.html#cb86-24"></a><span class="co">##使用psignrank()计算P值，需要注意的是符号秩时会连续分布，因此针对11.5/54.5这样的小鼠，在计算P值是否需要注意左侧右侧的边际问题</span></span>
+<span id="cb86-25"><a href="第八章-秩转换的非参数检验.html#cb86-25"></a><span class="kw">psignrank</span>(sum_plusrank,n_<span class="dv">1</span>)<span class="op">+</span><span class="kw">psignrank</span>(sum_minusrank,n_<span class="dv">1</span>,<span class="dt">lower.tail =</span> F)</span>
+<span id="cb86-26"><a href="第八章-秩转换的非参数检验.html#cb86-26"></a><span class="co"># [1] 0.0546875</span></span>
+<span id="cb86-27"><a href="第八章-秩转换的非参数检验.html#cb86-27"></a><span class="kw">psignrank</span>(sum_plusrank,n_<span class="dv">1</span>)<span class="op">*</span><span class="dv">2</span></span>
+<span id="cb86-28"><a href="第八章-秩转换的非参数检验.html#cb86-28"></a><span class="co"># [1] 0.06738281</span></span>
+<span id="cb86-29"><a href="第八章-秩转换的非参数检验.html#cb86-29"></a><span class="kw">psignrank</span>(sum_minusrank,n_<span class="dv">1</span>,<span class="dt">lower.tail =</span> F)<span class="op">*</span><span class="dv">2</span></span>
+<span id="cb86-30"><a href="第八章-秩转换的非参数检验.html#cb86-30"></a><span class="co"># [1] 0.04199219</span></span>
+<span id="cb86-31"><a href="第八章-秩转换的非参数检验.html#cb86-31"></a></span>
+<span id="cb86-32"><a href="第八章-秩转换的非参数检验.html#cb86-32"></a><span class="co">##或者使用wilcox.test()函数工具，对于N小于20的样本，一般采用exact=T计算</span></span>
+<span id="cb86-33"><a href="第八章-秩转换的非参数检验.html#cb86-33"></a><span class="co">##paired = T 说明是配对组，配对要求xy的长度必须一致</span></span>
+<span id="cb86-34"><a href="第八章-秩转换的非参数检验.html#cb86-34"></a><span class="kw">wilcox.test</span>(serum_df<span class="op">$</span>原法,serum_df<span class="op">$</span>新法,<span class="dt">mu=</span><span class="dv">0</span>,<span class="dt">paired =</span> T,<span class="dt">alternative =</span> <span class="kw">c</span>(<span class="st">&quot;two.sided&quot;</span>),<span class="dt">exact=</span>T,<span class="dt">correct =</span> F)</span>
+<span id="cb86-35"><a href="第八章-秩转换的非参数检验.html#cb86-35"></a><span class="co">##  Wilcoxon signed rank test</span></span>
+<span id="cb86-36"><a href="第八章-秩转换的非参数检验.html#cb86-36"></a><span class="co">## </span></span>
+<span id="cb86-37"><a href="第八章-秩转换的非参数检验.html#cb86-37"></a><span class="co">## data:  serum_df$原法 and serum_df$新法</span></span>
+<span id="cb86-38"><a href="第八章-秩转换的非参数检验.html#cb86-38"></a><span class="co">## V = 11.5, p-value = 0.05581</span></span>
+<span id="cb86-39"><a href="第八章-秩转换的非参数检验.html#cb86-39"></a><span class="co">## alternative hypothesis: true location shift is not equal to 0</span></span>
+<span id="cb86-40"><a href="第八章-秩转换的非参数检验.html#cb86-40"></a><span class="co">## </span></span>
+<span id="cb86-41"><a href="第八章-秩转换的非参数检验.html#cb86-41"></a><span class="co">## Warning messages:</span></span>
+<span id="cb86-42"><a href="第八章-秩转换的非参数检验.html#cb86-42"></a><span class="co">## 1: In wilcox.test.default(serum_df$原法, serum_df$新法, mu = 0, paired = T,  :</span></span>
+<span id="cb86-43"><a href="第八章-秩转换的非参数检验.html#cb86-43"></a><span class="co">##   无法精確計算带连结的p值</span></span>
+<span id="cb86-44"><a href="第八章-秩转换的非参数检验.html#cb86-44"></a><span class="co">## 2: In wilcox.test.default(serum_df$原法, serum_df$新法, mu = 0, paired = T,  :</span></span>
+<span id="cb86-45"><a href="第八章-秩转换的非参数检验.html#cb86-45"></a><span class="co">##   有0时无法計算精確的p值</span></span>
+<span id="cb86-46"><a href="第八章-秩转换的非参数检验.html#cb86-46"></a></span>
+<span id="cb86-47"><a href="第八章-秩转换的非参数检验.html#cb86-47"></a><span class="kw">wilcox.test</span>(serum_df<span class="op">$</span>原法,serum_df<span class="op">$</span>新法,<span class="dt">mu=</span><span class="dv">0</span>,<span class="dt">paired =</span> T,<span class="dt">alternative =</span> <span class="kw">c</span>(<span class="st">&quot;two.sided&quot;</span>),<span class="dt">exact=</span>F,<span class="dt">correct =</span> T)</span>
+<span id="cb86-48"><a href="第八章-秩转换的非参数检验.html#cb86-48"></a><span class="co">##  Wilcoxon signed rank test with continuity correction</span></span>
+<span id="cb86-49"><a href="第八章-秩转换的非参数检验.html#cb86-49"></a><span class="co">## </span></span>
+<span id="cb86-50"><a href="第八章-秩转换的非参数检验.html#cb86-50"></a><span class="co">## data:  serum_df$原法 and serum_df$新法</span></span>
+<span id="cb86-51"><a href="第八章-秩转换的非参数检验.html#cb86-51"></a><span class="co">## V = 11.5, p-value = 0.06175</span></span>
+<span id="cb86-52"><a href="第八章-秩转换的非参数检验.html#cb86-52"></a><span class="co">## alternative hypothesis: true location shift is not equal to 0</span></span></code></pre></div>
 <p>根据计算结果，p值&gt;0.05，因此不拒绝原假设<span class="math inline">\(H_0\)</span>，即还不能认为两种方法有差异。</p>
 <div id="配对的等级资料的中位数和0比较" class="section level4">
 <h4><span class="header-section-number">8.1.3.1</span> 配对的等级资料的中位数和0比较</h4>
@@ -490,9 +507,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
-<div id="两个独立样本的比较的wilcoxon秩和检验" class="section level2">
-<h2><span class="header-section-number">8.2</span> 两个独立样本的比较的Wilcoxon秩和检验</h2>
-<p>Wilcoxon 秩和检验(Wilcoxon rink sum test)，用于推断计量资料或等级资料的两个独立样本所来自的
+<div id="wilcoxon秩和检验" class="section level2">
+<h2><span class="header-section-number">8.2</span> Wilcoxon秩和检验</h2>
+<p>Wilcoxon 秩和检验(Wilcoxon rink sum test)，用于推断计量资料或等级资料的<strong>两个独立样本</strong>所来自的
 两个总体分布是否有差别。</p>
 <p>在理论上检验假设<span class="math inline">\(H_0\)</span>应为两个总体分布相同，即两个样本来自同一总体。由 于秩和检验对两个总体分布的形状差别不敏感，
 对于<strong>位置</strong>相同、形状不同但类似的两个总体分布，如均数 相等、方差不等的两个正态分布，推断不出两个总体分布(形状)
@@ -504,7 +521,972 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 而不关心其指标值分布的形状有无差别。两个总体分布位置相同或不同，实际情况一般是两个
 总体分布形状相同或 类似，这时可简化为两个总体中位数相等或不等。注意的是，理论上一个总体分布为正偏态、
 另一个总体分布为负偏态时，也可能两个总体中位数相等，这时认为正偏态总体分布位置比负偏态总体分布位置要右一些。</p>
+<div id="wilcoxon秩和检验的原理与过程" class="section level3">
+<h3><span class="header-section-number">8.2.1</span> Wilcoxon秩和检验的原理与过程</h3>
+<p>假设有两个独立样本数据(通常是一个处理因素下的两个或多个水平)，分别是样本容量为m，n的数据X和Y，即相当于一个处理重复了，m+n次独立实验。</p>
+<p>Wilcoxon秩和检验的计算过程大致如下：
+1. 将X，Y数据集合并成为一个容量为(m+n)的数据表，并按照从小到大排序得到秩，1,…,m+n。</p>
+</div>
+<div id="连续型资料的两样本比较" class="section level3">
+<h3><span class="header-section-number">8.2.2</span> 连续型资料的两样本比较</h3>
+<p>计量资料为原始数据(测量数据)的两样本比较，这里以《医学统计学》书中的案例8-3数据作为示例。
+设置的原假设<span class="math inline">\(H_0:\)</span>肺癌患者和矽肺0期的工人RD秩总体分布位置相同；备择假设<span class="math inline">\(H_1\)</span>肺癌患者RD值高于矽肺0期工人的RD值，是单侧检验。</p>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="第八章-秩转换的非参数检验.html#cb87-1"></a><span class="kw">library</span>(<span class="st">&quot;memisc&quot;</span>)</span>
+<span id="cb87-2"><a href="第八章-秩转换的非参数检验.html#cb87-2"></a><span class="kw">library</span>(<span class="st">&quot;kableExtra&quot;</span>)</span>
+<span id="cb87-3"><a href="第八章-秩转换的非参数检验.html#cb87-3"></a><span class="co">#读取数据</span></span>
+<span id="cb87-4"><a href="第八章-秩转换的非参数检验.html#cb87-4"></a>Lcp&lt;-<span class="kw">spss.system.file</span>(<span class="st">&quot;ExampleData/SavData4MedSta/Exam08-03.sav&quot;</span>)</span>
+<span id="cb87-5"><a href="第八章-秩转换的非参数检验.html#cb87-5"></a>Lcp_df&lt;-<span class="kw">as.data.frame</span>(<span class="kw">as.data.set</span>(Lcp))</span>
+<span id="cb87-6"><a href="第八章-秩转换的非参数检验.html#cb87-6"></a><span class="co">#  &#39;data.frame&#39;:    22 obs. of  2 variables:</span></span>
+<span id="cb87-7"><a href="第八章-秩转换的非参数检验.html#cb87-7"></a><span class="co">#   $ GROUP: num  1 1 1 1 1 1 1 1 1 1 ...</span></span>
+<span id="cb87-8"><a href="第八章-秩转换的非参数检验.html#cb87-8"></a><span class="co">#   $ R1值 : num  2.78 3.23 4.2 4.87 5.12 6.21 7.18 8.05 8.56 9.6 ...</span></span>
+<span id="cb87-9"><a href="第八章-秩转换的非参数检验.html#cb87-9"></a></span>
+<span id="cb87-10"><a href="第八章-秩转换的非参数检验.html#cb87-10"></a><span class="co">#对测试数据进行方差齐性分析</span></span>
+<span id="cb87-11"><a href="第八章-秩转换的非参数检验.html#cb87-11"></a>x &lt;-<span class="st"> </span>Lcp_df<span class="op">$</span>R1值[<span class="kw">which</span>(Lcp_df<span class="op">$</span>GROUP<span class="op">==</span><span class="dv">1</span>)]</span>
+<span id="cb87-12"><a href="第八章-秩转换的非参数检验.html#cb87-12"></a>y &lt;-<span class="st"> </span>Lcp_df<span class="op">$</span>R1值[<span class="kw">which</span>(Lcp_df<span class="op">$</span>GROUP<span class="op">==</span><span class="dv">2</span>)]</span>
+<span id="cb87-13"><a href="第八章-秩转换的非参数检验.html#cb87-13"></a><span class="kw">var.test</span>(x,y)</span>
+<span id="cb87-14"><a href="第八章-秩转换的非参数检验.html#cb87-14"></a><span class="co">##  F test to compare two variances</span></span>
+<span id="cb87-15"><a href="第八章-秩转换的非参数检验.html#cb87-15"></a><span class="co">## </span></span>
+<span id="cb87-16"><a href="第八章-秩转换的非参数检验.html#cb87-16"></a><span class="co">## data:  x and y</span></span>
+<span id="cb87-17"><a href="第八章-秩转换的非参数检验.html#cb87-17"></a><span class="co">## F = 16.836, num df = 9, denom df = 11, p-value = 6.517e-05</span></span>
+<span id="cb87-18"><a href="第八章-秩转换的非参数检验.html#cb87-18"></a><span class="co">## alternative hypothesis: true ratio of variances is not equal to 1</span></span>
+<span id="cb87-19"><a href="第八章-秩转换的非参数检验.html#cb87-19"></a><span class="co">## 95 percent confidence interval:</span></span>
+<span id="cb87-20"><a href="第八章-秩转换的非参数检验.html#cb87-20"></a><span class="co">##   4.692491 65.864395</span></span>
+<span id="cb87-21"><a href="第八章-秩转换的非参数检验.html#cb87-21"></a><span class="co">## sample estimates:</span></span>
+<span id="cb87-22"><a href="第八章-秩转换的非参数检验.html#cb87-22"></a><span class="co">## ratio of variances </span></span>
+<span id="cb87-23"><a href="第八章-秩转换的非参数检验.html#cb87-23"></a><span class="co">##           16.83618 </span></span>
+<span id="cb87-24"><a href="第八章-秩转换的非参数检验.html#cb87-24"></a></span>
+<span id="cb87-25"><a href="第八章-秩转换的非参数检验.html#cb87-25"></a><span class="co"># 1 使用rank()函数计算合并数据后秩</span></span>
+<span id="cb87-26"><a href="第八章-秩转换的非参数检验.html#cb87-26"></a>rank_vals&lt;-<span class="st"> </span><span class="kw">rank</span>(<span class="kw">c</span>(x,y))</span>
+<span id="cb87-27"><a href="第八章-秩转换的非参数检验.html#cb87-27"></a><span class="co"># 2 取不同水平再秩和</span></span>
+<span id="cb87-28"><a href="第八章-秩转换的非参数检验.html#cb87-28"></a>sum_xrank&lt;-<span class="kw">sum</span>(<span class="kw">rank</span>(<span class="kw">c</span>(x,y))[<span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(x)])</span>
+<span id="cb87-29"><a href="第八章-秩转换的非参数检验.html#cb87-29"></a>sum_yrank&lt;-<span class="kw">sum</span>(<span class="kw">rank</span>(<span class="kw">c</span>(x,y))[(<span class="kw">length</span>(x)<span class="op">+</span><span class="dv">1</span>)<span class="op">:</span>(<span class="kw">length</span>(x)<span class="op">+</span><span class="kw">length</span>(y))])</span>
+<span id="cb87-30"><a href="第八章-秩转换的非参数检验.html#cb87-30"></a></span>
+<span id="cb87-31"><a href="第八章-秩转换的非参数检验.html#cb87-31"></a><span class="co">#如果使用 pwilcox()或psignrank()查找P值</span></span>
+<span id="cb87-32"><a href="第八章-秩转换的非参数检验.html#cb87-32"></a><span class="kw">pwilcox</span>(sum_yrank,<span class="dv">10</span>,<span class="dv">12</span>,<span class="dt">lower.tail =</span> F)</span>
+<span id="cb87-33"><a href="第八章-秩转换的非参数检验.html#cb87-33"></a><span class="co"># [1] 0.04021056</span></span>
+<span id="cb87-34"><a href="第八章-秩转换的非参数检验.html#cb87-34"></a><span class="kw">psignrank</span>(sum_xrank,<span class="dv">2</span>,<span class="dt">lower.tail =</span> F)</span>
+<span id="cb87-35"><a href="第八章-秩转换的非参数检验.html#cb87-35"></a><span class="co"># [1] 0.0001036116</span></span>
+<span id="cb87-36"><a href="第八章-秩转换的非参数检验.html#cb87-36"></a></span>
+<span id="cb87-37"><a href="第八章-秩转换的非参数检验.html#cb87-37"></a><span class="kw">wilcox.test</span>(x,y,<span class="dt">mu=</span><span class="dv">0</span>,<span class="dt">paired =</span> F,<span class="dt">alternative =</span> <span class="kw">c</span>(<span class="st">&quot;greater&quot;</span>),<span class="dt">exact=</span>F,<span class="dt">correct =</span> F)</span>
+<span id="cb87-38"><a href="第八章-秩转换的非参数检验.html#cb87-38"></a><span class="co">##      Wilcoxon rank sum test</span></span>
+<span id="cb87-39"><a href="第八章-秩转换的非参数检验.html#cb87-39"></a><span class="co">##  </span></span>
+<span id="cb87-40"><a href="第八章-秩转换的非参数检验.html#cb87-40"></a><span class="co">##  data:  x and y</span></span>
+<span id="cb87-41"><a href="第八章-秩转换的非参数检验.html#cb87-41"></a><span class="co">##  W = 86.5, p-value = 0.04024</span></span>
+<span id="cb87-42"><a href="第八章-秩转换的非参数检验.html#cb87-42"></a><span class="co">##  alternative hypothesis: true location shift is greater than 0</span></span>
+<span id="cb87-43"><a href="第八章-秩转换的非参数检验.html#cb87-43"></a><span class="kw">pwilcox</span>(<span class="fl">86.5</span>,<span class="dv">10</span>,<span class="dv">12</span>,<span class="dt">lower.tail =</span> F)</span>
+<span id="cb87-44"><a href="第八章-秩转换的非参数检验.html#cb87-44"></a><span class="co"># [1] 0.04021056</span></span></code></pre></div>
+<p>根据上面的结果，按照分布计算的总秩无法有效使用 pwilcox()或psignrank()概率累积分布函数获取P值，和书上的T界值表有
+较大差异。因此使用wilcox.test()函数直接计算得到对应的W值和P值，这和pwilcox()对应的P值几乎一致。P值=0.04021056&lt;0.05，
+因此拒绝原假设，接受备择假设，可以认为肺癌患者RD值高于矽肺0期工人的RD值。</p>
+</div>
+<div id="非连续型资料的两样本比较" class="section level3">
+<h3><span class="header-section-number">8.2.3</span> 非连续型资料的两样本比较</h3>
+<p>数据为频数资料的样本先按照数量区间分组；等级资料先按照等级分组。这里以《医学统计学》书中的案例8-4数据作为示例。
+设置的原假设<span class="math inline">\(H_0:\)</span>吸烟工人与不吸烟工人的HbCO含量的总体分布位置相同；备择假设<span class="math inline">\(H_1\)</span>吸烟工人高于不吸烟工人的HbCO含量，是单侧检验。</p>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="第八章-秩转换的非参数检验.html#cb88-1"></a><span class="kw">library</span>(<span class="st">&quot;memisc&quot;</span>)</span>
+<span id="cb88-2"><a href="第八章-秩转换的非参数检验.html#cb88-2"></a><span class="co">#读取数据</span></span>
+<span id="cb88-3"><a href="第八章-秩转换的非参数检验.html#cb88-3"></a>smk&lt;-<span class="kw">spss.system.file</span>(<span class="st">&quot;ExampleData/SavData4MedSta/Exam08-04.sav&quot;</span>)</span>
+<span id="cb88-4"><a href="第八章-秩转换的非参数检验.html#cb88-4"></a>smk_df&lt;-<span class="kw">as.data.frame</span>(<span class="kw">as.data.set</span>(smk))</span>
+<span id="cb88-5"><a href="第八章-秩转换的非参数检验.html#cb88-5"></a><span class="kw">str</span>(smk_df)</span>
+<span id="cb88-6"><a href="第八章-秩转换的非参数检验.html#cb88-6"></a></span>
+<span id="cb88-7"><a href="第八章-秩转换的非参数检验.html#cb88-7"></a>FREQ&lt;-smk_df<span class="op">$</span>FREQ</span>
+<span id="cb88-8"><a href="第八章-秩转换的非参数检验.html#cb88-8"></a>Group&lt;-smk_df<span class="op">$</span>GROUP</span>
+<span id="cb88-9"><a href="第八章-秩转换的非参数检验.html#cb88-9"></a>mmol&lt;-smk_df<span class="op">$</span>含量</span>
+<span id="cb88-10"><a href="第八章-秩转换的非参数检验.html#cb88-10"></a></span>
+<span id="cb88-11"><a href="第八章-秩转换的非参数检验.html#cb88-11"></a>frequence_ranked_data_ranksum_caculator&lt;-<span class="cf">function</span>(Freq,Group1,Group2){</span>
+<span id="cb88-12"><a href="第八章-秩转换的非参数检验.html#cb88-12"></a>   FREQ&lt;-Freq</span>
+<span id="cb88-13"><a href="第八章-秩转换的非参数检验.html#cb88-13"></a>   Group&lt;-Group1</span>
+<span id="cb88-14"><a href="第八章-秩转换的非参数检验.html#cb88-14"></a>   mmol&lt;-Group2</span>
+<span id="cb88-15"><a href="第八章-秩转换的非参数检验.html#cb88-15"></a></span>
+<span id="cb88-16"><a href="第八章-秩转换的非参数检验.html#cb88-16"></a>   break_point&lt;-<span class="dv">0</span></span>
+<span id="cb88-17"><a href="第八章-秩转换的非参数检验.html#cb88-17"></a>   levels_val&lt;-<span class="kw">c</span>()</span>
+<span id="cb88-18"><a href="第八章-秩转换的非参数检验.html#cb88-18"></a>   group_val&lt;-<span class="kw">c</span>()</span>
+<span id="cb88-19"><a href="第八章-秩转换的非参数检验.html#cb88-19"></a>   mmol_levels&lt;-<span class="kw">unique</span>(mmol)</span>
+<span id="cb88-20"><a href="第八章-秩转换的非参数检验.html#cb88-20"></a></span>
+<span id="cb88-21"><a href="第八章-秩转换的非参数检验.html#cb88-21"></a>   <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(mmol_levels)){</span>
+<span id="cb88-22"><a href="第八章-秩转换的非参数检验.html#cb88-22"></a>      mmol_val&lt;-mmol_levels[i]</span>
+<span id="cb88-23"><a href="第八章-秩转换的非参数检验.html#cb88-23"></a>      <span class="co">#cat(FREQ[which(mmol==mmol_val)],&quot;   &quot;)</span></span>
+<span id="cb88-24"><a href="第八章-秩转换的非参数检验.html#cb88-24"></a>      group&lt;-Group[<span class="kw">which</span>(mmol<span class="op">==</span>mmol_val)]</span>
+<span id="cb88-25"><a href="第八章-秩转换的非参数检验.html#cb88-25"></a>      freq&lt;-FREQ[<span class="kw">which</span>(mmol<span class="op">==</span>mmol_val)]</span>
+<span id="cb88-26"><a href="第八章-秩转换的非参数检验.html#cb88-26"></a>      freq_sum&lt;-<span class="kw">sum</span>(freq)</span>
+<span id="cb88-27"><a href="第八章-秩转换的非参数检验.html#cb88-27"></a>      break_point&lt;-break_point<span class="op">+</span>freq_sum</span>
+<span id="cb88-28"><a href="第八章-秩转换的非参数检验.html#cb88-28"></a>      group_val&lt;-<span class="kw">c</span>(group_val,<span class="kw">rep</span>(group,freq))</span>
+<span id="cb88-29"><a href="第八章-秩转换的非参数检验.html#cb88-29"></a>      levels_val&lt;-<span class="kw">c</span>(levels_val,<span class="kw">rep</span>(mmol_val,freq_sum))</span>
+<span id="cb88-30"><a href="第八章-秩转换的非参数检验.html#cb88-30"></a>      <span class="co">#cat(group_val,&quot;\n&quot;)</span></span>
+<span id="cb88-31"><a href="第八章-秩转换的非参数检验.html#cb88-31"></a>   }</span>
+<span id="cb88-32"><a href="第八章-秩转换的非参数检验.html#cb88-32"></a>   </span>
+<span id="cb88-33"><a href="第八章-秩转换的非参数检验.html#cb88-33"></a>   ranked_vals&lt;-<span class="kw">rank</span>(levels_val)</span>
+<span id="cb88-34"><a href="第八章-秩转换的非参数检验.html#cb88-34"></a>   group_levels&lt;-<span class="kw">unique</span>(Group)</span>
+<span id="cb88-35"><a href="第八章-秩转换的非参数检验.html#cb88-35"></a>   T_vals&lt;-<span class="kw">c</span>()</span>
+<span id="cb88-36"><a href="第八章-秩转换的非参数检验.html#cb88-36"></a>   <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(group_levels)){</span>
+<span id="cb88-37"><a href="第八章-秩转换的非参数检验.html#cb88-37"></a>      T_val&lt;-<span class="kw">sum</span>(ranked_vals[<span class="kw">which</span>(group_val<span class="op">==</span>group_levels[i])])</span>
+<span id="cb88-38"><a href="第八章-秩转换的非参数检验.html#cb88-38"></a>      T_vals&lt;-<span class="kw">c</span>(T_vals,T_val)</span>
+<span id="cb88-39"><a href="第八章-秩转换的非参数检验.html#cb88-39"></a>      <span class="co">#cat(T_val,&quot;\n&quot;)</span></span>
+<span id="cb88-40"><a href="第八章-秩转换的非参数检验.html#cb88-40"></a>   }</span>
+<span id="cb88-41"><a href="第八章-秩转换的非参数检验.html#cb88-41"></a>   <span class="kw">names</span>(T_vals)&lt;-group_levels</span>
+<span id="cb88-42"><a href="第八章-秩转换的非参数检验.html#cb88-42"></a>   result_list&lt;-<span class="kw">list</span>(T_vals,levels_val,group_val)</span>
+<span id="cb88-43"><a href="第八章-秩转换的非参数检验.html#cb88-43"></a>   <span class="kw">names</span>(result_list)&lt;-<span class="kw">c</span>(<span class="st">&quot;T_vals&quot;</span>,<span class="st">&quot;Group1_val&quot;</span>,<span class="st">&quot;Group2_val&quot;</span>)</span>
+<span id="cb88-44"><a href="第八章-秩转换的非参数检验.html#cb88-44"></a>   <span class="kw">return</span>(result_list)</span>
+<span id="cb88-45"><a href="第八章-秩转换的非参数检验.html#cb88-45"></a>}</span>
+<span id="cb88-46"><a href="第八章-秩转换的非参数检验.html#cb88-46"></a></span>
+<span id="cb88-47"><a href="第八章-秩转换的非参数检验.html#cb88-47"></a>tmp1&lt;-<span class="kw">frequence_ranked_data_ranksum_caculator</span>(FREQ,Group,mmol)</span>
+<span id="cb88-48"><a href="第八章-秩转换的非参数检验.html#cb88-48"></a>tmp1<span class="op">$</span>T_vals</span>
+<span id="cb88-49"><a href="第八章-秩转换的非参数检验.html#cb88-49"></a><span class="co">#    1    2 </span></span>
+<span id="cb88-50"><a href="第八章-秩转换的非参数检验.html#cb88-50"></a><span class="co"># 1917 1243</span></span>
+<span id="cb88-51"><a href="第八章-秩转换的非参数检验.html#cb88-51"></a></span>
+<span id="cb88-52"><a href="第八章-秩转换的非参数检验.html#cb88-52"></a><span class="co">##正态近似法</span></span>
+<span id="cb88-53"><a href="第八章-秩转换的非参数检验.html#cb88-53"></a>ranksumtest_uAsym&lt;-<span class="cf">function</span>(T_val,groups1,freqs1,groups2,freqs2){</span>
+<span id="cb88-54"><a href="第八章-秩转换的非参数检验.html#cb88-54"></a>   n1&lt;-<span class="kw">sum</span>(freqs1)</span>
+<span id="cb88-55"><a href="第八章-秩转换的非参数检验.html#cb88-55"></a>   n2&lt;-<span class="kw">sum</span>(freqs2)</span>
+<span id="cb88-56"><a href="第八章-秩转换的非参数检验.html#cb88-56"></a>   eqrank&lt;-<span class="kw">intersect</span>(groups1,groups2)</span>
+<span id="cb88-57"><a href="第八章-秩转换的非参数检验.html#cb88-57"></a>   tmp_val&lt;-<span class="dv">0</span></span>
+<span id="cb88-58"><a href="第八章-秩转换的非参数检验.html#cb88-58"></a>   <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(eqrank)){</span>
+<span id="cb88-59"><a href="第八章-秩转换的非参数检验.html#cb88-59"></a>      t_val&lt;-(<span class="kw">sum</span>(freqs1[<span class="kw">which</span>(groups1<span class="op">==</span>eqrank[i])],freqs2[<span class="kw">which</span>(groups2<span class="op">==</span>eqrank[i])]))</span>
+<span id="cb88-60"><a href="第八章-秩转换的非参数检验.html#cb88-60"></a>      tmp_val&lt;-tmp_val<span class="op">+</span>t_val<span class="op">^</span><span class="dv">3</span><span class="op">-</span>t_val</span>
+<span id="cb88-61"><a href="第八章-秩转换的非参数检验.html#cb88-61"></a>   }</span>
+<span id="cb88-62"><a href="第八章-秩转换的非参数检验.html#cb88-62"></a>   <span class="co">#cat(T_val,&quot;\n&quot;,groups1,&quot;\n&quot;,freqs1,&quot;\n&quot;,groups2,&quot;\n&quot;,freqs2,&quot;\n&quot;,tmp_val)</span></span>
+<span id="cb88-63"><a href="第八章-秩转换的非参数检验.html#cb88-63"></a>   u&lt;-(T_val<span class="op">-</span>n1<span class="op">*</span>(n1<span class="op">+</span>n1<span class="op">+</span><span class="dv">1</span>)<span class="op">/</span><span class="dv">2</span>)<span class="op">/</span><span class="kw">sqrt</span>((n1<span class="op">*</span>n2<span class="op">*</span>(n1<span class="op">+</span>n2<span class="op">+</span><span class="dv">1</span>)<span class="op">/</span><span class="dv">12</span>)<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>tmp_val<span class="op">/</span>((n1<span class="op">+</span>n2)<span class="op">^</span><span class="dv">3</span><span class="op">-</span>(n1<span class="op">+</span>n2))))</span>
+<span id="cb88-64"><a href="第八章-秩转换的非参数检验.html#cb88-64"></a>   <span class="co">#cat(u,&quot;\n&quot;)</span></span>
+<span id="cb88-65"><a href="第八章-秩转换的非参数检验.html#cb88-65"></a>   <span class="kw">return</span>(<span class="kw">pnorm</span>(u,<span class="dt">lower.tail =</span> F))</span>
+<span id="cb88-66"><a href="第八章-秩转换的非参数检验.html#cb88-66"></a>}</span>
+<span id="cb88-67"><a href="第八章-秩转换的非参数检验.html#cb88-67"></a></span>
+<span id="cb88-68"><a href="第八章-秩转换的非参数检验.html#cb88-68"></a><span class="kw">ranksumtest_uAsym</span>(<span class="dv">1917</span>,<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,FREQ[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>],<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,FREQ[<span class="dv">6</span><span class="op">:</span><span class="dv">10</span>])</span>
+<span id="cb88-69"><a href="第八章-秩转换的非参数检验.html#cb88-69"></a><span class="co"># [1] 4.720595e-05</span></span>
+<span id="cb88-70"><a href="第八章-秩转换的非参数检验.html#cb88-70"></a></span>
+<span id="cb88-71"><a href="第八章-秩转换的非参数检验.html#cb88-71"></a><span class="co">##wilcox.test()方法</span></span>
+<span id="cb88-72"><a href="第八章-秩转换的非参数检验.html#cb88-72"></a>levels_val&lt;-tmp1<span class="op">$</span>Group1_val</span>
+<span id="cb88-73"><a href="第八章-秩转换的非参数检验.html#cb88-73"></a>group_val&lt;-tmp1<span class="op">$</span>Group2_val</span>
+<span id="cb88-74"><a href="第八章-秩转换的非参数检验.html#cb88-74"></a><span class="kw">wilcox.test</span>(levels_val[<span class="kw">which</span>(group_val<span class="op">==</span><span class="dv">1</span>)],levels_val[<span class="kw">which</span>(group_val<span class="op">==</span><span class="dv">2</span>)],<span class="dt">paired=</span>F,<span class="dt">correct =</span> T,<span class="dt">exact =</span> F)</span>
+<span id="cb88-75"><a href="第八章-秩转换的非参数检验.html#cb88-75"></a></span>
+<span id="cb88-76"><a href="第八章-秩转换的非参数检验.html#cb88-76"></a><span class="co">##  Wilcoxon rank sum test with continuity correction</span></span>
+<span id="cb88-77"><a href="第八章-秩转换的非参数检验.html#cb88-77"></a><span class="co">## </span></span>
+<span id="cb88-78"><a href="第八章-秩转换的非参数检验.html#cb88-78"></a><span class="co">## data:  levels_val[which(group_val == 1)] and levels_val[which(group_val == 2)]</span></span>
+<span id="cb88-79"><a href="第八章-秩转换的非参数检验.html#cb88-79"></a><span class="co">## W = 1137, p-value = 0.0002181</span></span>
+<span id="cb88-80"><a href="第八章-秩转换的非参数检验.html#cb88-80"></a><span class="co">##  alternative hypothesis: true location shift is not equal to 0</span></span>
+<span id="cb88-81"><a href="第八章-秩转换的非参数检验.html#cb88-81"></a></span>
+<span id="cb88-82"><a href="第八章-秩转换的非参数检验.html#cb88-82"></a><span class="kw">pwilcox</span>(<span class="dv">1137</span>,<span class="dv">39</span>,<span class="dv">40</span>,<span class="dt">lower.tail =</span> F)</span>
+<span id="cb88-83"><a href="第八章-秩转换的非参数检验.html#cb88-83"></a><span class="co"># [1] 0.0001758351</span></span></code></pre></div>
+<p>根据计算结果P值&lt;0.05，因此拒绝原假设<span class="math inline">\(H_0\)</span>，接受<span class="math inline">\(H_1\)</span>，可认为吸烟工人的HbCO含量高于不吸工人的HbCO含量。</p>
+</div>
+</div>
+<div id="完全随即设计多个样本比较的kruskal-wallis-h-检验" class="section level2">
+<h2><span class="header-section-number">8.3</span> 完全随即设计多个样本比较的Kruskal-Wallis H 检验</h2>
+<p>Kruskal-Wallis H检验(Kruskal-Wallis H test)，用于推断计量资料或等级资料的多个独立样本所来自的多个总体分布
+是否有差别。在理论上检验假设<span class="math inline">\(H_0\)</span>应为多个总体分布相同，即多个样本来自同一总体。 由于H检验对多个总体分布的形
+状差别不敏感，故在实际应用中检验假设<span class="math inline">\(H_0\)</span>可写作多个总体分布位置相同。备择假设<span class="math inline">\(H_1\)</span>为多个总体分布的位置不全相同。</p>
+<div id="原始数据的多个样本比较" class="section level3">
+<h3><span class="header-section-number">8.3.1</span> 原始数据的多个样本比较</h3>
+这里以《医学统计学》书中的案例8-5数据作为示例。
+设置的原假设$H_0:<span class="math inline">\(3种药物杀灭钉螺的致死率的总体分布位置相同；备择假设\)</span>H_1$3种药物杀灭钉螺的致死率的总体分布位置不全相同，是双侧检验。
+<table class=" lightable-paper lightable-striped table" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto; margin-left: auto; margin-right: auto;'>
+<caption>
+<span id="tab:ranktab1">Table 8.1: </span>3种药物杀灭钉螺的致死率数据
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+1
+</th>
+<th style="text-align:center;">
+1
+</th>
+<th style="text-align:center;">
+1
+</th>
+<th style="text-align:center;">
+1
+</th>
+<th style="text-align:center;">
+1
+</th>
+<th style="text-align:center;">
+2
+</th>
+<th style="text-align:center;">
+2
+</th>
+<th style="text-align:center;">
+2
+</th>
+<th style="text-align:center;">
+2
+</th>
+<th style="text-align:center;">
+2
+</th>
+<th style="text-align:center;">
+3
+</th>
+<th style="text-align:center;">
+3
+</th>
+<th style="text-align:center;">
+3
+</th>
+<th style="text-align:center;">
+3
+</th>
+<th style="text-align:center;">
+3
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Ratio
+</td>
+<td style="text-align:center;">
+32.5
+</td>
+<td style="text-align:center;">
+35.5
+</td>
+<td style="text-align:center;">
+40.5
+</td>
+<td style="text-align:center;">
+46
+</td>
+<td style="text-align:center;">
+49
+</td>
+<td style="text-align:center;">
+16
+</td>
+<td style="text-align:center;">
+20.5
+</td>
+<td style="text-align:center;">
+22.5
+</td>
+<td style="text-align:center;">
+29
+</td>
+<td style="text-align:center;">
+36
+</td>
+<td style="text-align:center;">
+6.5
+</td>
+<td style="text-align:center;">
+9
+</td>
+<td style="text-align:center;">
+12.5
+</td>
+<td style="text-align:center;">
+18
+</td>
+<td style="text-align:center;">
+24
+</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="第八章-秩转换的非参数检验.html#cb89-1"></a><span class="kw">library</span>(<span class="st">&quot;dplyr&quot;</span>)</span>
+<span id="cb89-2"><a href="第八章-秩转换的非参数检验.html#cb89-2"></a><span class="kw">library</span>(<span class="st">&quot;kableExtra&quot;</span>) </span>
+<span id="cb89-3"><a href="第八章-秩转换的非参数检验.html#cb89-3"></a><span class="kw">library</span>(<span class="st">&quot;memisc&quot;</span>)</span>
+<span id="cb89-4"><a href="第八章-秩转换的非参数检验.html#cb89-4"></a><span class="co">#读取数据</span></span>
+<span id="cb89-5"><a href="第八章-秩转换的非参数检验.html#cb89-5"></a>Oncomelania&lt;-<span class="kw">spss.system.file</span>(<span class="st">&quot;ExampleData/SavData4MedSta/Exam08-05.sav&quot;</span>)</span>
+<span id="cb89-6"><a href="第八章-秩转换的非参数检验.html#cb89-6"></a>Oncomelania_df&lt;-<span class="kw">as.data.frame</span>(<span class="kw">as.data.set</span>(Oncomelania))</span>
+<span id="cb89-7"><a href="第八章-秩转换的非参数检验.html#cb89-7"></a><span class="kw">colnames</span>(Oncomelania_df ) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Group&quot;</span>,<span class="st">&quot;Ratio&quot;</span>)</span>
+<span id="cb89-8"><a href="第八章-秩转换的非参数检验.html#cb89-8"></a><span class="kw">kruskal.test</span>(Oncomelania_df<span class="op">$</span>Ratio,Oncomelania_df<span class="op">$</span>Group)</span>
+<span id="cb89-9"><a href="第八章-秩转换的非参数检验.html#cb89-9"></a><span class="co">##  Kruskal-Wallis rank sum test</span></span>
+<span id="cb89-10"><a href="第八章-秩转换的非参数检验.html#cb89-10"></a><span class="co">## </span></span>
+<span id="cb89-11"><a href="第八章-秩转换的非参数检验.html#cb89-11"></a><span class="co">## data:  Oncomelania_df$Ratio and Oncomelania_df$Group</span></span>
+<span id="cb89-12"><a href="第八章-秩转换的非参数检验.html#cb89-12"></a><span class="co">## Kruskal-Wallis chi-squared = 9.74, df = 2, p-value = 0.007673</span></span></code></pre></div>
+<p>根据计算结果，P值&lt;0.05，因此拒绝原假设<span class="math inline">\(H_0\)</span>，接受<span class="math inline">\(H_1\)</span>，可认为3种药物的致死率不全一样。</p>
+<p>这里以《医学统计学》书中的案例8-6数据作为示例。设置的原假设$H_0:<span class="math inline">\(3种不同菌型的伤寒杆菌的存活日数总体分布位 置相同；备择假设\)</span>H_1$3种不同菌型的伤寒杆菌的存活日数总体分布位置不全相同，是双侧检验。</p>
+<table class=" lightable-paper lightable-striped table" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto; margin-left: auto; margin-right: auto;'>
+<thead>
+<tr>
+<th style="padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="TRUE">
+菌型
+</div>
+</th>
+<th style="padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="11">
+<div style="TRUE">
+存活天数
+</div>
+</th>
+</tr>
+</thead>
+<caption>
+<span id="tab:ranktab2">Table 8.2: </span>3种不同菌型的伤寒杆菌的存活日数数据
+</caption>
+<tbody>
+<tr>
+<td style="text-align:left;">
+DSC
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+9
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+11
+</td>
+<td style="text-align:center;">
+11
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+9D
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+11C
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+12
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="第八章-秩转换的非参数检验.html#cb90-1"></a>DSC &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">11</span>)</span>
+<span id="cb90-2"><a href="第八章-秩转换的非参数检验.html#cb90-2"></a>D9 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">7</span>)</span>
+<span id="cb90-3"><a href="第八章-秩转换的非参数检验.html#cb90-3"></a>C11 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">10</span>,<span class="dv">12</span>)</span>
+<span id="cb90-4"><a href="第八章-秩转换的非参数检验.html#cb90-4"></a></span>
+<span id="cb90-5"><a href="第八章-秩转换的非参数检验.html#cb90-5"></a>Bactype&lt;-<span class="kw">as.data.frame</span>(<span class="kw">cbind</span>(<span class="kw">c</span>(<span class="kw">rep</span>(<span class="dv">1</span>,<span class="kw">length</span>(D9)),<span class="kw">rep</span>(<span class="dv">2</span>,<span class="kw">length</span>(C11)),<span class="kw">rep</span>(<span class="dv">3</span>,<span class="kw">length</span>(DSC))),<span class="kw">c</span>(D9,C11,DSC)))</span>
+<span id="cb90-6"><a href="第八章-秩转换的非参数检验.html#cb90-6"></a><span class="kw">colnames</span>(Bactype)&lt;-<span class="kw">c</span>(<span class="st">&quot;Group&quot;</span>,<span class="st">&quot;Days&quot;</span>)</span>
+<span id="cb90-7"><a href="第八章-秩转换的非参数检验.html#cb90-7"></a><span class="kw">kruskal.test</span>(Bactype<span class="op">$</span>Days,Bactype<span class="op">$</span>Group)</span>
+<span id="cb90-8"><a href="第八章-秩转换的非参数检验.html#cb90-8"></a><span class="co">#   Kruskal-Wallis rank sum test</span></span>
+<span id="cb90-9"><a href="第八章-秩转换的非参数检验.html#cb90-9"></a><span class="co"># </span></span>
+<span id="cb90-10"><a href="第八章-秩转换的非参数检验.html#cb90-10"></a><span class="co"># data:  Bactype$Days and Bactype$Group</span></span>
+<span id="cb90-11"><a href="第八章-秩转换的非参数检验.html#cb90-11"></a><span class="co"># Kruskal-Wallis chi-squared = 8.706, df = 2, p-value = 0.01287</span></span></code></pre></div>
+<p>根据计算结果，P值=0.01287&lt;0.05，因此拒绝原假设<span class="math inline">\(H_0\)</span>，接受<span class="math inline">\(H_1\)</span>，可认为3菌型的存货天数的总体分布位置不全相同。</p>
+</div>
+<div id="频数表资料和登记资料的多个样本比较" class="section level3">
+<h3><span class="header-section-number">8.3.2</span> 频数表资料和登记资料的多个样本比较</h3>
+<p>数据为频数资料的样本先按照数量区间分组；等级资料先按照等级分组。这里以《医学统计学》书中的案例8-7数据作为示例。
+设置的原假设$H_0:<span class="math inline">\(4种疾病患者的痰液内嗜酸性白细胞总体分布位置相同；备择假设\)</span>H_1$4种疾病患者的痰液内嗜酸性白细胞总体分布位置不全相同。</p>
+<table class=" lightable-paper lightable-striped table" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto; margin-left: auto; margin-right: auto;'>
+<caption>
+<span id="tab:ranktab3">Table 8.3: </span>4种疾病患者的痰液内嗜酸性白细胞数据
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+1
+</th>
+<th style="text-align:center;">
+2
+</th>
+<th style="text-align:center;">
+3
+</th>
+<th style="text-align:center;">
+4
+</th>
+<th style="text-align:center;">
+5
+</th>
+<th style="text-align:center;">
+6
+</th>
+<th style="text-align:center;">
+7
+</th>
+<th style="text-align:center;">
+8
+</th>
+<th style="text-align:center;">
+9
+</th>
+<th style="text-align:center;">
+10
+</th>
+<th style="text-align:center;">
+11
+</th>
+<th style="text-align:center;">
+12
+</th>
+<th style="text-align:center;">
+13
+</th>
+<th style="text-align:center;">
+14
+</th>
+<th style="text-align:center;">
+15
+</th>
+<th style="text-align:center;">
+16
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Disease
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Lecuk.level
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Freq
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+9
+</td>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+0
+</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="第八章-秩转换的非参数检验.html#cb91-1"></a><span class="kw">library</span>(<span class="st">&quot;dplyr&quot;</span>)</span>
+<span id="cb91-2"><a href="第八章-秩转换的非参数检验.html#cb91-2"></a><span class="kw">library</span>(<span class="st">&quot;memisc&quot;</span>)</span>
+<span id="cb91-3"><a href="第八章-秩转换的非参数检验.html#cb91-3"></a><span class="kw">library</span>(<span class="st">&quot;tibble&quot;</span>)</span>
+<span id="cb91-4"><a href="第八章-秩转换的非参数检验.html#cb91-4"></a><span class="co">#读取数据</span></span>
+<span id="cb91-5"><a href="第八章-秩转换的非参数检验.html#cb91-5"></a>leukocyte&lt;-<span class="kw">spss.system.file</span>(<span class="st">&quot;ExampleData/SavData4MedSta/Exam08-07.sav&quot;</span>)</span>
+<span id="cb91-6"><a href="第八章-秩转换的非参数检验.html#cb91-6"></a>leukocyte_df&lt;-<span class="kw">as.data.frame</span>(<span class="kw">as.data.set</span>(leukocyte))</span>
+<span id="cb91-7"><a href="第八章-秩转换的非参数检验.html#cb91-7"></a><span class="kw">colnames</span>(leukocyte_df)&lt;-<span class="kw">c</span>(<span class="st">&quot;Disease&quot;</span>,<span class="st">&quot;Lecuk.level&quot;</span>,<span class="st">&quot;Freq&quot;</span>)</span>
+<span id="cb91-8"><a href="第八章-秩转换的非参数检验.html#cb91-8"></a></span>
+<span id="cb91-9"><a href="第八章-秩转换的非参数检验.html#cb91-9"></a>frequence_ranked_data_ranksum_caculator&lt;-<span class="cf">function</span>(Freq,Group1,Group2){</span>
+<span id="cb91-10"><a href="第八章-秩转换的非参数检验.html#cb91-10"></a>   FREQ&lt;-Freq</span>
+<span id="cb91-11"><a href="第八章-秩转换的非参数检验.html#cb91-11"></a>   Group&lt;-Group1</span>
+<span id="cb91-12"><a href="第八章-秩转换的非参数检验.html#cb91-12"></a>   mmol&lt;-Group2</span>
+<span id="cb91-13"><a href="第八章-秩转换的非参数检验.html#cb91-13"></a></span>
+<span id="cb91-14"><a href="第八章-秩转换的非参数检验.html#cb91-14"></a>   break_point&lt;-<span class="dv">0</span></span>
+<span id="cb91-15"><a href="第八章-秩转换的非参数检验.html#cb91-15"></a>   levels_val&lt;-<span class="kw">c</span>()</span>
+<span id="cb91-16"><a href="第八章-秩转换的非参数检验.html#cb91-16"></a>   group_val&lt;-<span class="kw">c</span>()</span>
+<span id="cb91-17"><a href="第八章-秩转换的非参数检验.html#cb91-17"></a>   mmol_levels&lt;-<span class="kw">unique</span>(mmol)</span>
+<span id="cb91-18"><a href="第八章-秩转换的非参数检验.html#cb91-18"></a></span>
+<span id="cb91-19"><a href="第八章-秩转换的非参数检验.html#cb91-19"></a>   <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(mmol_levels)){</span>
+<span id="cb91-20"><a href="第八章-秩转换的非参数检验.html#cb91-20"></a>      mmol_val&lt;-mmol_levels[i]</span>
+<span id="cb91-21"><a href="第八章-秩转换的非参数检验.html#cb91-21"></a>      <span class="co">#cat(FREQ[which(mmol==mmol_val)],&quot;   &quot;)</span></span>
+<span id="cb91-22"><a href="第八章-秩转换的非参数检验.html#cb91-22"></a>      group&lt;-Group[<span class="kw">which</span>(mmol<span class="op">==</span>mmol_val)]</span>
+<span id="cb91-23"><a href="第八章-秩转换的非参数检验.html#cb91-23"></a>      freq&lt;-FREQ[<span class="kw">which</span>(mmol<span class="op">==</span>mmol_val)]</span>
+<span id="cb91-24"><a href="第八章-秩转换的非参数检验.html#cb91-24"></a>      freq_sum&lt;-<span class="kw">sum</span>(freq)</span>
+<span id="cb91-25"><a href="第八章-秩转换的非参数检验.html#cb91-25"></a>      break_point&lt;-break_point<span class="op">+</span>freq_sum</span>
+<span id="cb91-26"><a href="第八章-秩转换的非参数检验.html#cb91-26"></a>      group_val&lt;-<span class="kw">c</span>(group_val,<span class="kw">rep</span>(group,freq))</span>
+<span id="cb91-27"><a href="第八章-秩转换的非参数检验.html#cb91-27"></a>      levels_val&lt;-<span class="kw">c</span>(levels_val,<span class="kw">rep</span>(mmol_val,freq_sum))</span>
+<span id="cb91-28"><a href="第八章-秩转换的非参数检验.html#cb91-28"></a>      <span class="co">#cat(group_val,&quot;\n&quot;)</span></span>
+<span id="cb91-29"><a href="第八章-秩转换的非参数检验.html#cb91-29"></a>   }</span>
+<span id="cb91-30"><a href="第八章-秩转换的非参数检验.html#cb91-30"></a>   </span>
+<span id="cb91-31"><a href="第八章-秩转换的非参数检验.html#cb91-31"></a>   ranked_vals&lt;-<span class="kw">rank</span>(levels_val)</span>
+<span id="cb91-32"><a href="第八章-秩转换的非参数检验.html#cb91-32"></a>   group_levels&lt;-<span class="kw">unique</span>(Group)</span>
+<span id="cb91-33"><a href="第八章-秩转换的非参数检验.html#cb91-33"></a>   T_vals&lt;-<span class="kw">c</span>()</span>
+<span id="cb91-34"><a href="第八章-秩转换的非参数检验.html#cb91-34"></a>   <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(group_levels)){</span>
+<span id="cb91-35"><a href="第八章-秩转换的非参数检验.html#cb91-35"></a>      T_val&lt;-<span class="kw">sum</span>(ranked_vals[<span class="kw">which</span>(group_val<span class="op">==</span>group_levels[i])])</span>
+<span id="cb91-36"><a href="第八章-秩转换的非参数检验.html#cb91-36"></a>      T_vals&lt;-<span class="kw">c</span>(T_vals,T_val)</span>
+<span id="cb91-37"><a href="第八章-秩转换的非参数检验.html#cb91-37"></a>      <span class="co">#cat(T_val,&quot;\n&quot;)</span></span>
+<span id="cb91-38"><a href="第八章-秩转换的非参数检验.html#cb91-38"></a>   }</span>
+<span id="cb91-39"><a href="第八章-秩转换的非参数检验.html#cb91-39"></a>   <span class="kw">names</span>(T_vals)&lt;-group_levels</span>
+<span id="cb91-40"><a href="第八章-秩转换的非参数检验.html#cb91-40"></a>   result_list&lt;-<span class="kw">list</span>(T_vals,levels_val,group_val)</span>
+<span id="cb91-41"><a href="第八章-秩转换的非参数检验.html#cb91-41"></a>   <span class="kw">names</span>(result_list)&lt;-<span class="kw">c</span>(<span class="st">&quot;T_vals&quot;</span>,<span class="st">&quot;Group1_val&quot;</span>,<span class="st">&quot;Group2_val&quot;</span>)</span>
+<span id="cb91-42"><a href="第八章-秩转换的非参数检验.html#cb91-42"></a>   <span class="kw">return</span>(result_list)</span>
+<span id="cb91-43"><a href="第八章-秩转换的非参数检验.html#cb91-43"></a>}</span>
+<span id="cb91-44"><a href="第八章-秩转换的非参数检验.html#cb91-44"></a></span>
+<span id="cb91-45"><a href="第八章-秩转换的非参数检验.html#cb91-45"></a>tmp1&lt;-<span class="kw">frequence_ranked_data_ranksum_caculator</span>(leukocyte_df<span class="op">$</span>Freq,leukocyte_df<span class="op">$</span>Disease,leukocyte_df<span class="op">$</span>Lecuk.level)</span>
+<span id="cb91-46"><a href="第八章-秩转换的非参数检验.html#cb91-46"></a></span>
+<span id="cb91-47"><a href="第八章-秩转换的非参数检验.html#cb91-47"></a>tmp1<span class="op">$</span>T_vals</span>
+<span id="cb91-48"><a href="第八章-秩转换的非参数检验.html#cb91-48"></a><span class="co">#     1     2     3     4 </span></span>
+<span id="cb91-49"><a href="第八章-秩转换的非参数检验.html#cb91-49"></a><span class="co"># 739.5 436.5 409.5 244.5 </span></span>
+<span id="cb91-50"><a href="第八章-秩转换的非参数检验.html#cb91-50"></a></span>
+<span id="cb91-51"><a href="第八章-秩转换的非参数检验.html#cb91-51"></a>levels_val&lt;-tmp1<span class="op">$</span>Group1_val</span>
+<span id="cb91-52"><a href="第八章-秩转换的非参数检验.html#cb91-52"></a>group_val&lt;-tmp1<span class="op">$</span>Group2_val</span>
+<span id="cb91-53"><a href="第八章-秩转换的非参数检验.html#cb91-53"></a><span class="kw">kruskal.test</span>(levels_val,group_val,<span class="dt">paired=</span>F,<span class="dt">correct =</span> T,<span class="dt">exact =</span> F)</span>
+<span id="cb91-54"><a href="第八章-秩转换的非参数检验.html#cb91-54"></a><span class="co">#   Kruskal-Wallis rank sum test</span></span>
+<span id="cb91-55"><a href="第八章-秩转换的非参数检验.html#cb91-55"></a><span class="co"># </span></span>
+<span id="cb91-56"><a href="第八章-秩转换的非参数检验.html#cb91-56"></a><span class="co"># data:  levels_val and group_val</span></span>
+<span id="cb91-57"><a href="第八章-秩转换的非参数检验.html#cb91-57"></a><span class="co"># Kruskal-Wallis chi-squared = 15.506, df = 3, p-value = 0.001432</span></span></code></pre></div>
+<p>根据计算结果，P值=0.001432&lt;0.05，因此拒绝原假设<span class="math inline">\(H_0\)</span>，接受<span class="math inline">\(H_1\)</span>，可认为4种疾病患者的痰液内嗜酸性白细胞总体分布位置不全相同。</p>
+</div>
+</div>
+<div id="多个独立样本两两比较的nemenyi法检验" class="section level2">
+<h2><span class="header-section-number">8.4</span> 多个独立样本两两比较的Nemenyi法检验</h2>
+<p>当经过多个独立样本比较的 Kruskal-Wallis H检验拒绝<span class="math inline">\(H_0\)</span>，接受<span class="math inline">\(H_1\)</span>，认为多个总体分布位置不全相同时，若要进一步推断是哪两两总
+体分布位置不同，可用 Nemenyi 法检验(Nemenyi test)。</p>
+<p>这里以《医学统计学》书中的案例8-6数据作为示例。设置的原假设<span class="math inline">\(H_0:\)</span>任意不同菌型的存活天数分布位置相同；备择假设<span class="math inline">\(H_1\)</span>任意两种不同菌型的伤寒杆菌的存活日数总体分布位置不相同，是双侧检验。</p>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="第八章-秩转换的非参数检验.html#cb92-1"></a></span>
+<span id="cb92-2"><a href="第八章-秩转换的非参数检验.html#cb92-2"></a><span class="co">#PMCMRplus包中的kwAllPairsNemenyiTest()函数</span></span>
+<span id="cb92-3"><a href="第八章-秩转换的非参数检验.html#cb92-3"></a><span class="co">#install.packages(&quot;PMCMRplus&quot;)</span></span>
+<span id="cb92-4"><a href="第八章-秩转换的非参数检验.html#cb92-4"></a><span class="kw">library</span>(<span class="st">&quot;PMCMRplus&quot;</span>)</span>
+<span id="cb92-5"><a href="第八章-秩转换的非参数检验.html#cb92-5"></a></span>
+<span id="cb92-6"><a href="第八章-秩转换的非参数检验.html#cb92-6"></a>D9 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">7</span>)</span>
+<span id="cb92-7"><a href="第八章-秩转换的非参数检验.html#cb92-7"></a>C11 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">10</span>,<span class="dv">12</span>)</span>
+<span id="cb92-8"><a href="第八章-秩转换的非参数检验.html#cb92-8"></a>DSC &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">11</span>)</span>
+<span id="cb92-9"><a href="第八章-秩转换的非参数检验.html#cb92-9"></a></span>
+<span id="cb92-10"><a href="第八章-秩转换的非参数检验.html#cb92-10"></a>Bactype&lt;-<span class="kw">as.data.frame</span>(<span class="kw">cbind</span>(<span class="kw">c</span>(<span class="kw">rep</span>(<span class="dv">1</span>,<span class="kw">length</span>(D9)),<span class="kw">rep</span>(<span class="dv">2</span>,<span class="kw">length</span>(C11)),<span class="kw">rep</span>(<span class="dv">3</span>,<span class="kw">length</span>(DSC))),<span class="kw">c</span>(D9,C11,DSC)))</span>
+<span id="cb92-11"><a href="第八章-秩转换的非参数检验.html#cb92-11"></a><span class="kw">colnames</span>(Bactype)&lt;-<span class="kw">c</span>(<span class="st">&quot;Group&quot;</span>,<span class="st">&quot;Days&quot;</span>)</span>
+<span id="cb92-12"><a href="第八章-秩转换的非参数检验.html#cb92-12"></a>Nem_t1&lt;-<span class="kw">kwAllPairsNemenyiTest</span>(Days <span class="op">~</span><span class="st"> </span>Group, <span class="dt">data =</span> Bactype,<span class="dt">dist=</span><span class="st">&quot;Tukey&quot;</span>)</span>
+<span id="cb92-13"><a href="第八章-秩转换的非参数检验.html#cb92-13"></a><span class="co">##  Pairwise comparisons using Tukey-Kramer-Nemenyi all-pairs test with Tukey-Dist approximation</span></span>
+<span id="cb92-14"><a href="第八章-秩转换的非参数检验.html#cb92-14"></a><span class="co">## </span></span>
+<span id="cb92-15"><a href="第八章-秩转换的非参数检验.html#cb92-15"></a><span class="co">## data: Days by Group</span></span>
+<span id="cb92-16"><a href="第八章-秩转换的非参数检验.html#cb92-16"></a><span class="co">## </span></span>
+<span id="cb92-17"><a href="第八章-秩转换的非参数检验.html#cb92-17"></a><span class="co">##   1     2    </span></span>
+<span id="cb92-18"><a href="第八章-秩转换的非参数检验.html#cb92-18"></a><span class="co">## 2 0.041 -    </span></span>
+<span id="cb92-19"><a href="第八章-秩转换的非参数检验.html#cb92-19"></a><span class="co">## 3 0.022 0.999</span></span>
+<span id="cb92-20"><a href="第八章-秩转换的非参数检验.html#cb92-20"></a><span class="co">## </span></span>
+<span id="cb92-21"><a href="第八章-秩转换的非参数检验.html#cb92-21"></a><span class="co">## P value adjustment method: single-step</span></span>
+<span id="cb92-22"><a href="第八章-秩转换的非参数检验.html#cb92-22"></a><span class="co">## alternative hypothesis: two.sided</span></span>
+<span id="cb92-23"><a href="第八章-秩转换的非参数检验.html#cb92-23"></a><span class="co">## Warning message:</span></span>
+<span id="cb92-24"><a href="第八章-秩转换的非参数检验.html#cb92-24"></a><span class="co">## In kwAllPairsNemenyiTest.default(c(2, 2, 2, 3, 4, 4, 5, 7, 7, 5,  :</span></span>
+<span id="cb92-25"><a href="第八章-秩转换的非参数检验.html#cb92-25"></a><span class="co">##   Ties are present, p-values are not corrected.</span></span>
+<span id="cb92-26"><a href="第八章-秩转换的非参数检验.html#cb92-26"></a></span>
+<span id="cb92-27"><a href="第八章-秩转换的非参数检验.html#cb92-27"></a></span>
+<span id="cb92-28"><a href="第八章-秩转换的非参数检验.html#cb92-28"></a><span class="co">#DescTools 包中的NemenyiTest()函数</span></span>
+<span id="cb92-29"><a href="第八章-秩转换的非参数检验.html#cb92-29"></a><span class="kw">library</span>(DescTools)</span>
+<span id="cb92-30"><a href="第八章-秩转换的非参数检验.html#cb92-30"></a>Nem_t&lt;-<span class="kw">NemenyiTest</span>(Bactype<span class="op">$</span>Days, Bactype<span class="op">$</span>Group,<span class="dt">dist=</span><span class="st">&quot;tukey&quot;</span>)</span>
+<span id="cb92-31"><a href="第八章-秩转换的非参数检验.html#cb92-31"></a>Nem_t</span>
+<span id="cb92-32"><a href="第八章-秩转换的非参数检验.html#cb92-32"></a><span class="co">##  Nemenyi&#39;s test of multiple comparisons for independent samples (tukey)  </span></span>
+<span id="cb92-33"><a href="第八章-秩转换的非参数检验.html#cb92-33"></a><span class="co">## </span></span>
+<span id="cb92-34"><a href="第八章-秩转换的非参数检验.html#cb92-34"></a><span class="co">##     mean.rank.diff   pval    </span></span>
+<span id="cb92-35"><a href="第八章-秩转换的非参数检验.html#cb92-35"></a><span class="co">## 2-1      9.6736111 0.0411 *  </span></span>
+<span id="cb92-36"><a href="第八章-秩转换的非参数检验.html#cb92-36"></a><span class="co">## 3-1      9.7929293 0.0220 *  </span></span>
+<span id="cb92-37"><a href="第八章-秩转换的非参数检验.html#cb92-37"></a><span class="co">## 3-2      0.1193182 0.9995    </span></span>
+<span id="cb92-38"><a href="第八章-秩转换的非参数检验.html#cb92-38"></a><span class="co">## ---</span></span>
+<span id="cb92-39"><a href="第八章-秩转换的非参数检验.html#cb92-39"></a><span class="co">## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</span></span></code></pre></div>
+<p>根据计算结果，1-2相比的P值=0.0411&lt;0.05，具有统计学意义，可以认为两种不同菌型的存活天数不同，从均值来看。第二种的存货天数显著要高；
+1-3相比的P值=0.0220，具有统计学意义；2-3相比的P值=0.9995，不具有统计学意义；</p>
+</div>
+<div id="随机区组设计多个相关样本的friedman-m-检验" class="section level2">
+<h2><span class="header-section-number">8.5</span> 随机区组设计多个相关样本的Friedman M 检验</h2>
+<p>Friedman M检验(Friedman’s M test)，用于推断随机区组设计的多个相关样本所来自的多个总体分布是否有差别。
+检验假设<span class="math inline">\(H_0\)</span>，和备择假设<span class="math inline">\(H_1\)</span>与多个独立样本比较的Kruskal-Wallis H检验相同。</p>
+<p>这里以《医学统计学》书中的案例8-9数据作为示例。设置的原假设$H_0:<span class="math inline">\(4种频率声音刺激的反应率总体分布的位置相同；备择假设\)</span>H_1$4种频率声音刺激的反应率总体分布的位置不全相同，是双侧检验。</p>
+<table class=" lightable-paper lightable-striped table" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto; margin-left: auto; margin-right: auto;'>
+<caption>
+<span id="tab:ranktab4">Table 8.4: </span>4种声音频率的刺激反应数据
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+FreqA
+</th>
+<th style="text-align:center;">
+FreqB
+</th>
+<th style="text-align:center;">
+FreqC
+</th>
+<th style="text-align:center;">
+FreqD
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+8.4
+</td>
+<td style="text-align:center;">
+9.6
+</td>
+<td style="text-align:center;">
+9.8
+</td>
+<td style="text-align:center;">
+11.7
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+11.6
+</td>
+<td style="text-align:center;">
+12.7
+</td>
+<td style="text-align:center;">
+11.8
+</td>
+<td style="text-align:center;">
+12.0
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+9.4
+</td>
+<td style="text-align:center;">
+9.1
+</td>
+<td style="text-align:center;">
+10.4
+</td>
+<td style="text-align:center;">
+9.8
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+9.8
+</td>
+<td style="text-align:center;">
+8.7
+</td>
+<td style="text-align:center;">
+9.9
+</td>
+<td style="text-align:center;">
+12.0
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+8.3
+</td>
+<td style="text-align:center;">
+8.0
+</td>
+<td style="text-align:center;">
+8.6
+</td>
+<td style="text-align:center;">
+8.6
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+8.6
+</td>
+<td style="text-align:center;">
+9.8
+</td>
+<td style="text-align:center;">
+9.6
+</td>
+<td style="text-align:center;">
+10.6
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+8.9
+</td>
+<td style="text-align:center;">
+9.0
+</td>
+<td style="text-align:center;">
+10.6
+</td>
+<td style="text-align:center;">
+11.4
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+7.8
+</td>
+<td style="text-align:center;">
+8.2
+</td>
+<td style="text-align:center;">
+8.5
+</td>
+<td style="text-align:center;">
+10.8
+</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="第八章-秩转换的非参数检验.html#cb93-1"></a><span class="kw">library</span>(<span class="st">&quot;dplyr&quot;</span>)</span>
+<span id="cb93-2"><a href="第八章-秩转换的非参数检验.html#cb93-2"></a><span class="kw">library</span>(<span class="st">&quot;memisc&quot;</span>)</span>
+<span id="cb93-3"><a href="第八章-秩转换的非参数检验.html#cb93-3"></a><span class="co">#读取数据</span></span>
+<span id="cb93-4"><a href="第八章-秩转换的非参数检验.html#cb93-4"></a>incitant&lt;-<span class="kw">spss.system.file</span>(<span class="st">&quot;ExampleData/SavData4MedSta/Exam08-09.sav&quot;</span>)</span>
+<span id="cb93-5"><a href="第八章-秩转换的非参数检验.html#cb93-5"></a>incitant_df&lt;-<span class="kw">as.data.frame</span>(<span class="kw">as.data.set</span>(incitant))</span>
+<span id="cb93-6"><a href="第八章-秩转换的非参数检验.html#cb93-6"></a><span class="kw">colnames</span>(incitant_df)&lt;-<span class="kw">c</span>(<span class="st">&quot;FreqA&quot;</span>,<span class="st">&quot;FreqB&quot;</span>,<span class="st">&quot;FreqC&quot;</span>,<span class="st">&quot;FreqD&quot;</span>)</span>
+<span id="cb93-7"><a href="第八章-秩转换的非参数检验.html#cb93-7"></a></span>
+<span id="cb93-8"><a href="第八章-秩转换的非参数检验.html#cb93-8"></a><span class="kw">friedman.test</span>(<span class="kw">as.matrix</span>(incitant_df))</span>
+<span id="cb93-9"><a href="第八章-秩转换的非参数检验.html#cb93-9"></a><span class="co">#   Friedman rank sum test</span></span>
+<span id="cb93-10"><a href="第八章-秩转换的非参数检验.html#cb93-10"></a><span class="co"># </span></span>
+<span id="cb93-11"><a href="第八章-秩转换的非参数检验.html#cb93-11"></a><span class="co"># data:  as.matrix(incitant_df)</span></span>
+<span id="cb93-12"><a href="第八章-秩转换的非参数检验.html#cb93-12"></a><span class="co"># Friedman chi-squared = 15.152, df = 3, p-value = 0.001691</span></span></code></pre></div>
+<!--  测试转换为两列形式的数据
+incitant_df1<-c()
+group_val<-c()
+for(i in 1:dim(incitant_df)[2]){
+   incitant_df1<-c(incitant_df1,incitant_df[,i])
+   group_val<-c(group_val,rep(colnames(incitant_df)[i],length(incitant_df[,i])))
+}
+incitant_df2<-as.data.frame(cbind(group_val,incitant_df1))
+names(incitant_df2)<-c("Group","Freq") !-->
+<p>根据计算结果，P值=0.001691，因此拒绝原假设<span class="math inline">\(H_0\)</span>，接受<span class="math inline">\(H_1\)</span>，即4种声音频率的刺激率的总体分布位置不都相同。</p>
+<div id="多个相关样本的两两比较" class="section level3">
+<h3><span class="header-section-number">8.5.1</span> 多个相关样本的两两比较</h3>
+<p>当经过Friedman M检验拒绝<span class="math inline">\(H_0\)</span>，接受<span class="math inline">\(H_1\)</span>，认为多个总体分布位置不全相同时，若要进一步推断是哪两两总体分布位置不同，可用 q检验(Nemenyi test)。</p>
+<p>这里以《医学统计学》书中的案例8-10数据作为示例。设置的原假设<span class="math inline">\(H_0:\)</span>任意两声音频率的刺激反应率的分布位置相同；备择假设<span class="math inline">\(H_1\)</span>任意两声音频率的刺激反应率的分布位置不相同，是双侧检验。</p>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="第八章-秩转换的非参数检验.html#cb94-1"></a><span class="kw">library</span>(<span class="st">&quot;dplyr&quot;</span>)</span>
+<span id="cb94-2"><a href="第八章-秩转换的非参数检验.html#cb94-2"></a><span class="kw">library</span>(<span class="st">&quot;memisc&quot;</span>)</span>
+<span id="cb94-3"><a href="第八章-秩转换的非参数检验.html#cb94-3"></a><span class="co">#读取数据</span></span>
+<span id="cb94-4"><a href="第八章-秩转换的非参数检验.html#cb94-4"></a>incitant&lt;-<span class="kw">spss.system.file</span>(<span class="st">&quot;ExampleData/SavData4MedSta/Exam08-09.sav&quot;</span>)</span>
+<span id="cb94-5"><a href="第八章-秩转换的非参数检验.html#cb94-5"></a>incitant_df&lt;-<span class="kw">as.data.frame</span>(<span class="kw">as.data.set</span>(incitant))</span>
+<span id="cb94-6"><a href="第八章-秩转换的非参数检验.html#cb94-6"></a><span class="kw">colnames</span>(incitant_df)&lt;-<span class="kw">c</span>(<span class="st">&quot;FreqA&quot;</span>,<span class="st">&quot;FreqB&quot;</span>,<span class="st">&quot;FreqC&quot;</span>,<span class="st">&quot;FreqD&quot;</span>)</span>
+<span id="cb94-7"><a href="第八章-秩转换的非参数检验.html#cb94-7"></a></span>
+<span id="cb94-8"><a href="第八章-秩转换的非参数检验.html#cb94-8"></a><span class="co">#PMCMRplus包中的 quadeAllPairsTest()函数</span></span>
+<span id="cb94-9"><a href="第八章-秩转换的非参数检验.html#cb94-9"></a><span class="co">#install.packages(&quot;PMCMRplus&quot;)</span></span>
+<span id="cb94-10"><a href="第八章-秩转换的非参数检验.html#cb94-10"></a><span class="kw">library</span>(<span class="st">&quot;PMCMRplus&quot;</span>)</span>
+<span id="cb94-11"><a href="第八章-秩转换的非参数检验.html#cb94-11"></a><span class="kw">quadeAllPairsTest</span>(<span class="kw">as.matrix</span>(incitant_df))</span>
+<span id="cb94-12"><a href="第八章-秩转换的非参数检验.html#cb94-12"></a><span class="co">#   Pairwise comparisons using Quade&#39;s test with TDist approximation</span></span>
+<span id="cb94-13"><a href="第八章-秩转换的非参数检验.html#cb94-13"></a><span class="co"># </span></span>
+<span id="cb94-14"><a href="第八章-秩转换的非参数检验.html#cb94-14"></a><span class="co"># data: as.matrix(incitant_df)</span></span>
+<span id="cb94-15"><a href="第八章-秩转换的非参数检验.html#cb94-15"></a><span class="co"># </span></span>
+<span id="cb94-16"><a href="第八章-秩转换的非参数检验.html#cb94-16"></a><span class="co">#       FreqA   FreqB   FreqC  </span></span>
+<span id="cb94-17"><a href="第八章-秩转换的非参数检验.html#cb94-17"></a><span class="co"># FreqB 0.27307 -       -      </span></span>
+<span id="cb94-18"><a href="第八章-秩转换的非参数检验.html#cb94-18"></a><span class="co"># FreqC 0.01584 0.14099 -      </span></span>
+<span id="cb94-19"><a href="第八章-秩转换的非参数检验.html#cb94-19"></a><span class="co"># FreqD 0.00029 0.00351 0.15476</span></span>
+<span id="cb94-20"><a href="第八章-秩转换的非参数检验.html#cb94-20"></a></span>
+<span id="cb94-21"><a href="第八章-秩转换的非参数检验.html#cb94-21"></a><span class="kw">quadeAllPairsTest</span>(<span class="kw">as.matrix</span>(incitant_df),<span class="dt">dist=</span><span class="st">&quot;Normal&quot;</span>)</span>
+<span id="cb94-22"><a href="第八章-秩转换的非参数检验.html#cb94-22"></a><span class="co">#   Pairwise comparisons using Quade&#39;s test with standard-normal approximation</span></span>
+<span id="cb94-23"><a href="第八章-秩转换的非参数检验.html#cb94-23"></a><span class="co"># </span></span>
+<span id="cb94-24"><a href="第八章-秩转换的非参数检验.html#cb94-24"></a><span class="co"># data: as.matrix(incitant_df)</span></span>
+<span id="cb94-25"><a href="第八章-秩转换的非参数检验.html#cb94-25"></a><span class="co"># </span></span>
+<span id="cb94-26"><a href="第八章-秩转换的非参数检验.html#cb94-26"></a><span class="co">#       FreqA   FreqB   FreqC </span></span>
+<span id="cb94-27"><a href="第八章-秩转换的非参数检验.html#cb94-27"></a><span class="co"># FreqB 0.2200  -       -     </span></span>
+<span id="cb94-28"><a href="第八章-秩转换的非参数检验.html#cb94-28"></a><span class="co"># FreqC 0.0017  0.0644  -     </span></span>
+<span id="cb94-29"><a href="第八章-秩转换的非参数检验.html#cb94-29"></a><span class="co"># FreqD 1.7e-07 7.7e-05 0.0860</span></span>
+<span id="cb94-30"><a href="第八章-秩转换的非参数检验.html#cb94-30"></a><span class="co"># </span></span>
+<span id="cb94-31"><a href="第八章-秩转换的非参数检验.html#cb94-31"></a><span class="co"># P value adjustment method: holm</span></span>
+<span id="cb94-32"><a href="第八章-秩转换的非参数检验.html#cb94-32"></a></span>
+<span id="cb94-33"><a href="第八章-秩转换的非参数检验.html#cb94-33"></a><span class="kw">quadeAllPairsTest</span>(<span class="kw">as.matrix</span>(incitant_df),<span class="dt">dist=</span><span class="st">&quot;Normal&quot;</span>,<span class="dt">p.adjust.method=</span><span class="st">&quot;fdr&quot;</span>)</span>
+<span id="cb94-34"><a href="第八章-秩转换的非参数检验.html#cb94-34"></a></span>
+<span id="cb94-35"><a href="第八章-秩转换的非参数检验.html#cb94-35"></a><span class="co">#   Pairwise comparisons using Quade&#39;s test with standard-normal approximation</span></span>
+<span id="cb94-36"><a href="第八章-秩转换的非参数检验.html#cb94-36"></a><span class="co"># </span></span>
+<span id="cb94-37"><a href="第八章-秩转换的非参数检验.html#cb94-37"></a><span class="co"># data: as.matrix(incitant_df)</span></span>
+<span id="cb94-38"><a href="第八章-秩转换的非参数检验.html#cb94-38"></a><span class="co"># </span></span>
+<span id="cb94-39"><a href="第八章-秩转换的非参数检验.html#cb94-39"></a><span class="co">#       FreqA   FreqB   FreqC  </span></span>
+<span id="cb94-40"><a href="第八章-秩转换的非参数检验.html#cb94-40"></a><span class="co"># FreqB 0.22001 -       -      </span></span>
+<span id="cb94-41"><a href="第八章-秩转换的非参数检验.html#cb94-41"></a><span class="co"># FreqC 0.00084 0.03220 -      </span></span>
+<span id="cb94-42"><a href="第八章-秩转换的非参数检验.html#cb94-42"></a><span class="co"># FreqD 1.7e-07 4.6e-05 0.05160</span></span>
+<span id="cb94-43"><a href="第八章-秩转换的非参数检验.html#cb94-43"></a><span class="co"># </span></span>
+<span id="cb94-44"><a href="第八章-秩转换的非参数检验.html#cb94-44"></a><span class="co"># P value adjustment method: fdr</span></span></code></pre></div>
+<p><strong>根据计算结果会发现，quadeAllPairsTest()的结果随着参数设置的改变发生变化美因茨在使用时候，需要是适当选择或多选几组看看。</strong></p>
 
+</div>
 </div>
 </div>
             </section>
