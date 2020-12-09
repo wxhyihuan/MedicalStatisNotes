@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="第七章-chi2检验.html"/>
-
+<link rel="next" href="双变量回归与相关.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -294,6 +294,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.5.1" data-path="第八章-秩转换的非参数检验.html"><a href="第八章-秩转换的非参数检验.html#多个相关样本的两两比较"><i class="fa fa-check"></i><b>8.5.1</b> 多个相关样本的两两比较</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="9" data-path="双变量回归与相关.html"><a href="双变量回归与相关.html"><i class="fa fa-check"></i><b>9</b> 双变量回归与相关</a><ul>
+<li class="chapter" data-level="9.1" data-path="双变量回归与相关.html"><a href="双变量回归与相关.html#直线回归"><i class="fa fa-check"></i><b>9.1</b> 直线回归</a></li>
+<li class="chapter" data-level="9.2" data-path="双变量回归与相关.html"><a href="双变量回归与相关.html#直线回归中的统计推断"><i class="fa fa-check"></i><b>9.2</b> 直线回归中的统计推断</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="双变量回归与相关.html"><a href="双变量回归与相关.html#方差分析"><i class="fa fa-check"></i><b>9.2.1</b> 方差分析</a></li>
+<li class="chapter" data-level="9.2.2" data-path="双变量回归与相关.html"><a href="双变量回归与相关.html#t检验-1"><i class="fa fa-check"></i><b>9.2.2</b> t检验</a></li>
+<li class="chapter" data-level="9.2.3" data-path="双变量回归与相关.html"><a href="双变量回归与相关.html#总体回归系数β的可信区间"><i class="fa fa-check"></i><b>9.2.3</b> 总体回归系数β的可信区间</a></li>
+<li class="chapter" data-level="9.2.4" data-path="双变量回归与相关.html"><a href="双变量回归与相关.html#利用回归方程进行估计和预测"><i class="fa fa-check"></i><b>9.2.4</b> 利用回归方程进行估计和预测</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -349,10 +358,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>最后，也有路径依赖的原因，因为早期很多数据都被假设是符合正态的，或者是近似符合正太分布的，可能那时候因为计算受限，
 这样的假设处理比较方便而且能解决大部分情况。均值计算起来更加方便快捷，百分位数则需要对所有数据排序，然后再计算。</p>
 <hr />
-<p>R 语言中的主要函数有：
-1. Wilcoxon符号秩检验，Wilcoxon Signed Rank Statistic的<a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/SignRank">dsignrank(),psignrank(),qsignrank(),rsignrank()</a>
-2. Wilcoxon符号秩和检验，Wilcoxon Rank Sum Statistic<a href="https://www.rdocumentation.org/link/pwilcox?package=stats&amp;version=3.6.2">dwilcox(),pwilcox(),qwilcox()和rwilcox()</a>
-3. 相应的检验函数有<a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/wilcox.test">wilcox.test()</a>。</p>
+<p>R 语言中的主要函数有：</p>
+<ol style="list-style-type: decimal">
+<li><p>Wilcoxon符号秩检验，Wilcoxon Signed Rank Statistic的<a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/SignRank">dsignrank(),psignrank(),qsignrank(),rsignrank()</a></p></li>
+<li><p>Wilcoxon符号秩和检验，Wilcoxon Rank Sum Statistic的 <a href="https://www.rdocumentation.org/link/pwilcox?package=stats&amp;version=3.6.2">dwilcox(),pwilcox(),qwilcox()和rwilcox()</a></p></li>
+<li><p>相应的检验函数有<a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/wilcox.test">wilcox.test()</a>。</p></li>
+</ol>
 <div id="wilcoxon符号秩检验" class="section level2">
 <h2><span class="header-section-number">8.1</span> Wilcoxon符号秩检验</h2>
 <p>Wilcoxon符号秩检验(Wilcoxon singed-rank test)可用于单样本中位数和总体中位数比较，还可用于配对样本差值的中位数和0比较。</p>
@@ -1494,8 +1505,8 @@ names(incitant_df2)<-c("Group","Freq") !-->
           </div>
         </div>
       </div>
-<a href="第七章-chi2检验.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="第七章-chi2检验.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="双变量回归与相关.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

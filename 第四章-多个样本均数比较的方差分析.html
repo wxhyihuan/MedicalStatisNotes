@@ -294,6 +294,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.5.1" data-path="第八章-秩转换的非参数检验.html"><a href="第八章-秩转换的非参数检验.html#多个相关样本的两两比较"><i class="fa fa-check"></i><b>8.5.1</b> 多个相关样本的两两比较</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="9" data-path="双变量回归与相关.html"><a href="双变量回归与相关.html"><i class="fa fa-check"></i><b>9</b> 双变量回归与相关</a><ul>
+<li class="chapter" data-level="9.1" data-path="双变量回归与相关.html"><a href="双变量回归与相关.html#直线回归"><i class="fa fa-check"></i><b>9.1</b> 直线回归</a></li>
+<li class="chapter" data-level="9.2" data-path="双变量回归与相关.html"><a href="双变量回归与相关.html#直线回归中的统计推断"><i class="fa fa-check"></i><b>9.2</b> 直线回归中的统计推断</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="双变量回归与相关.html"><a href="双变量回归与相关.html#方差分析"><i class="fa fa-check"></i><b>9.2.1</b> 方差分析</a></li>
+<li class="chapter" data-level="9.2.2" data-path="双变量回归与相关.html"><a href="双变量回归与相关.html#t检验-1"><i class="fa fa-check"></i><b>9.2.2</b> t检验</a></li>
+<li class="chapter" data-level="9.2.3" data-path="双变量回归与相关.html"><a href="双变量回归与相关.html#总体回归系数β的可信区间"><i class="fa fa-check"></i><b>9.2.3</b> 总体回归系数β的可信区间</a></li>
+<li class="chapter" data-level="9.2.4" data-path="双变量回归与相关.html"><a href="双变量回归与相关.html#利用回归方程进行估计和预测"><i class="fa fa-check"></i><b>9.2.4</b> 利用回归方程进行估计和预测</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -362,7 +371,7 @@ f(x,d_1,d_2) &amp;= \frac{\sqrt{\frac{(d_{1}x)^{d_1} d_2^{d_2}}{(d_{1}x+d_2)^{d_
 <span id="cb43-18"><a href="第四章-多个样本均数比较的方差分析.html#cb43-18"></a></span>
 <span id="cb43-19"><a href="第四章-多个样本均数比较的方差分析.html#cb43-19"></a><span class="kw">curve</span>(<span class="kw">df</span>(x, <span class="dt">df1 =</span> df1, <span class="dt">df2 =</span> df2), <span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">3</span>, <span class="dt">n =</span> <span class="dv">10000</span>, <span class="dt">col=</span> <span class="st">&#39;red&#39;</span>, <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">add =</span> T)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:fdistri"></span>
-<img src="MedicalStatisNotes_files/figure-html/fdistri-1.png" alt="F-分布的概率密度曲线测试" width="49%" />
+<img src="figs/fdistri.png" alt="F-分布的概率密度曲线测试" width="49%" />
 <p class="caption">
 Figure 4.1: F-分布的概率密度曲线测试
 </p>
@@ -493,7 +502,7 @@ Figure 4.5: MSb&lt;&lt;MSw示例
 <p>F检验的主要有如下几种：</p>
 <ol style="list-style-type: decimal">
 <li><a href="第三章-总体均数的估计与假设检验.html#两样本方差齐性检验">方差齐性检验(F-test of equality of variances)</a></li>
-<li><a href="#方差分析">方差分析(Analysis of Variance, ANOVA)</a></li>
+<li><a href="双变量回归与相关.html#方差分析">方差分析(Analysis of Variance, ANOVA)</a></li>
 <li>线性回归方程整体的显著性检验</li>
 </ol>
 </div>
@@ -579,7 +588,7 @@ Figure 4.5: MSb&lt;&lt;MSw示例
 <span id="cb44-71"><a href="第四章-多个样本均数比较的方差分析.html#cb44-71"></a></span>
 <span id="cb44-72"><a href="第四章-多个样本均数比较的方差分析.html#cb44-72"></a><span class="kw">boxplot</span>(rdl_df<span class="op">$</span>LDL_C <span class="op">~</span><span class="st"> </span>rdl_df<span class="op">$</span>GROUP,<span class="dt">col=</span><span class="kw">c</span>(<span class="dv">2</span><span class="op">:</span><span class="dv">5</span>),<span class="dt">ylab=</span><span class="st">&quot;rdl value&quot;</span>,<span class="dt">xlab=</span><span class="st">&quot;Group info&quot;</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:Cmdftest"></span>
-<img src="MedicalStatisNotes_files/figure-html/Cmdftest-1.png" alt="案例 04-02 120例数据的箱线图预览" width="60%" />
+<img src="figs/Cmdftest.png" alt="案例 04-02 120例数据的箱线图预览" width="60%" />
 <p class="caption">
 Figure 4.6: 案例 04-02 120例数据的箱线图预览
 </p>

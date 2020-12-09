@@ -11,6 +11,51 @@
   },
   "packages": null,
   "files": {
+    "figs/chisquaredfig.png": {
+      "checksum": "868a1f5dc21d6c405110c63797917627"
+    },
+    "figs/Cmdftest.png": {
+      "checksum": "5cdb0234da51b880ddb0f30e0aa3878e"
+    },
+    "figs/dnorm.png": {
+      "checksum": "e72a92a97e18c8c759f409ce91a9793f"
+    },
+    "figs/fdistri.png": {
+      "checksum": "9e77c1ec6c9890b795038a793ed60709"
+    },
+    "figs/hometdist.png": {
+      "checksum": "a84e4666d3b3cc6650767bfaf91123f6"
+    },
+    "figs/piredttest.png": {
+      "checksum": "d124587a016bb2e016721a3d53f2fdbf"
+    },
+    "figs/pnorm.png": {
+      "checksum": "5657f1c57f62dc00aff6639d7a006522"
+    },
+    "figs/pttest.png": {
+      "checksum": "1372ab209215d7d9ee5906f4a0873fe5"
+    },
+    "figs/qnorm.png": {
+      "checksum": "d6342e5e29a7302f6cdd214f63c5266e"
+    },
+    "figs/qqplot.png": {
+      "checksum": "da86076013a801df07d48a95c7ace792"
+    },
+    "figs/qqPlottest1.png": {
+      "checksum": "bb6700622f24fd03e524a394390560f8"
+    },
+    "figs/qttest.png": {
+      "checksum": "0bda6caeca48162b872e045189215384"
+    },
+    "figs/rnorm.png": {
+      "checksum": "09e898d21ca739d69498199d61ef6671"
+    },
+    "figs/rttest.png": {
+      "checksum": "6360b41b8c095e3a19bb816eaf09bcca"
+    },
+    "figs/tdist.png": {
+      "checksum": "7cdf7213010e36ed54167d37b169766a"
+    },
     "image/5ba23e818daa7c71b147707f9b5dfd6.png": {
       "checksum": "9c15a15ed9bde8f4d210a01a88a86b43"
     },
@@ -75,7 +120,7 @@
       "checksum": "806ab0467ea8b51e6248f2cc567b4827"
     },
     "index.html": {
-      "checksum": "ab4c6451d52fec174a1eba59a5d3b16c"
+      "checksum": "869770ec4913e220ccb2d6ab2cb80d03"
     },
     "libs/accessible-code-block-0.0.1/empty-anchor.js": {
       "checksum": "53c42ac72d71beb8e6dbffe86ab543d6"
@@ -201,34 +246,37 @@
       "checksum": "7cdf7213010e36ed54167d37b169766a"
     },
     "reference-keys.txt": {
-      "checksum": "b73c2b0f094a732df0b6e4ad2db13cd8"
+      "checksum": "f43245b0853285ab4335a28d10b4bf75"
     },
     "search_index.json": {
-      "checksum": "35a5f936e8cc5f5b055701bc4f7cfbda"
+      "checksum": "8c66c32ee457bac7e907d9ae631a4483"
     },
     "style.css": {
       "checksum": "19f0b33dc27d4f748874d2cde5cea5bc"
     },
     "第八章-秩转换的非参数检验.html": {
-      "checksum": "a773840da9fbc9d7af05394184dbcea2"
+      "checksum": "eba0136f5d5f8d1d9a29c20b54c89677"
     },
     "第二章-计量资料的统计描述.html": {
-      "checksum": "298416df88615cc2817292192da17e6b"
+      "checksum": "479bbe00052b7998447dc734ea2be931"
     },
     "第六章-计数资料的统计描述.html": {
-      "checksum": "1aafc2645de0eb626273e626103bbcc4"
+      "checksum": "2c1513a1f95befff51966c5229e43733"
     },
     "第七章-chi2检验.html": {
-      "checksum": "86af9914a51004a0c25749cb7262fffb"
+      "checksum": "940a70829d50392bf7fbc7b98d99a12d"
     },
     "第三章-总体均数的估计与假设检验.html": {
-      "checksum": "ab6a7c79a0b1f21a09bcc56d703ea3e4"
+      "checksum": "081b4fb443b7f9c3f640c8a972e53e6e"
     },
     "第四章-多个样本均数比较的方差分析.html": {
-      "checksum": "323349ae0802199d033df1c156afe95a"
+      "checksum": "2d5d4a31a44e2d318fecb7e0b8c35e50"
     },
     "第五章-计数资料的统计描述.html": {
-      "checksum": "852c3ddaebfd82c4b0abe45a4503c477"
+      "checksum": "b5063b2444ebbe850745031f40715a49"
+    },
+    "双变量回归与相关.html": {
+      "checksum": "13937dc76931cfdd1d6f878c5ff8f4ef"
     }
   },
   "users": null

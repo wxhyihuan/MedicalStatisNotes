@@ -294,6 +294,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.5.1" data-path="第八章-秩转换的非参数检验.html"><a href="第八章-秩转换的非参数检验.html#多个相关样本的两两比较"><i class="fa fa-check"></i><b>8.5.1</b> 多个相关样本的两两比较</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="9" data-path="双变量回归与相关.html"><a href="双变量回归与相关.html"><i class="fa fa-check"></i><b>9</b> 双变量回归与相关</a><ul>
+<li class="chapter" data-level="9.1" data-path="双变量回归与相关.html"><a href="双变量回归与相关.html#直线回归"><i class="fa fa-check"></i><b>9.1</b> 直线回归</a></li>
+<li class="chapter" data-level="9.2" data-path="双变量回归与相关.html"><a href="双变量回归与相关.html#直线回归中的统计推断"><i class="fa fa-check"></i><b>9.2</b> 直线回归中的统计推断</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="双变量回归与相关.html"><a href="双变量回归与相关.html#方差分析"><i class="fa fa-check"></i><b>9.2.1</b> 方差分析</a></li>
+<li class="chapter" data-level="9.2.2" data-path="双变量回归与相关.html"><a href="双变量回归与相关.html#t检验-1"><i class="fa fa-check"></i><b>9.2.2</b> t检验</a></li>
+<li class="chapter" data-level="9.2.3" data-path="双变量回归与相关.html"><a href="双变量回归与相关.html#总体回归系数β的可信区间"><i class="fa fa-check"></i><b>9.2.3</b> 总体回归系数β的可信区间</a></li>
+<li class="chapter" data-level="9.2.4" data-path="双变量回归与相关.html"><a href="双变量回归与相关.html#利用回归方程进行估计和预测"><i class="fa fa-check"></i><b>9.2.4</b> 利用回归方程进行估计和预测</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -333,191 +342,499 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="测试数据" class="section level2">
 <h2><span class="header-section-number">2.2</span> 测试数据</h2>
 <table>
-<caption><span id="tab:tab1">Table 2.1: </span>某医院用随机抽样的方法检测了138名正常成年女子的红细胞数目(RBC， <span class="math inline">\(*10^{12}/L\)</span>),其测量结果如下表：</caption>
+<caption>
+<span id="tab:tab1">Table 2.1: </span>某医院用随机抽样的方法检测了138名正常成年女子的红细胞数目(RBC， <span class="math inline">\(*10^{12}/L\)</span>),其测量结果如下表：
+</caption>
 <thead>
-<tr class="header">
-<th align="center">V1</th>
-<th align="center">V2</th>
-<th align="center">V3</th>
-<th align="center">V4</th>
-<th align="center">V5</th>
-<th align="center">V6</th>
-<th align="center">V7</th>
-<th align="center">V8</th>
-<th align="center">V9</th>
-<th align="center">V10</th>
-<th align="center">V11</th>
-<th align="center">V12</th>
+<tr>
+<th style="text-align:center;">
+V1
+</th>
+<th style="text-align:center;">
+V2
+</th>
+<th style="text-align:center;">
+V3
+</th>
+<th style="text-align:center;">
+V4
+</th>
+<th style="text-align:center;">
+V5
+</th>
+<th style="text-align:center;">
+V6
+</th>
+<th style="text-align:center;">
+V7
+</th>
+<th style="text-align:center;">
+V8
+</th>
+<th style="text-align:center;">
+V9
+</th>
+<th style="text-align:center;">
+V10
+</th>
+<th style="text-align:center;">
+V11
+</th>
+<th style="text-align:center;">
+V12
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="center">3.96</td>
-<td align="center">4.23</td>
-<td align="center">4.42</td>
-<td align="center">3.59</td>
-<td align="center">5.12</td>
-<td align="center">4.02</td>
-<td align="center">4.32</td>
-<td align="center">3.72</td>
-<td align="center">4.76</td>
-<td align="center">4.16</td>
-<td align="center">4.61</td>
-<td align="center">4.26</td>
+<tr>
+<td style="text-align:center;">
+3.96
+</td>
+<td style="text-align:center;">
+4.23
+</td>
+<td style="text-align:center;">
+4.42
+</td>
+<td style="text-align:center;">
+3.59
+</td>
+<td style="text-align:center;">
+5.12
+</td>
+<td style="text-align:center;">
+4.02
+</td>
+<td style="text-align:center;">
+4.32
+</td>
+<td style="text-align:center;">
+3.72
+</td>
+<td style="text-align:center;">
+4.76
+</td>
+<td style="text-align:center;">
+4.16
+</td>
+<td style="text-align:center;">
+4.61
+</td>
+<td style="text-align:center;">
+4.26
+</td>
 </tr>
-<tr class="even">
-<td align="center">3.77</td>
-<td align="center">4.20</td>
-<td align="center">4.36</td>
-<td align="center">3.07</td>
-<td align="center">4.89</td>
-<td align="center">3.97</td>
-<td align="center">4.28</td>
-<td align="center">3.64</td>
-<td align="center">4.66</td>
-<td align="center">4.04</td>
-<td align="center">4.55</td>
-<td align="center">4.25</td>
+<tr>
+<td style="text-align:center;">
+3.77
+</td>
+<td style="text-align:center;">
+4.20
+</td>
+<td style="text-align:center;">
+4.36
+</td>
+<td style="text-align:center;">
+3.07
+</td>
+<td style="text-align:center;">
+4.89
+</td>
+<td style="text-align:center;">
+3.97
+</td>
+<td style="text-align:center;">
+4.28
+</td>
+<td style="text-align:center;">
+3.64
+</td>
+<td style="text-align:center;">
+4.66
+</td>
+<td style="text-align:center;">
+4.04
+</td>
+<td style="text-align:center;">
+4.55
+</td>
+<td style="text-align:center;">
+4.25
+</td>
 </tr>
-<tr class="odd">
-<td align="center">4.63</td>
-<td align="center">3.91</td>
-<td align="center">4.41</td>
-<td align="center">3.52</td>
-<td align="center">5.03</td>
-<td align="center">4.01</td>
-<td align="center">4.30</td>
-<td align="center">4.19</td>
-<td align="center">4.75</td>
-<td align="center">4.14</td>
-<td align="center">4.57</td>
-<td align="center">4.26</td>
+<tr>
+<td style="text-align:center;">
+4.63
+</td>
+<td style="text-align:center;">
+3.91
+</td>
+<td style="text-align:center;">
+4.41
+</td>
+<td style="text-align:center;">
+3.52
+</td>
+<td style="text-align:center;">
+5.03
+</td>
+<td style="text-align:center;">
+4.01
+</td>
+<td style="text-align:center;">
+4.30
+</td>
+<td style="text-align:center;">
+4.19
+</td>
+<td style="text-align:center;">
+4.75
+</td>
+<td style="text-align:center;">
+4.14
+</td>
+<td style="text-align:center;">
+4.57
+</td>
+<td style="text-align:center;">
+4.26
+</td>
 </tr>
-<tr class="even">
-<td align="center">4.56</td>
-<td align="center">3.79</td>
-<td align="center">3.89</td>
-<td align="center">4.21</td>
-<td align="center">4.95</td>
-<td align="center">3.98</td>
-<td align="center">4.29</td>
-<td align="center">3.67</td>
-<td align="center">4.69</td>
-<td align="center">4.12</td>
-<td align="center">4.56</td>
-<td align="center">4.26</td>
+<tr>
+<td style="text-align:center;">
+4.56
+</td>
+<td style="text-align:center;">
+3.79
+</td>
+<td style="text-align:center;">
+3.89
+</td>
+<td style="text-align:center;">
+4.21
+</td>
+<td style="text-align:center;">
+4.95
+</td>
+<td style="text-align:center;">
+3.98
+</td>
+<td style="text-align:center;">
+4.29
+</td>
+<td style="text-align:center;">
+3.67
+</td>
+<td style="text-align:center;">
+4.69
+</td>
+<td style="text-align:center;">
+4.12
+</td>
+<td style="text-align:center;">
+4.56
+</td>
+<td style="text-align:center;">
+4.26
+</td>
 </tr>
-<tr class="odd">
-<td align="center">4.66</td>
-<td align="center">4.28</td>
-<td align="center">3.83</td>
-<td align="center">4.20</td>
-<td align="center">5.24</td>
-<td align="center">4.02</td>
-<td align="center">4.33</td>
-<td align="center">3.76</td>
-<td align="center">4.81</td>
-<td align="center">4.17</td>
-<td align="center">3.96</td>
-<td align="center">3.27</td>
+<tr>
+<td style="text-align:center;">
+4.66
+</td>
+<td style="text-align:center;">
+4.28
+</td>
+<td style="text-align:center;">
+3.83
+</td>
+<td style="text-align:center;">
+4.20
+</td>
+<td style="text-align:center;">
+5.24
+</td>
+<td style="text-align:center;">
+4.02
+</td>
+<td style="text-align:center;">
+4.33
+</td>
+<td style="text-align:center;">
+3.76
+</td>
+<td style="text-align:center;">
+4.81
+</td>
+<td style="text-align:center;">
+4.17
+</td>
+<td style="text-align:center;">
+3.96
+</td>
+<td style="text-align:center;">
+3.27
+</td>
 </tr>
-<tr class="even">
-<td align="center">4.61</td>
-<td align="center">4.26</td>
-<td align="center">3.96</td>
-<td align="center">4.23</td>
-<td align="center">3.76</td>
-<td align="center">4.01</td>
-<td align="center">4.29</td>
-<td align="center">3.67</td>
-<td align="center">3.39</td>
-<td align="center">4.12</td>
-<td align="center">4.27</td>
-<td align="center">3.61</td>
+<tr>
+<td style="text-align:center;">
+4.61
+</td>
+<td style="text-align:center;">
+4.26
+</td>
+<td style="text-align:center;">
+3.96
+</td>
+<td style="text-align:center;">
+4.23
+</td>
+<td style="text-align:center;">
+3.76
+</td>
+<td style="text-align:center;">
+4.01
+</td>
+<td style="text-align:center;">
+4.29
+</td>
+<td style="text-align:center;">
+3.67
+</td>
+<td style="text-align:center;">
+3.39
+</td>
+<td style="text-align:center;">
+4.12
+</td>
+<td style="text-align:center;">
+4.27
+</td>
+<td style="text-align:center;">
+3.61
+</td>
 </tr>
-<tr class="odd">
-<td align="center">4.98</td>
-<td align="center">4.24</td>
-<td align="center">3.83</td>
-<td align="center">4.20</td>
-<td align="center">3.71</td>
-<td align="center">4.03</td>
-<td align="center">4.34</td>
-<td align="center">4.69</td>
-<td align="center">3.62</td>
-<td align="center">4.18</td>
-<td align="center">4.26</td>
-<td align="center">4.36</td>
+<tr>
+<td style="text-align:center;">
+4.98
+</td>
+<td style="text-align:center;">
+4.24
+</td>
+<td style="text-align:center;">
+3.83
+</td>
+<td style="text-align:center;">
+4.20
+</td>
+<td style="text-align:center;">
+3.71
+</td>
+<td style="text-align:center;">
+4.03
+</td>
+<td style="text-align:center;">
+4.34
+</td>
+<td style="text-align:center;">
+4.69
+</td>
+<td style="text-align:center;">
+3.62
+</td>
+<td style="text-align:center;">
+4.18
+</td>
+<td style="text-align:center;">
+4.26
+</td>
+<td style="text-align:center;">
+4.36
+</td>
 </tr>
-<tr class="even">
-<td align="center">5.28</td>
-<td align="center">4.21</td>
-<td align="center">4.42</td>
-<td align="center">4.36</td>
-<td align="center">3.66</td>
-<td align="center">4.02</td>
-<td align="center">4.31</td>
-<td align="center">4.83</td>
-<td align="center">3.59</td>
-<td align="center">3.97</td>
-<td align="center">3.96</td>
-<td align="center">4.49</td>
+<tr>
+<td style="text-align:center;">
+5.28
+</td>
+<td style="text-align:center;">
+4.21
+</td>
+<td style="text-align:center;">
+4.42
+</td>
+<td style="text-align:center;">
+4.36
+</td>
+<td style="text-align:center;">
+3.66
+</td>
+<td style="text-align:center;">
+4.02
+</td>
+<td style="text-align:center;">
+4.31
+</td>
+<td style="text-align:center;">
+4.83
+</td>
+<td style="text-align:center;">
+3.59
+</td>
+<td style="text-align:center;">
+3.97
+</td>
+<td style="text-align:center;">
+3.96
+</td>
+<td style="text-align:center;">
+4.49
+</td>
 </tr>
-<tr class="odd">
-<td align="center">5.11</td>
-<td align="center">4.20</td>
-<td align="center">4.36</td>
-<td align="center">4.54</td>
-<td align="center">3.72</td>
-<td align="center">3.97</td>
-<td align="center">4.28</td>
-<td align="center">4.76</td>
-<td align="center">3.21</td>
-<td align="center">4.04</td>
-<td align="center">4.56</td>
-<td align="center">4.25</td>
+<tr>
+<td style="text-align:center;">
+5.11
+</td>
+<td style="text-align:center;">
+4.20
+</td>
+<td style="text-align:center;">
+4.36
+</td>
+<td style="text-align:center;">
+4.54
+</td>
+<td style="text-align:center;">
+3.72
+</td>
+<td style="text-align:center;">
+3.97
+</td>
+<td style="text-align:center;">
+4.28
+</td>
+<td style="text-align:center;">
+4.76
+</td>
+<td style="text-align:center;">
+3.21
+</td>
+<td style="text-align:center;">
+4.04
+</td>
+<td style="text-align:center;">
+4.56
+</td>
+<td style="text-align:center;">
+4.25
+</td>
 </tr>
-<tr class="even">
-<td align="center">4.92</td>
-<td align="center">4.23</td>
-<td align="center">4.47</td>
-<td align="center">3.60</td>
-<td align="center">5.23</td>
-<td align="center">4.02</td>
-<td align="center">4.32</td>
-<td align="center">4.68</td>
-<td align="center">4.76</td>
-<td align="center">3.69</td>
-<td align="center">4.61</td>
-<td align="center">4.26</td>
+<tr>
+<td style="text-align:center;">
+4.92
+</td>
+<td style="text-align:center;">
+4.23
+</td>
+<td style="text-align:center;">
+4.47
+</td>
+<td style="text-align:center;">
+3.60
+</td>
+<td style="text-align:center;">
+5.23
+</td>
+<td style="text-align:center;">
+4.02
+</td>
+<td style="text-align:center;">
+4.32
+</td>
+<td style="text-align:center;">
+4.68
+</td>
+<td style="text-align:center;">
+4.76
+</td>
+<td style="text-align:center;">
+3.69
+</td>
+<td style="text-align:center;">
+4.61
+</td>
+<td style="text-align:center;">
+4.26
+</td>
 </tr>
-<tr class="odd">
-<td align="center">3.89</td>
-<td align="center">4.21</td>
-<td align="center">4.36</td>
-<td align="center">3.42</td>
-<td align="center">5.01</td>
-<td align="center">4.01</td>
-<td align="center">4.29</td>
-<td align="center">3.68</td>
-<td align="center">4.71</td>
-<td align="center">4.13</td>
-<td align="center">4.57</td>
-<td align="center">4.26</td>
+<tr>
+<td style="text-align:center;">
+3.89
+</td>
+<td style="text-align:center;">
+4.21
+</td>
+<td style="text-align:center;">
+4.36
+</td>
+<td style="text-align:center;">
+3.42
+</td>
+<td style="text-align:center;">
+5.01
+</td>
+<td style="text-align:center;">
+4.01
+</td>
+<td style="text-align:center;">
+4.29
+</td>
+<td style="text-align:center;">
+3.68
+</td>
+<td style="text-align:center;">
+4.71
+</td>
+<td style="text-align:center;">
+4.13
+</td>
+<td style="text-align:center;">
+4.57
+</td>
+<td style="text-align:center;">
+4.26
+</td>
 </tr>
-<tr class="even">
-<td align="center">4.03</td>
-<td align="center">5.46</td>
-<td align="center">4.16</td>
-<td align="center">3.64</td>
-<td align="center">4.16</td>
-<td align="center">3.76</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
+<tr>
+<td style="text-align:center;">
+4.03
+</td>
+<td style="text-align:center;">
+5.46
+</td>
+<td style="text-align:center;">
+4.16
+</td>
+<td style="text-align:center;">
+3.64
+</td>
+<td style="text-align:center;">
+4.16
+</td>
+<td style="text-align:center;">
+3.76
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
 </tr>
 </tbody>
 </table>
@@ -716,7 +1033,7 @@ R包含有很丰富的正态分布相关的<a href="https://stat.ethz.ch/R-manua
 <span id="cb16-5"><a href="第二章-计量资料的统计描述.html#cb16-5"></a><span class="co">#将 y 中的落在x数据集上的数据画出来</span></span>
 <span id="cb16-6"><a href="第二章-计量资料的统计描述.html#cb16-6"></a><span class="kw">plot</span>(x,y,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">pch=</span><span class="dv">20</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:dnorm"></span>
-<img src="MedicalStatisNotes_files/figure-html/dnorm-1.png" alt="概率密度函数示例" width="49%" height="49%" />
+<img src="figs/dnorm.png" alt="概率密度函数示例" width="49%" height="49%" />
 <p class="caption">
 Figure 2.2: 概率密度函数示例
 </p>
@@ -733,7 +1050,7 @@ Figure 2.2: 概率密度函数示例
 <span id="cb17-5"><a href="第二章-计量资料的统计描述.html#cb17-5"></a><span class="co">#将 y 中的落在x数据集上的累计概率画出来</span></span>
 <span id="cb17-6"><a href="第二章-计量资料的统计描述.html#cb17-6"></a><span class="kw">plot</span>(x,y,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">pch=</span><span class="dv">20</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:pnorm"></span>
-<img src="MedicalStatisNotes_files/figure-html/pnorm-1.png" alt="累积分布函数示例" width="49%" height="49%" />
+<img src="figs/pnorm.png" alt="累积分布函数示例" width="49%" height="49%" />
 <p class="caption">
 Figure 2.3: 累积分布函数示例
 </p>
@@ -749,7 +1066,7 @@ Figure 2.3: 累积分布函数示例
 <span id="cb18-5"><a href="第二章-计量资料的统计描述.html#cb18-5"></a><span class="co">#将 y 中的落在x数据集上的数字画出来</span></span>
 <span id="cb18-6"><a href="第二章-计量资料的统计描述.html#cb18-6"></a><span class="kw">plot</span>(x,y,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">pch=</span><span class="dv">20</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:qnorm"></span>
-<img src="MedicalStatisNotes_files/figure-html/qnorm-1.png" alt="正态分位函数示例" width="49%" height="49%" />
+<img src="figs/qnorm.png" alt="正态分位函数示例" width="49%" height="49%" />
 <p class="caption">
 Figure 2.4: 正态分位函数示例
 </p>
@@ -765,7 +1082,7 @@ Figure 2.4: 正态分位函数示例
 <span id="cb19-5"><a href="第二章-计量资料的统计描述.html#cb19-5"></a><span class="co">#对选区的数据绘制频率分布图</span></span>
 <span id="cb19-6"><a href="第二章-计量资料的统计描述.html#cb19-6"></a><span class="kw">hist</span>(y,<span class="dt">col=</span><span class="st">&quot;#A8D6FF&quot;</span>,<span class="dt">labels =</span><span class="ot">TRUE</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:rnorm"></span>
-<img src="MedicalStatisNotes_files/figure-html/rnorm-1.png" alt="随机正态分布数据示例" width="49%" height="49%" />
+<img src="figs/rnorm.png" alt="随机正态分布数据示例" width="49%" height="49%" />
 <p class="caption">
 Figure 2.5: 随机正态分布数据示例
 </p>
@@ -847,7 +1164,7 @@ Figure 2.7: 正态分布检验与密度图
 并重新检查对数变换后的数据是否正态分布。可以应用log()函数进行对数变换。</p>
 <p>另外，qq图也是评估回归分析的残差是否服从正态分布的一种方便的方法。</p>
 <div class="figure" style="text-align: center"><span id="fig:qqPlottest1"></span>
-<img src="MedicalStatisNotes_files/figure-html/qqplottest1-1.png" alt="难以判断正态分布的密度图" width="49%" height="49%" />
+<img src="figs/qqPlottest1.png" alt="难以判断正态分布的密度图" width="49%" height="49%" />
 <p class="caption">
 Figure 2.8: 难以判断正态分布的密度图
 </p>
@@ -858,7 +1175,7 @@ Figure 2.8: 难以判断正态分布的密度图
 <span id="cb22-4"><a href="第二章-计量资料的统计描述.html#cb22-4"></a>dat_hist &lt;-<span class="st"> </span><span class="kw">data.frame</span>( <span class="dt">value =</span> <span class="kw">rnorm</span>(<span class="dv">12</span>, <span class="dt">mean =</span> <span class="dv">165</span>, <span class="dt">sd =</span> <span class="dv">5</span>))</span>
 <span id="cb22-5"><a href="第二章-计量资料的统计描述.html#cb22-5"></a><span class="kw">qqPlot</span>(dat_hist<span class="op">$</span>value)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:qqplot"></span>
-<img src="MedicalStatisNotes_files/figure-html/qqplot-1.png" alt="正态分布检验与QQ-plot (1)" width="49%" height="49%" />
+<img src="figs/qqplot.png" alt="正态分布检验与QQ-plot (1)" width="49%" height="49%" />
 <p class="caption">
 Figure 2.9: 正态分布检验与QQ-plot (1)
 </p>
