@@ -23,6 +23,9 @@
     "figs/fdistri.png": {
       "checksum": "9e77c1ec6c9890b795038a793ed60709"
     },
+    "figs/figregression.png": {
+      "checksum": "be827daa25920f572c69a9d8a3cf77b3"
+    },
     "figs/hometdist.png": {
       "checksum": "a84e4666d3b3cc6650767bfaf91123f6"
     },
@@ -120,7 +123,7 @@
       "checksum": "806ab0467ea8b51e6248f2cc567b4827"
     },
     "index.html": {
-      "checksum": "869770ec4913e220ccb2d6ab2cb80d03"
+      "checksum": "da70d3231e79149d3b8f92be297a8c4a"
     },
     "libs/accessible-code-block-0.0.1/empty-anchor.js": {
       "checksum": "53c42ac72d71beb8e6dbffe86ab543d6"
@@ -197,86 +200,38 @@
     "libs/lightable-0.0.1/lightable.css": {
       "checksum": "25547ce4d44910ea8f377212d34397fa"
     },
-    "MedicalStatisNotes_files/figure-html/chisquaredfig-1.png": {
-      "checksum": "868a1f5dc21d6c405110c63797917627"
-    },
-    "MedicalStatisNotes_files/figure-html/Cmdftest-1.png": {
-      "checksum": "5cdb0234da51b880ddb0f30e0aa3878e"
-    },
-    "MedicalStatisNotes_files/figure-html/dnorm-1.png": {
-      "checksum": "e72a92a97e18c8c759f409ce91a9793f"
-    },
-    "MedicalStatisNotes_files/figure-html/fdistri-1.png": {
-      "checksum": "9e77c1ec6c9890b795038a793ed60709"
-    },
-    "MedicalStatisNotes_files/figure-html/hometdist-1.png": {
-      "checksum": "a84e4666d3b3cc6650767bfaf91123f6"
-    },
-    "MedicalStatisNotes_files/figure-html/logtrans1-1.png": {
-      "checksum": "f26c071e97475bbfac82b2ab22870021"
-    },
-    "MedicalStatisNotes_files/figure-html/piredttest-1.png": {
-      "checksum": "d124587a016bb2e016721a3d53f2fdbf"
-    },
-    "MedicalStatisNotes_files/figure-html/pnorm-1.png": {
-      "checksum": "5657f1c57f62dc00aff6639d7a006522"
-    },
-    "MedicalStatisNotes_files/figure-html/pttest-1.png": {
-      "checksum": "1372ab209215d7d9ee5906f4a0873fe5"
-    },
-    "MedicalStatisNotes_files/figure-html/qnorm-1.png": {
-      "checksum": "d6342e5e29a7302f6cdd214f63c5266e"
-    },
-    "MedicalStatisNotes_files/figure-html/qqplot-1.png": {
-      "checksum": "da86076013a801df07d48a95c7ace792"
-    },
-    "MedicalStatisNotes_files/figure-html/qqplottest1-1.png": {
-      "checksum": "bb6700622f24fd03e524a394390560f8"
-    },
-    "MedicalStatisNotes_files/figure-html/qttest-1.png": {
-      "checksum": "0bda6caeca48162b872e045189215384"
-    },
-    "MedicalStatisNotes_files/figure-html/rnorm-1.png": {
-      "checksum": "09e898d21ca739d69498199d61ef6671"
-    },
-    "MedicalStatisNotes_files/figure-html/rttest-1.png": {
-      "checksum": "6360b41b8c095e3a19bb816eaf09bcca"
-    },
-    "MedicalStatisNotes_files/figure-html/tdist-1.png": {
-      "checksum": "7cdf7213010e36ed54167d37b169766a"
-    },
     "reference-keys.txt": {
-      "checksum": "f43245b0853285ab4335a28d10b4bf75"
+      "checksum": "8300dba839461139c6a887234e45638b"
     },
     "search_index.json": {
-      "checksum": "8c66c32ee457bac7e907d9ae631a4483"
+      "checksum": "45adabd959cd29f1cd21682b95867235"
     },
     "style.css": {
       "checksum": "19f0b33dc27d4f748874d2cde5cea5bc"
     },
     "第八章-秩转换的非参数检验.html": {
-      "checksum": "eba0136f5d5f8d1d9a29c20b54c89677"
+      "checksum": "98d7ad83d25f33f8d9567855fcf10712"
     },
     "第二章-计量资料的统计描述.html": {
-      "checksum": "479bbe00052b7998447dc734ea2be931"
+      "checksum": "b6ea897e122da43ffc2d8656bd04e272"
+    },
+    "第九章-双变量回归与相关.html": {
+      "checksum": "417d3d97a1abac62a9cb3501d6218990"
     },
     "第六章-计数资料的统计描述.html": {
-      "checksum": "2c1513a1f95befff51966c5229e43733"
+      "checksum": "046616f952efad4d7dea11a1fd41d847"
     },
     "第七章-chi2检验.html": {
-      "checksum": "940a70829d50392bf7fbc7b98d99a12d"
+      "checksum": "e86cecc25158cd6945ca8c42c35fa27e"
     },
     "第三章-总体均数的估计与假设检验.html": {
-      "checksum": "081b4fb443b7f9c3f640c8a972e53e6e"
+      "checksum": "e883dbda1daa31eaff637c615963fb4d"
     },
     "第四章-多个样本均数比较的方差分析.html": {
-      "checksum": "2d5d4a31a44e2d318fecb7e0b8c35e50"
+      "checksum": "718c3072e086893f21a17f6ab219a5b6"
     },
     "第五章-计数资料的统计描述.html": {
-      "checksum": "b5063b2444ebbe850745031f40715a49"
-    },
-    "双变量回归与相关.html": {
-      "checksum": "13937dc76931cfdd1d6f878c5ff8f4ef"
+      "checksum": "f79bfd1f7e783a6123078456216da37a"
     }
   },
   "users": null
