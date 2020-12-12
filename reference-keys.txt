@@ -53,6 +53,7 @@ tab:ranktab3
 tab:ranktab4
 tab:tablable
 fig:figregression
+fig:figcorrelation
 简介与传送门
 简介
 软件准备
@@ -228,3 +229,10 @@ t检验-1
 利用回归方程进行估计和预测
 总体均数mu_yx的可信区间
 个体y值的预测区间
+直线相关
+相关系数
+直线相关的假设推断
+相关系数的假设检验
+总体相关系数的可信区间
+决定系数
+直线回归与相关引用的注意事项

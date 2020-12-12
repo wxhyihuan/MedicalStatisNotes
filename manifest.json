@@ -23,6 +23,9 @@
     "figs/fdistri.png": {
       "checksum": "9e77c1ec6c9890b795038a793ed60709"
     },
+    "figs/figcorrelation.png": {
+      "checksum": "cf510d2af1b2b06bcd348d329d338e9d"
+    },
     "figs/figregression.png": {
       "checksum": "be827daa25920f572c69a9d8a3cf77b3"
     },
@@ -123,7 +126,7 @@
       "checksum": "806ab0467ea8b51e6248f2cc567b4827"
     },
     "index.html": {
-      "checksum": "da70d3231e79149d3b8f92be297a8c4a"
+      "checksum": "a83b6f332d2bf75320d65d82cf60f92f"
     },
     "libs/accessible-code-block-0.0.1/empty-anchor.js": {
       "checksum": "53c42ac72d71beb8e6dbffe86ab543d6"
@@ -201,37 +204,37 @@
       "checksum": "25547ce4d44910ea8f377212d34397fa"
     },
     "reference-keys.txt": {
-      "checksum": "8300dba839461139c6a887234e45638b"
+      "checksum": "a0954a808260272c7a3e2e3a72041983"
     },
     "search_index.json": {
-      "checksum": "45adabd959cd29f1cd21682b95867235"
+      "checksum": "e4fb93f76693a6871b092156abd31100"
     },
     "style.css": {
       "checksum": "19f0b33dc27d4f748874d2cde5cea5bc"
     },
     "第八章-秩转换的非参数检验.html": {
-      "checksum": "98d7ad83d25f33f8d9567855fcf10712"
+      "checksum": "b88f9646612765ed487d7579f37ca6da"
     },
     "第二章-计量资料的统计描述.html": {
-      "checksum": "b6ea897e122da43ffc2d8656bd04e272"
+      "checksum": "6259f39dac8031477ee4576072a482cc"
     },
     "第九章-双变量回归与相关.html": {
-      "checksum": "417d3d97a1abac62a9cb3501d6218990"
+      "checksum": "78409685b83156802e3621a1808e8633"
     },
     "第六章-计数资料的统计描述.html": {
-      "checksum": "046616f952efad4d7dea11a1fd41d847"
+      "checksum": "f46bff33403a17ade94f5e7553d58500"
     },
     "第七章-chi2检验.html": {
-      "checksum": "e86cecc25158cd6945ca8c42c35fa27e"
+      "checksum": "824a6969f8d829a8064c7a9796a3ebbb"
     },
     "第三章-总体均数的估计与假设检验.html": {
-      "checksum": "e883dbda1daa31eaff637c615963fb4d"
+      "checksum": "e628f29ead6cc94354de60aca9782cdc"
     },
     "第四章-多个样本均数比较的方差分析.html": {
-      "checksum": "718c3072e086893f21a17f6ab219a5b6"
+      "checksum": "51e523701883efb30d90d6b1c85709df"
     },
     "第五章-计数资料的统计描述.html": {
-      "checksum": "f79bfd1f7e783a6123078456216da37a"
+      "checksum": "5d5abb002e7af846347782b6aec59711"
     }
   },
   "users": null

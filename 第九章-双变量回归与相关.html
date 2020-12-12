@@ -302,6 +302,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.2.3" data-path="第九章-双变量回归与相关.html"><a href="第九章-双变量回归与相关.html#总体回归系数β的可信区间"><i class="fa fa-check"></i><b>9.2.3</b> 总体回归系数β的可信区间</a></li>
 <li class="chapter" data-level="9.2.4" data-path="第九章-双变量回归与相关.html"><a href="第九章-双变量回归与相关.html#利用回归方程进行估计和预测"><i class="fa fa-check"></i><b>9.2.4</b> 利用回归方程进行估计和预测</a></li>
 </ul></li>
+<li class="chapter" data-level="9.3" data-path="第九章-双变量回归与相关.html"><a href="第九章-双变量回归与相关.html#直线相关"><i class="fa fa-check"></i><b>9.3</b> 直线相关</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="第九章-双变量回归与相关.html"><a href="第九章-双变量回归与相关.html#相关系数"><i class="fa fa-check"></i><b>9.3.1</b> 相关系数</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="第九章-双变量回归与相关.html"><a href="第九章-双变量回归与相关.html#直线相关的假设推断"><i class="fa fa-check"></i><b>9.4</b> 直线相关的假设推断</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="第九章-双变量回归与相关.html"><a href="第九章-双变量回归与相关.html#相关系数的假设检验"><i class="fa fa-check"></i><b>9.4.1</b> 相关系数的假设检验</a></li>
+<li class="chapter" data-level="9.4.2" data-path="第九章-双变量回归与相关.html"><a href="第九章-双变量回归与相关.html#总体相关系数的可信区间"><i class="fa fa-check"></i><b>9.4.2</b> 总体相关系数的可信区间</a></li>
+<li class="chapter" data-level="9.4.3" data-path="第九章-双变量回归与相关.html"><a href="第九章-双变量回归与相关.html#决定系数"><i class="fa fa-check"></i><b>9.4.3</b> 决定系数</a></li>
+<li class="chapter" data-level="9.4.4" data-path="第九章-双变量回归与相关.html"><a href="第九章-双变量回归与相关.html#直线回归与相关引用的注意事项"><i class="fa fa-check"></i><b>9.4.4</b> 直线回归与相关引用的注意事项</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -645,8 +654,139 @@ S_{Y|X} &amp;=\sqrt{\frac{SS_{res}}{n-2}}
 Figure 9.1: 8名正常儿童的年龄X(岁)与尿肌酐含量Y*(mmol/24h)的线性回归模拟
 </p>
 </div>
-
 </div>
+</div>
+</div>
+<div id="直线相关" class="section level2">
+<h2><span class="header-section-number">9.3</span> 直线相关</h2>
+<p>直线相关(Linear correlation)又称简单相关(Simple correlation)，用于双变量正态分布(Bivariate normal distribution)资料。
+直线相关的性质可由散点图直观的说明，一般有下面几种情况：</p>
+<ol style="list-style-type: decimal">
+<li><p>若两变量X、Y同时增大或减小，变化趋势是同向的，称为正相关(Positive correlation);</p></li>
+<li><p>若两变量X、Y间呈反向变化，称为负相关(Negative correlation);</p></li>
+<li><p>若X、Y是同向变化，称为完全正相关(Perfect positive correlation);</p></li>
+<li><p>若X、Y呈反向变化，称为完全负相关(Perfect negative correlation)。</p></li>
+<li><p>若散点分布为圆形等一些形状，两变量间没有直线相关关系，称为零相关(Zero correlation)。</p></li>
+</ol>
+<p>正相关或负相关并不一定表示一个变量的改变是另一个变量变化的因，有可能同受另一个因素的影响。因此，相关关系并不一定是因果关系。</p>
+<div id="相关系数" class="section level3">
+<h3><span class="header-section-number">9.3.1</span> 相关系数</h3>
+<p>相关系数(Coefficient of correlation)又称 Pearson 积差相关系数(Coefficient of product-moment correlation)，以符号r表示样本相关系数，
+符号p表示其总体相关系数。它用来说明具有直线关系的两变 量间相关的密切程度与相关方向。样本相关系数的计算公式为：
+<span class="math display">\[r=\frac{\sum{(X-\bar X)(Y-\bar Y)}}{\sqrt{\sum(X-\bar X)^2}*\sqrt{\sum(Y-\bar Y)^2}}=\frac{l_{xy}}{\sqrt{l_{xx}l_{yy}}}\]</span>
+其中<span class="math inline">\(l_{xx}=\sum X^2-(\sum X)^2/n，l_{yy}=\sum Y^2-(\sum Y)^2/n，l_{xy}=\sum XY-(\sum X)(\sum Y)/n\)</span></p>
+<p>相关系数没有单位，其值为 -1&lt;r&lt;1。r值为正表示正相关，r值为负表示负相关，r的绝对值等于1为完全相关，r= 0为零相关。在生物界由于影响因素众多，因此很少完全相关。</p>
+<p>注意:这里的r实际上是就总体相关系数p来说的，r是p的估计值。</p>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="第九章-双变量回归与相关.html#cb97-1"></a><span class="kw">library</span>(<span class="st">&quot;dplyr&quot;</span>)</span>
+<span id="cb97-2"><a href="第九章-双变量回归与相关.html#cb97-2"></a><span class="kw">library</span>(<span class="st">&quot;haven&quot;</span>)</span>
+<span id="cb97-3"><a href="第九章-双变量回归与相关.html#cb97-3"></a><span class="kw">library</span>(<span class="st">&quot;ggplot2&quot;</span>)</span>
+<span id="cb97-4"><a href="第九章-双变量回归与相关.html#cb97-4"></a>bulkv_df&lt;-<span class="kw">read_sav</span>(<span class="dt">file=</span><span class="st">&quot;ExampleData/SavData4MedSta/Exam09-05.sav&quot;</span>)</span>
+<span id="cb97-5"><a href="第九章-双变量回归与相关.html#cb97-5"></a><span class="kw">colnames</span>(bulkv_df)&lt;-<span class="kw">c</span>(<span class="st">&quot;No.&quot;</span>,<span class="st">&quot;Weight&quot;</span>,<span class="st">&quot;Bulkv&quot;</span>)</span>
+<span id="cb97-6"><a href="第九章-双变量回归与相关.html#cb97-6"></a></span>
+<span id="cb97-7"><a href="第九章-双变量回归与相关.html#cb97-7"></a>meanW&lt;-<span class="kw">mean</span>(bulkv_df<span class="op">$</span>Weight)</span>
+<span id="cb97-8"><a href="第九章-双变量回归与相关.html#cb97-8"></a>meanB&lt;-<span class="kw">mean</span>(bulkv_df<span class="op">$</span>Bulkv)</span>
+<span id="cb97-9"><a href="第九章-双变量回归与相关.html#cb97-9"></a>n&lt;-<span class="kw">length</span>(bulkv_df<span class="op">$</span>Weight)</span>
+<span id="cb97-10"><a href="第九章-双变量回归与相关.html#cb97-10"></a><span class="co">##计算不同的离均差平方和(Sum of square of deviations from mean,SS)，离均差积和</span></span>
+<span id="cb97-11"><a href="第九章-双变量回归与相关.html#cb97-11"></a>DAS_xx&lt;-<span class="kw">sum</span>(bulkv_df<span class="op">$</span>Weight<span class="op">^</span><span class="dv">2</span>)<span class="op">-</span>(<span class="kw">sum</span>(bulkv_df<span class="op">$</span>Weight))<span class="op">^</span><span class="dv">2</span><span class="op">/</span>n</span>
+<span id="cb97-12"><a href="第九章-双变量回归与相关.html#cb97-12"></a>DAS_yy&lt;-<span class="kw">sum</span>(bulkv_df<span class="op">$</span>Bulkv<span class="op">^</span><span class="dv">2</span>)<span class="op">-</span>(<span class="kw">sum</span>(bulkv_df<span class="op">$</span>Bulkv))<span class="op">^</span><span class="dv">2</span><span class="op">/</span>n</span>
+<span id="cb97-13"><a href="第九章-双变量回归与相关.html#cb97-13"></a>DAS_xy&lt;-<span class="kw">sum</span>(bulkv_df<span class="op">$</span>Weight<span class="op">*</span>bulkv_df<span class="op">$</span>Bulkv)<span class="op">-</span>(<span class="kw">sum</span>(bulkv_df<span class="op">$</span>Weight)<span class="op">*</span><span class="kw">sum</span>(bulkv_df<span class="op">$</span>Bulkv))<span class="op">/</span>n</span>
+<span id="cb97-14"><a href="第九章-双变量回归与相关.html#cb97-14"></a></span>
+<span id="cb97-15"><a href="第九章-双变量回归与相关.html#cb97-15"></a><span class="co">#计算样本的相关系数</span></span>
+<span id="cb97-16"><a href="第九章-双变量回归与相关.html#cb97-16"></a>r&lt;-DAS_xy<span class="op">/</span><span class="kw">sqrt</span>(DAS_xx<span class="op">*</span>DAS_yy)</span>
+<span id="cb97-17"><a href="第九章-双变量回归与相关.html#cb97-17"></a><span class="co">#[1] 0.8754315</span></span>
+<span id="cb97-18"><a href="第九章-双变量回归与相关.html#cb97-18"></a></span>
+<span id="cb97-19"><a href="第九章-双变量回归与相关.html#cb97-19"></a>wb &lt;-<span class="st"> </span><span class="kw">ggplot</span>(bulkv_df, <span class="kw">aes</span>(Weight, Bulkv))<span class="op">+</span></span>
+<span id="cb97-20"><a href="第九章-双变量回归与相关.html#cb97-20"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;体重|Weight/kg X&quot;</span>)<span class="op">+</span><span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;双肾体积|Bulkv/ml Y&quot;</span>)<span class="op">+</span></span>
+<span id="cb97-21"><a href="第九章-双变量回归与相关.html#cb97-21"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">shape=</span><span class="dv">21</span>,<span class="dt">size=</span><span class="fl">3.5</span>, <span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>,<span class="dt">fill=</span><span class="st">&quot;red&quot;</span>,<span class="dt">alpha=</span><span class="fl">0.5</span>)<span class="op">+</span></span>
+<span id="cb97-22"><a href="第九章-双变量回归与相关.html#cb97-22"></a><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method=</span><span class="st">&quot;lm&quot;</span>, <span class="dt">se=</span><span class="ot">TRUE</span>, <span class="dt">colour =</span> <span class="st">&quot;blue&quot;</span>,<span class="dt">fill=</span><span class="st">&quot;blue&quot;</span>,<span class="dt">alpha=</span><span class="fl">0.3</span>,<span class="dt">size=</span><span class="fl">1.1</span>)<span class="op">+</span></span>
+<span id="cb97-23"><a href="第九章-双变量回归与相关.html#cb97-23"></a><span class="st">  </span><span class="kw">geom_vline</span>(<span class="kw">aes</span>(<span class="dt">xintercept =</span> <span class="kw">mean</span>(Weight)),<span class="dt">linetype=</span><span class="dv">2</span>)<span class="op">+</span></span>
+<span id="cb97-24"><a href="第九章-双变量回归与相关.html#cb97-24"></a><span class="st">  </span><span class="kw">geom_hline</span>(<span class="kw">aes</span>(<span class="dt">yintercept  =</span> <span class="kw">mean</span>(Bulkv)),<span class="dt">linetype=</span><span class="dv">2</span>)<span class="op">+</span></span>
+<span id="cb97-25"><a href="第九章-双变量回归与相关.html#cb97-25"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="kw">mean</span>(Weight),<span class="kw">mean</span>(Bulkv)),<span class="dt">shape=</span><span class="dv">16</span>,<span class="dt">size=</span><span class="fl">3.5</span>, <span class="dt">colour=</span><span class="st">&quot;green&quot;</span>,<span class="dt">alpha=</span><span class="fl">0.5</span>)<span class="op">+</span></span>
+<span id="cb97-26"><a href="第九章-双变量回归与相关.html#cb97-26"></a><span class="st">  </span><span class="kw">theme_classic</span>()</span>
+<span id="cb97-27"><a href="第九章-双变量回归与相关.html#cb97-27"></a>  </span>
+<span id="cb97-28"><a href="第九章-双变量回归与相关.html#cb97-28"></a><span class="kw">print</span>(wb)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:figcorrelation"></span>
+<img src="figs/figcorrelation.png" alt="15例正常成年人体重与双肾总体积的散点图" width="49%" />
+<p class="caption">
+Figure 9.2: 15例正常成年人体重与双肾总体积的散点图
+</p>
+</div>
+</div>
+</div>
+<div id="直线相关的假设推断" class="section level2">
+<h2><span class="header-section-number">9.4</span> 直线相关的假设推断</h2>
+<div id="相关系数的假设检验" class="section level3">
+<h3><span class="header-section-number">9.4.1</span> 相关系数的假设检验</h3>
+<p>从同一总体抽出的不同样本会得到不同的样本相关系数，所以要判断X、Y间是否确有直线相关关系，就要检验r是否来自ρ≠0的总体。
+因为即使从ρ=0的总体作随机抽样，由于抽样误差的影响，所得r值也常不等于零。故当计算出r值后，接着做p=0的假设检验。常用t检验，
+检验统计量1值的计算公式如下:
+<span class="math display">\[t=\frac{r-0}{S_r}=\frac{r}{\sqrt{\frac{1-r^2}{n-2}}}，v=n-2\]</span>
+公式中<span class="math inline">\(S_r\)</span>为相关系数的标准误，求得t值后可查t界值表判断P值，按检验水准判断结果。</p>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="第九章-双变量回归与相关.html#cb98-1"></a>r&lt;-DAS_xy<span class="op">/</span><span class="kw">sqrt</span>(DAS_xx<span class="op">*</span>DAS_yy)</span>
+<span id="cb98-2"><a href="第九章-双变量回归与相关.html#cb98-2"></a>t_val&lt;-r<span class="op">/</span><span class="kw">sqrt</span>((<span class="dv">1</span><span class="op">-</span>r<span class="op">^</span><span class="dv">2</span>)<span class="op">/</span>(n<span class="dv">-2</span>))</span>
+<span id="cb98-3"><a href="第九章-双变量回归与相关.html#cb98-3"></a><span class="co"># [1] 6.530389</span></span>
+<span id="cb98-4"><a href="第九章-双变量回归与相关.html#cb98-4"></a></span>
+<span id="cb98-5"><a href="第九章-双变量回归与相关.html#cb98-5"></a><span class="kw">pt</span>(t_val,n<span class="dv">-2</span>,<span class="dt">lower.tail =</span> F)</span>
+<span id="cb98-6"><a href="第九章-双变量回归与相关.html#cb98-6"></a><span class="co"># [1] 0.0003078376</span></span></code></pre></div>
+</div>
+<div id="总体相关系数的可信区间" class="section level3">
+<h3><span class="header-section-number">9.4.2</span> 总体相关系数的可信区间</h3>
+<p>由于相关系数的抽样分布在ρ不等于零时呈偏态分布(大样本情况下亦如此)，所以ρ的可信区间不 能简单地按照前述回归系数一样用t分布去解决，而需要先将其进行某种变量变换，使变换后变量服从正 态分布，然后再估计其可信区间。具体步骤如下:</p>
+<ol style="list-style-type: decimal">
+<li>首先对r作如下z变换:
+<span class="math display">\[z=tanh^{-1} \text{或者} z=1/2*ln\frac{1+r}{1-r}\]</span></li>
+<li>按下式根据正态近似原理计算z的1-α的可信区间：
+<span class="math display">\[(z±u_{a/2}/\sqrt{n-3}) \]</span></li>
+<li>根据计算的z的上限和下限做如下变换，得到r的1-α的可信区间：
+<span class="math display">\[r=tanhz \text{或者} r=\frac{e^{2z}-1}{e^{2z}+1}\]</span></li>
+</ol>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="第九章-双变量回归与相关.html#cb99-1"></a>r&lt;-DAS_xy<span class="op">/</span><span class="kw">sqrt</span>(DAS_xx<span class="op">*</span>DAS_yy)</span>
+<span id="cb99-2"><a href="第九章-双变量回归与相关.html#cb99-2"></a></span>
+<span id="cb99-3"><a href="第九章-双变量回归与相关.html#cb99-3"></a><span class="co">#1. jiangr值z转换</span></span>
+<span id="cb99-4"><a href="第九章-双变量回归与相关.html#cb99-4"></a>z&lt;-<span class="dv">1</span><span class="op">/</span><span class="kw">tanh</span>(r)</span>
+<span id="cb99-5"><a href="第九章-双变量回归与相关.html#cb99-5"></a><span class="co"># [1] 1.420206</span></span>
+<span id="cb99-6"><a href="第九章-双变量回归与相关.html#cb99-6"></a></span>
+<span id="cb99-7"><a href="第九章-双变量回归与相关.html#cb99-7"></a><span class="co">#2. 计算出z值得上限下限</span></span>
+<span id="cb99-8"><a href="第九章-双变量回归与相关.html#cb99-8"></a>z_lci&lt;-z<span class="op">-</span><span class="kw">qnorm</span>(<span class="fl">0.05</span><span class="op">/</span><span class="dv">2</span>,<span class="dt">lower.tail =</span> F)<span class="op">/</span>(n<span class="dv">-3</span>)<span class="op">^</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>)</span>
+<span id="cb99-9"><a href="第九章-双变量回归与相关.html#cb99-9"></a>z_uci&lt;-z<span class="op">+</span><span class="kw">qnorm</span>(<span class="fl">0.05</span><span class="op">/</span><span class="dv">2</span>,<span class="dt">lower.tail =</span> F)<span class="op">/</span>(n<span class="dv">-3</span>)<span class="op">^</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>)</span>
+<span id="cb99-10"><a href="第九章-双变量回归与相关.html#cb99-10"></a></span>
+<span id="cb99-11"><a href="第九章-双变量回归与相关.html#cb99-11"></a><span class="co">#根据z值上下限便返回r得上下限</span></span>
+<span id="cb99-12"><a href="第九章-双变量回归与相关.html#cb99-12"></a><span class="kw">tanh</span>(<span class="kw">c</span>(z_lci,z_uci))</span>
+<span id="cb99-13"><a href="第九章-双变量回归与相关.html#cb99-13"></a><span class="co"># [1] 0.6933680 0.9630249</span></span></code></pre></div>
+</div>
+<div id="决定系数" class="section level3">
+<h3><span class="header-section-number">9.4.3</span> 决定系数</h3>
+<p>直线回归与相关中，为了更直观得反应Y的总变异中回归关系所能解释的百分比，产生了决定系数(Coeddicient of determination)这一统计量，
+定义为回归平方与总平方和之比，计算公式为：
+<span class="math display">\[R^2=SS_{reg}/SS_{tol}=\frac{l_{xy}^2}{l_{xx}*l_{yy}}\]</span></p>
+<p><span class="math inline">\(R^2\in[0,1]\)</span>之间，其值大小反映了回归共享的相对程度，即回归关系所能解释的总变异百分比。
+<strong>注意，在双变量分析和多变量分析中，决定系数都用<span class="math inline">\(R^2\)</span>表示，但是在双变量分析中<span class="math inline">\(R^2=r^2\)</span>是一样的。</strong> 比如体重与肾脏体积的案例中<span class="math inline">\(R^2=r^2=\)</span> 0.76638。</p>
+<p>决定系数还可以用作对直线回归或相关作假设检验，其中对只想回归的拟合有毒就等价于对总体回归系数的假设检验，统计量为：
+<span class="math display">\[F=R^2/(1-R^2)(n-2)\]</span></p>
+</div>
+<div id="直线回归与相关引用的注意事项" class="section level3">
+<h3><span class="header-section-number">9.4.4</span> 直线回归与相关引用的注意事项</h3>
+<ol style="list-style-type: decimal">
+<li><p>根据分析目的选择自/应变量和统计方法</p></li>
+<li><p>进行直线回归和相关分析前绘制散点图，离群值处理</p></li>
+<li><p>用残差图考察数据是否符合模型假设条件：自变量与因变量关系为线性，误差服从均数为0的正态分布且方差相等，
+各观测独立(残差图横坐标为<span class="math inline">\(\hat Y\)</span>或者X，纵坐标为残差)，一般有以下几种情况：</p>
+<ul>
+<li>正常情况: 残差图中的点近乎对称的分布在直线y=0两侧，并且左右对称</li>
+<li>出现离群值: 残差图中的绝大部分点近乎对称的分布在直线y=0两侧，并且左右对称，但是有个别/极少数点会与它们远离</li>
+<li>方差不齐: 残差图中的点左右不对称，呈喇叭状分散，说明数据方差不齐，须进行方差稳定化处理</li>
+<li>不符合直线模型: 残差图中的点大致呈曲线分布，则说明直线回归不适合该数据，可能是符合曲线模型</li>
+<li>呈直线相关分布：残差图中的点大致呈直线相关分布，说明残差之间不独立，与横轴存在相关，直线回归模型不适合该数据，</li>
+</ul></li>
+<li><p>结果的解释与正确应用</p></li>
+</ol>
+<ul>
+<li>相关系数或回归系数的绝对值反映密切程度
+<ul>
+<li>假设检验的P值越小，越有理由认为变量间的直线关系存在(而不能说广义越密切或越“显著”)</li>
+</ul></li>
+</ul>
+
 </div>
 </div>
 </div>
